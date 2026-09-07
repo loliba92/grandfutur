@@ -344,22 +344,13 @@
   .sign-card[data-element="eau"] .sign-glyph{ color: var(--eau); }
   .sign-name{ font-family:"Fraunces",serif; font-weight:600; font-size:1.3rem; }
   .sign-dates{ font-size:0.78rem; color: var(--paper-dim); }
+  .sign-vibe{ margin: 0 0 18px; font-size:1rem; }
   .sign-categories{ display:grid; grid-template-columns: repeat(2, 1fr); gap:18px; }
   @media (max-width: 560px){ .sign-categories{ grid-template-columns: 1fr; } }
   .sign-cat{ background: var(--surface-2); border:1px solid var(--hairline-soft); border-radius:12px; padding:16px 18px; }
   .sign-cat-label{ display:block; font-family:"JetBrains Mono",monospace; font-size:0.7rem; letter-spacing:0.05em; text-transform:uppercase; color: var(--gold); margin-bottom:8px; }
   .sign-cat-body{ display:flex; align-items:center; gap:12px; }
   .sign-cat-text{ margin:0; font-size:0.88rem; }
-
-  /* Conseil : une touche à part, légère, jamais un chiffre — dans
-     l'esprit des horoscopes classiques (ex. "aérez votre appartement
-     cinq minutes"), volontairement détachée des 4 domaines notés.
-     "Style du jour" (fashion horoscope) a existé puis a été retiré
-     (retour utilisateur du 7 septembre : "c'est nul"), voir Historique. */
-  .sign-extras{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:16px; margin-top:18px; }
-  .sign-conseil{ padding:14px 18px; background: var(--surface-2); border-radius:12px; border-left:2px solid var(--gold); }
-  .sign-conseil-label{ display:block; font-family:"JetBrains Mono",monospace; font-size:0.68rem; letter-spacing:0.05em; text-transform:uppercase; color: var(--gold); margin-bottom:4px; }
-  .sign-conseil-text{ margin:0; font-size:0.88rem; font-style:italic; color: var(--paper-dim); }
 
   /* ---------- List box (top 3) ---------- */
   .list-box{ background: var(--surface); border:1px solid var(--gold); border-radius:10px; padding:20px 22px; }
@@ -369,11 +360,6 @@
   .list-box-rank{ font-family:"JetBrains Mono",monospace; font-weight:700; color: var(--gold); width:28px; }
   .list-box-title{ font-weight:600; margin-right:8px; }
   .list-box-meta{ color: var(--paper-dim); font-size:0.85rem; }
-
-  /* ---------- Lexique ---------- */
-  .lexique dl{ display:grid; gap:14px; }
-  .lexique dt{ font-family:"Fraunces",serif; font-weight:600; color: var(--gold); }
-  .lexique dd{ margin:4px 0 0; color: var(--paper-dim); font-size:0.92rem; }
 
   /* ---------- Footer ---------- */
   footer{ border-top:1px solid var(--hairline); margin-top:60px; padding:30px 0 50px; }
@@ -543,6 +529,7 @@
           <div><div class="sign-name">Bélier</div><div class="sign-dates">21 mars – 19 avril</div></div>
           <div class="energy-ring" style="--pct:49; --ring-color:var(--score-low); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">49%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
+        <p class="sign-vibe">Ton élan habituel est en retrait aujourd'hui — pas de quoi s'inquiéter, mais ce n'est pas le jour pour forcer un mouvement qui te coûterait d'habitude bien moins d'énergie. Laisse venir plutôt que de pousser, surtout sur un dossier qui traîne depuis un moment.</p>
         <div class="sign-categories">
           <div class="sign-cat" data-situation="freine">
             <span class="sign-cat-label">Amour</span>
@@ -573,9 +560,6 @@
             </div>
           </div>
         </div>
-        <div class="sign-extras">
-          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Avant de foncer, relis une fois ce que tu es sur le point d'envoyer.</p></div>
-        </div>
       </article>
       <article class="sign-card" data-sign="taureau" data-element="terre" data-energy="64" hidden>
         <div class="sign-card-top">
@@ -583,6 +567,7 @@
           <div><div class="sign-name">Taureau</div><div class="sign-dates">20 avril – 20 mai</div></div>
           <div class="energy-ring" style="--pct:64; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">64%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
+        <p class="sign-vibe">Rien de spectaculaire en vue aujourd'hui, et c'est tant mieux : ce calme sert un travail de fond qui paiera plus tard. Une tâche répétitive avancera plus vite que prévu si tu t'y tiens sans chercher de raccourci.</p>
         <div class="sign-categories">
           <div class="sign-cat" data-situation="neutre">
             <span class="sign-cat-label">Amour</span>
@@ -613,9 +598,6 @@
             </div>
           </div>
         </div>
-        <div class="sign-extras">
-          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Prends le temps du repas de midi, même dix minutes de plus.</p></div>
-        </div>
       </article>
       <article class="sign-card" data-sign="gemeaux" data-element="air" data-energy="58" hidden>
         <div class="sign-card-top">
@@ -623,6 +605,7 @@
           <div><div class="sign-name">Gémeaux</div><div class="sign-dates">21 mai – 20 juin</div></div>
           <div class="energy-ring" style="--pct:58; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">58%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
+        <p class="sign-vibe">Les mots viennent facilement aujourd'hui : bon moment pour rappeler quelqu'un que tu as un peu laissé de côté. Une conversation en tête-à-tête portera plus loin qu'un message groupé.</p>
         <div class="sign-categories">
           <div class="sign-cat" data-situation="neutre">
             <span class="sign-cat-label">Amour</span>
@@ -653,9 +636,6 @@
             </div>
           </div>
         </div>
-        <div class="sign-extras">
-          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Note une idée qui te traverse l'esprit avant de l'oublier ce soir.</p></div>
-        </div>
       </article>
       <article class="sign-card" data-sign="cancer" data-element="eau" data-energy="78" hidden>
         <div class="sign-card-top">
@@ -663,6 +643,7 @@
           <div><div class="sign-name">Cancer</div><div class="sign-dates">21 juin – 22 juillet</div></div>
           <div class="energy-ring" style="--pct:78; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">78%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
+        <p class="sign-vibe">Ton instinct est plus fiable que d'habitude aujourd'hui : ce que tu ressens chez les autres mérite d'être pris au sérieux, pas balayé. Une décision qui traînait peut enfin se prendre, presque sans effort.</p>
         <div class="sign-categories">
           <div class="sign-cat" data-situation="favorise">
             <span class="sign-cat-label">Amour</span>
@@ -693,9 +674,6 @@
             </div>
           </div>
         </div>
-        <div class="sign-extras">
-          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Un message à quelqu'un de confiance te fera plus de bien qu'un silence prolongé.</p></div>
-        </div>
       </article>
       <article class="sign-card" data-sign="lion" data-element="feu" data-energy="54" hidden>
         <div class="sign-card-top">
@@ -703,6 +681,7 @@
           <div><div class="sign-name">Lion</div><div class="sign-dates">23 juillet – 22 août</div></div>
           <div class="energy-ring" style="--pct:54; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">54%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
+        <p class="sign-vibe">Ta présence prend moins de place que d'habitude aujourd'hui, et ce n'est pas une mauvaise chose : observer vaut mieux que forcer une entrée en scène. Un projet personnel avance mieux mené en silence qu'annoncé trop tôt.</p>
         <div class="sign-categories">
           <div class="sign-cat" data-situation="freine">
             <span class="sign-cat-label">Amour</span>
@@ -733,9 +712,6 @@
             </div>
           </div>
         </div>
-        <div class="sign-extras">
-          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Laisse quelqu'un d'autre parler en premier dans une réunion aujourd'hui.</p></div>
-        </div>
       </article>
       <article class="sign-card" data-sign="vierge" data-element="terre" data-energy="59" hidden>
         <div class="sign-card-top">
@@ -743,6 +719,7 @@
           <div><div class="sign-name">Vierge</div><div class="sign-dates">23 août – 22 septembre</div></div>
           <div class="energy-ring" style="--pct:59; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">59%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
+        <p class="sign-vibe">Ranger un coin de ta vie, au sens propre ou au figuré, va te libérer plus d'énergie que prévu. Une petite mise à jour vaut mieux qu'une remise à plat complète aujourd'hui.</p>
         <div class="sign-categories">
           <div class="sign-cat" data-situation="neutre">
             <span class="sign-cat-label">Amour</span>
@@ -773,9 +750,6 @@
             </div>
           </div>
         </div>
-        <div class="sign-extras">
-          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Range un tiroir ou un dossier qui traîne, ça libère plus que prévu.</p></div>
-        </div>
       </article>
       <article class="sign-card" data-sign="balance" data-element="air" data-energy="57" hidden>
         <div class="sign-card-top">
@@ -783,6 +757,7 @@
           <div><div class="sign-name">Balance</div><div class="sign-dates">23 septembre – 22 octobre</div></div>
           <div class="energy-ring" style="--pct:57; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">57%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
+        <p class="sign-vibe">Une question en suspens depuis un moment peut avancer aujourd'hui, sans qu'il soit besoin de tout trancher d'un coup. Un compromis simple suffira, pas besoin de la solution parfaite.</p>
         <div class="sign-categories">
           <div class="sign-cat" data-situation="neutre">
             <span class="sign-cat-label">Amour</span>
@@ -813,9 +788,6 @@
             </div>
           </div>
         </div>
-        <div class="sign-extras">
-          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Donne-toi une deadline claire aujourd'hui pour trancher, sinon le sujet reviendra demain.</p></div>
-        </div>
       </article>
       <article class="sign-card" data-sign="scorpion" data-element="eau" data-energy="85" hidden>
         <div class="sign-card-top">
@@ -823,6 +795,7 @@
           <div><div class="sign-name">Scorpion</div><div class="sign-dates">23 octobre – 21 novembre</div></div>
           <div class="energy-ring" style="--pct:85; --ring-color:var(--score-high); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">85%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
+        <p class="sign-vibe">Ta lucidité est plus aiguisée que d'habitude, inutile de la garder seulement pour toi aujourd'hui. Ce que tu perçois sous la surface d'une situation mérite d'être dit, avec tact.</p>
         <div class="sign-categories">
           <div class="sign-cat" data-situation="favorise">
             <span class="sign-cat-label">Amour</span>
@@ -853,9 +826,6 @@
             </div>
           </div>
         </div>
-        <div class="sign-extras">
-          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Garde une observation juste pour toi jusqu'à avoir une vraie preuve à l'appui.</p></div>
-        </div>
       </article>
       <article class="sign-card" data-sign="sagittaire" data-element="feu" data-energy="53" hidden>
         <div class="sign-card-top">
@@ -863,6 +833,7 @@
           <div><div class="sign-name">Sagittaire</div><div class="sign-dates">22 novembre – 21 décembre</div></div>
           <div class="energy-ring" style="--pct:53; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">53%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
+        <p class="sign-vibe">L'envie d'imprévu est toujours là, mais l'élan pour la suivre manque un peu aujourd'hui — note l'idée, tu la reprendras avec plus de force dans quelques jours. Un plan modeste tenu jusqu'au bout vaut mieux qu'un grand projet lancé à moitié.</p>
         <div class="sign-categories">
           <div class="sign-cat" data-situation="freine">
             <span class="sign-cat-label">Amour</span>
@@ -893,9 +864,6 @@
             </div>
           </div>
         </div>
-        <div class="sign-extras">
-          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Vérifie une date ou un horaire avant de t'engager sur un coup de tête.</p></div>
-        </div>
       </article>
       <article class="sign-card" data-sign="capricorne" data-element="terre" data-energy="62" hidden>
         <div class="sign-card-top">
@@ -903,6 +871,7 @@
           <div><div class="sign-name">Capricorne</div><div class="sign-dates">22 décembre – 19 janvier</div></div>
           <div class="energy-ring" style="--pct:62; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">62%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
+        <p class="sign-vibe">Un rythme stable te convient aujourd'hui : avance pas à pas sur un dossier de fond, sans attendre de résultat immédiat. Un objectif à long terme se rapproche, même si rien ne le montre encore.</p>
         <div class="sign-categories">
           <div class="sign-cat" data-situation="neutre">
             <span class="sign-cat-label">Amour</span>
@@ -933,9 +902,6 @@
             </div>
           </div>
         </div>
-        <div class="sign-extras">
-          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Note ce que tu as accompli ce soir, même petit : tu as tendance à l'oublier.</p></div>
-        </div>
       </article>
       <article class="sign-card" data-sign="verseau" data-element="air" data-energy="57" hidden>
         <div class="sign-card-top">
@@ -943,6 +909,7 @@
           <div><div class="sign-name">Verseau</div><div class="sign-dates">20 janvier – 18 février</div></div>
           <div class="energy-ring" style="--pct:57; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">57%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
+        <p class="sign-vibe">Ta différence surprend d'abord, puis finit par convaincre ceux qui t'écoutent jusqu'au bout. Une idée qui sort du cadre trouvera son public si tu prends le temps de l'expliquer.</p>
         <div class="sign-categories">
           <div class="sign-cat" data-situation="neutre">
             <span class="sign-cat-label">Amour</span>
@@ -973,9 +940,6 @@
             </div>
           </div>
         </div>
-        <div class="sign-extras">
-          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Formule ton idée simplement : une bonne idée mal expliquée perd tout son impact.</p></div>
-        </div>
       </article>
       <article class="sign-card" data-sign="poissons" data-element="eau" data-energy="82" hidden>
         <div class="sign-card-top">
@@ -983,6 +947,7 @@
           <div><div class="sign-name">Poissons</div><div class="sign-dates">19 février – 20 mars</div></div>
           <div class="energy-ring" style="--pct:82; --ring-color:var(--score-high); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">82%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
+        <p class="sign-vibe">Ton instinct est particulièrement fiable aujourd'hui : ce qu'il te souffle mérite d'être suivi, même sans toutes les preuves à l'appui. Un moment de calme, même court, suffira à remettre tes idées en ordre.</p>
         <div class="sign-categories">
           <div class="sign-cat" data-situation="favorise">
             <span class="sign-cat-label">Amour</span>
@@ -1013,20 +978,8 @@
             </div>
           </div>
         </div>
-        <div class="sign-extras">
-          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Note une émotion forte plutôt que de la garder pour toi indéfiniment.</p></div>
-        </div>
       </article>
     </div>
-  </section>
-
-  <section class="lexique" style="margin-top:44px;">
-    <div class="section-head"><h2>Lexique</h2></div>
-    <dl>
-      <div><dt>Signe (ou signe solaire)</dt><dd>Le signe déterminé par la position du Soleil le jour de votre naissance — celui que tout le monde connaît, ce qui reste le plus lisible de votre thème.</dd></div>
-      <div><dt>Ascendant</dt><dd>Le signe qui se levait à l'horizon au moment exact et au lieu de votre naissance. Il dépend de l'heure, pas seulement du jour — deux personnes nées le même jour à quelques heures d'écart peuvent avoir un ascendant différent.</dd></div>
-      <div><dt>Élément</dt><dd>Chaque signe appartient à l'un des quatre éléments — Feu, Terre, Air ou Eau — qui donne une tonalité commune à trois signes du zodiaque.</dd></div>
-    </dl>
   </section>
 
 </main>
@@ -1417,20 +1370,16 @@
         situation: cat.getAttribute("data-situation") || ""
       });
     });
-    var conseilEl = card.querySelector(".sign-conseil .sign-conseil-text");
     return {
       name: card.querySelector(".sign-name").textContent,
       element: card.getAttribute("data-element"),
       energy: card.getAttribute("data-energy"),
-      categories: categories,
-      conseil: conseilEl ? conseilEl.textContent : ""
+      vibe: card.querySelector(".sign-vibe").textContent,
+      categories: categories
     };
   }
 
-  // Icônes des 4 domaines (grille de la carte famille) + phrase courte
-  // pour la jauge Énergie (générique par palier, pas de récit par jour :
-  // l'énergie est une moyenne, elle n'a pas de configuration planétaire
-  // propre à raconter).
+  // Icônes des 4 domaines (grille de la carte famille).
   var DOMAIN_ICONS = {
     "Amour": '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.8-9.3C.6 7.7 2 4.5 5.3 4c2.2-.3 4 .8 6.7 3.5C14.7 4.8 16.5 3.7 18.7 4c3.3.5 4.7 3.7 3.1 7.2C19.5 15.9 12 20.5 12 20.5Z"/></svg>',
     "Argent": '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 9l9 13 9-13-9-7Z"/><path d="M3 9h18M8.5 9 12 2l3.5 7M12 9l-2.5 13M12 9l2.5 13"/></svg>',
@@ -1438,11 +1387,6 @@
     "Humeur": '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5.5"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>'
   };
   var ENERGY_ICON = '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg>';
-  function energyTierText(e){
-    if (e < 50) return "Un rythme plus lent aujourd'hui : pas besoin de forcer.";
-    if (e < 80) return "Une énergie stable, à utiliser sans se presser.";
-    return "Une belle vitalité aujourd'hui, profites-en.";
-  }
 
   function render(){
     // Chips
@@ -1503,21 +1447,22 @@
       var adjCats = applyAscendantNudge(sunData.categories, ELEMENT_OF[asc]);
       var energy = Math.round(adjCats.reduce(function(sum, c){ return sum + parseInt(c.score, 10); }, 0) / adjCats.length);
 
-      // Toujours visible, sans clic (remplace le paragraphe "vibe",
-      // retour utilisateur : "super visuel"). Énergie est centrée seule
-      // au-dessus d'une ligne, puis les 4 domaines en dessous en 2x2
-      // (jamais de carte orpheline) — retour utilisateur : la version à
-      // 5 cartes en 2 colonnes était "quand même moche". Le texte de
-      // chaque domaine est repioché selon le décan, à situation égale
-      // (favorise/neutre/freine déjà fixée par le code du jour) : deux
-      // profils du même signe mais de décans différents lisent une
-      // phrase différente dans le même panier. Score inchangé (le décan
-      // ne touche jamais les chiffres).
+      // Énergie centrée seule au-dessus d'une ligne, avec la vibe du jour
+      // (texte réel du signe, pas un générique par palier) juste en
+      // dessous. Les 4 domaines sont repliés dans l'accordéon "Voir le
+      // détail" : Conseil a été retiré (retour utilisateur : "boiteux,
+      // aucun lien" — texte fixe par signe, jamais raccord à la
+      // situation réelle du jour, contrairement à la vibe et aux 4
+      // domaines). Le texte de chaque domaine est repioché selon le
+      // décan, à situation égale (favorise/neutre/freine déjà fixée par
+      // le code du jour) : deux profils du même signe mais de décans
+      // différents lisent une phrase différente dans le même panier.
+      // Score inchangé (le décan ne touche jamais les chiffres).
       var energyColor = scoreColor(energy);
       var energyBlockHtml = '<div class="family-energy-block" style="--ring-color:' + energyColor + ';">' +
         '<div class="family-energy-top">' + ENERGY_ICON + '<span class="family-energy-label">Énergie</span></div>' +
         '<div class="energy-ring energy-ring--lg" style="--pct:' + energy + '; --ring-color:' + energyColor + ';"><div class="energy-ring-inner"><span class="energy-ring-value">' + energy + '%</span></div></div>' +
-        '<p class="family-energy-text">' + energyTierText(energy) + '</p>' +
+        '<p class="family-energy-text">' + sunData.vibe + '</p>' +
       '</div>' +
       '<hr class="family-divider">';
       var domainCardsHtml = adjCats.map(function(c){
@@ -1530,11 +1475,6 @@
           '<p class="family-domain-text">' + personalizedText + '</p>' +
         '</div>';
       }).join('');
-      // Conseil reste dans l'accordéon (seul contenu qu'il englobe
-      // désormais) — retour utilisateur du 7 septembre.
-      var extrasHtml = '<div class="sign-extras">' +
-        (sunData.conseil ? '<div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">' + sunData.conseil + '</p></div>' : '') +
-      '</div>';
 
       var card = document.createElement("div");
       card.className = "family-card";
@@ -1546,10 +1486,9 @@
           '<div><span class="family-card-name">' + escapeHtml(p.name) + '</span><span class="family-card-signs">' + SIGN_NAMES[sun] + ' · Ascendant ' + SIGN_NAMES[asc] + '</span></div>' +
         '</div>' +
         energyBlockHtml +
-        '<div class="family-domain-grid">' + domainCardsHtml + '</div>' +
-        (sunData.conseil ? '<button type="button" class="family-detail-toggle">Voir le conseil <span class="family-detail-chevron">▾</span></button>' : '') +
+        '<button type="button" class="family-detail-toggle">Voir le détail <span class="family-detail-chevron">▾</span></button>' +
         '<div class="family-detail-body"><div class="family-detail-inner">' +
-          extrasHtml +
+          '<div class="family-domain-grid">' + domainCardsHtml + '</div>' +
         '</div></div>' +
         '<div class="family-card-actions">' +
           '<div class="family-share-wrap">' +
@@ -1587,7 +1526,7 @@
         var body = toggle.nextElementSibling;
         var isOpen = body.classList.toggle("is-open");
         toggle.classList.toggle("is-open", isOpen);
-        toggle.firstChild.textContent = isOpen ? "Masquer le conseil " : "Voir le conseil ";
+        toggle.firstChild.textContent = isOpen ? "Masquer le détail " : "Voir le détail ";
       });
     });
 
@@ -1607,14 +1546,12 @@
       lines.push("Grand Futur — " + p.name + " (" + SIGN_NAMES[sun] + ", ascendant " + SIGN_NAMES[asc] + ")");
       lines.push("Énergie du jour : " + energy + "%");
       lines.push("");
+      lines.push(sunData.vibe);
+      lines.push("");
       adjCats.forEach(function(c){
         var personalizedText = pickPersonalizedText(p.date, sun, decan, c.label, c.situation) || c.text;
         lines.push(c.label + " (" + c.score + ") : " + personalizedText);
       });
-      if (sunData.conseil){
-        lines.push("");
-        lines.push("Conseil : " + sunData.conseil);
-      }
       return lines.join("\n");
     }
 

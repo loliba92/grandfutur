@@ -2,12 +2,14 @@
 Applique les données générées (day_code + fragments, via generate_signs.py)
 à index.html : met à jour, pour les 12 signes, le data-energy, la jauge
 d'énergie, et les 4 catégories notées (score + texte). Style du jour et
-Conseil restent inchangés (encore non mécanisés).
+Conseil ("boiteux, aucun lien" — retour utilisateur du 7 septembre : texte
+fixe par signe, jamais raccord à la situation réelle du jour) ont été
+retirés définitivement, voir ARCHITECTURE.md § Historique.
 
-Le paragraphe "vibe" (résumé en une phrase, .sign-vibe) a été retiré le
-7 septembre : plus affiché nulle part (remplacé côté carte famille par la
-grille Énergie + 4 domaines, retour utilisateur "super visuel"), ce script
-ne l'écrit donc plus.
+Le paragraphe "vibe" (résumé en une phrase, .sign-vibe, affiché sous la
+jauge d'Énergie de chaque carte famille) reste réécrit à la main pour
+rester cohérent avec la vraie situation du jour (voir VIBES ci-dessous) —
+c'est la seule partie encore non mécanisée de ce premier passage.
 
 Usage : python3 apply_to_index.py 2026-09-07 /home/user/grandfutur/index.html
 """
@@ -24,7 +26,28 @@ def score_color(score):
     return "var(--score-high)"
 
 
-def patch_sign_block(html, sign, data):
+# Vibes réécrites pour rester honnêtes avec le vrai code du jour du
+# 2026-09-07 (Eau favorisée, Feu freiné, Terre/Air neutres). À la prochaine
+# édition avec une configuration différente, ces phrases seront réécrites
+# à nouveau — pas de valeur par défaut : mieux vaut un rappel explicite
+# ("Bloc introuvable") que de laisser une vibe de la veille en place.
+VIBES = {
+    "belier": "Ton élan habituel est en retrait aujourd'hui — pas de quoi s'inquiéter, mais ce n'est pas le jour pour forcer un mouvement qui te coûterait d'habitude bien moins d'énergie. Laisse venir plutôt que de pousser, surtout sur un dossier qui traîne depuis un moment.",
+    "taureau": "Rien de spectaculaire en vue aujourd'hui, et c'est tant mieux : ce calme sert un travail de fond qui paiera plus tard. Une tâche répétitive avancera plus vite que prévu si tu t'y tiens sans chercher de raccourci.",
+    "gemeaux": "Les mots viennent facilement aujourd'hui : bon moment pour rappeler quelqu'un que tu as un peu laissé de côté. Une conversation en tête-à-tête portera plus loin qu'un message groupé.",
+    "cancer": "Ton instinct est plus fiable que d'habitude aujourd'hui : ce que tu ressens chez les autres mérite d'être pris au sérieux, pas balayé. Une décision qui traînait peut enfin se prendre, presque sans effort.",
+    "lion": "Ta présence prend moins de place que d'habitude aujourd'hui, et ce n'est pas une mauvaise chose : observer vaut mieux que forcer une entrée en scène. Un projet personnel avance mieux mené en silence qu'annoncé trop tôt.",
+    "vierge": "Ranger un coin de ta vie, au sens propre ou au figuré, va te libérer plus d'énergie que prévu. Une petite mise à jour vaut mieux qu'une remise à plat complète aujourd'hui.",
+    "balance": "Une question en suspens depuis un moment peut avancer aujourd'hui, sans qu'il soit besoin de tout trancher d'un coup. Un compromis simple suffira, pas besoin de la solution parfaite.",
+    "scorpion": "Ta lucidité est plus aiguisée que d'habitude, inutile de la garder seulement pour toi aujourd'hui. Ce que tu perçois sous la surface d'une situation mérite d'être dit, avec tact.",
+    "sagittaire": "L'envie d'imprévu est toujours là, mais l'élan pour la suivre manque un peu aujourd'hui — note l'idée, tu la reprendras avec plus de force dans quelques jours. Un plan modeste tenu jusqu'au bout vaut mieux qu'un grand projet lancé à moitié.",
+    "capricorne": "Un rythme stable te convient aujourd'hui : avance pas à pas sur un dossier de fond, sans attendre de résultat immédiat. Un objectif à long terme se rapproche, même si rien ne le montre encore.",
+    "verseau": "Ta différence surprend d'abord, puis finit par convaincre ceux qui t'écoutent jusqu'au bout. Une idée qui sort du cadre trouvera son public si tu prends le temps de l'expliquer.",
+    "poissons": "Ton instinct est particulièrement fiable aujourd'hui : ce qu'il te souffle mérite d'être suivi, même sans toutes les preuves à l'appui. Un moment de calme, même court, suffira à remettre tes idées en ordre.",
+}
+
+
+def patch_sign_block(html, sign, data, vibe_text):
     # Isole le bloc <article ... data-sign="SIGN" ...> ... </article>
     block_re = re.compile(
         r'(<article class="sign-card" data-sign="' + sign + r'"[^>]*>)(.*?)(</article>)',
@@ -45,6 +68,15 @@ def patch_sign_block(html, sign, data):
         f'<div class="energy-ring" style="--pct:{data["energy"]}; --ring-color:{energy_color}; margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">{data["energy"]}%</span>',
         body,
     )
+
+    # Vibe (si une nouvelle version est fournie)
+    if vibe_text:
+        body = re.sub(
+            r'(<p class="sign-vibe">).*?(</p>)',
+            lambda mo: mo.group(1) + vibe_text + mo.group(2),
+            body,
+            count=1,
+        )
 
     # Les 4 catégories, dans l'ordre où generate_signs.py les produit
     # (même ordre que DOMAINS), en remplaçant chaque bloc sign-cat
@@ -90,7 +122,7 @@ def main():
         html = f.read()
 
     for sign, data in result["signs"].items():
-        html = patch_sign_block(html, sign, data)
+        html = patch_sign_block(html, sign, data, VIBES.get(sign))
 
     with open(index_path, "w", encoding="utf-8") as f:
         f.write(html)

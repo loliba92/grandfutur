@@ -485,6 +485,36 @@ dédié : voir [`docs/BACKLOG.md`](./BACKLOG.md).
 
 ## Historique
 
+- **7 septembre 2026** : troisième passage sur la carte famille suite aux
+  retours utilisateur.
+  - **La vibe est revenue, enrichie, sous la jauge d'Énergie** : le
+    paragraphe `.sign-vibe` (une phrase par signe, reflétant sa
+    `situation` du jour) avait été retiré plus tôt dans la journée au
+    profit d'un texte générique par palier d'énergie — jugé trop pauvre
+    ("on va réajouter le vibe que tu vas enrichir"). Il revient sous
+    forme de **deux phrases** (la seconde ajoute un exemple concret) et
+    s'affiche désormais directement sous la jauge d'Énergie centrée, à
+    la place du texte par palier. `readCardData()`, `buildProfileText()`
+    et `apply_to_index.py` (dict `VIBES`) le lisent/écrivent à nouveau.
+  - **Conseil retiré définitivement** (retour utilisateur : "boiteux, tu
+    dis n'importe quoi, aucun lien") : contrairement à la vibe et aux 4
+    domaines, ce texte était fixe par signe et ne reflétait jamais la
+    situation réelle du jour — d'où le sentiment de décalage. Plutôt que
+    de le raccrocher au code du jour (retravail conséquent pour un
+    contenu jugé pas indispensable), il est retiré comme "Style du jour"
+    avant lui : les 12 blocs `.sign-conseil`/`.sign-extras`, la règle CSS,
+    `readCardData().conseil`, et la ligne correspondante dans
+    `buildProfileText()` et `docs/routine-prompt.md`.
+  - **Les 4 domaines repassent dans l'accordéon "Voir le détail"**
+    (retour utilisateur : "tu peux mettre l'accordéon qui englobe amour
+    etc") — seule Énergie (+ sa vibe) reste visible sans clic ; l'idée
+    du 7 septembre matin ("tout afficher sans accordéon, super visuel")
+    est donc partiellement revenue en arrière une fois testée en vrai.
+  - **Lexique déplacé de la page d'accueil vers "Le projet"**
+    (`le-projet.html`) : contenu de référence (définitions Signe/
+    Ascendant/Élément), pas du contenu du jour — n'avait pas sa place au
+    milieu de la carte famille et des 12 signes.
+
 - **7 septembre 2026** : ajustement de la grille Énergie + 4 domaines
   (voir entrée juste en dessous) suite à un premier retour utilisateur
   ("c'est quand même moche") : 5 cartes en grille à 2 colonnes laissait

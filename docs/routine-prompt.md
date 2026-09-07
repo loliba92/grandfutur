@@ -92,15 +92,25 @@ chaque jour, en te basant sur `day_code` du JSON généré à l'étape 1 :
   élément ça favorise/freine) en langage clair, jamais en jargon
   astrologique brut. Terminer par un paragraphe "Le bon réflexe
   aujourd'hui / Le mauvais réflexe", cohérent avec la situation du jour.
-**`.sign-vibe` retiré le 7 septembre** (résumé en une phrase, remplacé côté
-carte famille par la grille Énergie + 4 domaines à jauges rondes — retour
-utilisateur : "super visuel") — ne plus l'écrire, `apply_to_index.py` ne
-le lit/écrit plus.
-- **`<span class="sign-conseil-label">Conseil</span>`** (12) : connecter
-  à une situation concrète du jour, jamais un conseil pratique générique
-  et déconnecté ("bois de l'eau"). **"Style du jour" (fashion horoscope)
-  a été retiré le 7 septembre** (retour utilisateur : "c'est nul") — ne
-  plus l'écrire, ni son bloc `.sign-conseil.sign-style` dans le HTML.
+- **Les 12 `<p class="sign-vibe">`** (une par fiche signe, affichée sous
+  la jauge d'Énergie de chaque carte famille) : doivent refléter la
+  vraie `situation` de ce signe (favorise/neutre/freine, dans le JSON),
+  connectée à la vie quotidienne (travail, relations, énergie physique)
+  — jamais une formule générique ou un conseil creux ("bois de l'eau").
+  Deux signes de même situation aujourd'hui doivent quand même lire
+  différemment (varier l'angle). Deux phrases (retour utilisateur du 7
+  septembre : "enrichis" par rapport à la version initiale d'une seule
+  phrase), la seconde ajoutant un exemple concret plutôt que de répéter
+  la première en d'autres mots. `apply_to_index.py` les réécrit via le
+  dict `VIBES` (à mettre à jour à chaque édition, pas de valeur par
+  défaut).
+
+**"Style du jour" (fashion horoscope) retiré le 7 septembre** (retour
+utilisateur : "c'est nul") — ne plus l'écrire.
+**Conseil retiré définitivement le 7 septembre** (retour utilisateur :
+"boiteux, aucun lien" — texte fixe par signe, jamais raccord à la
+situation réelle du jour, contrairement à la vibe et aux 4 domaines) —
+ne plus l'écrire, ni son bloc `.sign-conseil`/`.sign-extras` dans le HTML.
 **`#top3` (trio du jour) masqué depuis le 7 septembre** (retour
 utilisateur : pas utile pour l'instant) — ne plus l'écrire ni le mettre
 à jour chaque matin, ce serait du travail perdu pour une section que
