@@ -43,6 +43,9 @@
     --terre: #5e9c78;
     --air: #6f8fae;
     --eau: #8a7fae;
+    --score-low: #c0524a;
+    --score-mid: #d99a3f;
+    --score-high: #5e9c78;
   }
 
   *,*::before,*::after{ box-sizing: border-box; }
@@ -211,6 +214,14 @@
   .stat-label{ font-family:"JetBrains Mono",monospace; font-size:0.62rem; letter-spacing:0.03em; text-transform:uppercase; color: var(--paper-dim); }
   .stat--lg .stat-value{ font-size:1.7rem; }
   .stat--lg .stat-bar{ width:60px; height:4px; }
+
+  /* Jauge ronde réservée à l'énergie globale (les 4 domaines restent en
+     barre) — code couleur par seuil : <50 rouge, 50-80 orange, >80 vert. */
+  .energy-ring{ width:72px; height:72px; border-radius:50%; background: conic-gradient(var(--ring-color) calc(var(--pct) * 3.6deg), var(--hairline) 0deg); display:grid; place-items:center; flex-shrink:0; }
+  .energy-ring-inner{ width:58px; height:58px; border-radius:50%; background: var(--surface); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px; }
+  .family-card .energy-ring-inner{ background: var(--surface-2); }
+  .energy-ring-value{ font-family:"Fraunces",serif; font-weight:700; font-size:1.05rem; color: var(--ring-color); line-height:1; }
+  .energy-ring-label{ font-family:"JetBrains Mono",monospace; font-size:0.56rem; letter-spacing:0.03em; text-transform:uppercase; color: var(--paper-dim); }
 
   /* ---------- Damier des 12 signes + panneau de détail ----------
      Un clic sur une tuile affiche l'analyse du signe dans le panneau ci-dessous
@@ -430,35 +441,35 @@
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v-6"/><path d="M12 14c-3 0-5-2.3-4.5-5.2C7.7 7.1 9 6.3 9.7 7.2c.6.7 0 1.7-1.4 2"/><path d="M12 14c3 0 5-2.3 4.5-5.2C16.3 7.1 15 6.3 14.3 7.2c-.6.7 0 1.7 1.4 2"/></svg></span>
           <div><div class="sign-name">Bélier</div><div class="sign-dates">21 mars – 19 avril</div></div>
-          <div class="stat stat--lg" style="--accent: var(--feu); margin-left:auto;"><span class="stat-value">78%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:78%;"></span></span><span class="stat-label">Énergie</span></div>
+          <div class="energy-ring" style="--pct:78; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">78%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">Aujourd'hui, l'impatience joue en ta faveur : une idée que tu retournes depuis des semaines mérite d'être lancée maintenant, pas après-demain.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--feu);"><span class="stat-value">75%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:75%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">75%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:75%;"></span></span></div>
               <p class="sign-cat-text">Dis ce que tu veux au lieu d'attendre que l'autre le devine : une phrase simple suffit aujourd'hui.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--feu);"><span class="stat-value">80%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:80%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-high);"><span class="stat-value">80%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:80%;"></span></span></div>
               <p class="sign-cat-text">Défends ta position sans détour dans une négociation — ton franc-parler paie aujourd'hui.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--feu);"><span class="stat-value">82%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:82%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-high);"><span class="stat-value">82%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:82%;"></span></span></div>
               <p class="sign-cat-text">Beaucoup d'énergie : bouge, ça te fera plus de bien que ruminer.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--feu);"><span class="stat-value">75%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:75%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">75%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:75%;"></span></span></div>
               <p class="sign-cat-text">Impatient, mais motivé.</p>
             </div>
           </div>
@@ -472,35 +483,35 @@
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="4.6"/><path d="M7.5 9c0-2.8 2-4.6 4.5-4.6S16.5 6.2 16.5 9"/></svg></span>
           <div><div class="sign-name">Taureau</div><div class="sign-dates">20 avril – 20 mai</div></div>
-          <div class="stat stat--lg" style="--accent: var(--terre); margin-left:auto;"><span class="stat-value">64%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:64%;"></span></span><span class="stat-label">Énergie</span></div>
+          <div class="energy-ring" style="--pct:64; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">64%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">Rien de spectaculaire en vue aujourd'hui, et c'est tant mieux : ce calme sert un travail de fond qui paiera plus tard.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--terre);"><span class="stat-value">55%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:55%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">55%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:55%;"></span></span></div>
               <p class="sign-cat-text">Pas de grande scène aujourd'hui, juste une présence stable qui rassure sans grands mots.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--terre);"><span class="stat-value">70%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:70%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">70%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:70%;"></span></span></div>
               <p class="sign-cat-text">Continue un dossier déjà lancé plutôt que d'en ouvrir un nouveau : la constance paie.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--terre);"><span class="stat-value">68%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:68%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">68%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:68%;"></span></span></div>
               <p class="sign-cat-text">Un rythme tranquille te convient très bien aujourd'hui.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--terre);"><span class="stat-value">63%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:63%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">63%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:63%;"></span></span></div>
               <p class="sign-cat-text">Calme, posé.</p>
             </div>
           </div>
@@ -514,35 +525,35 @@
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="6" x2="17" y2="6"/><line x1="7" y1="18" x2="17" y2="18"/><line x1="9.5" y1="6" x2="9.5" y2="18"/><line x1="14.5" y1="6" x2="14.5" y2="18"/></svg></span>
           <div><div class="sign-name">Gémeaux</div><div class="sign-dates">21 mai – 20 juin</div></div>
-          <div class="stat stat--lg" style="--accent: var(--air); margin-left:auto;"><span class="stat-value">71%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:71%;"></span></span><span class="stat-label">Énergie</span></div>
+          <div class="energy-ring" style="--pct:71; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">71%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">Les mots viennent facilement aujourd'hui : bon moment pour rappeler quelqu'un que tu as un peu laissé de côté.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--air);"><span class="stat-value">68%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:68%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">68%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:68%;"></span></span></div>
               <p class="sign-cat-text">Les mots viennent facilement : bon moment pour rappeler quelqu'un que tu as un peu délaissé.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--air);"><span class="stat-value">72%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:72%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">72%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:72%;"></span></span></div>
               <p class="sign-cat-text">Tes idées passent bien à l'oral aujourd'hui — présente ce projet que tu gardais pour toi.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--air);"><span class="stat-value">65%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:65%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">65%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:65%;"></span></span></div>
               <p class="sign-cat-text">Le mental tourne à plein régime, pense à lever les yeux de l'écran de temps en temps.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--air);"><span class="stat-value">79%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:79%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">79%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:79%;"></span></span></div>
               <p class="sign-cat-text">Curieux, bavard.</p>
             </div>
           </div>
@@ -556,35 +567,35 @@
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.3" cy="8.7" r="2.1"/><path d="M8.3 8.7c0 5.3 4 7 6.7 4.8"/><circle cx="15.7" cy="15.3" r="2.1"/><path d="M15.7 15.3c0-5.3-4-7-6.7-4.8"/></svg></span>
           <div><div class="sign-name">Cancer</div><div class="sign-dates">21 juin – 22 juillet</div></div>
-          <div class="stat stat--lg" style="--accent: var(--eau); margin-left:auto;"><span class="stat-value">58%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:58%;"></span></span><span class="stat-label">Énergie</span></div>
+          <div class="energy-ring" style="--pct:58; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">58%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">Ton énergie est plus basse que d'habitude, et ce n'est pas un problème : garde-la pour ton cercle proche plutôt que de la disperser.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--eau);"><span class="stat-value">62%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:62%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">62%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:62%;"></span></span></div>
               <p class="sign-cat-text">Ta famille ou tes proches ont plus besoin de toi aujourd'hui qu'un inconnu ne l'aura jamais.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--eau);"><span class="stat-value">48%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:48%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-low);"><span class="stat-value">48%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:48%;"></span></span></div>
               <p class="sign-cat-text">Peu de force pour un rapport de force aujourd'hui : reporte une négociation tendue si tu le peux.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--eau);"><span class="stat-value">55%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:55%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">55%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:55%;"></span></span></div>
               <p class="sign-cat-text">Fatigue normale, repose-toi sans culpabiliser.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--eau);"><span class="stat-value">67%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:67%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">67%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:67%;"></span></span></div>
               <p class="sign-cat-text">Sensible, tourné vers l'intérieur.</p>
             </div>
           </div>
@@ -598,35 +609,35 @@
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9.2" cy="8" r="3"/><path d="M9.2 11c0 6.2 4.3 3 4.3 7.2c0 2-2 2.8-4 1.8"/></svg></span>
           <div><div class="sign-name">Lion</div><div class="sign-dates">23 juillet – 22 août</div></div>
-          <div class="stat stat--lg" style="--accent: var(--feu); margin-left:auto;"><span class="stat-value">82%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:82%;"></span></span><span class="stat-label">Énergie</span></div>
+          <div class="energy-ring" style="--pct:82; --ring-color:var(--score-high); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">82%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">Ta présence rassure plus qu'elle n'impressionne aujourd'hui, même en prenant un peu plus de place que d'habitude.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--feu);"><span class="stat-value">85%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:85%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-high);"><span class="stat-value">85%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:85%;"></span></span></div>
               <p class="sign-cat-text">Tu attires sans forcer aujourd'hui — montre-toi sous ton meilleur jour, sans complexe.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--feu);"><span class="stat-value">78%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:78%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">78%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:78%;"></span></span></div>
               <p class="sign-cat-text">Ton assurance naturelle sert une négociation ou une présentation importante.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--feu);"><span class="stat-value">84%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:84%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-high);"><span class="stat-value">84%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:84%;"></span></span></div>
               <p class="sign-cat-text">Belle énergie physique, à mettre au service d'une activité qui te plaît vraiment.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--feu);"><span class="stat-value">81%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:81%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-high);"><span class="stat-value">81%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:81%;"></span></span></div>
               <p class="sign-cat-text">Confiant, rayonnant.</p>
             </div>
           </div>
@@ -640,35 +651,35 @@
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 7.5v11"/><path d="M6.5 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v9"/><path d="M10.1 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v6.5c0 2.8 1.8 3.7 3.7 2"/></svg></span>
           <div><div class="sign-name">Vierge</div><div class="sign-dates">23 août – 22 septembre</div></div>
-          <div class="stat stat--lg" style="--accent: var(--terre); margin-left:auto;"><span class="stat-value">67%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:67%;"></span></span><span class="stat-label">Énergie</span></div>
+          <div class="energy-ring" style="--pct:67; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">67%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">Ranger un coin de ta vie, au sens propre ou au figuré, va te libérer plus d'énergie que prévu.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--terre);"><span class="stat-value">60%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:60%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">60%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:60%;"></span></span></div>
               <p class="sign-cat-text">Pas de grande déclaration aujourd'hui, mais une attention aux détails qui touche plus qu'on ne le croit.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--terre);"><span class="stat-value">82%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:82%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-high);"><span class="stat-value">82%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:82%;"></span></span></div>
               <p class="sign-cat-text">Ton œil pour le détail évite une erreur à quelqu'un, remarqué même sans un mot de plus.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--terre);"><span class="stat-value">65%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:65%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">65%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:65%;"></span></span></div>
               <p class="sign-cat-text">Petite fatigue mentale, accorde-toi une vraie pause.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--terre);"><span class="stat-value">61%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:61%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">61%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:61%;"></span></span></div>
               <p class="sign-cat-text">Un peu trop sévère envers toi-même.</p>
             </div>
           </div>
@@ -682,35 +693,35 @@
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="7.5" x2="18" y2="7.5"/><path d="M7 13.5a5 5 0 0 0 10 0"/><line x1="4.5" y1="18.5" x2="19.5" y2="18.5"/></svg></span>
           <div><div class="sign-name">Balance</div><div class="sign-dates">23 septembre – 22 octobre</div></div>
-          <div class="stat stat--lg" style="--accent: var(--air); margin-left:auto;"><span class="stat-value">60%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:60%;"></span></span><span class="stat-label">Énergie</span></div>
+          <div class="energy-ring" style="--pct:60; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">60%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">Une décision remise à plus tard depuis des semaines mérite enfin d'être tranchée aujourd'hui.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--air);"><span class="stat-value">58%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:58%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">58%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:58%;"></span></span></div>
               <p class="sign-cat-text">Une question affective en suspens depuis un moment mérite d'être tranchée aujourd'hui.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--air);"><span class="stat-value">55%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:55%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">55%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:55%;"></span></span></div>
               <p class="sign-cat-text">L'indécision coûte plus cher que le choix lui-même, quel qu'il soit.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--air);"><span class="stat-value">63%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:63%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">63%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:63%;"></span></span></div>
               <p class="sign-cat-text">Énergie correcte, une activité à deux te motive plus qu'une séance en solo.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--air);"><span class="stat-value">64%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:64%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">64%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:64%;"></span></span></div>
               <p class="sign-cat-text">En recherche d'équilibre.</p>
             </div>
           </div>
@@ -724,35 +735,35 @@
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 7.5v11"/><path d="M6.5 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v9"/><path d="M10.1 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v9"/><path d="M13.7 16.3l4.3 2.2"/><path d="M18 18.5l-.7-3"/><path d="M18 18.5l-2.9.8"/></svg></span>
           <div><div class="sign-name">Scorpion</div><div class="sign-dates">23 octobre – 21 novembre</div></div>
-          <div class="stat stat--lg" style="--accent: var(--eau); margin-left:auto;"><span class="stat-value">74%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:74%;"></span></span><span class="stat-label">Énergie</span></div>
+          <div class="energy-ring" style="--pct:74; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">74%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">Ta lucidité est plus aiguisée que d'habitude, inutile de la garder seulement pour toi aujourd'hui.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--eau);"><span class="stat-value">70%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:70%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">70%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:70%;"></span></span></div>
               <p class="sign-cat-text">Une conversation en profondeur avec ton ou ta partenaire est possible, si tu oses la lancer le premier.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--eau);"><span class="stat-value">76%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:76%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">76%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:76%;"></span></span></div>
               <p class="sign-cat-text">Tu perces facilement les non-dits d'un dossier professionnel qui traîne.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--eau);"><span class="stat-value">72%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:72%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">72%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:72%;"></span></span></div>
               <p class="sign-cat-text">Énergie solide, un effort intense t'aidera à évacuer une tension accumulée.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--eau);"><span class="stat-value">78%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:78%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">78%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:78%;"></span></span></div>
               <p class="sign-cat-text">Intense, lucide.</p>
             </div>
           </div>
@@ -766,35 +777,35 @@
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5.5" y1="18.5" x2="18" y2="6"/><path d="M12 6h6v6"/><line x1="9.8" y1="11.8" x2="13.5" y2="15.5"/></svg></span>
           <div><div class="sign-name">Sagittaire</div><div class="sign-dates">22 novembre – 21 décembre</div></div>
-          <div class="stat stat--lg" style="--accent: var(--feu); margin-left:auto;"><span class="stat-value">85%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:85%;"></span></span><span class="stat-label">Énergie</span></div>
+          <div class="energy-ring" style="--pct:85; --ring-color:var(--score-high); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">85%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">L'envie d'imprévu est la plus forte de tout le zodiaque aujourd'hui. Suis-la — vérifie juste que ça ne bouscule pas un engagement déjà pris ailleurs.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--feu);"><span class="stat-value">88%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:88%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-high);"><span class="stat-value">88%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:88%;"></span></span></div>
               <p class="sign-cat-text">Une rencontre ou un geste inattendu peut relancer une relation qui s'essoufflait doucement.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--feu);"><span class="stat-value">80%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:80%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-high);"><span class="stat-value">80%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:80%;"></span></span></div>
               <p class="sign-cat-text">Dis oui à une opportunité qui sort du cadre habituel, même si elle te fait un peu peur.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--feu);"><span class="stat-value">86%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:86%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-high);"><span class="stat-value">86%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:86%;"></span></span></div>
               <p class="sign-cat-text">Énergie débordante : choisis une seule activité et vas-y à fond.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--feu);"><span class="stat-value">86%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:86%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-high);"><span class="stat-value">86%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:86%;"></span></span></div>
               <p class="sign-cat-text">Optimiste, en mouvement.</p>
             </div>
           </div>
@@ -808,35 +819,35 @@
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 8c0-1.4 1-2.5 2.2-2.5S11 6.3 10 8.7c-2.3 4.7-1 9.3 2 9.3"/><path d="M13.3 14.3c1.2-2 3.4-2 4.4.1c1 2.2-1.1 4.3-3.4 3.4"/></svg></span>
           <div><div class="sign-name">Capricorne</div><div class="sign-dates">22 décembre – 19 janvier</div></div>
-          <div class="stat stat--lg" style="--accent: var(--terre); margin-left:auto;"><span class="stat-value">55%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:55%;"></span></span><span class="stat-label">Énergie</span></div>
+          <div class="energy-ring" style="--pct:55; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">55%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">L'énergie est plus basse aujourd'hui, un signal pour ralentir sur un projet de fond, pas pour l'abandonner.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--terre);"><span class="stat-value">50%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:50%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">50%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:50%;"></span></span></div>
               <p class="sign-cat-text">Rien de spectaculaire, mais une présence stable qui compte plus que les mots aujourd'hui.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--terre);"><span class="stat-value">62%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:62%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">62%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:62%;"></span></span></div>
               <p class="sign-cat-text">Avance pas à pas sur un dossier de fond, sans attendre un résultat immédiat.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--terre);"><span class="stat-value">52%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:52%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">52%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:52%;"></span></span></div>
               <p class="sign-cat-text">Fatigue à prendre au sérieux aujourd'hui — ralentir n'est pas un échec.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--terre);"><span class="stat-value">56%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:56%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">56%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:56%;"></span></span></div>
               <p class="sign-cat-text">Sérieux, réservé.</p>
             </div>
           </div>
@@ -850,35 +861,35 @@
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 9c2.2-2 4.3-2 6.5 0s4.3 2 6.5 0s4.3-2 6.5 0"/><path d="M3.5 15.5c2.2-2 4.3-2 6.5 0s4.3 2 6.5 0s4.3-2 6.5 0"/></svg></span>
           <div><div class="sign-name">Verseau</div><div class="sign-dates">20 janvier – 18 février</div></div>
-          <div class="stat stat--lg" style="--accent: var(--air); margin-left:auto;"><span class="stat-value">69%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:69%;"></span></span><span class="stat-label">Énergie</span></div>
+          <div class="energy-ring" style="--pct:69; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">69%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">Ta différence surprend d'abord, puis finit par convaincre ceux qui t'écoutent jusqu'au bout.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--air);"><span class="stat-value">65%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:65%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">65%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:65%;"></span></span></div>
               <p class="sign-cat-text">Une idée un peu décalée sur le couple ou l'amitié mérite d'être partagée aujourd'hui.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--air);"><span class="stat-value">74%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:74%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">74%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:74%;"></span></span></div>
               <p class="sign-cat-text">Ton regard de côté débloque une situation où tout le monde tourne en rond depuis des jours.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--air);"><span class="stat-value">66%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:66%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">66%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:66%;"></span></span></div>
               <p class="sign-cat-text">Énergie portée par la tête plus que par le corps — une vraie pause te fera du bien.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--air);"><span class="stat-value">71%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:71%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">71%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:71%;"></span></span></div>
               <p class="sign-cat-text">Indépendant, original.</p>
             </div>
           </div>
@@ -892,35 +903,35 @@
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.2 4c-3.2 3.2-3.2 12.8 0 16"/><path d="M15.8 4c3.2 3.2 3.2 12.8 0 16"/><line x1="6" y1="12" x2="18" y2="12"/></svg></span>
           <div><div class="sign-name">Poissons</div><div class="sign-dates">19 février – 20 mars</div></div>
-          <div class="stat stat--lg" style="--accent: var(--eau); margin-left:auto;"><span class="stat-value">62%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:62%;"></span></span><span class="stat-label">Énergie</span></div>
+          <div class="energy-ring" style="--pct:62; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">62%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">Ton instinct te souffle quelque chose depuis un moment. Pour une fois, écoute-le avant de trop réfléchir.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--eau);"><span class="stat-value">68%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:68%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">68%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:68%;"></span></span></div>
               <p class="sign-cat-text">Tu perçois chez l'autre ce qu'il n'a pas encore dit — fais confiance à ce que tu ressens.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--eau);"><span class="stat-value">48%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:48%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-low);"><span class="stat-value">48%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:48%;"></span></span></div>
               <p class="sign-cat-text">Peu d'énergie pour un rapport de force aujourd'hui : observe plutôt que d'agir dans la précipitation.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--eau);"><span class="stat-value">60%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:60%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">60%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:60%;"></span></span></div>
               <p class="sign-cat-text">Le repos te fera plus de bien qu'une nouvelle activité.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--eau);"><span class="stat-value">72%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:72%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">72%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:72%;"></span></span></div>
               <p class="sign-cat-text">Doux, intuitif.</p>
             </div>
           </div>
@@ -1028,6 +1039,16 @@
   function zodiacIconSvg(sign, size){
     return '<svg viewBox="0 0 24 24" width="' + size + '" height="' + size + '" fill="none" stroke="currentColor" ' +
       'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ZODIAC_ICON_PATHS[sign] + '</svg>';
+  }
+
+  // Code couleur par seuil sur les scores (pas par élément) : <50 rouge,
+  // 50-80 orange, >80 vert — même logique que le gabarit statique des
+  // 12 signes (voir docs/ARCHITECTURE.md).
+  function scoreColor(score){
+    score = parseFloat(score);
+    if (score < 50) return "var(--score-low)";
+    if (score < 80) return "var(--score-mid)";
+    return "var(--score-high)";
   }
 
   function sunSignFromDate(dateStr){
@@ -1215,14 +1236,14 @@
       if (!sunData) return;
 
       var ascFlavor = ASCENDANT_FLAVOR[ELEMENT_OF[asc]];
-      var accentVar = 'var(--' + sunData.element + ')';
 
-      // Rangée de stats compactes (chiffre + fine barre) — énergie globale
-      // puis les 4 domaines, toujours visible sans surcharger la carte.
-      var gaugesHtml = '<div class="stat stat--lg" style="--accent:' + accentVar + ';"><span class="stat-value">' + sunData.energy + '%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:' + sunData.energy + '%;"></span></span><span class="stat-label">Énergie</span></div>' +
+      // Rangée de stats compactes — jauge ronde pour l'énergie globale,
+      // fines barres pour les 4 domaines, toujours visible. Couleur par
+      // seuil (rouge <50, orange 50-80, vert >80), pas par élément.
+      var gaugesHtml = '<div class="energy-ring" style="--pct:' + sunData.energy + '; --ring-color:' + scoreColor(sunData.energy) + ';"><div class="energy-ring-inner"><span class="energy-ring-value">' + sunData.energy + '%</span><span class="energy-ring-label">Énergie</span></div></div>' +
         sunData.categories.map(function(c){
           var pct = c.score.replace('%','');
-          return '<div class="stat" style="--accent:' + accentVar + ';"><span class="stat-value">' + c.score + '</span><span class="stat-bar"><span class="stat-bar-fill" style="width:' + pct + '%;"></span></span><span class="stat-label">' + c.label + '</span></div>';
+          return '<div class="stat" style="--accent:' + scoreColor(pct) + ';"><span class="stat-value">' + c.score + '</span><span class="stat-bar"><span class="stat-bar-fill" style="width:' + pct + '%;"></span></span><span class="stat-label">' + c.label + '</span></div>';
         }).join('');
 
       var catsHtml = sunData.categories.map(function(c){
@@ -1230,10 +1251,12 @@
         return '<div class="sign-cat">' +
           '<span class="sign-cat-label">' + c.label + '</span>' +
           '<div class="sign-cat-body">' +
-            '<div class="stat" style="--accent:' + accentVar + ';"><span class="stat-value">' + c.score + '</span><span class="stat-bar"><span class="stat-bar-fill" style="width:' + pct + '%;"></span></span></div>' +
+            '<div class="stat" style="--accent:' + scoreColor(pct) + ';"><span class="stat-value">' + c.score + '</span><span class="stat-bar"><span class="stat-bar-fill" style="width:' + pct + '%;"></span></span></div>' +
             '<p class="sign-cat-text">' + c.text + '</p>' +
           '</div></div>';
       }).join('');
+      // Style du jour + Conseil restent visibles en permanence, hors de
+      // l'accordéon — seuls les 4 textes détaillés par domaine s'y replient.
       var extrasHtml = '<div class="sign-extras">' +
         (sunData.style ? '<div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">' + sunData.style + '</p></div>' : '') +
         (sunData.conseil ? '<div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">' + sunData.conseil + '</p></div>' : '') +
@@ -1249,10 +1272,10 @@
         '<p class="family-card-flavor">' + ascFlavor + '</p>' +
         '<p class="family-card-vibe">' + sunData.vibe + '</p>' +
         '<div class="family-gauges">' + gaugesHtml + '</div>' +
+        extrasHtml +
         '<button type="button" class="family-detail-toggle">Voir le détail par domaine <span class="family-detail-chevron">▾</span></button>' +
         '<div class="family-detail-body"><div class="family-detail-inner">' +
           '<div class="sign-categories family-card-categories">' + catsHtml + '</div>' +
-          extrasHtml +
         '</div></div>' +
         '<div class="family-card-actions">' +
           '<button type="button" class="family-copy-btn" data-profile-id="' + p.id + '">Copier cet horoscope</button>' +
