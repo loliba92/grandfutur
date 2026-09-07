@@ -184,20 +184,10 @@
   .family-card-name{ font-family:"Fraunces",serif; font-weight:600; font-size:1.1rem; }
   .family-card-signs{ font-size:0.8rem; color: var(--paper-dim); margin-bottom:4px; }
   .family-card-row{ display:flex; align-items:flex-start; gap:12px; margin:14px 0; }
-  .family-card-flavor{ font-size:0.85rem; color: var(--accent, var(--gold)); margin:10px 0 0; padding-left:10px; border-left:2px solid var(--accent, var(--gold)); }
+  .family-card-flavor{ font-size:0.85rem; color: var(--paper-dim); margin:8px 0 0; }
   .family-card-vibe{ margin:12px 0 0; font-size:0.9rem; }
-  .family-gauges{ display:flex; gap:22px; flex-wrap:wrap; margin:16px 0; }
-
-  /* Mini-graphique en barres : les 4 domaines toujours visibles, en un
-     coup d'œil, sans avoir besoin de déplier quoi que ce soit. */
-  .family-chart{ display:flex; flex-direction:column; gap:9px; margin:16px 0; }
-  .family-chart-row{ display:grid; grid-template-columns: 96px 1fr 34px; align-items:center; gap:10px; }
-  .family-chart-label{ font-family:"JetBrains Mono",monospace; font-size:0.66rem; letter-spacing:0.03em; text-transform:uppercase; color: var(--paper-dim); }
-  .family-chart-bar-track{ background: var(--surface); border-radius:4px; height:7px; overflow:hidden; }
-  .family-chart-bar-fill{ height:100%; background: var(--accent, var(--gold)); border-radius:4px; }
-  .family-chart-score{ font-family:"JetBrains Mono",monospace; font-size:0.7rem; color: var(--paper-dim); text-align:right; }
-
-  /* Accordéon "détail par domaine" : même recette que celui des 12 signes. */
+  /* Accordéon "détail" : englobe les 4 domaines + Style du jour/Conseil,
+     replié sous le résumé — même recette que celui des 12 signes. */
   .family-detail-toggle{
     display:flex; align-items:center; gap:6px; background:none; border:none; padding:0;
     font-family:"Inter",sans-serif; font-size:0.82rem; color: var(--gold); cursor:pointer;
@@ -452,11 +442,11 @@
     </div>
     <div class="sign-detail" id="sign-detail">
       <p class="sign-detail-empty" id="sign-detail-empty">Cliquez sur un signe ci-dessus pour voir son analyse du jour.</p>
-      <article class="sign-card" data-sign="belier" data-element="feu" data-energy="42" hidden>
+      <article class="sign-card" data-sign="belier" data-element="feu" data-energy="41" hidden>
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v-6"/><path d="M12 14c-3 0-5-2.3-4.5-5.2C7.7 7.1 9 6.3 9.7 7.2c.6.7 0 1.7-1.4 2"/><path d="M12 14c3 0 5-2.3 4.5-5.2C16.3 7.1 15 6.3 14.3 7.2c-.6.7 0 1.7 1.4 2"/></svg></span>
           <div><div class="sign-name">Bélier</div><div class="sign-dates">21 mars – 19 avril</div></div>
-          <div class="energy-ring" style="--pct:42; --ring-color:var(--score-low); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">42%</span><span class="energy-ring-label">Énergie</span></div></div>
+          <div class="energy-ring" style="--pct:41; --ring-color:var(--score-low); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">41%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">Ton élan habituel est en retrait aujourd'hui — pas de quoi s'inquiéter, mais ce n'est pas le jour pour forcer un mouvement qui te coûterait d'habitude bien moins d'énergie.</p>
         <div class="sign-categories">
@@ -468,10 +458,10 @@
             </div>
           </div>
           <div class="sign-cat" data-situation="freine">
-            <span class="sign-cat-label">Argent & travail</span>
+            <span class="sign-cat-label">Argent</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--score-low);"><span class="stat-value">48%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:48%;"></span></span></div>
-              <p class="sign-cat-text">Un imprévu risque de dérégler ton planning, garde une marge.</p>
+              <div class="stat" style="--accent: var(--score-low);"><span class="stat-value">42%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:42%;"></span></span></div>
+              <p class="sign-cat-text">Peu d'énergie pour un rapport de force : observe plutôt que d'insister.</p>
             </div>
           </div>
           <div class="sign-cat" data-situation="freine">
@@ -510,10 +500,10 @@
             </div>
           </div>
           <div class="sign-cat" data-situation="neutre">
-            <span class="sign-cat-label">Argent & travail</span>
+            <span class="sign-cat-label">Argent</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">60%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:60%;"></span></span></div>
-              <p class="sign-cat-text">Reste concentré·e sur une seule chose plutôt que d'en commencer trois.</p>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">61%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:61%;"></span></span></div>
+              <p class="sign-cat-text">Tes efforts ne se voient pas encore, mais ils comptent.</p>
             </div>
           </div>
           <div class="sign-cat" data-situation="freine">
@@ -552,10 +542,10 @@
             </div>
           </div>
           <div class="sign-cat" data-situation="freine">
-            <span class="sign-cat-label">Argent & travail</span>
+            <span class="sign-cat-label">Argent</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">52%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:52%;"></span></span></div>
-              <p class="sign-cat-text">Reporte une négociation tendue si tu en as la possibilité aujourd'hui.</p>
+              <div class="stat" style="--accent: var(--score-low);"><span class="stat-value">49%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:49%;"></span></span></div>
+              <p class="sign-cat-text">Un imprévu risque de dérégler ton planning, garde une marge.</p>
             </div>
           </div>
           <div class="sign-cat" data-situation="freine">
@@ -594,10 +584,10 @@
             </div>
           </div>
           <div class="sign-cat" data-situation="favorise">
-            <span class="sign-cat-label">Argent & travail</span>
+            <span class="sign-cat-label">Argent</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">80%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:80%;"></span></span></div>
-              <p class="sign-cat-text">Une opportunité inattendue mérite d'être prise au sérieux, même si elle sort du cadre.</p>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">79%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:79%;"></span></span></div>
+              <p class="sign-cat-text">Un contact professionnel peut débloquer quelque chose si tu prends l'initiative.</p>
             </div>
           </div>
           <div class="sign-cat" data-situation="favorise">
@@ -620,11 +610,11 @@
           <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Un message à quelqu'un de confiance te fera plus de bien qu'un silence prolongé.</p></div>
         </div>
       </article>
-      <article class="sign-card" data-sign="lion" data-element="feu" data-energy="47" hidden>
+      <article class="sign-card" data-sign="lion" data-element="feu" data-energy="46" hidden>
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9.2" cy="8" r="3"/><path d="M9.2 11c0 6.2 4.3 3 4.3 7.2c0 2-2 2.8-4 1.8"/></svg></span>
           <div><div class="sign-name">Lion</div><div class="sign-dates">23 juillet – 22 août</div></div>
-          <div class="energy-ring" style="--pct:47; --ring-color:var(--score-low); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">47%</span><span class="energy-ring-label">Énergie</span></div></div>
+          <div class="energy-ring" style="--pct:46; --ring-color:var(--score-low); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">46%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">Ta présence prend moins de place que d'habitude aujourd'hui, et ce n'est pas une mauvaise chose : observer vaut mieux que forcer une entrée en scène.</p>
         <div class="sign-categories">
@@ -636,10 +626,10 @@
             </div>
           </div>
           <div class="sign-cat" data-situation="freine">
-            <span class="sign-cat-label">Argent & travail</span>
+            <span class="sign-cat-label">Argent</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">51%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:51%;"></span></span></div>
-              <p class="sign-cat-text">Une décision financière importante peut attendre un jour plus favorable.</p>
+              <div class="stat" style="--accent: var(--score-low);"><span class="stat-value">47%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:47%;"></span></span></div>
+              <p class="sign-cat-text">Relis deux fois ce que tu es sur le point d'envoyer avant de cliquer.</p>
             </div>
           </div>
           <div class="sign-cat" data-situation="freine">
@@ -662,11 +652,11 @@
           <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Laisse quelqu'un d'autre parler en premier dans une réunion aujourd'hui.</p></div>
         </div>
       </article>
-      <article class="sign-card" data-sign="vierge" data-element="terre" data-energy="52" hidden>
+      <article class="sign-card" data-sign="vierge" data-element="terre" data-energy="51" hidden>
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 7.5v11"/><path d="M6.5 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v9"/><path d="M10.1 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v6.5c0 2.8 1.8 3.7 3.7 2"/></svg></span>
           <div><div class="sign-name">Vierge</div><div class="sign-dates">23 août – 22 septembre</div></div>
-          <div class="energy-ring" style="--pct:52; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">52%</span><span class="energy-ring-label">Énergie</span></div></div>
+          <div class="energy-ring" style="--pct:51; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">51%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">Ranger un coin de ta vie, au sens propre ou au figuré, va te libérer plus d'énergie que prévu.</p>
         <div class="sign-categories">
@@ -678,9 +668,9 @@
             </div>
           </div>
           <div class="sign-cat" data-situation="neutre">
-            <span class="sign-cat-label">Argent & travail</span>
+            <span class="sign-cat-label">Argent</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">68%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:68%;"></span></span></div>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">62%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:62%;"></span></span></div>
               <p class="sign-cat-text">Le terrain reste stable, sans avancée ni recul notable.</p>
             </div>
           </div>
@@ -704,11 +694,11 @@
           <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Range un tiroir ou un dossier qui traîne, ça libère plus que prévu.</p></div>
         </div>
       </article>
-      <article class="sign-card" data-sign="balance" data-element="air" data-energy="52" hidden>
+      <article class="sign-card" data-sign="balance" data-element="air" data-energy="53" hidden>
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="7.5" x2="18" y2="7.5"/><path d="M7 13.5a5 5 0 0 0 10 0"/><line x1="4.5" y1="18.5" x2="19.5" y2="18.5"/></svg></span>
           <div><div class="sign-name">Balance</div><div class="sign-dates">23 septembre – 22 octobre</div></div>
-          <div class="energy-ring" style="--pct:52; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">52%</span><span class="energy-ring-label">Énergie</span></div></div>
+          <div class="energy-ring" style="--pct:53; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">53%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">Une question en suspens depuis un moment peut avancer aujourd'hui, sans qu'il soit besoin de tout trancher d'un coup.</p>
         <div class="sign-categories">
@@ -720,10 +710,10 @@
             </div>
           </div>
           <div class="sign-cat" data-situation="freine">
-            <span class="sign-cat-label">Argent & travail</span>
+            <span class="sign-cat-label">Argent</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--score-low);"><span class="stat-value">46%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:46%;"></span></span></div>
-              <p class="sign-cat-text">Un imprévu risque de dérégler ton planning, garde une marge.</p>
+              <div class="stat" style="--accent: var(--score-low);"><span class="stat-value">47%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:47%;"></span></span></div>
+              <p class="sign-cat-text">Une décision financière importante peut attendre un jour plus favorable.</p>
             </div>
           </div>
           <div class="sign-cat" data-situation="freine">
@@ -746,11 +736,11 @@
           <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Donne-toi une deadline claire aujourd'hui pour trancher, sinon le sujet reviendra demain.</p></div>
         </div>
       </article>
-      <article class="sign-card" data-sign="scorpion" data-element="eau" data-energy="82" hidden>
+      <article class="sign-card" data-sign="scorpion" data-element="eau" data-energy="85" hidden>
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 7.5v11"/><path d="M6.5 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v9"/><path d="M10.1 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v9"/><path d="M13.7 16.3l4.3 2.2"/><path d="M18 18.5l-.7-3"/><path d="M18 18.5l-2.9.8"/></svg></span>
           <div><div class="sign-name">Scorpion</div><div class="sign-dates">23 octobre – 21 novembre</div></div>
-          <div class="energy-ring" style="--pct:82; --ring-color:var(--score-high); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">82%</span><span class="energy-ring-label">Énergie</span></div></div>
+          <div class="energy-ring" style="--pct:85; --ring-color:var(--score-high); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">85%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">Ta lucidité est plus aiguisée que d'habitude, inutile de la garder seulement pour toi aujourd'hui.</p>
         <div class="sign-categories">
@@ -762,10 +752,10 @@
             </div>
           </div>
           <div class="sign-cat" data-situation="favorise">
-            <span class="sign-cat-label">Argent & travail</span>
+            <span class="sign-cat-label">Argent</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">78%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:78%;"></span></span></div>
-              <p class="sign-cat-text">Avance sur ce qui traîne : tu as la clarté qui te manquait ces derniers jours.</p>
+              <div class="stat" style="--accent: var(--score-high);"><span class="stat-value">88%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:88%;"></span></span></div>
+              <p class="sign-cat-text">Défends ta position dans une négociation, ton argumentaire tient la route aujourd'hui.</p>
             </div>
           </div>
           <div class="sign-cat" data-situation="favorise">
@@ -788,11 +778,11 @@
           <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Garde une observation juste pour toi jusqu'à avoir une vraie preuve à l'appui.</p></div>
         </div>
       </article>
-      <article class="sign-card" data-sign="sagittaire" data-element="feu" data-energy="47" hidden>
+      <article class="sign-card" data-sign="sagittaire" data-element="feu" data-energy="45" hidden>
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5.5" y1="18.5" x2="18" y2="6"/><path d="M12 6h6v6"/><line x1="9.8" y1="11.8" x2="13.5" y2="15.5"/></svg></span>
           <div><div class="sign-name">Sagittaire</div><div class="sign-dates">22 novembre – 21 décembre</div></div>
-          <div class="energy-ring" style="--pct:47; --ring-color:var(--score-low); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">47%</span><span class="energy-ring-label">Énergie</span></div></div>
+          <div class="energy-ring" style="--pct:45; --ring-color:var(--score-low); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">45%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">L'envie d'imprévu est toujours là, mais l'élan pour la suivre manque un peu aujourd'hui — note l'idée, tu la reprendras avec plus de force dans quelques jours.</p>
         <div class="sign-categories">
@@ -804,10 +794,10 @@
             </div>
           </div>
           <div class="sign-cat" data-situation="freine">
-            <span class="sign-cat-label">Argent & travail</span>
+            <span class="sign-cat-label">Argent</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">51%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:51%;"></span></span></div>
-              <p class="sign-cat-text">Un imprévu risque de dérégler ton planning, garde une marge.</p>
+              <div class="stat" style="--accent: var(--score-low);"><span class="stat-value">44%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:44%;"></span></span></div>
+              <p class="sign-cat-text">Relis deux fois ce que tu es sur le point d'envoyer avant de cliquer.</p>
             </div>
           </div>
           <div class="sign-cat" data-situation="freine">
@@ -830,11 +820,11 @@
           <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Vérifie une date ou un horaire avant de t'engager sur un coup de tête.</p></div>
         </div>
       </article>
-      <article class="sign-card" data-sign="capricorne" data-element="terre" data-energy="53" hidden>
+      <article class="sign-card" data-sign="capricorne" data-element="terre" data-energy="54" hidden>
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 8c0-1.4 1-2.5 2.2-2.5S11 6.3 10 8.7c-2.3 4.7-1 9.3 2 9.3"/><path d="M13.3 14.3c1.2-2 3.4-2 4.4.1c1 2.2-1.1 4.3-3.4 3.4"/></svg></span>
           <div><div class="sign-name">Capricorne</div><div class="sign-dates">22 décembre – 19 janvier</div></div>
-          <div class="energy-ring" style="--pct:53; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">53%</span><span class="energy-ring-label">Énergie</span></div></div>
+          <div class="energy-ring" style="--pct:54; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">54%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">Un rythme stable te convient aujourd'hui : avance pas à pas sur un dossier de fond, sans attendre de résultat immédiat.</p>
         <div class="sign-categories">
@@ -846,10 +836,10 @@
             </div>
           </div>
           <div class="sign-cat" data-situation="neutre">
-            <span class="sign-cat-label">Argent & travail</span>
+            <span class="sign-cat-label">Argent</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">61%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:61%;"></span></span></div>
-              <p class="sign-cat-text">Continue ce qui est déjà lancé plutôt que d'ouvrir un nouveau chantier aujourd'hui.</p>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">65%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:65%;"></span></span></div>
+              <p class="sign-cat-text">Le terrain reste stable, sans avancée ni recul notable.</p>
             </div>
           </div>
           <div class="sign-cat" data-situation="freine">
@@ -872,11 +862,11 @@
           <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Note ce que tu as accompli ce soir, même petit : tu as tendance à l'oublier.</p></div>
         </div>
       </article>
-      <article class="sign-card" data-sign="verseau" data-element="air" data-energy="51" hidden>
+      <article class="sign-card" data-sign="verseau" data-element="air" data-energy="53" hidden>
         <div class="sign-card-top">
           <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 9c2.2-2 4.3-2 6.5 0s4.3 2 6.5 0s4.3-2 6.5 0"/><path d="M3.5 15.5c2.2-2 4.3-2 6.5 0s4.3 2 6.5 0s4.3-2 6.5 0"/></svg></span>
           <div><div class="sign-name">Verseau</div><div class="sign-dates">20 janvier – 18 février</div></div>
-          <div class="energy-ring" style="--pct:51; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">51%</span><span class="energy-ring-label">Énergie</span></div></div>
+          <div class="energy-ring" style="--pct:53; --ring-color:var(--score-mid); margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">53%</span><span class="energy-ring-label">Énergie</span></div></div>
         </div>
         <p class="sign-vibe">Ta différence surprend d'abord, puis finit par convaincre ceux qui t'écoutent jusqu'au bout.</p>
         <div class="sign-categories">
@@ -888,10 +878,10 @@
             </div>
           </div>
           <div class="sign-cat" data-situation="freine">
-            <span class="sign-cat-label">Argent & travail</span>
+            <span class="sign-cat-label">Argent</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--score-low);"><span class="stat-value">40%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:40%;"></span></span></div>
-              <p class="sign-cat-text">Relis deux fois ce que tu es sur le point d'envoyer avant de cliquer.</p>
+              <div class="stat" style="--accent: var(--score-mid);"><span class="stat-value">50%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:50%;"></span></span></div>
+              <p class="sign-cat-text">Reporte une négociation tendue si tu en as la possibilité aujourd'hui.</p>
             </div>
           </div>
           <div class="sign-cat" data-situation="freine">
@@ -930,10 +920,10 @@
             </div>
           </div>
           <div class="sign-cat" data-situation="favorise">
-            <span class="sign-cat-label">Argent & travail</span>
+            <span class="sign-cat-label">Argent</span>
             <div class="sign-cat-body">
-              <div class="stat" style="--accent: var(--score-high);"><span class="stat-value">87%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:87%;"></span></span></div>
-              <p class="sign-cat-text">C'est le bon jour pour présenter un dossier que tu gardais pour toi.</p>
+              <div class="stat" style="--accent: var(--score-high);"><span class="stat-value">88%</span><span class="stat-bar"><span class="stat-bar-fill" style="width:88%;"></span></span></div>
+              <p class="sign-cat-text">Avance sur ce qui traîne : tu as la clarté qui te manquait ces derniers jours.</p>
             </div>
           </div>
           <div class="sign-cat" data-situation="favorise">
@@ -1085,10 +1075,10 @@
   // Sans ça, deux profils du même signe solaire affichaient des scores
   // rigoureusement identiques, quelle que soit l'heure de naissance.
   var ASCENDANT_NUDGE = {
-    feu:   { "Argent & travail": 4, "Santé": -3 },
+    feu:   { "Argent": 4, "Santé": -3 },
     terre: { "Santé": 4, "Amour": -2 },
-    air:   { "Humeur": 4, "Argent & travail": -2 },
-    eau:   { "Amour": 4, "Argent & travail": -2 }
+    air:   { "Humeur": 4, "Argent": -2 },
+    eau:   { "Amour": 4, "Argent": -2 }
   };
 
   function applyAscendantNudge(categories, ascElement){
@@ -1429,12 +1419,6 @@
       // 50-80, vert >80), pas par élément.
       var energyRingHtml = '<div class="energy-ring" style="--pct:' + energy + '; --ring-color:' + scoreColor(energy) + '; margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">' + energy + '%</span><span class="energy-ring-label">Énergie</span></div></div>';
 
-      // Fines barres pour les 4 domaines, toujours visibles sous le résumé.
-      var gaugesHtml = adjCats.map(function(c){
-          var pct = c.score.replace('%','');
-          return '<div class="stat" style="--accent:' + scoreColor(pct) + ';"><span class="stat-value">' + c.score + '</span><span class="stat-bar"><span class="stat-bar-fill" style="width:' + pct + '%;"></span></span><span class="stat-label">' + c.label + '</span></div>';
-        }).join('');
-
       // Le texte de chaque domaine est repioché selon le décan, à
       // situation égale (favorise/neutre/freine déjà fixée par le code
       // du jour) : deux profils du même signe mais de décans différents
@@ -1474,11 +1458,10 @@
         '<p class="family-card-flavor">' + ascFlavor + '</p>' +
         '<p class="family-card-flavor">' + decFlavor + '</p>' +
         '<p class="family-card-vibe">' + sunData.vibe + '</p>' +
-        '<div class="family-gauges">' + gaugesHtml + '</div>' +
-        extrasHtml +
-        '<button type="button" class="family-detail-toggle">Voir le détail par domaine <span class="family-detail-chevron">▾</span></button>' +
+        '<button type="button" class="family-detail-toggle">Voir le détail <span class="family-detail-chevron">▾</span></button>' +
         '<div class="family-detail-body"><div class="family-detail-inner">' +
           '<div class="sign-categories family-card-categories">' + catsHtml + '</div>' +
+          extrasHtml +
         '</div></div>' +
         '<div class="family-card-actions">' +
           '<button type="button" class="family-copy-btn" data-profile-id="' + p.id + '">Copier cet horoscope</button>' +
@@ -1489,14 +1472,16 @@
       gridEl.appendChild(card);
     });
 
-    // Accordéon "Voir le détail par domaine" : même principe que celui des
-    // 12 signes (grid-template-rows 0fr -> 1fr), indépendant par carte.
+    // Accordéon "Voir le détail" : englobe désormais les 4 domaines ET
+    // Style du jour/Conseil (regroupés sous le résumé, retour utilisateur
+    // du 7 septembre) — même principe que celui des 12 signes
+    // (grid-template-rows 0fr -> 1fr), indépendant par carte.
     gridEl.querySelectorAll(".family-detail-toggle").forEach(function(toggle){
       toggle.addEventListener("click", function(){
         var body = toggle.nextElementSibling;
         var isOpen = body.classList.toggle("is-open");
         toggle.classList.toggle("is-open", isOpen);
-        toggle.firstChild.textContent = isOpen ? "Masquer le détail par domaine " : "Voir le détail par domaine ";
+        toggle.firstChild.textContent = isOpen ? "Masquer le détail " : "Voir le détail ";
       });
     });
 

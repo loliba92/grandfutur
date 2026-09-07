@@ -20,7 +20,7 @@ import hashlib
 from day_code import compute_day_code, ZODIAC_ORDER, ELEMENT_OF
 from fragments import FRAGMENTS, BASE_SCORE
 
-DOMAINS = ["Amour", "Argent & travail", "Santé", "Humeur"]
+DOMAINS = ["Amour", "Argent", "Santé", "Humeur"]
 
 
 def stable_int(key):

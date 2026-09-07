@@ -72,8 +72,8 @@ profils doivent être vus en premier, avant même le résumé du jour) :
    « Voir le détail de son signe » depuis une carte famille sélectionne la
    bonne tuile puis scrolle vers le panneau.
    **Score par domaine** (retour utilisateur du 7 septembre, en plus de
-   l'énergie globale) : chaque signe porte 4 sous-scores — Amour, Argent &
-   travail, Santé, Humeur — chacun avec un texte dédié. **L'énergie globale
+   l'énergie globale) : chaque signe porte 4 sous-scores — Amour, Argent,
+   Santé, Humeur — chacun avec un texte dédié. **L'énergie globale
    affichée est la moyenne arrondie de ces 4 scores**, jamais une 5e valeur
    inventée séparément : ça garantit la cohérence et simplifie la future
    génération automatique (la routine n'écrit que 4 chiffres, le total se
@@ -138,7 +138,7 @@ Correctif :
   lieu d'une par élément (4 variantes).
 - `ASCENDANT_NUDGE` + `applyAscendantNudge()` : l'élément de l'ascendant
   déplace de quelques points les 4 scores du signe solaire (ex. Feu :
-  +4 Argent & travail / -3 Santé ; Eau : +4 Amour / -2 Argent & travail),
+  +4 Argent / -3 Santé ; Eau : +4 Amour / -2 Argent),
   bornés à [0, 100]. L'énergie globale de la carte famille est recalculée
   comme la moyenne de ces scores ajustés — elle n'est donc plus identique
   à celle affichée sur la carte générique du signe.
@@ -179,7 +179,7 @@ future routine quotidienne, P1).
    planète (Lune ×2, Mars ×1.5, Mercure/Vénus ×1), quel élément est
    `favorise`/`neutre`/`freine` aujourd'hui.
 2. **`fragments.py`** — pour chacun des 4 domaines notés (Amour,
-   Argent & travail, Santé, Humeur) × 3 situations (favorise/neutre/
+   Argent, Santé, Humeur) × 3 situations (favorise/neutre/
    freine), 6 phrases écrites à la main, plus un score de base par
    situation (82/62/46). Écrire une variante de plus dans un panier
    existant n'impacte rien d'autre — c'est le seul travail d'écriture
@@ -225,7 +225,7 @@ planète précise et son domaine.
 
 Correctif : `DOMAIN_PLANETS` (`day_code.py`) attribue à chaque domaine
 les planètes qui le gouvernent traditionnellement — Amour (Vénus, Lune),
-Argent & travail (Mercure, Mars), Santé (Mars, Lune), Humeur (Mercure,
+Argent (Mercure, Mars), Santé (Mars, Lune), Humeur (Mercure,
 Lune). `domain_elements` refait le même classement favorisé/neutre/freiné
 que `elements`, mais un jeu de poids séparé par domaine, restreint à ses
 seules planètes. `generate_signs.py` pioche désormais la situation de
@@ -484,6 +484,25 @@ Le backlog (idées, tâches ouvertes, priorités P1-P3) est dans un fichier
 dédié : voir [`docs/BACKLOG.md`](./BACKLOG.md).
 
 ## Historique
+
+- **7 septembre 2026** : "Argent & travail" renommé en "Argent" (retour
+  utilisateur : séparer les deux en 2 domaines demanderait une nouvelle
+  bibliothèque de phrases, une attribution planétaire séparée et une
+  mise en page à 5 cases — jugé disproportionné pour l'instant ; un mot
+  plus court suffit). Renommé dans `fragments.json`, `day_code.py`
+  (`DOMAIN_PLANETS`), `generate_signs.py` (`DOMAINS`) et `index.html`
+  (`ASCENDANT_NUDGE`) — le libellé affiché se propage automatiquement
+  depuis `c["label"]`, aucun autre endroit à toucher à la main.
+  **Même jour** : carte famille restructurée — l'accordéon "Voir le
+  détail" englobe maintenant les 4 domaines *et* Style du jour/Conseil
+  (avant : mini-jauges + Style/Conseil toujours visibles, seuls les
+  détails par domaine repliés), pour une carte bien plus compacte par
+  défaut ; CSS mort nettoyé (`.family-gauges`, `.family-chart-*`, d'une
+  itération de design antérieure jamais reliée au JS actuel). Barre
+  verticale colorée sur les phrases d'ascendant/décan retirée (retour
+  utilisateur : "moches et ne veulent rien dire" — la couleur venait de
+  l'élément du signe sans lien de sens avec le texte) : texte simple,
+  couleur atténuée, sans bordure.
 
 - **7 septembre 2026** : audit technique externe (généraliste, sans lecture
   du code réel) comparé point par point au code effectif. La plupart des

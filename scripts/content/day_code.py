@@ -54,7 +54,7 @@ PLANET_WEIGHT = {"lune": 2.0, "mars": 1.5, "mercure": 1.0, "venus": 1.0}
 # domaine que sur les autres, au lieu de peser pareil sur les 4 à la fois.
 DOMAIN_PLANETS = {
     "Amour": ["venus", "lune"],
-    "Argent & travail": ["mercure", "mars"],
+    "Argent": ["mercure", "mars"],
     "Santé": ["mars", "lune"],
     "Humeur": ["mercure", "lune"],
 }

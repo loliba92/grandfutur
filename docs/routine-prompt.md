@@ -50,7 +50,7 @@ python3 apply_to_index.py AAAA-MM-JJ /home/user/grandfutur/index.html
 ```
 
 Ça met à jour, pour les 12 signes, `data-energy`, la jauge d'énergie, et
-les 4 catégories notées (Amour, Argent & travail, Santé, Humeur) — score
+les 4 catégories notées (Amour, Argent, Santé, Humeur) — score
 et texte. **Ne jamais réécrire ces 4 catégories à la main** : elles
 viennent du moteur (`day_code.py` + `fragments.py`), c'est tout leur
 intérêt (déterministe, gratuit, cohérent avec la vraie position des
