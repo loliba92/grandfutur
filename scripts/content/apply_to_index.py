@@ -71,9 +71,12 @@ def patch_sign_block(html, sign, data, vibe_text):
 
     # Les 4 catégories, dans l'ordre où generate_signs.py les produit
     # (même ordre que DOMAINS), en remplaçant chaque bloc sign-cat
-    # successivement.
+    # successivement. data-situation exposé sur la balise : lu par le JS
+    # (readCardData) pour re-piocher une phrase personnalisée par décan
+    # dans la carte famille, sans avoir à recalculer le code du jour
+    # côté client (voir ARCHITECTURE.md § Décan et quotidien).
     cat_re = re.compile(
-        r'(<div class="sign-cat">\s*<span class="sign-cat-label">)[^<]+(</span>\s*<div class="sign-cat-body">\s*'
+        r'(<div class="sign-cat")(>\s*<span class="sign-cat-label">)[^<]+(</span>\s*<div class="sign-cat-body">\s*'
         r'<div class="stat" style="--accent: )[^;]+(;">\s*<span class="stat-value">)\d+%(</span><span class="stat-bar"><span class="stat-bar-fill" style="width:)\d+(%;"></span></span></div>\s*'
         r'<p class="sign-cat-text">)[^<]+(</p>)',
         re.S,
@@ -84,10 +87,11 @@ def patch_sign_block(html, sign, data, vibe_text):
     def repl_cat(mo):
         c = next(cats)
         color = score_color(c["score"])
+        situation_attr = ' data-situation="' + c["situation"] + '"' if c.get("situation") else ''
         return (
-            mo.group(1) + c["label"] + mo.group(2) + color + mo.group(3)
-            + f'{c["score"]}%' + mo.group(4) + str(c["score"]) + mo.group(5)
-            + c["text"] + mo.group(6)
+            mo.group(1) + situation_attr + mo.group(2) + c["label"] + mo.group(3) + color + mo.group(4)
+            + f'{c["score"]}%' + mo.group(5) + str(c["score"]) + mo.group(6)
+            + c["text"] + mo.group(7)
         )
 
     body = cat_re.sub(repl_cat, body)

@@ -283,6 +283,39 @@ décan nuance le texte. Affiché dans la carte famille : sous-titre
 ("Bélier (2e décan) · Ascendant Gémeaux") + une phrase dédiée, sous celle
 de l'ascendant ; repris dans le texte "Copier"/"Partager".
 
+### Décan et quotidien — le décan repioche le texte du jour, pas juste une phrase fixe
+
+Retour utilisateur (7/09) : après avoir compris que le décan ne touche
+aucun score et ne réagit pas au ciel du jour, sa contribution semblait
+trop mince ("qu'apporte le décan alors ? comprends pas"). Trois options
+posées, l'utilisateur choisit : garder le décan purement informatif
+(inchangé) VS le retirer VS **le faire influencer le texte quotidien des
+4 domaines, sans toucher aux scores** — retenue.
+
+Mécanisme : chaque bloc `.sign-cat` de la fiche signe porte maintenant
+un attribut `data-situation="favorise/neutre/freine"` (ajouté par
+`apply_to_index.py`, lu depuis `categories[i].situation` de
+`generate_signs.py`) — c'était déjà calculé côté Python, seulement pas
+exposé au DOM jusqu'ici. Côté JS, `readCardData()` le récupère, et
+`pickPersonalizedText(date, signe, décan, domaine, situation)` repioche,
+**pour le profil**, une phrase dans le même panier `FRAGMENTS_DOMAINS`
+que celui utilisé côté Python — mais avec le décan en plus dans la clé
+de hash (`date|signe|décan|domaine|pick`), via un hash JS maison
+(djb2, `stableHashJS`) plutôt qu'une réplique du MD5 Python : aucun
+besoin de faire correspondre les deux algorithmes, la sélection
+personnalisée n'a jamais à reproduire le texte générique de la fiche
+signe, juste à être stable dans le temps.
+
+Conséquence voulue : deux profils du même signe solaire, même situation
+du jour, mais de décans différents, lisent maintenant un texte différent
+pour un même domaine (vérifié : Bélier 1er décan vs 3e décan, même jour,
+même ascendant → 3 des 4 domaines diffèrent, le 4e coïncide par hasard —
+attendu avec un panier de 6). Les scores restent strictement identiques
+(le décan ne les touche jamais, décision du paragraphe précédent
+inchangée) — seul le texte varie. Le texte affiché sur la fiche signe
+générique (le damier public des 12 signes) ne change pas : cette
+repioche n'a lieu que pour une carte de profil, où un décan existe.
+
 ### Bibliothèque de phrases — un seul JSON, deux runtimes
 
 Retour utilisateur (7/09) : les phrases (fragments par domaine/situation,
