@@ -244,6 +244,24 @@ dédié : voir [`docs/BACKLOG.md`](./BACKLOG.md).
 
 ## Historique
 
+- **7 septembre 2026** : audit technique externe (généraliste, sans lecture
+  du code réel) comparé point par point au code effectif. La plupart des
+  recommandations UX/archives/SEO de base étaient déjà en place ou ne
+  s'appliquaient pas (heure de naissance volontairement obligatoire, par
+  exemple). Trois points se sont révélés réels et corrigés :
+  - `p.name` (saisi librement dans le formulaire) était injecté via
+    `innerHTML` sans échappement (`chip.innerHTML`, carte famille) — un
+    prénom contenant du HTML/JS s'exécutait dans le propre navigateur du
+    visiteur. Corrigé avec un helper `escapeHtml()` et `textContent` pour
+    la puce de profil.
+  - Les tuiles de signes (déjà de vrais `<button>`) n'exposaient pas leur
+    état sélectionné aux lecteurs d'écran. Ajout de `aria-pressed` (basculé
+    dans `selectSign()`) et `aria-controls="sign-detail"`.
+  - Ajout de données structurées `Article` (JSON-LD : `headline`,
+    `datePublished`, `dateModified`, `image`, `publisher`) — absent
+    jusqu'ici, pertinent pour un contenu quotidien daté. **À mettre à jour
+    à chaque nouvelle édition**, en même temps que `<title>`/meta/og:title
+    (mêmes informations, un endroit de plus à changer).
 - **7 septembre 2026** : v1 de démonstration publiée. GitHub Pages activé
   (branche `main`, dossier racine). Compte GoatCounter `grandfutur` créé
   et confirmé fonctionnel (le script déjà posé dans le gabarit correspond
