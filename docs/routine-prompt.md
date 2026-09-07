@@ -64,6 +64,17 @@ réelle Lune/Mercure/Vénus/Mars, éléments favorisé/neutre/freiné) et, par
 signe, `situation` et `energy` — sers-t'en pour les étapes suivantes,
 plutôt que de recalculer à la main ce qui est déjà dans ce fichier.
 
+**Historique des énergies** — tout de suite après, ajouter l'entrée du
+jour à `data/historique-energie.json` (nourrit le futur graphique
+d'évolution par profil, `docs/BACKLOG.md` § P3) :
+
+```bash
+python3 build_history.py 0 AAAA-MM-JJ
+```
+
+`0` = n'ajouter/mettre à jour que la date passée en second argument,
+sans toucher au reste de l'historique déjà écrit.
+
 ## Étape 2 — Ce qui reste rédactionnel (jugement, pas mécanique)
 
 Ces éléments ne sont pas (encore) mécanisés — les écrire à la main,

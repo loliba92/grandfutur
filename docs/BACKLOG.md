@@ -42,29 +42,23 @@ P2 = important mais pas bloquant, P3 = idée future à explorer.
   solaire jour après jour, plutôt qu'une seule valeur instantanée —
   visualiser une tendance dans le temps.
 
-  **Faisabilité : oui, sans backend**, à condition que la routine
-  quotidienne publie une petite trace de données à chaque édition plutôt
-  que seulement le HTML. Deux approches :
-  1. *(Retenue)* Un fichier JSON cumulatif (ex. `data/energie-quotidienne.json`),
-     complété par la routine chaque matin, au format
-     `{"date": "AAAA-MM-JJ", "energies": {"belier": 78, "taureau": 64, ...}}`
-     par jour publié. Le JS du site le télécharge une fois (`fetch`), puis
-     pour chaque profil enregistré, extrait la série de son signe solaire
-     et trace une courbe — réutiliser le composant `.dc-chart-box`/SVG déjà
-     construit sur Scénario pour le graphique de croissance d'audience
-     (voir `docs/ARCHITECTURE.md` de Scénario, section « Mesure
-     d'audience »), même principe d'escalier/ligne, pas besoin de
-     bibliothèque de graphique externe.
-  2. Alternative sans nouveau fichier : lire chaque `archives/{date}.html`
-     et en extraire les `data-energy` par signe via `fetch` + parsing HTML
-     côté client — plus lourd dès que l'historique s'allonge (autant de
-     requêtes que de jours d'archive), à éviter au-delà de quelques
-     semaines d'historique.
+  **Donnée : faite (7 septembre).** `data/historique-energie.json`
+  existe, pré-rempli sur 91 jours (9 juin → 7 septembre) via
+  `scripts/content/build_history.py` — le code du jour étant un vrai
+  calcul astronomique, on peut le rejouer pour une date passée aussi
+  bien que pour aujourd'hui, pas besoin d'attendre que la routine
+  accumule les jours un par un. La routine quotidienne (étape 1,
+  `docs/routine-prompt.md`) y ajoute l'entrée du jour à chaque édition.
+  Format : `{"AAAA-MM-JJ": {"belier": 78, "taureau": 64, ...}, ...}`.
 
-  **Dépendance bloquante** : n'a de sens qu'une fois l'automatisation
-  quotidienne réelle en place (P1) — tant que le contenu est un exemple
-  figé sur une seule date, il n'y a rien à tracer dans le temps. À
-  construire après, pas avant.
+  **Reste à construire : la courbe elle-même**, côté JS d'`index.html` —
+  `fetch("data/historique-energie.json")`, puis pour chaque profil
+  enregistré, extraire la série de son signe solaire et la tracer.
+  Réutiliser le composant `.dc-chart-box`/SVG déjà construit sur Scénario
+  pour le graphique de croissance d'audience (voir `docs/ARCHITECTURE.md`
+  de Scénario, section « Mesure d'audience »), même principe
+  d'escalier/ligne, pas besoin de bibliothèque de graphique externe.
+  Plus bloqué par rien — à faire dès que demandé.
 
 - ~~**Décan** comme troisième axe de personnalisation~~ — **fait le 7
   septembre**, voir `docs/ARCHITECTURE.md` § « Décan ». Pas de nuance de

@@ -289,6 +289,33 @@ sur `http://localhost:PORT/index.html` — jamais `file://` pour une page
 qui fait un `fetch()`. En production (GitHub Pages), aucun problème :
 c'est un vrai serveur HTTP.
 
+### Historique des énergies — recalculé rétroactivement, pas inventé
+
+`data/historique-energie.json` (`{"AAAA-MM-JJ": {"belier": 78, ...}, ...}`)
+nourrit le futur graphique d'évolution par profil (`docs/BACKLOG.md` §
+P3, demandé le 7 septembre, débloqué le même jour par ce fichier).
+
+**Point important à ne jamais perdre de vue** : ce n'est *pas* un journal
+de ce qui a réellement été publié — le site n'a qu'une seule vraie
+édition (7 septembre 2026). C'est le code du jour **recalculé
+rétroactivement** avec `scripts/content/build_history.py`, pour chaque
+date passée, exactement avec la même formule que pour aujourd'hui. Ce
+n'est légitime que *parce que* le moteur est un vrai calcul astronomique
+déterministe (position réelle des planètes à cette date) — recalculer
+pour le 9 juin donne ce que la formule aurait produit ce jour-là, ni plus
+ni moins vrai que pour aujourd'hui. Backfillé sur 91 jours (9 juin → 7
+septembre) en une commande plutôt que d'attendre que la routine
+quotidienne accumule les jours un par un pendant 3 mois.
+
+Entièrement stable dans le temps : la sélection de phrase et le score
+sont un hash déterministe de `date + signe + domaine` (voir § Moteur de
+contenu) — recalculer le même jour demain, dans un an, donne rigoureusement
+le même résultat. La seule chose qui romprait cette stabilité serait de
+modifier `data/fragments.json` (les phrases/scores de base) après coup ;
+l'historique déjà écrit resterait alors figé sur l'ancienne version, ce
+qui est le comportement souhaité (un historique ne doit pas bouger sous
+les pieds une fois publié).
+
 ## Image du jour (Pexels)
 
 Port simplifié des scripts Scénario (`fetch_topic_image.py` /
