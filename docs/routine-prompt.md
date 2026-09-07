@@ -120,7 +120,11 @@ d'astrophotographie à fort grain).
    réécrire tous les chemins relatifs avec un préfixe `../` (`assets/`,
    `manifest.webmanifest`, `index.html`, `archives.html`, `le-projet.html`,
    `mentions-legales.html`, `politique-de-confidentialite.html`,
-   `contact.html`).
+   `contact.html`, **`data/fragments.json` → `../data/fragments.json`** —
+   piège rencontré le 7 septembre : sans cette réécriture, le `fetch()`
+   de la bibliothèque de phrases pointe vers un chemin qui n'existe pas
+   depuis `archives/`, et les phrases d'ascendant/décan restent vides
+   sur l'archive figée).
 3. Ajouter une ligne dans `archives.html` (section `<main>`, `.entry`)
    pointant vers la nouvelle archive, avec le `<h1>` du jour comme titre.
 4. **Vérifier visuellement avant de pousser** (Playwright local,

@@ -1066,23 +1066,14 @@
   // d'ascendant (0-360°) en signe.
   var ZODIAC_ORDER = ["belier","taureau","gemeaux","cancer","lion","vierge","balance","scorpion","sagittaire","capricorne","verseau","poissons"];
 
-  // Une phrase par signe ascendant (et non plus par élément) : 12 variantes
-  // au lieu de 4, pour qu'un Gémeaux ascendant Bélier et un Gémeaux
-  // ascendant Poissons ne lisent plus jamais exactement la même chose.
-  var ASCENDANT_FLAVOR = {
-    belier: "Ton ascendant Bélier te donne l'impatience d'agir avant d'avoir toutes les réponses.",
-    taureau: "Ton ascendant Taureau te retient d'improviser — mieux vaut avancer sur du solide aujourd'hui.",
-    gemeaux: "Ton ascendant Gémeaux multiplie les sujets de conversation, quitte à en laisser filer certains.",
-    cancer: "Ton ascendant Cancer te rend plus attentif·ve à ce que ressentent les gens autour de toi.",
-    lion: "Ton ascendant Lion te donne envie qu'on remarque ce que tu fais aujourd'hui.",
-    vierge: "Ton ascendant Vierge repère le détail qui cloche avant même que tu aies fini de sourire.",
-    balance: "Ton ascendant Balance pèse le pour et le contre un peu plus longtemps que d'habitude.",
-    scorpion: "Ton ascendant Scorpion te pousse à creuser sous la surface d'un sujet plutôt qu'à l'effleurer.",
-    sagittaire: "Ton ascendant Sagittaire te donne envie de voir plus large que le programme du jour.",
-    capricorne: "Ton ascendant Capricorne te rappelle où tu veux en être dans six mois, pas seulement ce soir.",
-    verseau: "Ton ascendant Verseau te fait préférer ta propre méthode à celle qu'on t'impose.",
-    poissons: "Ton ascendant Poissons brouille un peu la frontière entre ce que tu ressens et ce que tu observes."
-  };
+  // Une phrase par signe ascendant, une par signe teintant un décan :
+  // chargées depuis data/fragments.json (fetch plus bas dans ce script),
+  // pas codées en dur ici — source de vérité unique, partagée avec le
+  // moteur Python (scripts/content/fragments.py lit le même fichier).
+  // Objets vides en attendant la résolution du fetch ; render() n'est
+  // appelé qu'une fois ce chargement terminé (voir bas de fichier).
+  var ASCENDANT_FLAVOR = {};
+  var DECAN_COLOR_TRAIT = {};
 
   // L'ascendant ne fait pas que qualifier la journée en mots : il déplace
   // aussi un peu les scores des 4 domaines, par petites touches liées à son
@@ -1201,21 +1192,6 @@
     var idx = ZODIAC_ORDER.indexOf(sign);
     return ZODIAC_ORDER[(idx + (decanNum - 1) * 4) % 12];
   }
-
-  var DECAN_COLOR_TRAIT = {
-    belier: "l'envie d'aller droit au but, quitte à bousculer un peu",
-    taureau: "un besoin de stabilité et de confort avant d'avancer",
-    gemeaux: "une curiosité qui saute facilement d'un sujet à l'autre",
-    cancer: "une sensibilité aux non-dits et à l'ambiance du moment",
-    lion: "une confiance qui donne envie de se faire remarquer",
-    vierge: "une exigence du détail, envers les autres comme envers soi",
-    balance: "un temps de réflexion avant de trancher quoi que ce soit",
-    scorpion: "une intensité qui va chercher sous la surface",
-    sagittaire: "une soif d'imprévu et de grand air",
-    capricorne: "une discipline tournée vers le long terme",
-    verseau: "une indépendance d'esprit qui résiste au cadre",
-    poissons: "une intuition qui devance la logique"
-  };
 
   var DECAN_ORDINAL = { 1: "1er", 2: "2e", 3: "3e" };
 
@@ -1655,7 +1631,22 @@
     render();
   });
 
-  render();
+  // Bibliothèque de phrases (ascendant, décan) : un seul fichier JSON,
+  // partagé avec le moteur Python — voir data/fragments.json et
+  // docs/ARCHITECTURE.md § Bibliothèque de phrases. Le premier rendu
+  // attend ce chargement ; les rendus suivants (clic sur un profil,
+  // ajout/suppression) n'ont plus besoin d'attendre, les deux objets
+  // restent peuplés en mémoire pour le reste de la session.
+  fetch("data/fragments.json")
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      ASCENDANT_FLAVOR = data.ascendant_flavor;
+      DECAN_COLOR_TRAIT = data.decan_color_trait;
+    })
+    .catch(function(err){
+      console.error("Impossible de charger data/fragments.json :", err);
+    })
+    .then(function(){ render(); });
 })();
 </script>
 

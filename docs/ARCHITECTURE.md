@@ -255,6 +255,40 @@ décan nuance le texte. Affiché dans la carte famille : sous-titre
 ("Bélier (2e décan) · Ascendant Gémeaux") + une phrase dédiée, sous celle
 de l'ascendant ; repris dans le texte "Copier"/"Partager".
 
+### Bibliothèque de phrases — un seul JSON, deux runtimes
+
+Retour utilisateur (7/09) : les phrases (fragments par domaine/situation,
+ASCENDANT_FLAVOR, DECAN_COLOR_TRAIT) étaient éparpillées entre
+`scripts/content/fragments.py` (dict Python) et des objets JS codés en
+dur dans `index.html` — deux syntaxes différentes pour le même genre de
+contenu, aucun lien mécanique entre les deux.
+
+**`data/fragments.json`** est maintenant l'unique source de vérité —
+`{domains, base_score, ascendant_flavor, decan_color_trait}`. JSON est
+nativement lisible par les deux runtimes du projet, sans script de
+synchronisation ni étape de build :
+
+- **Python** (`scripts/content/fragments.py`) : devenu un simple
+  chargeur (`json.loads` du fichier), toujours exposé sous les mêmes
+  noms `FRAGMENTS`/`BASE_SCORE` — `generate_signs.py` n'a rien eu à
+  changer.
+- **JS** (`index.html`) : `ASCENDANT_FLAVOR`/`DECAN_COLOR_TRAIT`
+  démarrent comme des objets vides, peuplés par un `fetch("data/fragments.json")`
+  avant le tout premier `render()` en fin de script. Les `render()`
+  déclenchés ensuite par une interaction (ajout de profil, clic sur une
+  puce) n'ont plus besoin d'attendre : les deux objets restent en mémoire
+  pour le reste de la session.
+
+**Piège de test local, à connaître** : `fetch()` d'un fichier local est
+bloqué par le navigateur en `file://` (restriction CORS), alors que tout
+le test en local de ce projet se fait via `file:///.../index.html`
+(voir plus haut, limite du proxy réseau de l'environnement de session).
+Depuis ce changement, tester la page nécessite un petit serveur HTTP
+local : `python3 -m http.server` à la racine du dépôt, puis Playwright
+sur `http://localhost:PORT/index.html` — jamais `file://` pour une page
+qui fait un `fetch()`. En production (GitHub Pages), aucun problème :
+c'est un vrai serveur HTTP.
+
 ## Image du jour (Pexels)
 
 Port simplifié des scripts Scénario (`fetch_topic_image.py` /
