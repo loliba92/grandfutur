@@ -166,8 +166,29 @@
   .family-card-signs{ font-size:0.8rem; color: var(--paper-dim); margin-bottom:4px; }
   .family-card-row{ display:flex; align-items:flex-start; gap:12px; margin:14px 0; }
   .family-card-flavor{ font-size:0.85rem; color: var(--accent, var(--gold)); margin:0; padding-left:10px; border-left:2px solid var(--accent, var(--gold)); }
-  .family-card-categories{ grid-template-columns: 1fr; margin-bottom:16px; }
-  .family-card-actions{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; padding-top:4px; border-top:1px solid var(--hairline); padding-top:14px; }
+  .family-card-categories{ grid-template-columns: 1fr; }
+
+  /* Mini-graphique en barres : les 4 domaines toujours visibles, en un
+     coup d'œil, sans avoir besoin de déplier quoi que ce soit. */
+  .family-chart{ display:flex; flex-direction:column; gap:9px; margin:16px 0; }
+  .family-chart-row{ display:grid; grid-template-columns: 96px 1fr 34px; align-items:center; gap:10px; }
+  .family-chart-label{ font-family:"JetBrains Mono",monospace; font-size:0.66rem; letter-spacing:0.03em; text-transform:uppercase; color: var(--paper-dim); }
+  .family-chart-bar-track{ background: var(--surface); border-radius:4px; height:7px; overflow:hidden; }
+  .family-chart-bar-fill{ height:100%; background: var(--accent, var(--gold)); border-radius:4px; }
+  .family-chart-score{ font-family:"JetBrains Mono",monospace; font-size:0.7rem; color: var(--paper-dim); text-align:right; }
+
+  /* Accordéon "détail par domaine" : même recette que celui des 12 signes. */
+  .family-detail-toggle{
+    display:flex; align-items:center; gap:6px; background:none; border:none; padding:0;
+    font-family:"Inter",sans-serif; font-size:0.82rem; color: var(--gold); cursor:pointer;
+  }
+  .family-detail-chevron{ font-size:0.75rem; transition: transform 0.25s ease; }
+  .family-detail-toggle.is-open .family-detail-chevron{ transform: rotate(180deg); }
+  .family-detail-body{ display:grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; }
+  .family-detail-inner{ overflow:hidden; }
+  .family-detail-body.is-open{ grid-template-rows: 1fr; margin-top:16px; }
+
+  .family-card-actions{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; border-top:1px solid var(--hairline); padding-top:14px; margin-top:16px; }
   .family-copy-btn{
     font-family:"JetBrains Mono",monospace; font-size:0.76rem; background: var(--surface); color: var(--ink);
     border:1px solid var(--hairline); border-radius:6px; padding:8px 14px; cursor:pointer;
@@ -703,7 +724,7 @@
           <div><div class="sign-name">Sagittaire</div><div class="sign-dates">22 novembre – 21 décembre</div></div>
           <div class="energy-gauge" style="--pct:85; margin-left:auto;"><div class="energy-gauge-inner">85%</div></div>
         </div>
-        <p class="sign-vibe">L'envie d'imprévu est la plus forte de tout le zodiaque aujourd'hui. Suis-la, mais vérifie quand même que ce que tu dis oui aujourd'hui ne déborde pas sur un engagement que tu as déjà pris ailleurs.</p>
+        <p class="sign-vibe">L'envie d'imprévu est la plus forte de tout le zodiaque aujourd'hui. Suis-la — vérifie juste que ça ne bouscule pas un engagement déjà pris ailleurs.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
@@ -1130,6 +1151,17 @@
       if (!sunData) return;
 
       var ascFlavor = ASCENDANT_FLAVOR[ELEMENT_OF[asc]];
+      // Résumé toujours visible : seulement la 1re phrase, le détail complet
+      // par domaine est dans l'accordéon repliable juste en dessous.
+      var vibePreview = sunData.vibe.split(/(?<=[.!?])\s/)[0];
+
+      var chartHtml = sunData.categories.map(function(c){
+        return '<div class="family-chart-row">' +
+          '<span class="family-chart-label">' + c.label + '</span>' +
+          '<div class="family-chart-bar-track"><div class="family-chart-bar-fill" style="width:' + c.score + ';"></div></div>' +
+          '<span class="family-chart-score">' + c.score + '</span>' +
+        '</div>';
+      }).join('');
 
       var catsHtml = sunData.categories.map(function(c){
         return '<div class="sign-cat">' +
@@ -1150,15 +1182,30 @@
         '<p class="family-card-flavor">' + ascFlavor + '</p>' +
         '<div class="family-card-row">' +
           '<div class="energy-gauge" style="--pct:' + sunData.energy + '; --accent: var(--' + sunData.element + ');"><div class="energy-gauge-inner">' + sunData.energy + '%</div></div>' +
-          '<p style="margin:0; font-size:0.9rem;">' + sunData.vibe + '</p>' +
+          '<p style="margin:0; font-size:0.9rem;">' + vibePreview + '</p>' +
         '</div>' +
-        '<div class="sign-categories family-card-categories">' + catsHtml + '</div>' +
+        '<div class="family-chart">' + chartHtml + '</div>' +
+        '<button type="button" class="family-detail-toggle">Voir le détail par domaine <span class="family-detail-chevron">▾</span></button>' +
+        '<div class="family-detail-body"><div class="family-detail-inner">' +
+          '<div class="sign-categories family-card-categories">' + catsHtml + '</div>' +
+        '</div></div>' +
         '<div class="family-card-actions">' +
           '<button type="button" class="family-copy-btn" data-profile-id="' + p.id + '">Copier cet horoscope</button>' +
           '<a class="family-card-link" href="#signe-' + sun + '" data-target="' + sun + '">Voir aussi la fiche ' + SIGN_NAMES[sun] + ' →</a>' +
         '</div>';
 
       gridEl.appendChild(card);
+    });
+
+    // Accordéon "Voir le détail par domaine" : même principe que celui des
+    // 12 signes (grid-template-rows 0fr -> 1fr), indépendant par carte.
+    gridEl.querySelectorAll(".family-detail-toggle").forEach(function(toggle){
+      toggle.addEventListener("click", function(){
+        var body = toggle.nextElementSibling;
+        var isOpen = body.classList.toggle("is-open");
+        toggle.classList.toggle("is-open", isOpen);
+        toggle.firstChild.textContent = isOpen ? "Masquer le détail par domaine " : "Voir le détail par domaine ";
+      });
     });
 
     // Bouton "Copier" : assemble un texte prêt à partager (ex. par message)
