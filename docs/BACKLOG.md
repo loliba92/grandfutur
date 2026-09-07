@@ -7,12 +7,17 @@ P2 = important mais pas bloquant, P3 = idée future à explorer.
 ## P1 — Essentiel
 
 - **Automatisation quotidienne réelle** : une routine planifiée (type
-  Claude Code Remote) qui génère le vrai thème du jour, les 12 textes et
-  les 4 scores par domaine (Amour, Argent & travail, Santé, Humeur) de
-  chaque signe, récupère une photo Pexels adaptée au thème, écrase
-  `index.html` et fige l'archive — sur le modèle exact de la routine
-  Scénario (`docs/routine-prompt.md`). Tant que ce point n'est pas fait,
-  le site reste une démo figée sur l'édition du 7 septembre.
+  Claude Code Remote) qui, chaque matin, appelle le moteur de contenu
+  (`scripts/content/`, voir `ARCHITECTURE.md` § Moteur de contenu),
+  récupère une photo Pexels adaptée au thème du jour, écrase `index.html`
+  et fige l'archive — sur le modèle de la routine Scénario
+  (`docs/routine-prompt.md`). Le moteur qui calcule le contenu existe déjà
+  (7 septembre) ; ce qui manque encore, c'est le déclenchement automatique
+  quotidien (la routine elle-même) et la génération programmatique du
+  paragraphe d'intro + des 12 phrases "vibe" (encore écrites à la main à
+  chaque édition, voir la limite notée dans `ARCHITECTURE.md`). Tant que
+  ce point n'est pas fait, le site reste une démo figée sur l'édition du
+  7 septembre.
 - **FormSubmit** : envoyer un premier message de test depuis
   `contact.html` et cliquer sur le lien de confirmation reçu à
   `grandfuturcontact@gmail.com` pour activer le formulaire.
@@ -61,6 +66,19 @@ P2 = important mais pas bloquant, P3 = idée future à explorer.
   figé sur une seule date, il n'y a rien à tracer dans le temps. À
   construire après, pas avant.
 
+- **Décan** (chaque signe divisé en 3 tranches de 10°, ~10 jours) comme
+  troisième axe de personnalisation, en plus du signe solaire et de
+  l'ascendant — demande utilisateur du 7 septembre. Contrairement à
+  l'ascendant, le décan ne dépend que de la date de naissance (pas de
+  l'heure) et ne varie pas avec le jour : pas besoin de calcul en temps
+  réel, une table de dates statique (36 entrées au lieu des 12 de
+  `SUN_SIGN_RANGES`) suffit. Prévoir une bibliothèque de phrases par décan
+  (comme `ASCENDANT_FLAVOR`) et éventuellement une nuance de score
+  supplémentaire, superposée à celle de l'ascendant.
+- **Style du jour et Conseil mécanisés** : ces deux blocs sont encore
+  écrits/ajustés à la main à chaque édition (voir `ARCHITECTURE.md` §
+  Moteur de contenu, limite assumée) — les faire aussi piocher dans une
+  bibliothèque par situation du jour, comme les 4 domaines notés.
 - **Ascendant avec lieu de naissance précis** : la v1 suppose une
   naissance en France métropolitaine (Paris) pour tout le monde — ajouter
   un champ ville/pays au profil si le besoin de précision se confirme

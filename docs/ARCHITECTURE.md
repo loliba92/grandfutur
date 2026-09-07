@@ -151,6 +151,68 @@ solaire (rédiger 144 combinaisons signe × ascendant chaque jour à la main
 n'est pas réaliste tant que l'automatisation quotidienne — voir Backlog
 P1 — n'existe pas).
 
+### Moteur de contenu (`scripts/content/`) — jour réel + bibliothèque de phrases
+
+Problème plus profond, remonté par l'utilisateur le 7 septembre en
+réaction au point précédent : réécrire les 12 textes à la main chaque
+jour (ou, pire, générer 144 combinaisons uniques par IA chaque matin —
+chiffré, cf. discussion, quelques dizaines de centimes à ~1 $/jour selon
+le modèle, donc pas bloquant côté coût mais un mauvais choix
+d'architecture) ne scale pas et ne garantit rien de cohérent. Le
+paragraphe d'intro du 7 septembre inventait même une configuration
+("Mars en Lion") qui ne correspondait à aucune réalité astronomique.
+
+Solution retenue : séparer un **code du jour** (calculé, réel) d'une
+**bibliothèque de phrases** (écrite une fois, réutilisée) reliés par une
+**sélection déterministe** — le modèle des horoscopes syndiqués, pas une
+génération IA à la volée.
+
+Dépendance : `pip install ephem` (bibliothèque pure Python, aucune donnée
+externe à télécharger — à installer dans l'environnement qui exécutera la
+future routine quotidienne, P1).
+
+1. **`day_code.py`** — calcule la position réelle de la Lune, Mercure,
+   Vénus et Mars (signe + rétrograde) via la bibliothèque `ephem`
+   (auto-suffisante, aucune donnée externe à télécharger), dans le même
+   esprit que le calcul de l'ascendant côté client : une vraie formule,
+   pas une configuration inventée. En déduit, par un score pondéré par
+   planète (Lune ×2, Mars ×1.5, Mercure/Vénus ×1), quel élément est
+   `favorise`/`neutre`/`freine` aujourd'hui.
+2. **`fragments.py`** — pour chacun des 4 domaines notés (Amour,
+   Argent & travail, Santé, Humeur) × 3 situations (favorise/neutre/
+   freine), 6 phrases écrites à la main, plus un score de base par
+   situation (82/62/46). Écrire une variante de plus dans un panier
+   existant n'impacte rien d'autre — c'est le seul travail d'écriture
+   récurrent que ce système ne supprime pas, mais il devient ponctuel
+   (étoffer la bibliothèque de temps en temps) au lieu de quotidien.
+3. **`generate_signs.py`** — pour chaque signe, situation = état de son
+   élément dans le code du jour ; choisit une phrase par domaine par un
+   hash stable de `date + signe + domaine` (déterministe : la même date
+   redonne toujours le même résultat, condition nécessaire pour que
+   « Copier l'horoscope » et l'archive figée restent identiques dans le
+   temps) ; score = score de base de la situation + petite variation
+   elle aussi déterministe (±6).
+4. **`apply_to_index.py`** — patch `index.html` : `data-energy`, jauge
+   d'énergie et les 4 blocs `.sign-cat` (score + texte) des 12 signes.
+
+Exemple concret (7 septembre, calculé) : Lune et Mars en Cancer → élément
+Eau favorisé, Feu freiné, Terre/Air neutres — l'inverse de la
+configuration inventée la veille. Le trio de tête est passé de
+Sagittaire/Lion/Bélier à Scorpion/Poissons/Cancer.
+
+**Ce qui n'est pas encore mécanisé** (limite assumée de ce premier
+passage) : le paragraphe d'intro général et les 12 phrases "vibe" en tête
+de chaque fiche signe sont encore réécrits à la main pour rester
+cohérents avec le code du jour — de même pour "Style du jour" et
+"Conseil", qui peuvent ponctuellement sonner un peu décalés par rapport à
+la situation du jour (ex. un conseil pensé pour un jour calme affiché un
+jour où le signe est en fait favorisé). Les mécaniser à leur tour (leur
+propre bibliothèque par situation) est noté dans `BACKLOG.md`.
+
+Cette architecture compose proprement avec le nudge d'ascendant
+ci-dessus : le code du jour fixe la base par signe solaire, l'ascendant
+la nuance ensuite — deux axes indépendants, aucun conflit.
+
 ## Image du jour (Pexels)
 
 Port simplifié des scripts Scénario (`fetch_topic_image.py` /
