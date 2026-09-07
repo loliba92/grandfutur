@@ -125,6 +125,32 @@ Vérifié : la vitesse de déplacement de l'ascendant dans le zodiaque n'est
 la portion du ciel, un vrai phénomène d'ascension oblique aux latitudes
 non équatoriales) — comportement attendu de la formule, pas un bug.
 
+### L'ascendant doit se voir, pas juste se calculer
+
+Défaut identifié par l'utilisateur (7/09) : le calcul d'ascendant était
+correct, mais **invisible dans le résultat**. Deux personnes du même signe
+solaire lisaient exactement le même horoscope — mêmes scores des 4
+domaines, même texte — l'ascendant ne servait qu'à afficher un libellé et
+une phrase générique partagée par les 3 signes du même élément.
+
+Correctif :
+- `ASCENDANT_FLAVOR` : une phrase par signe ascendant (12 variantes) au
+  lieu d'une par élément (4 variantes).
+- `ASCENDANT_NUDGE` + `applyAscendantNudge()` : l'élément de l'ascendant
+  déplace de quelques points les 4 scores du signe solaire (ex. Feu :
+  +4 Argent & travail / -3 Santé ; Eau : +4 Amour / -2 Argent & travail),
+  bornés à [0, 100]. L'énergie globale de la carte famille est recalculée
+  comme la moyenne de ces scores ajustés — elle n'est donc plus identique
+  à celle affichée sur la carte générique du signe.
+- Les mêmes valeurs ajustées alimentent le bouton « Copier »/« Partager »,
+  pour que le texte exporté corresponde à ce qui est affiché.
+
+Limite assumée : seuls les *chiffres* et une phrase varient avec
+l'ascendant ; les paragraphes détaillés par domaine restent ceux du signe
+solaire (rédiger 144 combinaisons signe × ascendant chaque jour à la main
+n'est pas réaliste tant que l'automatisation quotidienne — voir Backlog
+P1 — n'existe pas).
+
 ## Image du jour (Pexels)
 
 Port simplifié des scripts Scénario (`fetch_topic_image.py` /

@@ -1005,12 +1005,45 @@
   // d'ascendant (0-360°) en signe.
   var ZODIAC_ORDER = ["belier","taureau","gemeaux","cancer","lion","vierge","balance","scorpion","sagittaire","capricorne","verseau","poissons"];
 
+  // Une phrase par signe ascendant (et non plus par élément) : 12 variantes
+  // au lieu de 4, pour qu'un Gémeaux ascendant Bélier et un Gémeaux
+  // ascendant Poissons ne lisent plus jamais exactement la même chose.
   var ASCENDANT_FLAVOR = {
-    feu:   "Ton ascendant, en Feu, ajoute un supplément d'audace à cette journée.",
-    terre: "Ton ascendant, en Terre, te pousse à rester concret aujourd'hui, même sur un sujet qui t'emballe.",
-    air:   "Ton ascendant, en Air, te donne un besoin de parler, d'échanger, de mettre des mots sur les choses.",
-    eau:   "Ton ascendant, en Eau, amplifie ta sensibilité aujourd'hui — écoute ce que ça te dit."
+    belier: "Ton ascendant Bélier te donne l'impatience d'agir avant d'avoir toutes les réponses.",
+    taureau: "Ton ascendant Taureau te retient d'improviser — mieux vaut avancer sur du solide aujourd'hui.",
+    gemeaux: "Ton ascendant Gémeaux multiplie les sujets de conversation, quitte à en laisser filer certains.",
+    cancer: "Ton ascendant Cancer te rend plus attentif·ve à ce que ressentent les gens autour de toi.",
+    lion: "Ton ascendant Lion te donne envie qu'on remarque ce que tu fais aujourd'hui.",
+    vierge: "Ton ascendant Vierge repère le détail qui cloche avant même que tu aies fini de sourire.",
+    balance: "Ton ascendant Balance pèse le pour et le contre un peu plus longtemps que d'habitude.",
+    scorpion: "Ton ascendant Scorpion te pousse à creuser sous la surface d'un sujet plutôt qu'à l'effleurer.",
+    sagittaire: "Ton ascendant Sagittaire te donne envie de voir plus large que le programme du jour.",
+    capricorne: "Ton ascendant Capricorne te rappelle où tu veux en être dans six mois, pas seulement ce soir.",
+    verseau: "Ton ascendant Verseau te fait préférer ta propre méthode à celle qu'on t'impose.",
+    poissons: "Ton ascendant Poissons brouille un peu la frontière entre ce que tu ressens et ce que tu observes."
   };
+
+  // L'ascendant ne fait pas que qualifier la journée en mots : il déplace
+  // aussi un peu les scores des 4 domaines, par petites touches liées à son
+  // élément (ex. un ascendant Feu pousse à l'action mais fatigue plus vite).
+  // Sans ça, deux profils du même signe solaire affichaient des scores
+  // rigoureusement identiques, quelle que soit l'heure de naissance.
+  var ASCENDANT_NUDGE = {
+    feu:   { "Argent & travail": 4, "Santé": -3 },
+    terre: { "Santé": 4, "Amour": -2 },
+    air:   { "Humeur": 4, "Argent & travail": -2 },
+    eau:   { "Amour": 4, "Argent & travail": -2 }
+  };
+
+  function applyAscendantNudge(categories, ascElement){
+    var nudge = ASCENDANT_NUDGE[ascElement] || {};
+    return categories.map(function(c){
+      var base = parseInt(c.score, 10);
+      var delta = nudge[c.label] || 0;
+      var adjusted = Math.max(0, Math.min(100, base + delta));
+      return { label: c.label, text: c.text, score: adjusted + "%" };
+    });
+  }
 
   var ELEMENT_OF = {
     belier:"feu", lion:"feu", sagittaire:"feu",
@@ -1238,21 +1271,27 @@
       var sunData = readCardData(sun);
       if (!sunData) return;
 
-      var ascFlavor = ASCENDANT_FLAVOR[ELEMENT_OF[asc]];
+      var ascFlavor = ASCENDANT_FLAVOR[asc];
+
+      // Les 4 scores sont ceux du signe solaire, nuancés par l'élément de
+      // l'ascendant — c'est ce qui fait qu'une personne née à 6h et une
+      // autre née à 20h le même jour n'affichent plus les mêmes chiffres.
+      var adjCats = applyAscendantNudge(sunData.categories, ELEMENT_OF[asc]);
+      var energy = Math.round(adjCats.reduce(function(sum, c){ return sum + parseInt(c.score, 10); }, 0) / adjCats.length);
 
       // Jauge ronde de l'énergie globale — placée dans l'en-tête, à droite
       // du prénom, même disposition que la fiche de signe (glyphe + nom,
       // jauge poussée à droite). Couleur par seuil (rouge <50, orange
       // 50-80, vert >80), pas par élément.
-      var energyRingHtml = '<div class="energy-ring" style="--pct:' + sunData.energy + '; --ring-color:' + scoreColor(sunData.energy) + '; margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">' + sunData.energy + '%</span><span class="energy-ring-label">Énergie</span></div></div>';
+      var energyRingHtml = '<div class="energy-ring" style="--pct:' + energy + '; --ring-color:' + scoreColor(energy) + '; margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">' + energy + '%</span><span class="energy-ring-label">Énergie</span></div></div>';
 
       // Fines barres pour les 4 domaines, toujours visibles sous le résumé.
-      var gaugesHtml = sunData.categories.map(function(c){
+      var gaugesHtml = adjCats.map(function(c){
           var pct = c.score.replace('%','');
           return '<div class="stat" style="--accent:' + scoreColor(pct) + ';"><span class="stat-value">' + c.score + '</span><span class="stat-bar"><span class="stat-bar-fill" style="width:' + pct + '%;"></span></span><span class="stat-label">' + c.label + '</span></div>';
         }).join('');
 
-      var catsHtml = sunData.categories.map(function(c){
+      var catsHtml = adjCats.map(function(c){
         var pct = c.score.replace('%','');
         return '<div class="sign-cat">' +
           '<span class="sign-cat-label">' + c.label + '</span>' +
@@ -1319,14 +1358,16 @@
       var sun = sunSignFromDate(p.date);
       var asc = computeAscendantSign(p.date, p.time);
       var sunData = readCardData(sun);
+      var adjCats = applyAscendantNudge(sunData.categories, ELEMENT_OF[asc]);
+      var energy = Math.round(adjCats.reduce(function(sum, c){ return sum + parseInt(c.score, 10); }, 0) / adjCats.length);
       var lines = [];
       lines.push("Grand Futur — " + p.name + " (" + SIGN_NAMES[sun] + ", ascendant " + SIGN_NAMES[asc] + ")");
-      lines.push("Énergie du jour : " + sunData.energy + "%");
+      lines.push("Énergie du jour : " + energy + "%");
       lines.push("");
       lines.push(sunData.vibe);
-      lines.push(ASCENDANT_FLAVOR[ELEMENT_OF[asc]]);
+      lines.push(ASCENDANT_FLAVOR[asc]);
       lines.push("");
-      sunData.categories.forEach(function(c){
+      adjCats.forEach(function(c){
         lines.push(c.label + " (" + c.score + ") : " + c.text);
       });
       if (sunData.style){
