@@ -195,12 +195,13 @@
   .family-detail-body.is-open{ grid-template-rows: 1fr; margin-top:16px; }
 
   .family-card-actions{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; border-top:1px solid var(--hairline); padding-top:14px; margin-top:16px; }
-  .family-copy-btn{
+  .family-copy-btn, .family-share-btn, .family-edit-btn{
     font-family:"JetBrains Mono",monospace; font-size:0.76rem; background: var(--surface); color: var(--ink);
     border:1px solid var(--hairline); border-radius:6px; padding:8px 14px; cursor:pointer;
   }
-  .family-copy-btn:hover{ border-color: var(--gold); color: var(--gold); }
+  .family-copy-btn:hover, .family-share-btn:hover, .family-edit-btn:hover{ border-color: var(--gold); color: var(--gold); }
   .family-copy-btn:disabled{ opacity:0.7; cursor:default; }
+  .family-edit-btn{ margin-left:auto; background:none; border-color:transparent; color: var(--paper-dim); }
   .family-card-link{ font-size:0.8rem; color: var(--gold); text-decoration:none; }
   .family-empty{ color: var(--paper-dim); font-size:0.9rem; }
 
@@ -1162,12 +1163,14 @@
 
   var profiles = loadProfiles();
   var activeId = profiles.length ? profiles[0].id : null;
+  var editingId = null; // id du profil en cours de modification, null = ajout
 
   var chipsEl = document.getElementById("profile-chips");
   var gridEl = document.getElementById("family-grid");
   var formEl = document.getElementById("profile-form");
   var addBtn = document.getElementById("add-profile-btn");
   var cancelBtn = document.getElementById("profile-form-cancel");
+  var submitBtn = formEl.querySelector("button[type=submit]");
 
   function readCardData(sign){
     var card = document.querySelector('.sign-card[data-sign="' + sign + '"]');
@@ -1237,11 +1240,14 @@
 
       var ascFlavor = ASCENDANT_FLAVOR[ELEMENT_OF[asc]];
 
-      // Rangée de stats compactes — jauge ronde pour l'énergie globale,
-      // fines barres pour les 4 domaines, toujours visible. Couleur par
-      // seuil (rouge <50, orange 50-80, vert >80), pas par élément.
-      var gaugesHtml = '<div class="energy-ring" style="--pct:' + sunData.energy + '; --ring-color:' + scoreColor(sunData.energy) + ';"><div class="energy-ring-inner"><span class="energy-ring-value">' + sunData.energy + '%</span><span class="energy-ring-label">Énergie</span></div></div>' +
-        sunData.categories.map(function(c){
+      // Jauge ronde de l'énergie globale — placée dans l'en-tête, à droite
+      // du prénom, même disposition que la fiche de signe (glyphe + nom,
+      // jauge poussée à droite). Couleur par seuil (rouge <50, orange
+      // 50-80, vert >80), pas par élément.
+      var energyRingHtml = '<div class="energy-ring" style="--pct:' + sunData.energy + '; --ring-color:' + scoreColor(sunData.energy) + '; margin-left:auto;"><div class="energy-ring-inner"><span class="energy-ring-value">' + sunData.energy + '%</span><span class="energy-ring-label">Énergie</span></div></div>';
+
+      // Fines barres pour les 4 domaines, toujours visibles sous le résumé.
+      var gaugesHtml = sunData.categories.map(function(c){
           var pct = c.score.replace('%','');
           return '<div class="stat" style="--accent:' + scoreColor(pct) + ';"><span class="stat-value">' + c.score + '</span><span class="stat-bar"><span class="stat-bar-fill" style="width:' + pct + '%;"></span></span><span class="stat-label">' + c.label + '</span></div>';
         }).join('');
@@ -1262,13 +1268,20 @@
         (sunData.conseil ? '<div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">' + sunData.conseil + '</p></div>' : '') +
       '</div>';
 
+      var shareBtnHtml = (typeof navigator.share === "function")
+        ? '<button type="button" class="family-share-btn" data-profile-id="' + p.id + '">Partager</button>'
+        : '';
+
       var card = document.createElement("div");
       card.className = "family-card";
       card.dataset.profileId = p.id;
       card.style.setProperty("--accent", "var(--" + sunData.element + ")");
       card.innerHTML =
-        '<div class="family-card-head"><span class="family-card-icon">' + zodiacIconSvg(sun, 20) + '</span><span class="family-card-name">' + p.name + '</span></div>' +
-        '<div class="family-card-signs">' + SIGN_NAMES[sun] + ' · Ascendant ' + SIGN_NAMES[asc] + '</div>' +
+        '<div class="family-card-head">' +
+          '<span class="family-card-icon">' + zodiacIconSvg(sun, 20) + '</span>' +
+          '<div><div class="family-card-name">' + p.name + '</div><div class="family-card-signs">' + SIGN_NAMES[sun] + ' · Ascendant ' + SIGN_NAMES[asc] + '</div></div>' +
+          energyRingHtml +
+        '</div>' +
         '<p class="family-card-flavor">' + ascFlavor + '</p>' +
         '<p class="family-card-vibe">' + sunData.vibe + '</p>' +
         '<div class="family-gauges">' + gaugesHtml + '</div>' +
@@ -1279,6 +1292,8 @@
         '</div></div>' +
         '<div class="family-card-actions">' +
           '<button type="button" class="family-copy-btn" data-profile-id="' + p.id + '">Copier cet horoscope</button>' +
+          shareBtnHtml +
+          '<button type="button" class="family-edit-btn" data-profile-id="' + p.id + '">Modifier</button>' +
         '</div>';
 
       gridEl.appendChild(card);
@@ -1298,29 +1313,39 @@
     // Bouton "Copier" : assemble un texte prêt à partager (ex. par message)
     // reprenant la lecture complète du profil — signe, ascendant, énergie,
     // et les 4 domaines, tel qu'affiché dans la carte.
+    // Texte partagé par les boutons "Copier" et "Partager" — une seule
+    // fonction pour ne jamais les laisser diverger.
+    function buildProfileText(p){
+      var sun = sunSignFromDate(p.date);
+      var asc = computeAscendantSign(p.date, p.time);
+      var sunData = readCardData(sun);
+      var lines = [];
+      lines.push("Grand Futur — " + p.name + " (" + SIGN_NAMES[sun] + ", ascendant " + SIGN_NAMES[asc] + ")");
+      lines.push("Énergie du jour : " + sunData.energy + "%");
+      lines.push("");
+      lines.push(sunData.vibe);
+      lines.push(ASCENDANT_FLAVOR[ELEMENT_OF[asc]]);
+      lines.push("");
+      sunData.categories.forEach(function(c){
+        lines.push(c.label + " (" + c.score + ") : " + c.text);
+      });
+      if (sunData.style){
+        lines.push("");
+        lines.push("Style du jour : " + sunData.style);
+      }
+      if (sunData.conseil){
+        lines.push("");
+        lines.push("Conseil : " + sunData.conseil);
+      }
+      return lines.join("\n");
+    }
+
     gridEl.querySelectorAll(".family-copy-btn").forEach(function(btn){
       btn.addEventListener("click", function(){
         var id = btn.getAttribute("data-profile-id");
         var p = profiles.find(function(x){ return x.id === id; });
         if (!p) return;
-        var sun = sunSignFromDate(p.date);
-        var asc = computeAscendantSign(p.date, p.time);
-        var sunData = readCardData(sun);
-        var lines = [];
-        lines.push("Grand Futur — " + p.name + " (" + SIGN_NAMES[sun] + ", ascendant " + SIGN_NAMES[asc] + ")");
-        lines.push("Énergie du jour : " + sunData.energy + "%");
-        lines.push("");
-        lines.push(sunData.vibe);
-        lines.push(ASCENDANT_FLAVOR[ELEMENT_OF[asc]]);
-        lines.push("");
-        sunData.categories.forEach(function(c){
-          lines.push(c.label + " (" + c.score + ") : " + c.text);
-        });
-        if (sunData.conseil){
-          lines.push("");
-          lines.push("Conseil : " + sunData.conseil);
-        }
-        var text = lines.join("\n");
+        var text = buildProfileText(p);
 
         function showCopied(){
           var original = btn.textContent;
@@ -1344,6 +1369,37 @@
           try { document.execCommand("copy"); showCopied(); } catch (e) {}
           document.body.removeChild(ta);
         }
+      });
+    });
+
+    // Bouton "Partager" (mobile) : ouvre le menu natif du téléphone plutôt
+    // qu'un copier-coller manuel — bouton absent du DOM si l'API n'existe pas.
+    gridEl.querySelectorAll(".family-share-btn").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        var id = btn.getAttribute("data-profile-id");
+        var p = profiles.find(function(x){ return x.id === id; });
+        if (!p) return;
+        navigator.share({ title: "Grand Futur — " + p.name, text: buildProfileText(p) }).catch(function(){
+          // L'utilisateur a annulé le partage, ou l'appareil l'a refusé —
+          // rien à faire, ce n'est jamais une vraie erreur à signaler.
+        });
+      });
+    });
+
+    // Bouton "Modifier" : pré-remplit le formulaire avec les infos du
+    // profil et bascule la soumission en mode mise à jour plutôt qu'ajout.
+    gridEl.querySelectorAll(".family-edit-btn").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        var id = btn.getAttribute("data-profile-id");
+        var p = profiles.find(function(x){ return x.id === id; });
+        if (!p) return;
+        editingId = id;
+        document.getElementById("profile-name").value = p.name;
+        document.getElementById("profile-date").value = p.date;
+        document.getElementById("profile-time").value = p.time;
+        if (submitBtn) submitBtn.textContent = "Enregistrer les modifications";
+        formEl.classList.add("is-open");
+        formEl.scrollIntoView({ behavior: "smooth", block: "center" });
       });
     });
 
@@ -1383,8 +1439,15 @@
     selectSign(location.hash.slice("#signe-".length));
   }
 
-  addBtn.addEventListener("click", function(){ formEl.classList.add("is-open"); });
-  cancelBtn.addEventListener("click", function(){ formEl.classList.remove("is-open"); formEl.reset(); });
+  function closeForm(){
+    formEl.classList.remove("is-open");
+    formEl.reset();
+    editingId = null;
+    if (submitBtn) submitBtn.textContent = "Ajouter";
+  }
+
+  addBtn.addEventListener("click", function(){ editingId = null; formEl.classList.add("is-open"); });
+  cancelBtn.addEventListener("click", closeForm);
 
   formEl.addEventListener("submit", function(e){
     e.preventDefault();
@@ -1392,12 +1455,20 @@
     var date = document.getElementById("profile-date").value;
     var time = document.getElementById("profile-time").value;
     if (!name || !date || !time) return;
-    var p = { id: uid(), name: name, date: date, time: time };
-    profiles.push(p);
-    activeId = p.id;
+
+    if (editingId){
+      var existing = profiles.find(function(x){ return x.id === editingId; });
+      if (existing){
+        existing.name = name; existing.date = date; existing.time = time;
+        activeId = existing.id;
+      }
+    } else {
+      var p = { id: uid(), name: name, date: date, time: time };
+      profiles.push(p);
+      activeId = p.id;
+    }
     saveProfiles(profiles);
-    formEl.reset();
-    formEl.classList.remove("is-open");
+    closeForm();
     render();
   });
 
