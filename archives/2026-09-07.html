@@ -198,14 +198,36 @@
   .family-detail-inner{ overflow:hidden; }
   .family-detail-body.is-open{ grid-template-rows: 1fr; margin-top:16px; }
 
-  .family-card-actions{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; border-top:1px solid var(--hairline); padding-top:14px; margin-top:16px; }
-  .family-copy-btn, .family-share-btn, .family-edit-btn{
-    font-family:"JetBrains Mono",monospace; font-size:0.76rem; background: var(--surface); color: var(--ink);
-    border:1px solid var(--hairline); border-radius:6px; padding:8px 14px; cursor:pointer;
+  .family-card-actions{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; border-top:1px solid var(--hairline); padding-top:14px; margin-top:16px; }
+  .family-edit-btn{
+    font-family:"JetBrains Mono",monospace; font-size:0.76rem; background:none; color: var(--paper-dim);
+    border:1px solid transparent; border-radius:6px; padding:8px 14px; cursor:pointer; margin-left:auto;
   }
-  .family-copy-btn:hover, .family-share-btn:hover, .family-edit-btn:hover{ border-color: var(--gold); color: var(--gold); }
-  .family-copy-btn:disabled{ opacity:0.7; cursor:default; }
-  .family-edit-btn{ margin-left:auto; background:none; border-color:transparent; color: var(--paper-dim); }
+  .family-edit-btn:hover{ color: var(--gold); }
+
+  /* Bouton unique "Partager" : sur mobile (navigator.share dispo), ouvre
+     directement la feuille de partage native. Sinon (desktop), déroule
+     un petit menu d'icônes — jamais les deux widgets à la fois, retour
+     utilisateur du 7 septembre ("un bouton, un menu dynamique"). */
+  .family-share-wrap{ position:relative; }
+  .family-share-trigger{
+    display:flex; align-items:center; gap:8px; font-family:"JetBrains Mono",monospace; font-size:0.76rem;
+    background: var(--surface); color: var(--ink); border:1px solid var(--hairline); border-radius:999px;
+    padding:8px 16px; cursor:pointer;
+  }
+  .family-share-trigger:hover{ border-color: var(--gold); color: var(--gold); }
+  .family-share-trigger svg{ width:14px; height:14px; color: var(--gold); flex-shrink:0; }
+  .family-share-menu{
+    position:absolute; top:calc(100% + 8px); left:0; z-index:5; display:flex; gap:4px;
+    background: var(--surface-2); border:1px solid var(--hairline); border-radius:10px; padding:6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.4);
+  }
+  .family-share-icon{
+    width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    background:none; border:none; color: var(--paper-dim); cursor:pointer;
+  }
+  .family-share-icon:hover{ background: var(--surface); color: var(--gold); }
+  .family-share-icon svg{ width:16px; height:16px; }
   .family-card-link{ font-size:0.8rem; color: var(--gold); text-decoration:none; }
   .family-empty{ color: var(--paper-dim); font-size:0.9rem; }
 
@@ -1444,16 +1466,13 @@
             '<p class="sign-cat-text">' + personalizedText + '</p>' +
           '</div></div>';
       }).join('');
-      // Style du jour + Conseil restent visibles en permanence, hors de
-      // l'accordéon — seuls les 4 textes détaillés par domaine s'y replient.
+      // Style du jour + Conseil sont dans l'accordéon "Voir le détail",
+      // avec les 4 domaines (voir plus bas) — plus rien d'affiché en
+      // permanence sous le résumé (retour utilisateur du 7 septembre).
       var extrasHtml = '<div class="sign-extras">' +
         (sunData.style ? '<div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">' + sunData.style + '</p></div>' : '') +
         (sunData.conseil ? '<div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">' + sunData.conseil + '</p></div>' : '') +
       '</div>';
-
-      var shareBtnHtml = (typeof navigator.share === "function")
-        ? '<button type="button" class="family-share-btn" data-profile-id="' + p.id + '">Partager</button>'
-        : '';
 
       var card = document.createElement("div");
       card.className = "family-card";
@@ -1473,8 +1492,26 @@
           extrasHtml +
         '</div></div>' +
         '<div class="family-card-actions">' +
-          '<button type="button" class="family-copy-btn" data-profile-id="' + p.id + '">Copier cet horoscope</button>' +
-          shareBtnHtml +
+          '<div class="family-share-wrap">' +
+            '<button type="button" class="family-share-trigger" data-profile-id="' + p.id + '">' +
+              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8 15.8 6.4M8.2 13.2l7.6 4.4"/></svg>' +
+              'Partager cet horoscope' +
+            '</button>' +
+            '<div class="family-share-menu" hidden>' +
+              '<button type="button" class="family-share-icon" data-share-action="copy" data-profile-id="' + p.id + '" aria-label="Copier le texte" title="Copier le texte">' +
+                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>' +
+              '</button>' +
+              '<button type="button" class="family-share-icon" data-share-action="whatsapp" data-profile-id="' + p.id + '" aria-label="WhatsApp" title="WhatsApp">' +
+                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l-1.5 3.5L9 19a8 8 0 1 0-3-3z"/><path d="M9 10c0 3 2.5 5.5 5.5 5.5"/><path d="M9 10c0-.5.5-1.5 1-1.5s1 1.5 1.5 2 1.5.5 2 1 .5 1.5 0 2"/></svg>' +
+              '</button>' +
+              '<button type="button" class="family-share-icon" data-share-action="telegram" data-profile-id="' + p.id + '" aria-label="Telegram" title="Telegram">' +
+                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5 19 6l-3 13-5-4-3 3-.5-5Z"/><path d="m11 14 5-5"/></svg>' +
+              '</button>' +
+              '<button type="button" class="family-share-icon" data-share-action="x" data-profile-id="' + p.id + '" aria-label="X" title="X">' +
+                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg>' +
+              '</button>' +
+            '</div>' +
+          '</div>' +
           '<button type="button" class="family-edit-btn" data-profile-id="' + p.id + '">Modifier</button>' +
         '</div>';
 
@@ -1528,51 +1565,84 @@
       return lines.join("\n");
     }
 
-    gridEl.querySelectorAll(".family-copy-btn").forEach(function(btn){
-      btn.addEventListener("click", function(){
-        var id = btn.getAttribute("data-profile-id");
+    // Copie le texte dans le presse-papier, avec un retour visuel bref sur
+    // l'icône cliquée (coche) — réutilisé par l'icône "Copier" du menu.
+    function copyProfileText(text, iconBtn){
+      function showCopied(){
+        var original = iconBtn.innerHTML;
+        iconBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>';
+        setTimeout(function(){ iconBtn.innerHTML = original; }, 1500);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(showCopied).catch(function(){});
+      } else {
+        // Repli navigateurs anciens : zone de texte temporaire + execCommand.
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand("copy"); showCopied(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+    }
+
+    function closeAllShareMenus(){
+      gridEl.querySelectorAll(".family-share-menu").forEach(function(m){ m.hidden = true; });
+    }
+
+    // Bouton unique "Partager cet horoscope" : sur mobile (API dispo),
+    // ouvre directement la feuille de partage native du téléphone — pas
+    // besoin du menu custom, l'OS propose déjà tous les réseaux installés.
+    // Sinon (desktop), déroule le petit menu d'icônes juste en dessous.
+    gridEl.querySelectorAll(".family-share-trigger").forEach(function(trigger){
+      trigger.addEventListener("click", function(e){
+        e.stopPropagation();
+        var id = trigger.getAttribute("data-profile-id");
+        var p = profiles.find(function(x){ return x.id === id; });
+        if (!p) return;
+        if (typeof navigator.share === "function"){
+          navigator.share({ title: "Grand Futur — " + p.name, text: buildProfileText(p) }).catch(function(){
+            // Annulé par l'utilisateur ou refusé par l'appareil — jamais une vraie erreur.
+          });
+          return;
+        }
+        var menu = trigger.nextElementSibling;
+        var wasOpen = !menu.hidden;
+        closeAllShareMenus();
+        menu.hidden = wasOpen;
+      });
+    });
+
+    // Icônes du menu : Copier (presse-papier) ou intent de partage direct
+    // vers WhatsApp/Telegram/X avec le texte pré-rempli, sans passer par
+    // le clic-droit "copier-coller" manuel.
+    gridEl.querySelectorAll(".family-share-icon").forEach(function(icon){
+      icon.addEventListener("click", function(e){
+        e.stopPropagation();
+        var id = icon.getAttribute("data-profile-id");
         var p = profiles.find(function(x){ return x.id === id; });
         if (!p) return;
         var text = buildProfileText(p);
-
-        function showCopied(){
-          var original = btn.textContent;
-          btn.textContent = "Copié ✓";
-          btn.disabled = true;
-          setTimeout(function(){ btn.textContent = original; btn.disabled = false; }, 1800);
+        var action = icon.getAttribute("data-share-action");
+        if (action === "copy"){
+          copyProfileText(text, icon);
+          return;
         }
-        if (navigator.clipboard && navigator.clipboard.writeText){
-          navigator.clipboard.writeText(text).then(showCopied).catch(function(){
-            btn.textContent = "Échec de la copie";
-            setTimeout(function(){ btn.textContent = "Copier cet horoscope"; }, 1800);
-          });
-        } else {
-          // Repli navigateurs anciens : zone de texte temporaire + execCommand.
-          var ta = document.createElement("textarea");
-          ta.value = text;
-          ta.style.position = "fixed";
-          ta.style.opacity = "0";
-          document.body.appendChild(ta);
-          ta.select();
-          try { document.execCommand("copy"); showCopied(); } catch (e) {}
-          document.body.removeChild(ta);
-        }
+        var encoded = encodeURIComponent(text);
+        var url =
+          action === "whatsapp" ? "https://wa.me/?text=" + encoded :
+          action === "telegram" ? "https://t.me/share/url?url=" + encodeURIComponent("https://loliba92.github.io/grandfutur/") + "&text=" + encoded :
+          action === "x" ? "https://twitter.com/intent/tweet?text=" + encoded :
+          null;
+        if (url) window.open(url, "_blank", "noopener");
+        closeAllShareMenus();
       });
     });
 
-    // Bouton "Partager" (mobile) : ouvre le menu natif du téléphone plutôt
-    // qu'un copier-coller manuel — bouton absent du DOM si l'API n'existe pas.
-    gridEl.querySelectorAll(".family-share-btn").forEach(function(btn){
-      btn.addEventListener("click", function(){
-        var id = btn.getAttribute("data-profile-id");
-        var p = profiles.find(function(x){ return x.id === id; });
-        if (!p) return;
-        navigator.share({ title: "Grand Futur — " + p.name, text: buildProfileText(p) }).catch(function(){
-          // L'utilisateur a annulé le partage, ou l'appareil l'a refusé —
-          // rien à faire, ce n'est jamais une vraie erreur à signaler.
-        });
-      });
-    });
+    // Un clic n'importe où ailleurs referme un menu de partage resté ouvert.
+    document.addEventListener("click", closeAllShareMenus);
 
     // Bouton "Modifier" : pré-remplit le formulaire avec les infos du
     // profil et bascule la soumission en mode mise à jour plutôt qu'ajout.
