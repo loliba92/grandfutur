@@ -25,17 +25,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg: #f3ead9;
-    --ink: #2b2318;
-    --surface: #fbf6ea;
-    --surface-2: #f1e6cf;
-    --hairline: #ddcba3;
-    --paper-dim: #6e6250;
-    --gold: #b8863f;
-    --feu: #b5573c;
-    --terre: #4f8563;
-    --air: #4f708f;
-    --eau: #6f5f96;
+    --bg: #10151c;
+    --ink: #ece7da;
+    --ink-on-gold: #201a10;
+    --surface: #1a212b;
+    --surface-2: #212a35;
+    --hairline: #2c3644;
+    --paper-dim: #a9a89c;
+    --gold: #cf9d4c;
+    --feu: #bd6248;
+    --terre: #5e9c78;
+    --air: #6f8fae;
+    --eau: #8a7fae;
   }
 
   *,*::before,*::after{ box-sizing: border-box; }
@@ -51,7 +52,7 @@
   }
 
   a{ color: inherit; }
-  ::selection{ background: var(--gold); color: var(--ink); }
+  ::selection{ background: var(--gold); color: var(--ink-on-gold); }
   :focus-visible{ outline: 2px solid var(--gold); outline-offset: 3px; }
 
   .wrap{ max-width: 960px; margin: 0 auto; padding: 0 24px; }
@@ -131,7 +132,7 @@
     font-family:"JetBrains Mono",monospace; font-size:0.8rem; background:none; color: var(--gold);
     border:1px dashed var(--gold); border-radius:999px; padding:8px 16px; cursor:pointer;
   }
-  .add-profile-btn:hover{ background: rgba(184,134,63,0.12); }
+  .add-profile-btn:hover{ background: rgba(207,157,76,0.12); }
 
   .profile-form{ display:none; gap:12px; flex-wrap:wrap; align-items:end; margin-top:16px; padding-top:16px; border-top:1px solid var(--hairline); }
   .profile-form.is-open{ display:flex; }
@@ -141,7 +142,7 @@
     padding:8px 10px; font-family:"Inter",sans-serif; font-size:0.9rem;
   }
   .profile-form button[type=submit]{
-    background: var(--gold); color: var(--ink); border:none; border-radius:6px; padding:9px 18px;
+    background: var(--gold); color: var(--ink-on-gold); border:none; border-radius:6px; padding:9px 18px;
     font-weight:600; cursor:pointer; font-size:0.9rem;
   }
   .profile-form-cancel{ background:none; border:none; color: var(--paper-dim); cursor:pointer; text-decoration:underline; font-size:0.85rem; }
@@ -160,21 +161,30 @@
   .energy-gauge-inner{ width:44px; height:44px; border-radius:50%; background: var(--surface-2); display:grid; place-items:center; font-family:"JetBrains Mono",monospace; font-size:0.78rem; }
   .family-card .energy-gauge-inner{ background: var(--surface); }
 
-  /* ---------- Signs grid ---------- */
-  .signs-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap:16px; }
-  .sign-card{ background: var(--surface); border:1px solid var(--hairline); border-radius:12px; padding:20px; scroll-margin-top: 90px; transition: border-color 0.3s, background 0.3s; }
-  .sign-card.is-highlighted{ border-color: var(--gold); background: var(--surface-2); }
-  /* Accordéon en CSS pur (grid-template-rows 0fr -> 1fr), sans dépendance JS
-     pour l'animation — seul le basculement de la classe is-open est fait en JS. */
-  .sign-card-top{
-    display:flex; align-items:center; gap:14px; width:100%;
-    background:none; border:none; padding:0; margin:0; cursor:pointer; text-align:left; font:inherit; color:inherit;
+  /* ---------- Damier des 12 signes + panneau de détail ----------
+     Un clic sur une tuile affiche l'analyse du signe dans le panneau ci-dessous
+     (un seul signe visible à la fois, via l'attribut HTML `hidden` — pas de
+     dépendance à une animation CSS complexe). */
+  .sign-tiles{ display:grid; grid-template-columns: repeat(auto-fill, minmax(92px,1fr)); gap:10px; }
+  .sign-tile{
+    display:flex; flex-direction:column; align-items:center; gap:6px;
+    background: var(--surface); border:1px solid var(--hairline); border-radius:10px;
+    padding:14px 8px; cursor:pointer; font-family:"Inter",sans-serif; color: var(--ink);
+    transition: border-color 0.2s, background 0.2s;
   }
-  .sign-chevron{ color: var(--paper-dim); font-size:0.9rem; transition: transform 0.25s ease; flex-shrink:0; }
-  .sign-card.is-open .sign-chevron{ transform: rotate(180deg); color: var(--gold); }
-  .sign-card-body{ display:grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; }
-  .sign-card-body-inner{ overflow:hidden; }
-  .sign-card.is-open .sign-card-body{ grid-template-rows: 1fr; margin-top:14px; }
+  .sign-tile:hover{ border-color: var(--gold); }
+  .sign-tile.is-active{ border-color: var(--gold); background: var(--surface-2); }
+  .sign-tile-glyph{ font-size:1.6rem; }
+  .sign-tile[data-element="feu"] .sign-tile-glyph{ color: var(--feu); }
+  .sign-tile[data-element="terre"] .sign-tile-glyph{ color: var(--terre); }
+  .sign-tile[data-element="air"] .sign-tile-glyph{ color: var(--air); }
+  .sign-tile[data-element="eau"] .sign-tile-glyph{ color: var(--eau); }
+  .sign-tile-name{ font-size:0.78rem; font-weight:600; }
+
+  .sign-detail{ margin-top:22px; scroll-margin-top: 90px; }
+  .sign-detail-empty{ color: var(--paper-dim); font-size:0.9rem; }
+  .sign-card{ background: var(--surface); border:1px solid var(--hairline); border-radius:12px; padding:22px; }
+  .sign-card-top{ display:flex; align-items:center; gap:14px; margin-bottom:14px; }
   .sign-glyph{ font-size:1.8rem; width:44px; height:44px; border-radius:50%; display:grid; place-items:center; background: var(--surface-2); flex-shrink:0; }
   .sign-card[data-element="feu"] .sign-glyph{ color: var(--feu); }
   .sign-card[data-element="terre"] .sign-glyph{ color: var(--terre); }
@@ -184,11 +194,15 @@
   .sign-card[data-element="terre"] .energy-gauge{ --accent: var(--terre); }
   .sign-card[data-element="air"] .energy-gauge{ --accent: var(--air); }
   .sign-card[data-element="eau"] .energy-gauge{ --accent: var(--eau); }
-  .sign-name{ font-family:"Fraunces",serif; font-weight:600; font-size:1.15rem; }
+  .sign-name{ font-family:"Fraunces",serif; font-weight:600; font-size:1.3rem; }
   .sign-dates{ font-size:0.78rem; color: var(--paper-dim); }
-  .sign-vibe{ margin: 0 0 12px; font-size:0.95rem; }
-  .sign-meta{ display:flex; flex-direction:column; gap:6px; font-size:0.82rem; }
-  .sign-meta span.label{ font-family:"JetBrains Mono",monospace; font-size:0.68rem; letter-spacing:0.05em; text-transform:uppercase; color: var(--gold); margin-right:6px; }
+  .sign-vibe{ margin: 0 0 18px; font-size:1rem; }
+  .sign-categories{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:16px; }
+  .sign-cat{ background: var(--surface-2); border:1px solid var(--hairline); border-radius:8px; padding:14px 16px; }
+  .sign-cat-head{ display:flex; align-items:baseline; justify-content:space-between; gap:8px; margin-bottom:6px; }
+  .sign-cat-label{ font-family:"JetBrains Mono",monospace; font-size:0.7rem; letter-spacing:0.05em; text-transform:uppercase; color: var(--gold); }
+  .sign-cat-score{ font-family:"JetBrains Mono",monospace; font-size:0.78rem; color: var(--paper-dim); }
+  .sign-cat-text{ margin:0; font-size:0.88rem; }
 
   /* ---------- List box (top 3) ---------- */
   .list-box{ background: var(--surface); border:1px solid var(--gold); border-radius:10px; padding:20px 22px; }
@@ -237,8 +251,29 @@
 
 <main class="wrap">
 
+  <section class="hero">
+    <figure class="article-image">
+      <div class="article-image-photo-wrap">
+        <img class="article-image-photo" src="../assets/topic-images/2026-09-07-wide.jpg" alt="Ciel étoilé traversé par la Voie lactée, teintes violettes.">
+        <div class="article-image-scrim"></div>
+        <div class="article-image-masthead">
+          <img class="article-image-logo" src="../assets/logo.svg" alt="">
+          <span class="article-image-wordmark">Grand<b>Futur</b></span>
+        </div>
+        <div class="article-image-overlay wrap">
+          <p class="eyebrow">Édition du 7 septembre 2026</p>
+          <h1>Une journée pour avancer pas à pas, sans forcer le rythme</h1>
+          <p class="pubdate">Publié le 7 septembre 2026</p>
+        </div>
+      </div>
+    </figure>
+    <p class="image-credit">Photo : <a href="https://www.pexels.com/photo/spectacular-view-of-the-milky-way-galaxy-at-night-33630927/" target="_blank" rel="noopener">Stevan Cetojevic</a> / Pexels</p>
+    <p class="dek">La Lune traverse aujourd'hui le signe de la Vierge : concrètement, c'est une journée où les détails pèsent plus que les grandes déclarations — vérifier deux fois avant d'envoyer, reprendre un dossier en suspens plutôt qu'en ouvrir un nouveau.</p>
+    <p class="dek">Mars, toujours en Lion jusqu'à la fin du mois, continue de pousser les signes de feu (Bélier, Lion, Sagittaire) — d'où leur trio en tête du classement ci-dessous. Les signes d'eau (Cancer, Scorpion, Poissons) ont moins de puissance brute aujourd'hui, mais plus de justesse dans ce qu'ils perçoivent chez les autres.</p>
+  </section>
+
   <section id="famille">
-    <div class="section-head" style="margin-top:28px;">
+    <div class="section-head">
       <h2>Vos proches</h2>
       <span class="section-note">Enregistrés uniquement sur cet appareil</span>
     </div>
@@ -266,225 +301,375 @@
     </div>
   </section>
 
-  <section class="hero">
-    <figure class="article-image">
-      <div class="article-image-photo-wrap">
-        <img class="article-image-photo" src="../assets/topic-images/2026-09-07-wide.jpg" alt="Ciel étoilé traversé par la Voie lactée, teintes violettes.">
-        <div class="article-image-scrim"></div>
-        <div class="article-image-masthead">
-          <img class="article-image-logo" src="../assets/logo.svg" alt="">
-          <span class="article-image-wordmark">Grand<b>Futur</b></span>
-        </div>
-        <div class="article-image-overlay wrap">
-          <p class="eyebrow">Édition du 7 septembre 2026</p>
-          <h1>Une journée pour avancer pas à pas, sans forcer le rythme</h1>
-          <p class="pubdate">Publié le 7 septembre 2026</p>
-        </div>
-      </div>
-    </figure>
-    <p class="image-credit">Photo : <a href="https://www.pexels.com/photo/spectacular-view-of-the-milky-way-galaxy-at-night-33630927/" target="_blank" rel="noopener">Stevan Cetojevic</a> / Pexels</p>
-    <p class="dek">La Lune traverse aujourd'hui le signe de la Vierge : concrètement, c'est une journée où les détails pèsent plus que les grandes déclarations — vérifier deux fois avant d'envoyer, reprendre un dossier en suspens plutôt qu'en ouvrir un nouveau.</p>
-    <p class="dek">Mars, toujours en Lion jusqu'à la fin du mois, continue de pousser les signes de feu (Bélier, Lion, Sagittaire) — d'où leur trio en tête du classement ci-dessous. Les signes d'eau (Cancer, Scorpion, Poissons) ont moins de puissance brute aujourd'hui, mais plus de justesse dans ce qu'ils perçoivent chez les autres.</p>
-  </section>
-
   <section id="signes">
     <div class="section-head">
       <h2>Les 12 signes aujourd'hui</h2>
+      <span class="section-note">Cliquez sur un signe pour voir son analyse</span>
     </div>
-    <div class="signs-grid">
-
-      <article class="sign-card" data-sign="belier" data-element="feu" data-energy="78">
-        <button type="button" class="sign-card-top">
+    <div class="sign-tiles" id="sign-tiles">
+      <button type="button" class="sign-tile" data-sign="belier" data-element="feu">
+        <span class="sign-tile-glyph">♈</span>
+        <span class="sign-tile-name">Bélier</span>
+      </button>
+      <button type="button" class="sign-tile" data-sign="taureau" data-element="terre">
+        <span class="sign-tile-glyph">♉</span>
+        <span class="sign-tile-name">Taureau</span>
+      </button>
+      <button type="button" class="sign-tile" data-sign="gemeaux" data-element="air">
+        <span class="sign-tile-glyph">♊</span>
+        <span class="sign-tile-name">Gémeaux</span>
+      </button>
+      <button type="button" class="sign-tile" data-sign="cancer" data-element="eau">
+        <span class="sign-tile-glyph">♋</span>
+        <span class="sign-tile-name">Cancer</span>
+      </button>
+      <button type="button" class="sign-tile" data-sign="lion" data-element="feu">
+        <span class="sign-tile-glyph">♌</span>
+        <span class="sign-tile-name">Lion</span>
+      </button>
+      <button type="button" class="sign-tile" data-sign="vierge" data-element="terre">
+        <span class="sign-tile-glyph">♍</span>
+        <span class="sign-tile-name">Vierge</span>
+      </button>
+      <button type="button" class="sign-tile" data-sign="balance" data-element="air">
+        <span class="sign-tile-glyph">♎</span>
+        <span class="sign-tile-name">Balance</span>
+      </button>
+      <button type="button" class="sign-tile" data-sign="scorpion" data-element="eau">
+        <span class="sign-tile-glyph">♏</span>
+        <span class="sign-tile-name">Scorpion</span>
+      </button>
+      <button type="button" class="sign-tile" data-sign="sagittaire" data-element="feu">
+        <span class="sign-tile-glyph">♐</span>
+        <span class="sign-tile-name">Sagittaire</span>
+      </button>
+      <button type="button" class="sign-tile" data-sign="capricorne" data-element="terre">
+        <span class="sign-tile-glyph">♑</span>
+        <span class="sign-tile-name">Capricorne</span>
+      </button>
+      <button type="button" class="sign-tile" data-sign="verseau" data-element="air">
+        <span class="sign-tile-glyph">♒</span>
+        <span class="sign-tile-name">Verseau</span>
+      </button>
+      <button type="button" class="sign-tile" data-sign="poissons" data-element="eau">
+        <span class="sign-tile-glyph">♓</span>
+        <span class="sign-tile-name">Poissons</span>
+      </button>
+    </div>
+    <div class="sign-detail" id="sign-detail">
+      <p class="sign-detail-empty" id="sign-detail-empty">Cliquez sur un signe ci-dessus pour voir son analyse du jour.</p>
+      <article class="sign-card" data-sign="belier" data-element="feu" data-energy="78" hidden>
+        <div class="sign-card-top">
           <span class="sign-glyph">♈</span>
           <div><div class="sign-name">Bélier</div><div class="sign-dates">21 mars – 19 avril</div></div>
           <div class="energy-gauge" style="--pct:78; margin-left:auto;"><div class="energy-gauge-inner">78%</div></div>
-          <span class="sign-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="sign-card-body"><div class="sign-card-body-inner">
-        <p class="sign-vibe">Le bon jour pour foncer sur une idée qui traîne depuis trop longtemps. Ton impatience habituelle devient un vrai moteur aujourd'hui, à condition de viser une seule cible à la fois.</p>
-        <div class="sign-meta">
-          <div><span class="label">Atout</span>Ton énergie de départ — utilise-la maintenant, avant qu'elle ne retombe en fin de journée.</div>
-          <div><span class="label">À éviter</span>Trancher une dispute à chaud : laisse la pression retomber avant de répondre, tu le regretterais sinon.</div>
         </div>
-        </div></div>
+        <p class="sign-vibe">Le bon jour pour foncer sur une idée qui traîne depuis trop longtemps. Ton impatience habituelle devient un vrai moteur aujourd'hui, à condition de viser une seule cible à la fois.</p>
+        <div class="sign-categories">
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">75%</span></div>
+            <p class="sign-cat-text">N'attends pas que l'autre devine ce que tu veux : dis-le clairement aujourd'hui, ça change tout.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">80%</span></div>
+            <p class="sign-cat-text">Bon jour pour défendre ta position dans une négociation, sans détour.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">82%</span></div>
+            <p class="sign-cat-text">Énergie physique au rendez-vous — profites-en pour bouger plutôt que pour forcer sur autre chose.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">75%</span></div>
+            <p class="sign-cat-text">Une impatience positive, qui pousse à agir plutôt qu'à ruminer.</p>
+          </div>
+        </div>
       </article>
-
-      <article class="sign-card" data-sign="taureau" data-element="terre" data-energy="64">
-        <button type="button" class="sign-card-top">
+      <article class="sign-card" data-sign="taureau" data-element="terre" data-energy="64" hidden>
+        <div class="sign-card-top">
           <span class="sign-glyph">♉</span>
           <div><div class="sign-name">Taureau</div><div class="sign-dates">20 avril – 20 mai</div></div>
           <div class="energy-gauge" style="--pct:64; margin-left:auto;"><div class="energy-gauge-inner">64%</div></div>
-          <span class="sign-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="sign-card-body"><div class="sign-card-body-inner">
-        <p class="sign-vibe">Une journée pour consolider ce qui existe déjà plutôt que tout changer. Le calme apparent cache un vrai travail de fond, qui paiera dans la durée plus que dans l'instant.</p>
-        <div class="sign-meta">
-          <div><span class="label">Atout</span>Ta patience — elle rapporte plus que d'habitude aujourd'hui, même si les résultats ne sont pas immédiats.</div>
-          <div><span class="label">À éviter</span>Un achat impulsif qui ne te ressemble pas : le besoin de confort ne doit pas remplacer la réflexion.</div>
         </div>
-        </div></div>
+        <p class="sign-vibe">Une journée pour consolider ce qui existe déjà plutôt que tout changer. Le calme apparent cache un vrai travail de fond, qui paiera dans la durée plus que dans l'instant.</p>
+        <div class="sign-categories">
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">55%</span></div>
+            <p class="sign-cat-text">Rien de spectaculaire aujourd'hui, mais une vraie stabilité qui rassure ton entourage.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">70%</span></div>
+            <p class="sign-cat-text">Bon jour pour consolider un dossier déjà en cours, pas pour en ouvrir un nouveau.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">68%</span></div>
+            <p class="sign-cat-text">Énergie correcte, sans excès — un rythme calme te convient mieux aujourd'hui.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">63%</span></div>
+            <p class="sign-cat-text">Un calme tranquille, pas d'accès d'enthousiasme particulier.</p>
+          </div>
+        </div>
       </article>
-
-      <article class="sign-card" data-sign="gemeaux" data-element="air" data-energy="71">
-        <button type="button" class="sign-card-top">
+      <article class="sign-card" data-sign="gemeaux" data-element="air" data-energy="71" hidden>
+        <div class="sign-card-top">
           <span class="sign-glyph">♊</span>
           <div><div class="sign-name">Gémeaux</div><div class="sign-dates">21 mai – 20 juin</div></div>
           <div class="energy-gauge" style="--pct:71; margin-left:auto;"><div class="energy-gauge-inner">71%</div></div>
-          <span class="sign-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="sign-card-body"><div class="sign-card-body-inner">
-        <p class="sign-vibe">Le bon jour pour reprendre contact avec quelqu'un que tu as un peu délaissé. Les mots te viennent facilement, profites-en pour clarifier ce qui restait flou entre vous.</p>
-        <div class="sign-meta">
-          <div><span class="label">Atout</span>Ta facilité à mettre des mots sur ce que les autres n'arrivent pas à dire — un vrai service rendu autour de toi.</div>
-          <div><span class="label">À éviter</span>Trop de fronts ouverts en même temps : choisis une conversation à mener à son terme plutôt que dix entamées.</div>
         </div>
-        </div></div>
+        <p class="sign-vibe">Le bon jour pour reprendre contact avec quelqu'un que tu as un peu délaissé. Les mots te viennent facilement, profites-en pour clarifier ce qui restait flou entre vous.</p>
+        <div class="sign-categories">
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">68%</span></div>
+            <p class="sign-cat-text">Une conversation vraie avec quelqu'un que tu avais délaissé peut tout changer aujourd'hui.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">72%</span></div>
+            <p class="sign-cat-text">Tes idées circulent bien — bon moment pour présenter un projet à l'oral.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">65%</span></div>
+            <p class="sign-cat-text">Rien à signaler, l'agitation mentale prime sur le physique aujourd'hui.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">79%</span></div>
+            <p class="sign-cat-text">De la curiosité et de l'entrain, une belle disposition sociale.</p>
+          </div>
+        </div>
       </article>
-
-      <article class="sign-card" data-sign="cancer" data-element="eau" data-energy="58">
-        <button type="button" class="sign-card-top">
+      <article class="sign-card" data-sign="cancer" data-element="eau" data-energy="58" hidden>
+        <div class="sign-card-top">
           <span class="sign-glyph">♋</span>
           <div><div class="sign-name">Cancer</div><div class="sign-dates">21 juin – 22 juillet</div></div>
           <div class="energy-gauge" style="--pct:58; margin-left:auto;"><div class="energy-gauge-inner">58%</div></div>
-          <span class="sign-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="sign-card-body"><div class="sign-card-body-inner">
-        <p class="sign-vibe">Une journée pour prendre soin de ton cercle proche plutôt que de courir après des inconnus. L'énergie est plus basse que d'habitude — pas besoin de tout donner aujourd'hui.</p>
-        <div class="sign-meta">
-          <div><span class="label">Atout</span>Ton intuition sur ce dont un proche a besoin, souvent avant qu'il ne le dise lui-même.</div>
-          <div><span class="label">À éviter</span>Ressasser une remarque qui n'était probablement pas si grave — reviens-y demain si ça compte vraiment.</div>
         </div>
-        </div></div>
+        <p class="sign-vibe">Une journée pour prendre soin de ton cercle proche plutôt que de courir après des inconnus. L'énergie est plus basse que d'habitude — pas besoin de tout donner aujourd'hui.</p>
+        <div class="sign-categories">
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">62%</span></div>
+            <p class="sign-cat-text">Ton cercle proche a besoin de toi plus qu'un inconnu aujourd'hui — recentre-toi sur l'essentiel.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">48%</span></div>
+            <p class="sign-cat-text">Peu d'énergie pour les rapports de force — mieux vaut temporiser un dossier tendu.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">55%</span></div>
+            <p class="sign-cat-text">Énergie plus basse que d'habitude, normal — pas besoin de tout donner.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">67%</span></div>
+            <p class="sign-cat-text">Une sensibilité à fleur de peau, mais pas négative.</p>
+          </div>
+        </div>
       </article>
-
-      <article class="sign-card" data-sign="lion" data-element="feu" data-energy="82">
-        <button type="button" class="sign-card-top">
+      <article class="sign-card" data-sign="lion" data-element="feu" data-energy="82" hidden>
+        <div class="sign-card-top">
           <span class="sign-glyph">♌</span>
           <div><div class="sign-name">Lion</div><div class="sign-dates">23 juillet – 22 août</div></div>
           <div class="energy-gauge" style="--pct:82; margin-left:auto;"><div class="energy-gauge-inner">82%</div></div>
-          <span class="sign-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="sign-card-body"><div class="sign-card-body-inner">
-        <p class="sign-vibe">Le bon jour pour te montrer, sans avoir besoin qu'on te le demande. Ta présence rassure et entraîne les autres plus qu'elle ne dérange, même si tu prends un peu plus de place que d'habitude.</p>
-        <div class="sign-meta">
-          <div><span class="label">Atout</span>Ta capacité à donner confiance à quelqu'un qui en manque — un vrai talent à ne pas sous-estimer.</div>
-          <div><span class="label">À éviter</span>Vouloir avoir le dernier mot dans une discussion qui n'en vaut vraiment pas la peine.</div>
         </div>
-        </div></div>
+        <p class="sign-vibe">Le bon jour pour te montrer, sans avoir besoin qu'on te le demande. Ta présence rassure et entraîne les autres plus qu'elle ne dérange, même si tu prends un peu plus de place que d'habitude.</p>
+        <div class="sign-categories">
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">85%</span></div>
+            <p class="sign-cat-text">Ta présence rassure et attire — un bon jour pour te montrer sous ton meilleur jour.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">78%</span></div>
+            <p class="sign-cat-text">Ton assurance impressionne, utile pour une présentation ou une négociation.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">84%</span></div>
+            <p class="sign-cat-text">Énergie au top : canalise-la dans une activité physique plutôt que dans un excès de parole.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">81%</span></div>
+            <p class="sign-cat-text">Confiance et bonne humeur communicatives.</p>
+          </div>
+        </div>
       </article>
-
-      <article class="sign-card" data-sign="vierge" data-element="terre" data-energy="67">
-        <button type="button" class="sign-card-top">
+      <article class="sign-card" data-sign="vierge" data-element="terre" data-energy="67" hidden>
+        <div class="sign-card-top">
           <span class="sign-glyph">♍</span>
           <div><div class="sign-name">Vierge</div><div class="sign-dates">23 août – 22 septembre</div></div>
           <div class="energy-gauge" style="--pct:67; margin-left:auto;"><div class="energy-gauge-inner">67%</div></div>
-          <span class="sign-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="sign-card-body"><div class="sign-card-body-inner">
-        <p class="sign-vibe">Une journée pour ranger ce qui traîne, au sens propre comme au figuré. Mettre de l'ordre dans un coin de ta vie te libère plus d'énergie que prévu pour le reste.</p>
-        <div class="sign-meta">
-          <div><span class="label">Atout</span>Ton sens du détail, qui évite une erreur à quelqu'un d'autre sans même qu'on te le demande.</div>
-          <div><span class="label">À éviter</span>Critiquer un travail qui n'attendait pas de retour — parfois, le silence bienveillant vaut mieux que la correction.</div>
         </div>
-        </div></div>
+        <p class="sign-vibe">Une journée pour ranger ce qui traîne, au sens propre comme au figuré. Mettre de l'ordre dans un coin de ta vie te libère plus d'énergie que prévu pour le reste.</p>
+        <div class="sign-categories">
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">60%</span></div>
+            <p class="sign-cat-text">Pas de grande déclaration aujourd'hui, mais une attention aux détails qui touche l'autre.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">82%</span></div>
+            <p class="sign-cat-text">Ton sens du détail évite une erreur à quelqu'un — vraiment remarqué aujourd'hui.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">65%</span></div>
+            <p class="sign-cat-text">Rien d'alarmant, juste une petite fatigue mentale à surveiller.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">61%</span></div>
+            <p class="sign-cat-text">Un peu critique envers toi-même, à relativiser.</p>
+          </div>
+        </div>
       </article>
-
-      <article class="sign-card" data-sign="balance" data-element="air" data-energy="60">
-        <button type="button" class="sign-card-top">
+      <article class="sign-card" data-sign="balance" data-element="air" data-energy="60" hidden>
+        <div class="sign-card-top">
           <span class="sign-glyph">♎</span>
           <div><div class="sign-name">Balance</div><div class="sign-dates">23 septembre – 22 octobre</div></div>
           <div class="energy-gauge" style="--pct:60; margin-left:auto;"><div class="energy-gauge-inner">60%</div></div>
-          <span class="sign-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="sign-card-body"><div class="sign-card-body-inner">
-        <p class="sign-vibe">Le bon jour pour trancher une décision que tu remets depuis des semaines. L'indécision te coûte plus d'énergie que le choix lui-même, quel qu'il soit.</p>
-        <div class="sign-meta">
-          <div><span class="label">Atout</span>Ton sens de la mesure, utile aujourd'hui pour calmer un désaccord entre deux proches.</div>
-          <div><span class="label">À éviter</span>Dire oui pour éviter un conflit que tu devrais plutôt affronter directement — ça ne fera que le reporter.</div>
         </div>
-        </div></div>
+        <p class="sign-vibe">Le bon jour pour trancher une décision que tu remets depuis des semaines. L'indécision te coûte plus d'énergie que le choix lui-même, quel qu'il soit.</p>
+        <div class="sign-categories">
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">58%</span></div>
+            <p class="sign-cat-text">Une décision affective en suspens depuis un moment mérite d'être tranchée aujourd'hui.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">55%</span></div>
+            <p class="sign-cat-text">L'indécision te coûte plus d'énergie que le choix lui-même — tranche plutôt que d'hésiter.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">63%</span></div>
+            <p class="sign-cat-text">Énergie correcte, sans plus.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">64%</span></div>
+            <p class="sign-cat-text">Un besoin d'harmonie qui te pousse à éviter les tensions inutiles.</p>
+          </div>
+        </div>
       </article>
-
-      <article class="sign-card" data-sign="scorpion" data-element="eau" data-energy="74">
-        <button type="button" class="sign-card-top">
+      <article class="sign-card" data-sign="scorpion" data-element="eau" data-energy="74" hidden>
+        <div class="sign-card-top">
           <span class="sign-glyph">♏</span>
           <div><div class="sign-name">Scorpion</div><div class="sign-dates">23 octobre – 21 novembre</div></div>
           <div class="energy-gauge" style="--pct:74; margin-left:auto;"><div class="energy-gauge-inner">74%</div></div>
-          <span class="sign-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="sign-card-body"><div class="sign-card-body-inner">
-        <p class="sign-vibe">Une journée propice pour aller au fond d'un sujet que tout le monde préfère éviter. Ta lucidité est plus aiguisée que d'habitude — ne la garde pas seulement pour toi.</p>
-        <div class="sign-meta">
-          <div><span class="label">Atout</span>Ta capacité à voir ce qui se cache derrière les non-dits, un vrai atout dans une conversation difficile.</div>
-          <div><span class="label">À éviter</span>Interpréter un silence comme une attaque personnelle — ce n'est pas toujours dirigé contre toi.</div>
         </div>
-        </div></div>
+        <p class="sign-vibe">Une journée propice pour aller au fond d'un sujet que tout le monde préfère éviter. Ta lucidité est plus aiguisée que d'habitude — ne la garde pas seulement pour toi.</p>
+        <div class="sign-categories">
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">70%</span></div>
+            <p class="sign-cat-text">Une vraie conversation en profondeur avec ton/ta partenaire est possible aujourd'hui, si tu oses la lancer.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">76%</span></div>
+            <p class="sign-cat-text">Ta lucidité perce les non-dits d'un dossier professionnel épineux.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">72%</span></div>
+            <p class="sign-cat-text">Énergie solide, bien canalisée.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">78%</span></div>
+            <p class="sign-cat-text">Une intensité qui te sert plus qu'elle ne dessert aujourd'hui.</p>
+          </div>
+        </div>
       </article>
-
-      <article class="sign-card" data-sign="sagittaire" data-element="feu" data-energy="85">
-        <button type="button" class="sign-card-top">
+      <article class="sign-card" data-sign="sagittaire" data-element="feu" data-energy="85" hidden>
+        <div class="sign-card-top">
           <span class="sign-glyph">♐</span>
           <div><div class="sign-name">Sagittaire</div><div class="sign-dates">22 novembre – 21 décembre</div></div>
           <div class="energy-gauge" style="--pct:85; margin-left:auto;"><div class="energy-gauge-inner">85%</div></div>
-          <span class="sign-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="sign-card-body"><div class="sign-card-body-inner">
-        <p class="sign-vibe">Le bon jour pour dire oui à quelque chose qui sort de ta routine habituelle. L'énergie du jour te pousse vers l'imprévu, et c'est exactement ce dont tu as besoin en ce moment.</p>
-        <div class="sign-meta">
-          <div><span class="label">Atout</span>Ton optimisme, contagieux pour ceux qui en manquent cruellement aujourd'hui autour de toi.</div>
-          <div><span class="label">À éviter</span>Promettre plus que ce que tu peux vraiment tenir — l'enthousiasme du moment peut te jouer des tours.</div>
         </div>
-        </div></div>
+        <p class="sign-vibe">Le bon jour pour dire oui à quelque chose qui sort de ta routine habituelle. L'énergie du jour te pousse vers l'imprévu, et c'est exactement ce dont tu as besoin en ce moment.</p>
+        <div class="sign-categories">
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">88%</span></div>
+            <p class="sign-cat-text">Une rencontre ou un geste inattendu peut relancer une relation qui s'essoufflait.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">80%</span></div>
+            <p class="sign-cat-text">Bon jour pour dire oui à une opportunité qui sort du cadre habituel.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">86%</span></div>
+            <p class="sign-cat-text">Énergie débordante — canalise-la plutôt que de la disperser partout.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">86%</span></div>
+            <p class="sign-cat-text">Optimisme contagieux, profites-en pour entraîner les autres.</p>
+          </div>
+        </div>
       </article>
-
-      <article class="sign-card" data-sign="capricorne" data-element="terre" data-energy="55">
-        <button type="button" class="sign-card-top">
+      <article class="sign-card" data-sign="capricorne" data-element="terre" data-energy="55" hidden>
+        <div class="sign-card-top">
           <span class="sign-glyph">♑</span>
           <div><div class="sign-name">Capricorne</div><div class="sign-dates">22 décembre – 19 janvier</div></div>
           <div class="energy-gauge" style="--pct:55; margin-left:auto;"><div class="energy-gauge-inner">55%</div></div>
-          <span class="sign-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="sign-card-body"><div class="sign-card-body-inner">
-        <p class="sign-vibe">Une journée pour avancer pas à pas sur un projet de fond, sans attendre de résultat spectaculaire. L'énergie plus basse que d'habitude t'invite à ralentir, pas à t'arrêter.</p>
-        <div class="sign-meta">
-          <div><span class="label">Atout</span>Ta discipline, qui rassure ton entourage bien plus que tu ne l'imagines toi-même.</div>
-          <div><span class="label">À éviter</span>Te reprocher un rythme que toi seul juges trop lent — personne d'autre ne le voit ainsi.</div>
         </div>
-        </div></div>
+        <p class="sign-vibe">Une journée pour avancer pas à pas sur un projet de fond, sans attendre de résultat spectaculaire. L'énergie plus basse que d'habitude t'invite à ralentir, pas à t'arrêter.</p>
+        <div class="sign-categories">
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">50%</span></div>
+            <p class="sign-cat-text">Rien de spectaculaire, mais une présence stable qui compte plus que les mots aujourd'hui.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">62%</span></div>
+            <p class="sign-cat-text">Avance pas à pas sur un dossier de fond, sans attendre de résultat immédiat.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">52%</span></div>
+            <p class="sign-cat-text">Énergie plus basse — ralentis plutôt que de forcer.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">56%</span></div>
+            <p class="sign-cat-text">Un sérieux qui peut passer pour de la froideur — ce n'est pas le cas.</p>
+          </div>
+        </div>
       </article>
-
-      <article class="sign-card" data-sign="verseau" data-element="air" data-energy="69">
-        <button type="button" class="sign-card-top">
+      <article class="sign-card" data-sign="verseau" data-element="air" data-energy="69" hidden>
+        <div class="sign-card-top">
           <span class="sign-glyph">♒</span>
           <div><div class="sign-name">Verseau</div><div class="sign-dates">20 janvier – 18 février</div></div>
           <div class="energy-gauge" style="--pct:69; margin-left:auto;"><div class="energy-gauge-inner">69%</div></div>
-          <span class="sign-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="sign-card-body"><div class="sign-card-body-inner">
-        <p class="sign-vibe">Le bon jour pour proposer une idée un peu décalée à ton entourage. Ta différence est aujourd'hui une force, même si elle surprend d'abord ceux qui t'écoutent.</p>
-        <div class="sign-meta">
-          <div><span class="label">Atout</span>Ton regard différent, qui débloque une situation où tout le monde tourne en rond depuis un moment.</div>
-          <div><span class="label">À éviter</span>Te braquer si ton idée n'est pas comprise immédiatement — laisse-lui le temps de faire son chemin.</div>
         </div>
-        </div></div>
+        <p class="sign-vibe">Le bon jour pour proposer une idée un peu décalée à ton entourage. Ta différence est aujourd'hui une force, même si elle surprend d'abord ceux qui t'écoutent.</p>
+        <div class="sign-categories">
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">65%</span></div>
+            <p class="sign-cat-text">Une idée un peu différente sur le couple ou l'amitié mérite d'être partagée aujourd'hui.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">74%</span></div>
+            <p class="sign-cat-text">Ton regard décalé débloque une situation où tout le monde tourne en rond.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">66%</span></div>
+            <p class="sign-cat-text">Énergie correcte, portée par ta tête plus que par ton corps aujourd'hui.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">71%</span></div>
+            <p class="sign-cat-text">Une indépendance d'esprit qui te fait du bien.</p>
+          </div>
+        </div>
       </article>
-
-      <article class="sign-card" data-sign="poissons" data-element="eau" data-energy="62">
-        <button type="button" class="sign-card-top">
+      <article class="sign-card" data-sign="poissons" data-element="eau" data-energy="62" hidden>
+        <div class="sign-card-top">
           <span class="sign-glyph">♓</span>
           <div><div class="sign-name">Poissons</div><div class="sign-dates">19 février – 20 mars</div></div>
           <div class="energy-gauge" style="--pct:62; margin-left:auto;"><div class="energy-gauge-inner">62%</div></div>
-          <span class="sign-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="sign-card-body"><div class="sign-card-body-inner">
-        <p class="sign-vibe">Une journée pour écouter ce que ton instinct te souffle depuis un moment déjà. Ta sensibilité, souvent perçue comme une faiblesse, est aujourd'hui une vraie boussole.</p>
-        <div class="sign-meta">
-          <div><span class="label">Atout</span>Ta sensibilité, qui capte une tension avant qu'elle n'éclate ouvertement autour de toi.</div>
-          <div><span class="label">À éviter</span>T'oublier complètement au profit des besoins des autres — ta journée compte aussi.</div>
         </div>
-        </div></div>
+        <p class="sign-vibe">Une journée pour écouter ce que ton instinct te souffle depuis un moment déjà. Ta sensibilité, souvent perçue comme une faiblesse, est aujourd'hui une vraie boussole.</p>
+        <div class="sign-categories">
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">68%</span></div>
+            <p class="sign-cat-text">Ton instinct capte quelque chose chez l'autre avant même qu'il ne le dise — fais-lui confiance.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">48%</span></div>
+            <p class="sign-cat-text">Peu d'énergie pour les rapports de force aujourd'hui, mieux vaut observer qu'agir.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">60%</span></div>
+            <p class="sign-cat-text">Une sensibilité qui demande du repos plus que de l'action.</p>
+          </div>
+          <div class="sign-cat">
+            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">72%</span></div>
+            <p class="sign-cat-text">Douceur et intuition, une belle journée intérieure.</p>
+          </div>
+        </div>
       </article>
-
     </div>
   </section>
 
@@ -758,47 +943,40 @@
       gridEl.appendChild(card);
     });
 
-    // Liens "voir le détail" : ouvre l'accordéon du signe puis scroll + highlight temporaire
+    // Liens "voir le détail" : sélectionne la tuile du signe puis scroll vers le panneau
     gridEl.querySelectorAll(".family-card-link").forEach(function(link){
       link.addEventListener("click", function(e){
         e.preventDefault();
         var sign = link.getAttribute("data-target");
-        var card = document.querySelector('.sign-card[data-sign="' + sign + '"]');
-        if (!card) return;
-        openSignCard(card);
-        card.scrollIntoView({ behavior: "smooth", block: "center" });
-        card.classList.add("is-highlighted");
-        setTimeout(function(){ card.classList.remove("is-highlighted"); }, 2200);
+        selectSign(sign);
+        document.getElementById("sign-detail").scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
   }
 
-  // Accordéon des 12 signes : un clic sur l'en-tête bascule l'ouverture de sa
-  // carte, indépendamment des autres (pas de fermeture automatique des autres).
-  function openSignCard(card){
-    card.classList.add("is-open");
-    var toggle = card.querySelector(".sign-card-top");
-    if (toggle) toggle.setAttribute("aria-expanded", "true");
+  // Damier des 12 signes : un clic sur une tuile affiche l'analyse du signe
+  // correspondant dans le panneau de détail (un seul signe visible à la fois,
+  // via l'attribut HTML `hidden` — pas d'animation complexe à maintenir).
+  var emptyMsg = document.getElementById("sign-detail-empty");
+  function selectSign(sign){
+    document.querySelectorAll(".sign-tile").forEach(function(t){
+      t.classList.toggle("is-active", t.getAttribute("data-sign") === sign);
+    });
+    document.querySelectorAll(".sign-card").forEach(function(card){
+      card.hidden = card.getAttribute("data-sign") !== sign;
+    });
+    if (emptyMsg) emptyMsg.hidden = true;
   }
-  document.querySelectorAll(".sign-card-top").forEach(function(toggle){
-    toggle.setAttribute("aria-expanded", "false");
-    toggle.addEventListener("click", function(){
-      var card = toggle.closest(".sign-card");
-      var isOpen = card.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  document.querySelectorAll(".sign-tile").forEach(function(tile){
+    tile.addEventListener("click", function(){
+      selectSign(tile.getAttribute("data-sign"));
     });
   });
 
-  // Ancres directes #signe-XXX -> id sur chaque carte, pour l'accès direct par signe
-  document.querySelectorAll(".sign-card").forEach(function(card){
-    card.id = "signe-" + card.getAttribute("data-sign");
-  });
-
-  // Arrivée directe sur #signe-XXX (lien externe, partage) : ouvrir l'accordéon
-  // correspondant automatiquement, sinon il resterait replié malgré le scroll natif du navigateur.
+  // Arrivée directe sur #signe-XXX (lien externe, partage) : sélectionner ce
+  // signe automatiquement au chargement de la page.
   if (location.hash.indexOf("#signe-") === 0){
-    var targetCard = document.getElementById(location.hash.slice(1));
-    if (targetCard) openSignCard(targetCard);
+    selectSign(location.hash.slice("#signe-".length));
   }
 
   addBtn.addEventListener("click", function(){ formEl.classList.add("is-open"); });

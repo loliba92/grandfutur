@@ -55,19 +55,29 @@ profils doivent être vus en premier, avant même le résumé du jour) :
    7 septembre : *"c'est creux, ça ne veut rien dire"* sur une première
    version trop lisse — règle à appliquer aussi le jour où la génération
    sera automatisée avec de vraies éphémérides.
-5. **Les 12 signes, en accordéon** — une carte par signe, repliée par
-   défaut : l'en-tête (glyphe, dates, jauge d'énergie) reste visible en
-   permanence, le détail (texte du jour, atout, à éviter) ne s'affiche
-   qu'au clic. Accordéon en CSS pur (`grid-template-rows` 0fr → 1fr, comme
-   l'accordéon des résumés de `archives.html` sur Scénario), le JS ne fait
-   que basculer une classe `is-open` — plusieurs cartes peuvent rester
-   ouvertes en même temps, pas de fermeture automatique des autres. Chaque
-   carte porte `data-sign`, `data-element` et `data-energy` — lus par le
-   JS du gestionnaire de profils, **source unique de vérité** (pas de
+5. **Les 12 signes, en damier** — une grille de 12 tuiles compactes
+   (glyphe + nom, couleur d'élément), sans détail affiché. Cliquer sur une
+   tuile affiche l'analyse complète du signe dans un panneau unique juste
+   en dessous (`#sign-detail`) — un seul signe visible à la fois, basculé
+   via l'attribut HTML natif `hidden` sur chaque `.sign-card` plutôt qu'une
+   animation CSS complexe. **Remplace un essai précédent en accordéon**
+   (chaque carte se dépliait sur place) — retour utilisateur du 7 septembre :
+   préférence pour un damier de sélection + un panneau de détail unique,
+   plus proche d'une interaction "choisir puis voir" que d'une longue liste
+   à parcourir.
+   Chaque carte de détail porte `data-sign`, `data-element` et
+   `data-energy` (moyenne arrondie des 4 scores ci-dessous) — lue par le JS
+   du gestionnaire de profils, **source unique de vérité** (pas de
    duplication du contenu du jour dans un objet JS séparé). Un clic sur
-   « Voir le détail de son signe » depuis une carte famille ouvre
-   l'accordéon correspondant avant de scroller — sinon le contenu resterait
-   caché malgré le défilement.
+   « Voir le détail de son signe » depuis une carte famille sélectionne la
+   bonne tuile puis scrolle vers le panneau.
+   **Score par domaine** (retour utilisateur du 7 septembre, en plus de
+   l'énergie globale) : chaque signe porte 4 sous-scores — Amour, Argent &
+   travail, Santé, Humeur — chacun avec un texte dédié. **L'énergie globale
+   affichée est la moyenne arrondie de ces 4 scores**, jamais une 5e valeur
+   inventée séparément : ça garantit la cohérence et simplifie la future
+   génération automatique (la routine n'écrit que 4 chiffres, le total se
+   déduit).
 6. **Trio du jour** — top 3 énergie, `.list-box` (composant repris tel quel
    du gabarit Scénario).
 7. **Lexique** — Signe, Ascendant, Élément.
@@ -179,37 +189,32 @@ comme sur Scénario (optionnel, évite l'exposition aux robots spammeurs).
 
 ## Identité visuelle
 
-**Fond clair « éditorial chaleureux »** (décidé le 7 septembre après retour
-utilisateur : une première version sombre à dominante indigo/violette a été
-jugée « trop ésotérique »). Palette actuelle, propre à Grand Futur : fond
-parchemin chaud (`--bg #f3ead9`), texte encre brune (`--ink #2b2318`),
-accent or plus profond qu'un simple jaune pour garder du contraste sur fond
-clair (`--gold #b8863f`), quatre couleurs d'élément recalées pour rester
-lisibles sur fond clair (Feu `#b5573c`, Terre `#4f8563`, Air `#4f708f`, Eau
-`#6f5f96`). Seule la photo du jour (bandeau `.article-image-*`) garde un
-traitement sombre — dégradé + texte clair incrusté dessus — puisqu'elle
-reste une image, indépendante du thème du reste de la page. Même base
+**Fond sombre, identique au principe de Scénario** — décision finale du
+7 septembre, après deux allers-retours sur la palette dans la même
+journée : une v1 sombre à dominante indigo/violette jugée « trop
+ésotérique », puis un essai en fond clair parchemin jugé « pas du tout »
+convaincant (« le marron »), pour revenir au fond sombre classique. Palette
+actuelle, propre à Grand Futur (pas une reprise exacte des couleurs
+Scénario, mais le même principe visuel) : fond très sombre (`--bg
+#10151c`), texte clair (`--ink #ece7da`), accent or (`--gold #cf9d4c`),
+quatre couleurs d'élément (Feu `#bd6248`, Terre `#5e9c78`, Air `#6f8fae`,
+Eau `#8a7fae`). Un token dédié `--ink-on-gold` (`#201a10`, fixe, ne suit
+pas le thème) sert uniquement au texte posé sur un fond or plein (bouton
+« Ajouter », sélection de texte) — toujours sombre pour le contraste,
+indépendamment de la couleur du texte courant de la page. Même base
 typographique que Scénario pour la lisibilité (Fraunces + Inter +
 JetBrains Mono).
 
-## Ce qui reste à faire
+**Ordre des sections retravaillé deux fois le 7 septembre** : d'abord
+« Vos proches » en premier (retour utilisateur), puis revenu à l'ordre
+Scénario — la photo/résumé du jour en tout premier, « Vos proches »
+juste en dessous — décision finale, à ne pas réinverser sans nouveau
+retour explicite.
 
-- **Automatisation quotidienne réelle** : une routine planifiée (type
-  Claude Code Remote) qui génère le vrai thème du jour, les 12 textes et
-  l'énergie de chaque signe, récupère une photo Pexels adaptée au thème,
-  écrase `index.html` et fige l'archive — sur le modèle exact de la
-  routine Scénario (`docs/routine-prompt.md`).
-- **FormSubmit** : envoyer un premier message de test depuis
-  `contact.html` et cliquer sur le lien de confirmation reçu à
-  `grandfuturcontact@gmail.com` pour activer le formulaire.
-- **Compte Google AdSense** à créer et faire valider, puis remplacer le
-  placeholder `.ad-slot` par le vrai code — et implémenter un bandeau de
-  consentement cookies avant activation réelle.
-- **Scénario Make.com** à construire côté Make (lecture de `feed.xml`,
-  publication Instagram + Facebook).
-- **Nom de domaine** : le site tourne pour l'instant sur
-  `https://loliba92.github.io/grandfutur/` — à remplacer par un domaine
-  dédié (`CNAME` + toutes les URLs absolues du site) une fois acheté.
+## Backlog
+
+Le backlog (idées, tâches ouvertes, priorités P1-P3) est dans un fichier
+dédié : voir [`docs/BACKLOG.md`](./BACKLOG.md).
 
 ## Historique
 
@@ -217,3 +222,11 @@ JetBrains Mono).
   (branche `main`, dossier racine). Compte GoatCounter `grandfutur` créé
   et confirmé fonctionnel (le script déjà posé dans le gabarit correspond
   au bon compte). Email de contact confirmé : `grandfuturcontact@gmail.com`.
+- **7 septembre 2026, même jour** : retours utilisateur successifs sur le
+  premier jet — palette repassée en clair « éditorial chaleureux » (fond
+  sombre indigo jugé trop ésotérique), hero repassé en photo plein écran
+  type couverture, contenu du jour réécrit pour être concret (planètes et
+  positions nommées, conséquences actionnables, plus de formule vague),
+  passage d'un accordéon à un damier de 12 tuiles + panneau de détail
+  unique, et ajout des 4 scores par domaine (Amour, Argent & travail,
+  Santé, Humeur) dont la moyenne devient l'énergie globale affichée.
