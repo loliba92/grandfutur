@@ -1,1276 +1,4643 @@
 {
   "2026-06-09": {
-    "belier": 86,
-    "taureau": 59,
-    "gemeaux": 47,
-    "cancer": 83,
-    "lion": 82,
-    "vierge": 60,
-    "balance": 47,
-    "scorpion": 78,
-    "sagittaire": 84,
-    "capricorne": 64,
-    "verseau": 47,
-    "poissons": 84
+    "energies": {
+      "belier": 86,
+      "taureau": 59,
+      "gemeaux": 47,
+      "cancer": 83,
+      "lion": 82,
+      "vierge": 60,
+      "balance": 47,
+      "scorpion": 78,
+      "sagittaire": 84,
+      "capricorne": 64,
+      "verseau": 47,
+      "poissons": 84
+    },
+    "day_code": {
+      "date": "2026-06-09",
+      "planetes": {
+        "lune": {
+          "signe": "belier",
+          "element": "feu",
+          "degre": 1.55,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 101.66,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 115.02,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 45.66,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "neutre",
+        "air": "freine",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-06-10": {
-    "belier": 84,
-    "taureau": 65,
-    "gemeaux": 44,
-    "cancer": 81,
-    "lion": 80,
-    "vierge": 62,
-    "balance": 44,
-    "scorpion": 81,
-    "sagittaire": 78,
-    "capricorne": 65,
-    "verseau": 46,
-    "poissons": 83
+    "energies": {
+      "belier": 84,
+      "taureau": 65,
+      "gemeaux": 44,
+      "cancer": 81,
+      "lion": 80,
+      "vierge": 62,
+      "balance": 44,
+      "scorpion": 81,
+      "sagittaire": 78,
+      "capricorne": 65,
+      "verseau": 46,
+      "poissons": 83
+    },
+    "day_code": {
+      "date": "2026-06-10",
+      "planetes": {
+        "lune": {
+          "signe": "belier",
+          "element": "feu",
+          "degre": 15.21,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 102.94,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 116.19,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 46.39,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "neutre",
+        "air": "freine",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-06-11": {
-    "belier": 83,
-    "taureau": 62,
-    "gemeaux": 44,
-    "cancer": 83,
-    "lion": 84,
-    "vierge": 64,
-    "balance": 46,
-    "scorpion": 83,
-    "sagittaire": 84,
-    "capricorne": 62,
-    "verseau": 47,
-    "poissons": 83
+    "energies": {
+      "belier": 83,
+      "taureau": 62,
+      "gemeaux": 44,
+      "cancer": 83,
+      "lion": 84,
+      "vierge": 64,
+      "balance": 46,
+      "scorpion": 83,
+      "sagittaire": 84,
+      "capricorne": 62,
+      "verseau": 47,
+      "poissons": 83
+    },
+    "day_code": {
+      "date": "2026-06-11",
+      "planetes": {
+        "lune": {
+          "signe": "belier",
+          "element": "feu",
+          "degre": 29.35,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 104.17,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 117.36,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 47.12,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "neutre",
+        "air": "freine",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-06-12": {
-    "belier": 49,
-    "taureau": 84,
-    "gemeaux": 49,
-    "cancer": 62,
-    "lion": 48,
-    "vierge": 79,
-    "balance": 45,
-    "scorpion": 62,
-    "sagittaire": 47,
-    "capricorne": 79,
-    "verseau": 48,
-    "poissons": 63
+    "energies": {
+      "belier": 49,
+      "taureau": 84,
+      "gemeaux": 49,
+      "cancer": 62,
+      "lion": 48,
+      "vierge": 79,
+      "balance": 45,
+      "scorpion": 62,
+      "sagittaire": 47,
+      "capricorne": 79,
+      "verseau": 48,
+      "poissons": 63
+    },
+    "day_code": {
+      "date": "2026-06-12",
+      "planetes": {
+        "lune": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 43.95,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 105.34,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 118.53,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 47.86,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "freine",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-06-13": {
-    "belier": 44,
-    "taureau": 80,
-    "gemeaux": 48,
-    "cancer": 63,
-    "lion": 46,
-    "vierge": 82,
-    "balance": 42,
-    "scorpion": 66,
-    "sagittaire": 48,
-    "capricorne": 83,
-    "verseau": 46,
-    "poissons": 63
+    "energies": {
+      "belier": 44,
+      "taureau": 80,
+      "gemeaux": 48,
+      "cancer": 63,
+      "lion": 46,
+      "vierge": 82,
+      "balance": 42,
+      "scorpion": 66,
+      "sagittaire": 48,
+      "capricorne": 83,
+      "verseau": 46,
+      "poissons": 63
+    },
+    "day_code": {
+      "date": "2026-06-13",
+      "planetes": {
+        "lune": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 58.94,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 106.46,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 119.69,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 48.59,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "freine",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-06-14": {
-    "belier": 46,
-    "taureau": 61,
-    "gemeaux": 86,
-    "cancer": 44,
-    "lion": 48,
-    "vierge": 66,
-    "balance": 80,
-    "scorpion": 46,
-    "sagittaire": 48,
-    "capricorne": 62,
-    "verseau": 83,
-    "poissons": 45
+    "energies": {
+      "belier": 46,
+      "taureau": 61,
+      "gemeaux": 86,
+      "cancer": 44,
+      "lion": 48,
+      "vierge": 66,
+      "balance": 80,
+      "scorpion": 46,
+      "sagittaire": 48,
+      "capricorne": 62,
+      "verseau": 83,
+      "poissons": 45
+    },
+    "day_code": {
+      "date": "2026-06-14",
+      "planetes": {
+        "lune": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 74.17,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 107.53,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 120.86,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 49.31,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "favorise",
+        "eau": "freine"
+      }
+    }
   },
   "2026-06-15": {
-    "belier": 45,
-    "taureau": 65,
-    "gemeaux": 80,
-    "cancer": 45,
-    "lion": 43,
-    "vierge": 60,
-    "balance": 80,
-    "scorpion": 49,
-    "sagittaire": 46,
-    "capricorne": 60,
-    "verseau": 83,
-    "poissons": 45
+    "energies": {
+      "belier": 45,
+      "taureau": 65,
+      "gemeaux": 80,
+      "cancer": 45,
+      "lion": 43,
+      "vierge": 60,
+      "balance": 80,
+      "scorpion": 49,
+      "sagittaire": 46,
+      "capricorne": 60,
+      "verseau": 83,
+      "poissons": 45
+    },
+    "day_code": {
+      "date": "2026-06-15",
+      "planetes": {
+        "lune": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 89.48,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 108.54,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 122.02,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 50.04,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "favorise",
+        "eau": "freine"
+      }
+    }
   },
   "2026-06-16": {
-    "belier": 60,
-    "taureau": 60,
-    "gemeaux": 46,
-    "cancer": 82,
-    "lion": 60,
-    "vierge": 59,
-    "balance": 48,
-    "scorpion": 79,
-    "sagittaire": 61,
-    "capricorne": 62,
-    "verseau": 43,
-    "poissons": 83
+    "energies": {
+      "belier": 60,
+      "taureau": 60,
+      "gemeaux": 46,
+      "cancer": 82,
+      "lion": 60,
+      "vierge": 59,
+      "balance": 48,
+      "scorpion": 79,
+      "sagittaire": 61,
+      "capricorne": 62,
+      "verseau": 43,
+      "poissons": 83
+    },
+    "day_code": {
+      "date": "2026-06-16",
+      "planetes": {
+        "lune": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 104.67,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 109.49,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 123.18,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 50.77,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "neutre",
+        "terre": "neutre",
+        "air": "freine",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-06-17": {
-    "belier": 63,
-    "taureau": 62,
-    "gemeaux": 50,
-    "cancer": 82,
-    "lion": 61,
-    "vierge": 62,
-    "balance": 45,
-    "scorpion": 83,
-    "sagittaire": 60,
-    "capricorne": 65,
-    "verseau": 48,
-    "poissons": 79
+    "energies": {
+      "belier": 63,
+      "taureau": 62,
+      "gemeaux": 50,
+      "cancer": 82,
+      "lion": 61,
+      "vierge": 62,
+      "balance": 45,
+      "scorpion": 83,
+      "sagittaire": 60,
+      "capricorne": 65,
+      "verseau": 48,
+      "poissons": 79
+    },
+    "day_code": {
+      "date": "2026-06-17",
+      "planetes": {
+        "lune": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 119.58,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 110.38,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 124.34,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 51.5,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "neutre",
+        "terre": "neutre",
+        "air": "freine",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-06-18": {
-    "belier": 82,
-    "taureau": 64,
-    "gemeaux": 44,
-    "cancer": 60,
-    "lion": 84,
-    "vierge": 61,
-    "balance": 46,
-    "scorpion": 65,
-    "sagittaire": 79,
-    "capricorne": 60,
-    "verseau": 47,
-    "poissons": 62
+    "energies": {
+      "belier": 82,
+      "taureau": 64,
+      "gemeaux": 44,
+      "cancer": 60,
+      "lion": 84,
+      "vierge": 61,
+      "balance": 46,
+      "scorpion": 65,
+      "sagittaire": 79,
+      "capricorne": 60,
+      "verseau": 47,
+      "poissons": 62
+    },
+    "day_code": {
+      "date": "2026-06-18",
+      "planetes": {
+        "lune": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 134.08,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 111.22,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 125.5,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 52.22,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "neutre",
+        "air": "freine",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-06-19": {
-    "belier": 83,
-    "taureau": 62,
-    "gemeaux": 45,
-    "cancer": 60,
-    "lion": 83,
-    "vierge": 63,
-    "balance": 48,
-    "scorpion": 62,
-    "sagittaire": 82,
-    "capricorne": 62,
-    "verseau": 45,
-    "poissons": 61
+    "energies": {
+      "belier": 83,
+      "taureau": 62,
+      "gemeaux": 45,
+      "cancer": 60,
+      "lion": 83,
+      "vierge": 63,
+      "balance": 48,
+      "scorpion": 62,
+      "sagittaire": 82,
+      "capricorne": 62,
+      "verseau": 45,
+      "poissons": 61
+    },
+    "day_code": {
+      "date": "2026-06-19",
+      "planetes": {
+        "lune": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 148.13,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 111.99,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 126.65,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 52.94,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "neutre",
+        "air": "freine",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-06-20": {
-    "belier": 62,
-    "taureau": 85,
-    "gemeaux": 48,
-    "cancer": 59,
-    "lion": 61,
-    "vierge": 84,
-    "balance": 44,
-    "scorpion": 64,
-    "sagittaire": 60,
-    "capricorne": 84,
-    "verseau": 46,
-    "poissons": 61
+    "energies": {
+      "belier": 62,
+      "taureau": 85,
+      "gemeaux": 48,
+      "cancer": 59,
+      "lion": 61,
+      "vierge": 84,
+      "balance": 44,
+      "scorpion": 64,
+      "sagittaire": 60,
+      "capricorne": 84,
+      "verseau": 46,
+      "poissons": 61
+    },
+    "day_code": {
+      "date": "2026-06-20",
+      "planetes": {
+        "lune": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 161.7,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 112.69,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 127.81,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 53.67,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "neutre",
+        "terre": "favorise",
+        "air": "freine",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-06-21": {
-    "belier": 62,
-    "taureau": 83,
-    "gemeaux": 44,
-    "cancer": 62,
-    "lion": 60,
-    "vierge": 84,
-    "balance": 42,
-    "scorpion": 62,
-    "sagittaire": 61,
-    "capricorne": 83,
-    "verseau": 46,
-    "poissons": 60
+    "energies": {
+      "belier": 62,
+      "taureau": 83,
+      "gemeaux": 44,
+      "cancer": 62,
+      "lion": 60,
+      "vierge": 84,
+      "balance": 42,
+      "scorpion": 62,
+      "sagittaire": 61,
+      "capricorne": 83,
+      "verseau": 46,
+      "poissons": 60
+    },
+    "day_code": {
+      "date": "2026-06-21",
+      "planetes": {
+        "lune": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 174.85,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 113.33,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 128.96,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 54.39,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "neutre",
+        "terre": "favorise",
+        "air": "freine",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-06-22": {
-    "belier": 45,
-    "taureau": 61,
-    "gemeaux": 84,
-    "cancer": 49,
-    "lion": 45,
-    "vierge": 63,
-    "balance": 82,
-    "scorpion": 44,
-    "sagittaire": 46,
-    "capricorne": 60,
-    "verseau": 80,
-    "poissons": 46
+    "energies": {
+      "belier": 45,
+      "taureau": 61,
+      "gemeaux": 84,
+      "cancer": 49,
+      "lion": 45,
+      "vierge": 63,
+      "balance": 82,
+      "scorpion": 44,
+      "sagittaire": 46,
+      "capricorne": 60,
+      "verseau": 80,
+      "poissons": 46
+    },
+    "day_code": {
+      "date": "2026-06-22",
+      "planetes": {
+        "lune": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 187.61,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 113.91,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 130.11,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 55.11,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "favorise",
+        "eau": "freine"
+      }
+    }
   },
   "2026-06-23": {
-    "belier": 47,
-    "taureau": 60,
-    "gemeaux": 81,
-    "cancer": 49,
-    "lion": 45,
-    "vierge": 64,
-    "balance": 81,
-    "scorpion": 43,
-    "sagittaire": 46,
-    "capricorne": 65,
-    "verseau": 85,
-    "poissons": 45
+    "energies": {
+      "belier": 47,
+      "taureau": 60,
+      "gemeaux": 81,
+      "cancer": 49,
+      "lion": 45,
+      "vierge": 64,
+      "balance": 81,
+      "scorpion": 43,
+      "sagittaire": 46,
+      "capricorne": 65,
+      "verseau": 85,
+      "poissons": 45
+    },
+    "day_code": {
+      "date": "2026-06-23",
+      "planetes": {
+        "lune": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 200.07,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 114.41,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 131.26,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 55.83,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "favorise",
+        "eau": "freine"
+      }
+    }
   },
   "2026-06-24": {
-    "belier": 62,
-    "taureau": 62,
-    "gemeaux": 45,
-    "cancer": 82,
-    "lion": 64,
-    "vierge": 65,
-    "balance": 46,
-    "scorpion": 81,
-    "sagittaire": 59,
-    "capricorne": 61,
-    "verseau": 44,
-    "poissons": 80
+    "energies": {
+      "belier": 62,
+      "taureau": 62,
+      "gemeaux": 45,
+      "cancer": 82,
+      "lion": 64,
+      "vierge": 65,
+      "balance": 46,
+      "scorpion": 81,
+      "sagittaire": 59,
+      "capricorne": 61,
+      "verseau": 44,
+      "poissons": 80
+    },
+    "day_code": {
+      "date": "2026-06-24",
+      "planetes": {
+        "lune": {
+          "signe": "scorpion",
+          "element": "eau",
+          "degre": 212.3,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 114.84,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 132.41,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 56.55,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "neutre",
+        "terre": "neutre",
+        "air": "freine",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-06-25": {
-    "belier": 66,
-    "taureau": 64,
-    "gemeaux": 46,
-    "cancer": 82,
-    "lion": 62,
-    "vierge": 60,
-    "balance": 44,
-    "scorpion": 80,
-    "sagittaire": 63,
-    "capricorne": 60,
-    "verseau": 46,
-    "poissons": 85
+    "energies": {
+      "belier": 66,
+      "taureau": 64,
+      "gemeaux": 46,
+      "cancer": 82,
+      "lion": 62,
+      "vierge": 60,
+      "balance": 44,
+      "scorpion": 80,
+      "sagittaire": 63,
+      "capricorne": 60,
+      "verseau": 46,
+      "poissons": 85
+    },
+    "day_code": {
+      "date": "2026-06-25",
+      "planetes": {
+        "lune": {
+          "signe": "scorpion",
+          "element": "eau",
+          "degre": 224.36,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 115.2,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 133.56,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 57.26,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "neutre",
+        "terre": "neutre",
+        "air": "freine",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-06-26": {
-    "belier": 62,
-    "taureau": 64,
-    "gemeaux": 48,
-    "cancer": 83,
-    "lion": 62,
-    "vierge": 62,
-    "balance": 47,
-    "scorpion": 80,
-    "sagittaire": 62,
-    "capricorne": 62,
-    "verseau": 48,
-    "poissons": 85
+    "energies": {
+      "belier": 62,
+      "taureau": 64,
+      "gemeaux": 48,
+      "cancer": 83,
+      "lion": 62,
+      "vierge": 62,
+      "balance": 47,
+      "scorpion": 80,
+      "sagittaire": 62,
+      "capricorne": 62,
+      "verseau": 48,
+      "poissons": 85
+    },
+    "day_code": {
+      "date": "2026-06-26",
+      "planetes": {
+        "lune": {
+          "signe": "scorpion",
+          "element": "eau",
+          "degre": 236.31,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 115.49,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 134.7,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 57.98,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "neutre",
+        "terre": "neutre",
+        "air": "freine",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-06-27": {
-    "belier": 83,
-    "taureau": 59,
-    "gemeaux": 46,
-    "cancer": 61,
-    "lion": 81,
-    "vierge": 64,
-    "balance": 47,
-    "scorpion": 62,
-    "sagittaire": 80,
-    "capricorne": 57,
-    "verseau": 49,
-    "poissons": 62
+    "energies": {
+      "belier": 83,
+      "taureau": 59,
+      "gemeaux": 46,
+      "cancer": 61,
+      "lion": 81,
+      "vierge": 64,
+      "balance": 47,
+      "scorpion": 62,
+      "sagittaire": 80,
+      "capricorne": 57,
+      "verseau": 49,
+      "poissons": 62
+    },
+    "day_code": {
+      "date": "2026-06-27",
+      "planetes": {
+        "lune": {
+          "signe": "sagittaire",
+          "element": "feu",
+          "degre": 248.2,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 115.7,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 135.84,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 58.7,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "neutre",
+        "air": "freine",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-06-28": {
-    "belier": 85,
-    "taureau": 63,
-    "gemeaux": 48,
-    "cancer": 60,
-    "lion": 82,
-    "vierge": 66,
-    "balance": 46,
-    "scorpion": 63,
-    "sagittaire": 84,
-    "capricorne": 61,
-    "verseau": 46,
-    "poissons": 61
+    "energies": {
+      "belier": 85,
+      "taureau": 63,
+      "gemeaux": 48,
+      "cancer": 60,
+      "lion": 82,
+      "vierge": 66,
+      "balance": 46,
+      "scorpion": 63,
+      "sagittaire": 84,
+      "capricorne": 61,
+      "verseau": 46,
+      "poissons": 61
+    },
+    "day_code": {
+      "date": "2026-06-28",
+      "planetes": {
+        "lune": {
+          "signe": "sagittaire",
+          "element": "feu",
+          "degre": 260.07,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 115.83,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 136.98,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 59.41,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "neutre",
+        "air": "freine",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-06-29": {
-    "belier": 46,
-    "taureau": 82,
-    "gemeaux": 60,
-    "cancer": 47,
-    "lion": 44,
-    "vierge": 80,
-    "balance": 61,
-    "scorpion": 46,
-    "sagittaire": 45,
-    "capricorne": 80,
-    "verseau": 62,
-    "poissons": 45
+    "energies": {
+      "belier": 46,
+      "taureau": 82,
+      "gemeaux": 60,
+      "cancer": 47,
+      "lion": 44,
+      "vierge": 80,
+      "balance": 61,
+      "scorpion": 46,
+      "sagittaire": 45,
+      "capricorne": 80,
+      "verseau": 62,
+      "poissons": 45
+    },
+    "day_code": {
+      "date": "2026-06-29",
+      "planetes": {
+        "lune": {
+          "signe": "capricorne",
+          "element": "terre",
+          "degre": 271.95,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 115.89,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 138.12,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 60.12,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "neutre",
+        "eau": "freine"
+      }
+    }
   },
   "2026-06-30": {
-    "belier": 48,
-    "taureau": 80,
-    "gemeaux": 63,
-    "cancer": 46,
-    "lion": 49,
-    "vierge": 84,
-    "balance": 62,
-    "scorpion": 46,
-    "sagittaire": 45,
-    "capricorne": 78,
-    "verseau": 60,
-    "poissons": 47
+    "energies": {
+      "belier": 48,
+      "taureau": 80,
+      "gemeaux": 63,
+      "cancer": 46,
+      "lion": 49,
+      "vierge": 84,
+      "balance": 62,
+      "scorpion": 46,
+      "sagittaire": 45,
+      "capricorne": 78,
+      "verseau": 60,
+      "poissons": 47
+    },
+    "day_code": {
+      "date": "2026-06-30",
+      "planetes": {
+        "lune": {
+          "signe": "capricorne",
+          "element": "terre",
+          "degre": 283.87,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 115.87,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 139.26,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 60.83,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "neutre",
+        "eau": "freine"
+      }
+    }
   },
   "2026-07-01": {
-    "belier": 46,
-    "taureau": 82,
-    "gemeaux": 60,
-    "cancer": 44,
-    "lion": 46,
-    "vierge": 82,
-    "balance": 65,
-    "scorpion": 47,
-    "sagittaire": 46,
-    "capricorne": 77,
-    "verseau": 64,
-    "poissons": 46
+    "energies": {
+      "belier": 46,
+      "taureau": 82,
+      "gemeaux": 60,
+      "cancer": 44,
+      "lion": 46,
+      "vierge": 82,
+      "balance": 65,
+      "scorpion": 47,
+      "sagittaire": 46,
+      "capricorne": 77,
+      "verseau": 64,
+      "poissons": 46
+    },
+    "day_code": {
+      "date": "2026-07-01",
+      "planetes": {
+        "lune": {
+          "signe": "capricorne",
+          "element": "terre",
+          "degre": 295.84,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 115.77,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 140.39,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 61.55,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "neutre",
+        "eau": "freine"
+      }
+    }
   },
   "2026-07-02": {
-    "belier": 61,
-    "taureau": 43,
-    "gemeaux": 85,
-    "cancer": 62,
-    "lion": 61,
-    "vierge": 48,
-    "balance": 80,
-    "scorpion": 62,
-    "sagittaire": 62,
-    "capricorne": 48,
-    "verseau": 84,
-    "poissons": 62
+    "energies": {
+      "belier": 61,
+      "taureau": 43,
+      "gemeaux": 85,
+      "cancer": 62,
+      "lion": 61,
+      "vierge": 48,
+      "balance": 80,
+      "scorpion": 62,
+      "sagittaire": 62,
+      "capricorne": 48,
+      "verseau": 84,
+      "poissons": 62
+    },
+    "day_code": {
+      "date": "2026-07-02",
+      "planetes": {
+        "lune": {
+          "signe": "verseau",
+          "element": "air",
+          "degre": 307.91,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 115.6,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 141.52,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 62.26,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "neutre",
+        "terre": "freine",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-07-03": {
-    "belier": 62,
-    "taureau": 47,
-    "gemeaux": 82,
-    "cancer": 60,
-    "lion": 63,
-    "vierge": 41,
-    "balance": 82,
-    "scorpion": 63,
-    "sagittaire": 60,
-    "capricorne": 46,
-    "verseau": 83,
-    "poissons": 59
+    "energies": {
+      "belier": 62,
+      "taureau": 47,
+      "gemeaux": 82,
+      "cancer": 60,
+      "lion": 63,
+      "vierge": 41,
+      "balance": 82,
+      "scorpion": 63,
+      "sagittaire": 60,
+      "capricorne": 46,
+      "verseau": 83,
+      "poissons": 59
+    },
+    "day_code": {
+      "date": "2026-07-03",
+      "planetes": {
+        "lune": {
+          "signe": "verseau",
+          "element": "air",
+          "degre": 320.11,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 115.35,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 142.65,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 62.96,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "neutre",
+        "terre": "freine",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-07-04": {
-    "belier": 61,
-    "taureau": 45,
-    "gemeaux": 63,
-    "cancer": 80,
-    "lion": 58,
-    "vierge": 48,
-    "balance": 62,
-    "scorpion": 82,
-    "sagittaire": 61,
-    "capricorne": 42,
-    "verseau": 62,
-    "poissons": 86
+    "energies": {
+      "belier": 61,
+      "taureau": 45,
+      "gemeaux": 63,
+      "cancer": 80,
+      "lion": 58,
+      "vierge": 48,
+      "balance": 62,
+      "scorpion": 82,
+      "sagittaire": 61,
+      "capricorne": 42,
+      "verseau": 62,
+      "poissons": 86
+    },
+    "day_code": {
+      "date": "2026-07-04",
+      "planetes": {
+        "lune": {
+          "signe": "poissons",
+          "element": "eau",
+          "degre": 332.48,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 115.04,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 143.78,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 63.67,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "neutre",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-07-05": {
-    "belier": 65,
-    "taureau": 49,
-    "gemeaux": 63,
-    "cancer": 82,
-    "lion": 64,
-    "vierge": 49,
-    "balance": 61,
-    "scorpion": 82,
-    "sagittaire": 63,
-    "capricorne": 46,
-    "verseau": 60,
-    "poissons": 80
+    "energies": {
+      "belier": 65,
+      "taureau": 49,
+      "gemeaux": 63,
+      "cancer": 82,
+      "lion": 64,
+      "vierge": 49,
+      "balance": 61,
+      "scorpion": 82,
+      "sagittaire": 63,
+      "capricorne": 46,
+      "verseau": 60,
+      "poissons": 80
+    },
+    "day_code": {
+      "date": "2026-07-05",
+      "planetes": {
+        "lune": {
+          "signe": "poissons",
+          "element": "eau",
+          "degre": 345.07,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 114.66,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 144.91,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 64.38,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "neutre",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-07-06": {
-    "belier": 62,
-    "taureau": 45,
-    "gemeaux": 65,
-    "cancer": 82,
-    "lion": 62,
-    "vierge": 48,
-    "balance": 63,
-    "scorpion": 80,
-    "sagittaire": 62,
-    "capricorne": 49,
-    "verseau": 64,
-    "poissons": 82
+    "energies": {
+      "belier": 62,
+      "taureau": 45,
+      "gemeaux": 65,
+      "cancer": 82,
+      "lion": 62,
+      "vierge": 48,
+      "balance": 63,
+      "scorpion": 80,
+      "sagittaire": 62,
+      "capricorne": 49,
+      "verseau": 64,
+      "poissons": 82
+    },
+    "day_code": {
+      "date": "2026-07-06",
+      "planetes": {
+        "lune": {
+          "signe": "poissons",
+          "element": "eau",
+          "degre": 357.93,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 114.22,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 146.03,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 65.09,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "neutre",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-07-07": {
-    "belier": 77,
-    "taureau": 47,
-    "gemeaux": 64,
-    "cancer": 61,
-    "lion": 85,
-    "vierge": 46,
-    "balance": 60,
-    "scorpion": 61,
-    "sagittaire": 84,
-    "capricorne": 46,
-    "verseau": 62,
-    "poissons": 63
+    "energies": {
+      "belier": 77,
+      "taureau": 47,
+      "gemeaux": 64,
+      "cancer": 61,
+      "lion": 85,
+      "vierge": 46,
+      "balance": 60,
+      "scorpion": 61,
+      "sagittaire": 84,
+      "capricorne": 46,
+      "verseau": 62,
+      "poissons": 63
+    },
+    "day_code": {
+      "date": "2026-07-07",
+      "planetes": {
+        "lune": {
+          "signe": "belier",
+          "element": "feu",
+          "degre": 11.13,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 113.72,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 147.15,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 65.79,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-07-08": {
-    "belier": 82,
-    "taureau": 45,
-    "gemeaux": 63,
-    "cancer": 59,
-    "lion": 84,
-    "vierge": 46,
-    "balance": 62,
-    "scorpion": 62,
-    "sagittaire": 83,
-    "capricorne": 46,
-    "verseau": 62,
-    "poissons": 64
+    "energies": {
+      "belier": 82,
+      "taureau": 45,
+      "gemeaux": 63,
+      "cancer": 59,
+      "lion": 84,
+      "vierge": 46,
+      "balance": 62,
+      "scorpion": 62,
+      "sagittaire": 83,
+      "capricorne": 46,
+      "verseau": 62,
+      "poissons": 64
+    },
+    "day_code": {
+      "date": "2026-07-08",
+      "planetes": {
+        "lune": {
+          "signe": "belier",
+          "element": "feu",
+          "degre": 24.71,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 113.17,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 148.27,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 66.49,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-07-09": {
-    "belier": 46,
-    "taureau": 80,
-    "gemeaux": 61,
-    "cancer": 46,
-    "lion": 46,
-    "vierge": 85,
-    "balance": 58,
-    "scorpion": 44,
-    "sagittaire": 48,
-    "capricorne": 80,
-    "verseau": 59,
-    "poissons": 43
+    "energies": {
+      "belier": 46,
+      "taureau": 80,
+      "gemeaux": 61,
+      "cancer": 46,
+      "lion": 46,
+      "vierge": 85,
+      "balance": 58,
+      "scorpion": 44,
+      "sagittaire": 48,
+      "capricorne": 80,
+      "verseau": 59,
+      "poissons": 43
+    },
+    "day_code": {
+      "date": "2026-07-09",
+      "planetes": {
+        "lune": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 38.7,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 112.59,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 149.38,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 67.2,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "neutre",
+        "eau": "freine"
+      }
+    }
   },
   "2026-07-10": {
-    "belier": 48,
-    "taureau": 83,
-    "gemeaux": 64,
-    "cancer": 65,
-    "lion": 44,
-    "vierge": 81,
-    "balance": 61,
-    "scorpion": 61,
-    "sagittaire": 46,
-    "capricorne": 83,
-    "verseau": 62,
-    "poissons": 61
+    "energies": {
+      "belier": 48,
+      "taureau": 83,
+      "gemeaux": 64,
+      "cancer": 65,
+      "lion": 44,
+      "vierge": 81,
+      "balance": 61,
+      "scorpion": 61,
+      "sagittaire": 46,
+      "capricorne": 83,
+      "verseau": 62,
+      "poissons": 61
+    },
+    "day_code": {
+      "date": "2026-07-10",
+      "planetes": {
+        "lune": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 53.1,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 111.98,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 150.5,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 67.9,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "neutre",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-07-11": {
-    "belier": 44,
-    "taureau": 63,
-    "gemeaux": 81,
-    "cancer": 63,
-    "lion": 50,
-    "vierge": 62,
-    "balance": 84,
-    "scorpion": 61,
-    "sagittaire": 46,
-    "capricorne": 65,
-    "verseau": 83,
-    "poissons": 65
+    "energies": {
+      "belier": 44,
+      "taureau": 63,
+      "gemeaux": 81,
+      "cancer": 63,
+      "lion": 50,
+      "vierge": 62,
+      "balance": 84,
+      "scorpion": 61,
+      "sagittaire": 46,
+      "capricorne": 65,
+      "verseau": 83,
+      "poissons": 65
+    },
+    "day_code": {
+      "date": "2026-07-11",
+      "planetes": {
+        "lune": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 67.84,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 111.34,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 151.61,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 68.6,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-07-12": {
-    "belier": 45,
-    "taureau": 65,
-    "gemeaux": 86,
-    "cancer": 59,
-    "lion": 44,
-    "vierge": 63,
-    "balance": 80,
-    "scorpion": 59,
-    "sagittaire": 49,
-    "capricorne": 61,
-    "verseau": 82,
-    "poissons": 61
+    "energies": {
+      "belier": 45,
+      "taureau": 65,
+      "gemeaux": 86,
+      "cancer": 59,
+      "lion": 44,
+      "vierge": 63,
+      "balance": 80,
+      "scorpion": 59,
+      "sagittaire": 49,
+      "capricorne": 61,
+      "verseau": 82,
+      "poissons": 61
+    },
+    "day_code": {
+      "date": "2026-07-12",
+      "planetes": {
+        "lune": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 82.85,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 110.7,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 152.71,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 69.3,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-07-13": {
-    "belier": 45,
-    "taureau": 61,
-    "gemeaux": 63,
-    "cancer": 81,
-    "lion": 46,
-    "vierge": 60,
-    "balance": 63,
-    "scorpion": 84,
-    "sagittaire": 47,
-    "capricorne": 64,
-    "verseau": 62,
-    "poissons": 84
+    "energies": {
+      "belier": 45,
+      "taureau": 61,
+      "gemeaux": 63,
+      "cancer": 81,
+      "lion": 46,
+      "vierge": 60,
+      "balance": 63,
+      "scorpion": 84,
+      "sagittaire": 47,
+      "capricorne": 64,
+      "verseau": 62,
+      "poissons": 84
+    },
+    "day_code": {
+      "date": "2026-07-13",
+      "planetes": {
+        "lune": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 97.96,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 110.05,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 153.82,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 70.0,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "neutre",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-07-14": {
-    "belier": 45,
-    "taureau": 63,
-    "gemeaux": 62,
-    "cancer": 80,
-    "lion": 43,
-    "vierge": 61,
-    "balance": 65,
-    "scorpion": 84,
-    "sagittaire": 46,
-    "capricorne": 62,
-    "verseau": 64,
-    "poissons": 82
+    "energies": {
+      "belier": 45,
+      "taureau": 63,
+      "gemeaux": 62,
+      "cancer": 80,
+      "lion": 43,
+      "vierge": 61,
+      "balance": 65,
+      "scorpion": 84,
+      "sagittaire": 46,
+      "capricorne": 62,
+      "verseau": 64,
+      "poissons": 82
+    },
+    "day_code": {
+      "date": "2026-07-14",
+      "planetes": {
+        "lune": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 113.04,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 109.42,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 154.92,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 70.69,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "neutre",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-07-15": {
-    "belier": 81,
-    "taureau": 47,
-    "gemeaux": 64,
-    "cancer": 48,
-    "lion": 83,
-    "vierge": 48,
-    "balance": 61,
-    "scorpion": 48,
-    "sagittaire": 82,
-    "capricorne": 45,
-    "verseau": 62,
-    "poissons": 50
+    "energies": {
+      "belier": 81,
+      "taureau": 47,
+      "gemeaux": 64,
+      "cancer": 48,
+      "lion": 83,
+      "vierge": 48,
+      "balance": 61,
+      "scorpion": 48,
+      "sagittaire": 82,
+      "capricorne": 45,
+      "verseau": 62,
+      "poissons": 50
+    },
+    "day_code": {
+      "date": "2026-07-15",
+      "planetes": {
+        "lune": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 127.9,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 108.81,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 156.02,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 71.39,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "freine"
+      }
+    }
   },
   "2026-07-16": {
-    "belier": 84,
-    "taureau": 45,
-    "gemeaux": 60,
-    "cancer": 44,
-    "lion": 80,
-    "vierge": 45,
-    "balance": 61,
-    "scorpion": 42,
-    "sagittaire": 86,
-    "capricorne": 48,
-    "verseau": 60,
-    "poissons": 47
+    "energies": {
+      "belier": 84,
+      "taureau": 45,
+      "gemeaux": 60,
+      "cancer": 44,
+      "lion": 80,
+      "vierge": 45,
+      "balance": 61,
+      "scorpion": 42,
+      "sagittaire": 86,
+      "capricorne": 48,
+      "verseau": 60,
+      "poissons": 47
+    },
+    "day_code": {
+      "date": "2026-07-16",
+      "planetes": {
+        "lune": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 142.44,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 108.24,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 157.12,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 72.08,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "freine"
+      }
+    }
   },
   "2026-07-17": {
-    "belier": 49,
-    "taureau": 82,
-    "gemeaux": 63,
-    "cancer": 60,
-    "lion": 48,
-    "vierge": 83,
-    "balance": 60,
-    "scorpion": 65,
-    "sagittaire": 47,
-    "capricorne": 82,
-    "verseau": 62,
-    "poissons": 62
+    "energies": {
+      "belier": 49,
+      "taureau": 82,
+      "gemeaux": 63,
+      "cancer": 60,
+      "lion": 48,
+      "vierge": 83,
+      "balance": 60,
+      "scorpion": 65,
+      "sagittaire": 47,
+      "capricorne": 82,
+      "verseau": 62,
+      "poissons": 62
+    },
+    "day_code": {
+      "date": "2026-07-17",
+      "planetes": {
+        "lune": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 156.56,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 107.71,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 158.21,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 72.78,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "neutre",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-07-18": {
-    "belier": 47,
-    "taureau": 84,
-    "gemeaux": 60,
-    "cancer": 62,
-    "lion": 46,
-    "vierge": 82,
-    "balance": 64,
-    "scorpion": 62,
-    "sagittaire": 42,
-    "capricorne": 84,
-    "verseau": 63,
-    "poissons": 64
+    "energies": {
+      "belier": 47,
+      "taureau": 84,
+      "gemeaux": 60,
+      "cancer": 62,
+      "lion": 46,
+      "vierge": 82,
+      "balance": 64,
+      "scorpion": 62,
+      "sagittaire": 42,
+      "capricorne": 84,
+      "verseau": 63,
+      "poissons": 64
+    },
+    "day_code": {
+      "date": "2026-07-18",
+      "planetes": {
+        "lune": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 170.24,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 107.24,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 159.31,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 73.47,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "neutre",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-07-19": {
-    "belier": 44,
-    "taureau": 62,
-    "gemeaux": 82,
-    "cancer": 61,
-    "lion": 42,
-    "vierge": 61,
-    "balance": 80,
-    "scorpion": 60,
-    "sagittaire": 46,
-    "capricorne": 65,
-    "verseau": 80,
-    "poissons": 60
+    "energies": {
+      "belier": 44,
+      "taureau": 62,
+      "gemeaux": 82,
+      "cancer": 61,
+      "lion": 42,
+      "vierge": 61,
+      "balance": 80,
+      "scorpion": 60,
+      "sagittaire": 46,
+      "capricorne": 65,
+      "verseau": 80,
+      "poissons": 60
+    },
+    "day_code": {
+      "date": "2026-07-19",
+      "planetes": {
+        "lune": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 183.48,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 106.83,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 160.39,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 74.16,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-07-20": {
-    "belier": 48,
-    "taureau": 62,
-    "gemeaux": 80,
-    "cancer": 65,
-    "lion": 46,
-    "vierge": 64,
-    "balance": 79,
-    "scorpion": 64,
-    "sagittaire": 41,
-    "capricorne": 63,
-    "verseau": 84,
-    "poissons": 61
+    "energies": {
+      "belier": 48,
+      "taureau": 62,
+      "gemeaux": 80,
+      "cancer": 65,
+      "lion": 46,
+      "vierge": 64,
+      "balance": 79,
+      "scorpion": 64,
+      "sagittaire": 41,
+      "capricorne": 63,
+      "verseau": 84,
+      "poissons": 61
+    },
+    "day_code": {
+      "date": "2026-07-20",
+      "planetes": {
+        "lune": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 196.31,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 106.49,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 161.48,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 74.85,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-07-21": {
-    "belier": 42,
-    "taureau": 61,
-    "gemeaux": 81,
-    "cancer": 62,
-    "lion": 46,
-    "vierge": 66,
-    "balance": 81,
-    "scorpion": 64,
-    "sagittaire": 46,
-    "capricorne": 62,
-    "verseau": 80,
-    "poissons": 62
+    "energies": {
+      "belier": 42,
+      "taureau": 61,
+      "gemeaux": 81,
+      "cancer": 62,
+      "lion": 46,
+      "vierge": 66,
+      "balance": 81,
+      "scorpion": 64,
+      "sagittaire": 46,
+      "capricorne": 62,
+      "verseau": 80,
+      "poissons": 62
+    },
+    "day_code": {
+      "date": "2026-07-21",
+      "planetes": {
+        "lune": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 208.82,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 106.22,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 162.56,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 75.54,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-07-22": {
-    "belier": 45,
-    "taureau": 62,
-    "gemeaux": 61,
-    "cancer": 82,
-    "lion": 44,
-    "vierge": 62,
-    "balance": 61,
-    "scorpion": 84,
-    "sagittaire": 45,
-    "capricorne": 61,
-    "verseau": 60,
-    "poissons": 83
+    "energies": {
+      "belier": 45,
+      "taureau": 62,
+      "gemeaux": 61,
+      "cancer": 82,
+      "lion": 44,
+      "vierge": 62,
+      "balance": 61,
+      "scorpion": 84,
+      "sagittaire": 45,
+      "capricorne": 61,
+      "verseau": 60,
+      "poissons": 83
+    },
+    "day_code": {
+      "date": "2026-07-22",
+      "planetes": {
+        "lune": {
+          "signe": "scorpion",
+          "element": "eau",
+          "degre": 221.05,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 106.05,
+          "retrograde": true
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 163.64,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 76.23,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "neutre",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-07-23": {
-    "belier": 44,
-    "taureau": 62,
-    "gemeaux": 66,
-    "cancer": 82,
-    "lion": 47,
-    "vierge": 59,
-    "balance": 67,
-    "scorpion": 83,
-    "sagittaire": 44,
-    "capricorne": 62,
-    "verseau": 62,
-    "poissons": 82
+    "energies": {
+      "belier": 44,
+      "taureau": 62,
+      "gemeaux": 66,
+      "cancer": 82,
+      "lion": 47,
+      "vierge": 59,
+      "balance": 67,
+      "scorpion": 83,
+      "sagittaire": 44,
+      "capricorne": 62,
+      "verseau": 62,
+      "poissons": 82
+    },
+    "day_code": {
+      "date": "2026-07-23",
+      "planetes": {
+        "lune": {
+          "signe": "scorpion",
+          "element": "eau",
+          "degre": 233.1,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 105.96,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 164.71,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 76.91,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "neutre",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-07-24": {
-    "belier": 82,
-    "taureau": 44,
-    "gemeaux": 62,
-    "cancer": 48,
-    "lion": 81,
-    "vierge": 46,
-    "balance": 60,
-    "scorpion": 46,
-    "sagittaire": 82,
-    "capricorne": 44,
-    "verseau": 59,
-    "poissons": 49
+    "energies": {
+      "belier": 82,
+      "taureau": 44,
+      "gemeaux": 62,
+      "cancer": 48,
+      "lion": 81,
+      "vierge": 46,
+      "balance": 60,
+      "scorpion": 46,
+      "sagittaire": 82,
+      "capricorne": 44,
+      "verseau": 59,
+      "poissons": 49
+    },
+    "day_code": {
+      "date": "2026-07-24",
+      "planetes": {
+        "lune": {
+          "signe": "sagittaire",
+          "element": "feu",
+          "degre": 245.02,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 105.96,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 165.78,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 77.6,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "freine"
+      }
+    }
   },
   "2026-07-25": {
-    "belier": 79,
-    "taureau": 47,
-    "gemeaux": 60,
-    "cancer": 45,
-    "lion": 82,
-    "vierge": 47,
-    "balance": 63,
-    "scorpion": 50,
-    "sagittaire": 80,
-    "capricorne": 44,
-    "verseau": 62,
-    "poissons": 48
+    "energies": {
+      "belier": 79,
+      "taureau": 47,
+      "gemeaux": 60,
+      "cancer": 45,
+      "lion": 82,
+      "vierge": 47,
+      "balance": 63,
+      "scorpion": 50,
+      "sagittaire": 80,
+      "capricorne": 44,
+      "verseau": 62,
+      "poissons": 48
+    },
+    "day_code": {
+      "date": "2026-07-25",
+      "planetes": {
+        "lune": {
+          "signe": "sagittaire",
+          "element": "feu",
+          "degre": 256.9,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 106.06,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 166.85,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 78.28,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "freine"
+      }
+    }
   },
   "2026-07-26": {
-    "belier": 82,
-    "taureau": 49,
-    "gemeaux": 60,
-    "cancer": 42,
-    "lion": 81,
-    "vierge": 46,
-    "balance": 61,
-    "scorpion": 46,
-    "sagittaire": 81,
-    "capricorne": 49,
-    "verseau": 64,
-    "poissons": 44
+    "energies": {
+      "belier": 82,
+      "taureau": 49,
+      "gemeaux": 60,
+      "cancer": 42,
+      "lion": 81,
+      "vierge": 46,
+      "balance": 61,
+      "scorpion": 46,
+      "sagittaire": 81,
+      "capricorne": 49,
+      "verseau": 64,
+      "poissons": 44
+    },
+    "day_code": {
+      "date": "2026-07-26",
+      "planetes": {
+        "lune": {
+          "signe": "sagittaire",
+          "element": "feu",
+          "degre": 268.77,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 106.26,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 167.91,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 78.96,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "freine"
+      }
+    }
   },
   "2026-07-27": {
-    "belier": 46,
-    "taureau": 80,
-    "gemeaux": 64,
-    "cancer": 62,
-    "lion": 46,
-    "vierge": 82,
-    "balance": 67,
-    "scorpion": 61,
-    "sagittaire": 45,
-    "capricorne": 83,
-    "verseau": 62,
-    "poissons": 63
+    "energies": {
+      "belier": 46,
+      "taureau": 80,
+      "gemeaux": 64,
+      "cancer": 62,
+      "lion": 46,
+      "vierge": 82,
+      "balance": 67,
+      "scorpion": 61,
+      "sagittaire": 45,
+      "capricorne": 83,
+      "verseau": 62,
+      "poissons": 63
+    },
+    "day_code": {
+      "date": "2026-07-27",
+      "planetes": {
+        "lune": {
+          "signe": "capricorne",
+          "element": "terre",
+          "degre": 280.68,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 106.56,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 168.97,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 79.65,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "neutre",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-07-28": {
-    "belier": 50,
-    "taureau": 81,
-    "gemeaux": 64,
-    "cancer": 61,
-    "lion": 42,
-    "vierge": 84,
-    "balance": 60,
-    "scorpion": 65,
-    "sagittaire": 46,
-    "capricorne": 83,
-    "verseau": 67,
-    "poissons": 62
+    "energies": {
+      "belier": 50,
+      "taureau": 81,
+      "gemeaux": 64,
+      "cancer": 61,
+      "lion": 42,
+      "vierge": 84,
+      "balance": 60,
+      "scorpion": 65,
+      "sagittaire": 46,
+      "capricorne": 83,
+      "verseau": 67,
+      "poissons": 62
+    },
+    "day_code": {
+      "date": "2026-07-28",
+      "planetes": {
+        "lune": {
+          "signe": "capricorne",
+          "element": "terre",
+          "degre": 292.69,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 106.96,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 170.03,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 80.33,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "neutre",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-07-29": {
-    "belier": 48,
-    "taureau": 65,
-    "gemeaux": 80,
-    "cancer": 64,
-    "lion": 46,
-    "vierge": 61,
-    "balance": 80,
-    "scorpion": 64,
-    "sagittaire": 46,
-    "capricorne": 65,
-    "verseau": 82,
-    "poissons": 63
+    "energies": {
+      "belier": 48,
+      "taureau": 65,
+      "gemeaux": 80,
+      "cancer": 64,
+      "lion": 46,
+      "vierge": 61,
+      "balance": 80,
+      "scorpion": 64,
+      "sagittaire": 46,
+      "capricorne": 65,
+      "verseau": 82,
+      "poissons": 63
+    },
+    "day_code": {
+      "date": "2026-07-29",
+      "planetes": {
+        "lune": {
+          "signe": "verseau",
+          "element": "air",
+          "degre": 304.81,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 107.46,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 171.08,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 81.01,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-07-30": {
-    "belier": 46,
-    "taureau": 64,
-    "gemeaux": 81,
-    "cancer": 65,
-    "lion": 45,
-    "vierge": 58,
-    "balance": 82,
-    "scorpion": 61,
-    "sagittaire": 45,
-    "capricorne": 60,
-    "verseau": 82,
-    "poissons": 64
+    "energies": {
+      "belier": 46,
+      "taureau": 64,
+      "gemeaux": 81,
+      "cancer": 65,
+      "lion": 45,
+      "vierge": 58,
+      "balance": 82,
+      "scorpion": 61,
+      "sagittaire": 45,
+      "capricorne": 60,
+      "verseau": 82,
+      "poissons": 64
+    },
+    "day_code": {
+      "date": "2026-07-30",
+      "planetes": {
+        "lune": {
+          "signe": "verseau",
+          "element": "air",
+          "degre": 317.07,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 108.06,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 172.13,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 81.68,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-07-31": {
-    "belier": 44,
-    "taureau": 64,
-    "gemeaux": 81,
-    "cancer": 64,
-    "lion": 43,
-    "vierge": 62,
-    "balance": 82,
-    "scorpion": 63,
-    "sagittaire": 47,
-    "capricorne": 62,
-    "verseau": 82,
-    "poissons": 61
+    "energies": {
+      "belier": 44,
+      "taureau": 64,
+      "gemeaux": 81,
+      "cancer": 64,
+      "lion": 43,
+      "vierge": 62,
+      "balance": 82,
+      "scorpion": 63,
+      "sagittaire": 47,
+      "capricorne": 62,
+      "verseau": 82,
+      "poissons": 61
+    },
+    "day_code": {
+      "date": "2026-07-31",
+      "planetes": {
+        "lune": {
+          "signe": "verseau",
+          "element": "air",
+          "degre": 329.51,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 108.76,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 173.17,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 82.36,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-01": {
-    "belier": 45,
-    "taureau": 63,
-    "gemeaux": 62,
-    "cancer": 82,
-    "lion": 46,
-    "vierge": 58,
-    "balance": 65,
-    "scorpion": 81,
-    "sagittaire": 44,
-    "capricorne": 62,
-    "verseau": 60,
-    "poissons": 82
+    "energies": {
+      "belier": 45,
+      "taureau": 63,
+      "gemeaux": 62,
+      "cancer": 82,
+      "lion": 46,
+      "vierge": 58,
+      "balance": 65,
+      "scorpion": 81,
+      "sagittaire": 44,
+      "capricorne": 62,
+      "verseau": 60,
+      "poissons": 82
+    },
+    "day_code": {
+      "date": "2026-08-01",
+      "planetes": {
+        "lune": {
+          "signe": "poissons",
+          "element": "eau",
+          "degre": 342.13,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 109.57,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 174.21,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 83.04,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "neutre",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-08-02": {
-    "belier": 46,
-    "taureau": 61,
-    "gemeaux": 63,
-    "cancer": 82,
-    "lion": 50,
-    "vierge": 62,
-    "balance": 61,
-    "scorpion": 84,
-    "sagittaire": 46,
-    "capricorne": 61,
-    "verseau": 62,
-    "poissons": 83
+    "energies": {
+      "belier": 46,
+      "taureau": 61,
+      "gemeaux": 63,
+      "cancer": 82,
+      "lion": 50,
+      "vierge": 62,
+      "balance": 61,
+      "scorpion": 84,
+      "sagittaire": 46,
+      "capricorne": 61,
+      "verseau": 62,
+      "poissons": 83
+    },
+    "day_code": {
+      "date": "2026-08-02",
+      "planetes": {
+        "lune": {
+          "signe": "poissons",
+          "element": "eau",
+          "degre": 354.96,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 110.47,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 175.24,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 83.71,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "neutre",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-08-03": {
-    "belier": 83,
-    "taureau": 47,
-    "gemeaux": 62,
-    "cancer": 45,
-    "lion": 80,
-    "vierge": 49,
-    "balance": 59,
-    "scorpion": 46,
-    "sagittaire": 81,
-    "capricorne": 43,
-    "verseau": 62,
-    "poissons": 47
+    "energies": {
+      "belier": 83,
+      "taureau": 47,
+      "gemeaux": 62,
+      "cancer": 45,
+      "lion": 80,
+      "vierge": 49,
+      "balance": 59,
+      "scorpion": 46,
+      "sagittaire": 81,
+      "capricorne": 43,
+      "verseau": 62,
+      "poissons": 47
+    },
+    "day_code": {
+      "date": "2026-08-03",
+      "planetes": {
+        "lune": {
+          "signe": "belier",
+          "element": "feu",
+          "degre": 8.04,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 111.46,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 176.27,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 84.38,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "freine"
+      }
+    }
   },
   "2026-08-04": {
-    "belier": 85,
-    "taureau": 46,
-    "gemeaux": 62,
-    "cancer": 48,
-    "lion": 83,
-    "vierge": 44,
-    "balance": 60,
-    "scorpion": 47,
-    "sagittaire": 85,
-    "capricorne": 45,
-    "verseau": 64,
-    "poissons": 50
+    "energies": {
+      "belier": 85,
+      "taureau": 46,
+      "gemeaux": 62,
+      "cancer": 48,
+      "lion": 83,
+      "vierge": 44,
+      "balance": 60,
+      "scorpion": 47,
+      "sagittaire": 85,
+      "capricorne": 45,
+      "verseau": 64,
+      "poissons": 50
+    },
+    "day_code": {
+      "date": "2026-08-04",
+      "planetes": {
+        "lune": {
+          "signe": "belier",
+          "element": "feu",
+          "degre": 21.38,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 112.55,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 177.29,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 85.06,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "freine"
+      }
+    }
   },
   "2026-08-05": {
-    "belier": 44,
-    "taureau": 81,
-    "gemeaux": 60,
-    "cancer": 62,
-    "lion": 46,
-    "vierge": 82,
-    "balance": 66,
-    "scorpion": 63,
-    "sagittaire": 44,
-    "capricorne": 83,
-    "verseau": 65,
-    "poissons": 61
+    "energies": {
+      "belier": 44,
+      "taureau": 81,
+      "gemeaux": 60,
+      "cancer": 62,
+      "lion": 46,
+      "vierge": 82,
+      "balance": 66,
+      "scorpion": 63,
+      "sagittaire": 44,
+      "capricorne": 83,
+      "verseau": 65,
+      "poissons": 61
+    },
+    "day_code": {
+      "date": "2026-08-05",
+      "planetes": {
+        "lune": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 35.0,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 113.74,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 178.31,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 85.73,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "neutre",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-06": {
-    "belier": 48,
-    "taureau": 84,
-    "gemeaux": 60,
-    "cancer": 64,
-    "lion": 47,
-    "vierge": 82,
-    "balance": 58,
-    "scorpion": 60,
-    "sagittaire": 46,
-    "capricorne": 82,
-    "verseau": 64,
-    "poissons": 63
+    "energies": {
+      "belier": 48,
+      "taureau": 84,
+      "gemeaux": 60,
+      "cancer": 64,
+      "lion": 47,
+      "vierge": 82,
+      "balance": 58,
+      "scorpion": 60,
+      "sagittaire": 46,
+      "capricorne": 82,
+      "verseau": 64,
+      "poissons": 63
+    },
+    "day_code": {
+      "date": "2026-08-06",
+      "planetes": {
+        "lune": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 48.92,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 115.01,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 179.33,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 86.4,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "neutre",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-07": {
-    "belier": 47,
-    "taureau": 43,
-    "gemeaux": 82,
-    "cancer": 60,
-    "lion": 45,
-    "vierge": 46,
-    "balance": 86,
-    "scorpion": 61,
-    "sagittaire": 47,
-    "capricorne": 43,
-    "verseau": 80,
-    "poissons": 64
+    "energies": {
+      "belier": 47,
+      "taureau": 43,
+      "gemeaux": 82,
+      "cancer": 60,
+      "lion": 45,
+      "vierge": 46,
+      "balance": 86,
+      "scorpion": 61,
+      "sagittaire": 47,
+      "capricorne": 43,
+      "verseau": 80,
+      "poissons": 64
+    },
+    "day_code": {
+      "date": "2026-08-07",
+      "planetes": {
+        "lune": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 63.13,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 116.37,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 180.33,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 87.06,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "freine",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-08": {
-    "belier": 48,
-    "taureau": 44,
-    "gemeaux": 78,
-    "cancer": 64,
-    "lion": 45,
-    "vierge": 46,
-    "balance": 80,
-    "scorpion": 63,
-    "sagittaire": 44,
-    "capricorne": 46,
-    "verseau": 82,
-    "poissons": 63
+    "energies": {
+      "belier": 48,
+      "taureau": 44,
+      "gemeaux": 78,
+      "cancer": 64,
+      "lion": 45,
+      "vierge": 46,
+      "balance": 80,
+      "scorpion": 63,
+      "sagittaire": 44,
+      "capricorne": 46,
+      "verseau": 82,
+      "poissons": 63
+    },
+    "day_code": {
+      "date": "2026-08-08",
+      "planetes": {
+        "lune": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 77.58,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 117.82,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 181.34,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 87.73,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "freine",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-09": {
-    "belier": 46,
-    "taureau": 48,
-    "gemeaux": 61,
-    "cancer": 80,
-    "lion": 47,
-    "vierge": 47,
-    "balance": 62,
-    "scorpion": 85,
-    "sagittaire": 48,
-    "capricorne": 41,
-    "verseau": 62,
-    "poissons": 83
+    "energies": {
+      "belier": 46,
+      "taureau": 48,
+      "gemeaux": 61,
+      "cancer": 80,
+      "lion": 47,
+      "vierge": 47,
+      "balance": 62,
+      "scorpion": 85,
+      "sagittaire": 48,
+      "capricorne": 41,
+      "verseau": 62,
+      "poissons": 83
+    },
+    "day_code": {
+      "date": "2026-08-09",
+      "planetes": {
+        "lune": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 92.22,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 119.34,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 182.34,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 88.4,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-08-10": {
-    "belier": 61,
-    "taureau": 47,
-    "gemeaux": 85,
-    "cancer": 61,
-    "lion": 66,
-    "vierge": 44,
-    "balance": 83,
-    "scorpion": 62,
-    "sagittaire": 63,
-    "capricorne": 46,
-    "verseau": 79,
-    "poissons": 60
+    "energies": {
+      "belier": 61,
+      "taureau": 47,
+      "gemeaux": 85,
+      "cancer": 61,
+      "lion": 66,
+      "vierge": 44,
+      "balance": 83,
+      "scorpion": 62,
+      "sagittaire": 63,
+      "capricorne": 46,
+      "verseau": 79,
+      "poissons": 60
+    },
+    "day_code": {
+      "date": "2026-08-10",
+      "planetes": {
+        "lune": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 106.96,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 120.94,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 183.33,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 89.06,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "neutre",
+        "terre": "freine",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-11": {
-    "belier": 80,
-    "taureau": 47,
-    "gemeaux": 64,
-    "cancer": 48,
-    "lion": 82,
-    "vierge": 44,
-    "balance": 63,
-    "scorpion": 46,
-    "sagittaire": 82,
-    "capricorne": 42,
-    "verseau": 65,
-    "poissons": 46
+    "energies": {
+      "belier": 80,
+      "taureau": 47,
+      "gemeaux": 64,
+      "cancer": 48,
+      "lion": 82,
+      "vierge": 44,
+      "balance": 63,
+      "scorpion": 46,
+      "sagittaire": 82,
+      "capricorne": 42,
+      "verseau": 65,
+      "poissons": 46
+    },
+    "day_code": {
+      "date": "2026-08-11",
+      "planetes": {
+        "lune": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 121.68,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 122.6,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 184.31,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 89.73,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "freine"
+      }
+    }
   },
   "2026-08-12": {
-    "belier": 81,
-    "taureau": 51,
-    "gemeaux": 63,
-    "cancer": 60,
-    "lion": 82,
-    "vierge": 46,
-    "balance": 60,
-    "scorpion": 66,
-    "sagittaire": 85,
-    "capricorne": 44,
-    "verseau": 62,
-    "poissons": 62
+    "energies": {
+      "belier": 81,
+      "taureau": 51,
+      "gemeaux": 63,
+      "cancer": 60,
+      "lion": 82,
+      "vierge": 46,
+      "balance": 60,
+      "scorpion": 66,
+      "sagittaire": 85,
+      "capricorne": 44,
+      "verseau": 62,
+      "poissons": 62
+    },
+    "day_code": {
+      "date": "2026-08-12",
+      "planetes": {
+        "lune": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 136.28,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 124.33,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 185.29,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 90.39,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-13": {
-    "belier": 48,
-    "taureau": 79,
-    "gemeaux": 48,
-    "cancer": 66,
-    "lion": 44,
-    "vierge": 81,
-    "balance": 46,
-    "scorpion": 60,
-    "sagittaire": 46,
-    "capricorne": 81,
-    "verseau": 44,
-    "poissons": 64
+    "energies": {
+      "belier": 48,
+      "taureau": 79,
+      "gemeaux": 48,
+      "cancer": 66,
+      "lion": 44,
+      "vierge": 81,
+      "balance": 46,
+      "scorpion": 60,
+      "sagittaire": 46,
+      "capricorne": 81,
+      "verseau": 44,
+      "poissons": 64
+    },
+    "day_code": {
+      "date": "2026-08-13",
+      "planetes": {
+        "lune": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 150.63,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 126.11,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 186.27,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 91.05,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "freine",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-14": {
-    "belier": 46,
-    "taureau": 79,
-    "gemeaux": 44,
-    "cancer": 63,
-    "lion": 44,
-    "vierge": 79,
-    "balance": 47,
-    "scorpion": 64,
-    "sagittaire": 48,
-    "capricorne": 79,
-    "verseau": 45,
-    "poissons": 64
+    "energies": {
+      "belier": 46,
+      "taureau": 79,
+      "gemeaux": 44,
+      "cancer": 63,
+      "lion": 44,
+      "vierge": 79,
+      "balance": 47,
+      "scorpion": 64,
+      "sagittaire": 48,
+      "capricorne": 79,
+      "verseau": 45,
+      "poissons": 64
+    },
+    "day_code": {
+      "date": "2026-08-14",
+      "planetes": {
+        "lune": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 164.66,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 127.95,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 187.23,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 91.71,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "freine",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-15": {
-    "belier": 45,
-    "taureau": 80,
-    "gemeaux": 42,
-    "cancer": 60,
-    "lion": 44,
-    "vierge": 81,
-    "balance": 45,
-    "scorpion": 60,
-    "sagittaire": 46,
-    "capricorne": 84,
-    "verseau": 46,
-    "poissons": 63
+    "energies": {
+      "belier": 45,
+      "taureau": 80,
+      "gemeaux": 42,
+      "cancer": 60,
+      "lion": 44,
+      "vierge": 81,
+      "balance": 45,
+      "scorpion": 60,
+      "sagittaire": 46,
+      "capricorne": 84,
+      "verseau": 46,
+      "poissons": 63
+    },
+    "day_code": {
+      "date": "2026-08-15",
+      "planetes": {
+        "lune": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 178.32,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 129.83,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 188.19,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 92.37,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "freine",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-16": {
-    "belier": 66,
-    "taureau": 47,
-    "gemeaux": 82,
-    "cancer": 63,
-    "lion": 64,
-    "vierge": 45,
-    "balance": 84,
-    "scorpion": 58,
-    "sagittaire": 64,
-    "capricorne": 45,
-    "verseau": 81,
-    "poissons": 60
+    "energies": {
+      "belier": 66,
+      "taureau": 47,
+      "gemeaux": 82,
+      "cancer": 63,
+      "lion": 64,
+      "vierge": 45,
+      "balance": 84,
+      "scorpion": 58,
+      "sagittaire": 64,
+      "capricorne": 45,
+      "verseau": 81,
+      "poissons": 60
+    },
+    "day_code": {
+      "date": "2026-08-16",
+      "planetes": {
+        "lune": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 191.59,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 131.75,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 189.15,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 93.02,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "neutre",
+        "terre": "freine",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-17": {
-    "belier": 59,
-    "taureau": 47,
-    "gemeaux": 82,
-    "cancer": 60,
-    "lion": 61,
-    "vierge": 47,
-    "balance": 82,
-    "scorpion": 61,
-    "sagittaire": 62,
-    "capricorne": 46,
-    "verseau": 85,
-    "poissons": 62
+    "energies": {
+      "belier": 59,
+      "taureau": 47,
+      "gemeaux": 82,
+      "cancer": 60,
+      "lion": 61,
+      "vierge": 47,
+      "balance": 82,
+      "scorpion": 61,
+      "sagittaire": 62,
+      "capricorne": 46,
+      "verseau": 85,
+      "poissons": 62
+    },
+    "day_code": {
+      "date": "2026-08-17",
+      "planetes": {
+        "lune": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 204.48,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 133.7,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 190.09,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 93.68,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "neutre",
+        "terre": "freine",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-18": {
-    "belier": 62,
-    "taureau": 48,
-    "gemeaux": 64,
-    "cancer": 82,
-    "lion": 64,
-    "vierge": 46,
-    "balance": 63,
-    "scorpion": 82,
-    "sagittaire": 60,
-    "capricorne": 44,
-    "verseau": 62,
-    "poissons": 83
+    "energies": {
+      "belier": 62,
+      "taureau": 48,
+      "gemeaux": 64,
+      "cancer": 82,
+      "lion": 64,
+      "vierge": 46,
+      "balance": 63,
+      "scorpion": 82,
+      "sagittaire": 60,
+      "capricorne": 44,
+      "verseau": 62,
+      "poissons": 83
+    },
+    "day_code": {
+      "date": "2026-08-18",
+      "planetes": {
+        "lune": {
+          "signe": "scorpion",
+          "element": "eau",
+          "degre": 217.03,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 135.67,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 191.03,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 94.33,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "neutre",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-08-19": {
-    "belier": 64,
-    "taureau": 45,
-    "gemeaux": 62,
-    "cancer": 84,
-    "lion": 62,
-    "vierge": 47,
-    "balance": 61,
-    "scorpion": 82,
-    "sagittaire": 62,
-    "capricorne": 46,
-    "verseau": 60,
-    "poissons": 86
+    "energies": {
+      "belier": 64,
+      "taureau": 45,
+      "gemeaux": 62,
+      "cancer": 84,
+      "lion": 62,
+      "vierge": 47,
+      "balance": 61,
+      "scorpion": 82,
+      "sagittaire": 62,
+      "capricorne": 46,
+      "verseau": 60,
+      "poissons": 86
+    },
+    "day_code": {
+      "date": "2026-08-19",
+      "planetes": {
+        "lune": {
+          "signe": "scorpion",
+          "element": "eau",
+          "degre": 229.31,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 137.66,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 191.96,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 94.98,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "neutre",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-08-20": {
-    "belier": 82,
-    "taureau": 46,
-    "gemeaux": 63,
-    "cancer": 65,
-    "lion": 83,
-    "vierge": 48,
-    "balance": 64,
-    "scorpion": 62,
-    "sagittaire": 78,
-    "capricorne": 47,
-    "verseau": 61,
-    "poissons": 64
+    "energies": {
+      "belier": 82,
+      "taureau": 46,
+      "gemeaux": 63,
+      "cancer": 65,
+      "lion": 83,
+      "vierge": 48,
+      "balance": 64,
+      "scorpion": 62,
+      "sagittaire": 78,
+      "capricorne": 47,
+      "verseau": 61,
+      "poissons": 64
+    },
+    "day_code": {
+      "date": "2026-08-20",
+      "planetes": {
+        "lune": {
+          "signe": "sagittaire",
+          "element": "feu",
+          "degre": 241.37,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 139.67,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 192.89,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 95.63,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-21": {
-    "belier": 79,
-    "taureau": 46,
-    "gemeaux": 60,
-    "cancer": 63,
-    "lion": 83,
-    "vierge": 49,
-    "balance": 62,
-    "scorpion": 64,
-    "sagittaire": 85,
-    "capricorne": 46,
-    "verseau": 62,
-    "poissons": 61
+    "energies": {
+      "belier": 79,
+      "taureau": 46,
+      "gemeaux": 60,
+      "cancer": 63,
+      "lion": 83,
+      "vierge": 49,
+      "balance": 62,
+      "scorpion": 64,
+      "sagittaire": 85,
+      "capricorne": 46,
+      "verseau": 62,
+      "poissons": 61
+    },
+    "day_code": {
+      "date": "2026-08-21",
+      "planetes": {
+        "lune": {
+          "signe": "sagittaire",
+          "element": "feu",
+          "degre": 253.31,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 141.68,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 193.8,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 96.28,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-22": {
-    "belier": 80,
-    "taureau": 47,
-    "gemeaux": 59,
-    "cancer": 59,
-    "lion": 82,
-    "vierge": 48,
-    "balance": 60,
-    "scorpion": 60,
-    "sagittaire": 84,
-    "capricorne": 48,
-    "verseau": 65,
-    "poissons": 64
+    "energies": {
+      "belier": 80,
+      "taureau": 47,
+      "gemeaux": 59,
+      "cancer": 59,
+      "lion": 82,
+      "vierge": 48,
+      "balance": 60,
+      "scorpion": 60,
+      "sagittaire": 84,
+      "capricorne": 48,
+      "verseau": 65,
+      "poissons": 64
+    },
+    "day_code": {
+      "date": "2026-08-22",
+      "planetes": {
+        "lune": {
+          "signe": "sagittaire",
+          "element": "feu",
+          "degre": 265.18,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 143.69,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 194.7,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 96.93,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-23": {
-    "belier": 41,
-    "taureau": 80,
-    "gemeaux": 46,
-    "cancer": 62,
-    "lion": 46,
-    "vierge": 81,
-    "balance": 43,
-    "scorpion": 64,
-    "sagittaire": 44,
-    "capricorne": 81,
-    "verseau": 48,
-    "poissons": 64
+    "energies": {
+      "belier": 41,
+      "taureau": 80,
+      "gemeaux": 46,
+      "cancer": 62,
+      "lion": 46,
+      "vierge": 81,
+      "balance": 43,
+      "scorpion": 64,
+      "sagittaire": 44,
+      "capricorne": 81,
+      "verseau": 48,
+      "poissons": 64
+    },
+    "day_code": {
+      "date": "2026-08-23",
+      "planetes": {
+        "lune": {
+          "signe": "capricorne",
+          "element": "terre",
+          "degre": 277.07,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 145.7,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 195.6,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 97.58,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "freine",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-24": {
-    "belier": 43,
-    "taureau": 81,
-    "gemeaux": 46,
-    "cancer": 62,
-    "lion": 46,
-    "vierge": 78,
-    "balance": 47,
-    "scorpion": 62,
-    "sagittaire": 41,
-    "capricorne": 82,
-    "verseau": 44,
-    "poissons": 63
+    "energies": {
+      "belier": 43,
+      "taureau": 81,
+      "gemeaux": 46,
+      "cancer": 62,
+      "lion": 46,
+      "vierge": 78,
+      "balance": 47,
+      "scorpion": 62,
+      "sagittaire": 41,
+      "capricorne": 82,
+      "verseau": 44,
+      "poissons": 63
+    },
+    "day_code": {
+      "date": "2026-08-24",
+      "planetes": {
+        "lune": {
+          "signe": "capricorne",
+          "element": "terre",
+          "degre": 289.03,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 147.71,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 196.49,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 98.23,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "freine",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-25": {
-    "belier": 66,
-    "taureau": 49,
-    "gemeaux": 87,
-    "cancer": 64,
-    "lion": 62,
-    "vierge": 46,
-    "balance": 80,
-    "scorpion": 62,
-    "sagittaire": 62,
-    "capricorne": 48,
-    "verseau": 80,
-    "poissons": 61
+    "energies": {
+      "belier": 66,
+      "taureau": 49,
+      "gemeaux": 87,
+      "cancer": 64,
+      "lion": 62,
+      "vierge": 46,
+      "balance": 80,
+      "scorpion": 62,
+      "sagittaire": 62,
+      "capricorne": 48,
+      "verseau": 80,
+      "poissons": 61
+    },
+    "day_code": {
+      "date": "2026-08-25",
+      "planetes": {
+        "lune": {
+          "signe": "verseau",
+          "element": "air",
+          "degre": 301.13,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 149.71,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 197.36,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 98.87,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "neutre",
+        "terre": "freine",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-26": {
-    "belier": 47,
-    "taureau": 61,
-    "gemeaux": 80,
-    "cancer": 60,
-    "lion": 48,
-    "vierge": 63,
-    "balance": 83,
-    "scorpion": 63,
-    "sagittaire": 49,
-    "capricorne": 61,
-    "verseau": 84,
-    "poissons": 65
+    "energies": {
+      "belier": 47,
+      "taureau": 61,
+      "gemeaux": 80,
+      "cancer": 60,
+      "lion": 48,
+      "vierge": 63,
+      "balance": 83,
+      "scorpion": 63,
+      "sagittaire": 49,
+      "capricorne": 61,
+      "verseau": 84,
+      "poissons": 65
+    },
+    "day_code": {
+      "date": "2026-08-26",
+      "planetes": {
+        "lune": {
+          "signe": "verseau",
+          "element": "air",
+          "degre": 313.41,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 151.69,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 198.23,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 99.51,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-27": {
-    "belier": 47,
-    "taureau": 61,
-    "gemeaux": 83,
-    "cancer": 62,
-    "lion": 47,
-    "vierge": 63,
-    "balance": 80,
-    "scorpion": 60,
-    "sagittaire": 45,
-    "capricorne": 64,
-    "verseau": 83,
-    "poissons": 58
+    "energies": {
+      "belier": 47,
+      "taureau": 61,
+      "gemeaux": 83,
+      "cancer": 62,
+      "lion": 47,
+      "vierge": 63,
+      "balance": 80,
+      "scorpion": 60,
+      "sagittaire": 45,
+      "capricorne": 64,
+      "verseau": 83,
+      "poissons": 58
+    },
+    "day_code": {
+      "date": "2026-08-27",
+      "planetes": {
+        "lune": {
+          "signe": "verseau",
+          "element": "air",
+          "degre": 325.91,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 153.67,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 199.09,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 100.15,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-28": {
-    "belier": 47,
-    "taureau": 62,
-    "gemeaux": 62,
-    "cancer": 79,
-    "lion": 47,
-    "vierge": 63,
-    "balance": 61,
-    "scorpion": 80,
-    "sagittaire": 49,
-    "capricorne": 62,
-    "verseau": 62,
-    "poissons": 84
+    "energies": {
+      "belier": 47,
+      "taureau": 62,
+      "gemeaux": 62,
+      "cancer": 79,
+      "lion": 47,
+      "vierge": 63,
+      "balance": 61,
+      "scorpion": 80,
+      "sagittaire": 49,
+      "capricorne": 62,
+      "verseau": 62,
+      "poissons": 84
+    },
+    "day_code": {
+      "date": "2026-08-28",
+      "planetes": {
+        "lune": {
+          "signe": "poissons",
+          "element": "eau",
+          "degre": 338.63,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 155.62,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 199.93,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 100.79,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "neutre",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-08-29": {
-    "belier": 44,
-    "taureau": 62,
-    "gemeaux": 64,
-    "cancer": 84,
-    "lion": 45,
-    "vierge": 64,
-    "balance": 61,
-    "scorpion": 81,
-    "sagittaire": 48,
-    "capricorne": 64,
-    "verseau": 63,
-    "poissons": 85
+    "energies": {
+      "belier": 44,
+      "taureau": 62,
+      "gemeaux": 64,
+      "cancer": 84,
+      "lion": 45,
+      "vierge": 64,
+      "balance": 61,
+      "scorpion": 81,
+      "sagittaire": 48,
+      "capricorne": 64,
+      "verseau": 63,
+      "poissons": 85
+    },
+    "day_code": {
+      "date": "2026-08-29",
+      "planetes": {
+        "lune": {
+          "signe": "poissons",
+          "element": "eau",
+          "degre": 351.6,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 157.56,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 200.77,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 101.43,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "neutre",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-08-30": {
-    "belier": 80,
-    "taureau": 46,
-    "gemeaux": 45,
-    "cancer": 59,
-    "lion": 83,
-    "vierge": 44,
-    "balance": 48,
-    "scorpion": 61,
-    "sagittaire": 78,
-    "capricorne": 47,
-    "verseau": 45,
-    "poissons": 60
+    "energies": {
+      "belier": 80,
+      "taureau": 46,
+      "gemeaux": 45,
+      "cancer": 59,
+      "lion": 83,
+      "vierge": 44,
+      "balance": 48,
+      "scorpion": 61,
+      "sagittaire": 78,
+      "capricorne": 47,
+      "verseau": 45,
+      "poissons": 60
+    },
+    "day_code": {
+      "date": "2026-08-30",
+      "planetes": {
+        "lune": {
+          "signe": "belier",
+          "element": "feu",
+          "degre": 4.81,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 159.48,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 201.59,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 102.07,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "freine",
+        "air": "freine",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-08-31": {
-    "belier": 80,
-    "taureau": 46,
-    "gemeaux": 46,
-    "cancer": 59,
-    "lion": 82,
-    "vierge": 47,
-    "balance": 46,
-    "scorpion": 60,
-    "sagittaire": 83,
-    "capricorne": 46,
-    "verseau": 46,
-    "poissons": 60
+    "energies": {
+      "belier": 80,
+      "taureau": 46,
+      "gemeaux": 46,
+      "cancer": 59,
+      "lion": 82,
+      "vierge": 47,
+      "balance": 46,
+      "scorpion": 60,
+      "sagittaire": 83,
+      "capricorne": 46,
+      "verseau": 46,
+      "poissons": 60
+    },
+    "day_code": {
+      "date": "2026-08-31",
+      "planetes": {
+        "lune": {
+          "signe": "belier",
+          "element": "feu",
+          "degre": 18.25,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 161.39,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 202.4,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 102.7,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "freine",
+        "air": "freine",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-09-01": {
-    "belier": 44,
-    "taureau": 80,
-    "gemeaux": 62,
-    "cancer": 60,
-    "lion": 46,
-    "vierge": 81,
-    "balance": 63,
-    "scorpion": 62,
-    "sagittaire": 48,
-    "capricorne": 84,
-    "verseau": 60,
-    "poissons": 62
+    "energies": {
+      "belier": 44,
+      "taureau": 80,
+      "gemeaux": 62,
+      "cancer": 60,
+      "lion": 46,
+      "vierge": 81,
+      "balance": 63,
+      "scorpion": 62,
+      "sagittaire": 48,
+      "capricorne": 84,
+      "verseau": 60,
+      "poissons": 62
+    },
+    "day_code": {
+      "date": "2026-09-01",
+      "planetes": {
+        "lune": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 31.9,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 163.27,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 203.2,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 103.34,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "neutre",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-09-02": {
-    "belier": 46,
-    "taureau": 80,
-    "gemeaux": 65,
-    "cancer": 63,
-    "lion": 48,
-    "vierge": 78,
-    "balance": 64,
-    "scorpion": 60,
-    "sagittaire": 44,
-    "capricorne": 82,
-    "verseau": 61,
-    "poissons": 64
+    "energies": {
+      "belier": 46,
+      "taureau": 80,
+      "gemeaux": 65,
+      "cancer": 63,
+      "lion": 48,
+      "vierge": 78,
+      "balance": 64,
+      "scorpion": 60,
+      "sagittaire": 44,
+      "capricorne": 82,
+      "verseau": 61,
+      "poissons": 64
+    },
+    "day_code": {
+      "date": "2026-09-02",
+      "planetes": {
+        "lune": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 45.74,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 165.13,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 203.98,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 103.97,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "neutre",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-09-03": {
-    "belier": 43,
-    "taureau": 82,
-    "gemeaux": 63,
-    "cancer": 63,
-    "lion": 47,
-    "vierge": 84,
-    "balance": 60,
-    "scorpion": 62,
-    "sagittaire": 46,
-    "capricorne": 79,
-    "verseau": 63,
-    "poissons": 62
+    "energies": {
+      "belier": 43,
+      "taureau": 82,
+      "gemeaux": 63,
+      "cancer": 63,
+      "lion": 47,
+      "vierge": 84,
+      "balance": 60,
+      "scorpion": 62,
+      "sagittaire": 46,
+      "capricorne": 79,
+      "verseau": 63,
+      "poissons": 62
+    },
+    "day_code": {
+      "date": "2026-09-03",
+      "planetes": {
+        "lune": {
+          "signe": "taureau",
+          "element": "terre",
+          "degre": 59.75,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 166.98,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 204.76,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 104.6,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "favorise",
+        "air": "neutre",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-09-04": {
-    "belier": 48,
-    "taureau": 64,
-    "gemeaux": 83,
-    "cancer": 62,
-    "lion": 44,
-    "vierge": 61,
-    "balance": 80,
-    "scorpion": 61,
-    "sagittaire": 45,
-    "capricorne": 65,
-    "verseau": 80,
-    "poissons": 60
+    "energies": {
+      "belier": 48,
+      "taureau": 64,
+      "gemeaux": 83,
+      "cancer": 62,
+      "lion": 44,
+      "vierge": 61,
+      "balance": 80,
+      "scorpion": 61,
+      "sagittaire": 45,
+      "capricorne": 65,
+      "verseau": 80,
+      "poissons": 60
+    },
+    "day_code": {
+      "date": "2026-09-04",
+      "planetes": {
+        "lune": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 73.89,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 168.8,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 205.51,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 105.23,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-09-05": {
-    "belier": 50,
-    "taureau": 62,
-    "gemeaux": 81,
-    "cancer": 62,
-    "lion": 47,
-    "vierge": 62,
-    "balance": 77,
-    "scorpion": 60,
-    "sagittaire": 47,
-    "capricorne": 60,
-    "verseau": 81,
-    "poissons": 65
+    "energies": {
+      "belier": 50,
+      "taureau": 62,
+      "gemeaux": 81,
+      "cancer": 62,
+      "lion": 47,
+      "vierge": 62,
+      "balance": 77,
+      "scorpion": 60,
+      "sagittaire": 47,
+      "capricorne": 60,
+      "verseau": 81,
+      "poissons": 65
+    },
+    "day_code": {
+      "date": "2026-09-05",
+      "planetes": {
+        "lune": {
+          "signe": "gemeaux",
+          "element": "air",
+          "degre": 88.13,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 170.61,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 206.26,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 105.86,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "favorise",
+        "eau": "neutre"
+      }
+    }
   },
   "2026-09-06": {
-    "belier": 48,
-    "taureau": 64,
-    "gemeaux": 64,
-    "cancer": 82,
-    "lion": 47,
-    "vierge": 62,
-    "balance": 62,
-    "scorpion": 82,
-    "sagittaire": 49,
-    "capricorne": 58,
-    "verseau": 60,
-    "poissons": 82
+    "energies": {
+      "belier": 48,
+      "taureau": 64,
+      "gemeaux": 64,
+      "cancer": 82,
+      "lion": 47,
+      "vierge": 62,
+      "balance": 62,
+      "scorpion": 82,
+      "sagittaire": 49,
+      "capricorne": 58,
+      "verseau": 60,
+      "poissons": 82
+    },
+    "day_code": {
+      "date": "2026-09-06",
+      "planetes": {
+        "lune": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 102.44,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 172.39,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 206.98,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 106.49,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "neutre",
+        "eau": "favorise"
+      }
+    }
   },
   "2026-09-07": {
-    "belier": 42,
-    "taureau": 64,
-    "gemeaux": 66,
-    "cancer": 78,
-    "lion": 47,
-    "vierge": 60,
-    "balance": 64,
-    "scorpion": 82,
-    "sagittaire": 47,
-    "capricorne": 61,
-    "verseau": 63,
-    "poissons": 82
+    "energies": {
+      "belier": 42,
+      "taureau": 64,
+      "gemeaux": 66,
+      "cancer": 78,
+      "lion": 47,
+      "vierge": 60,
+      "balance": 64,
+      "scorpion": 82,
+      "sagittaire": 47,
+      "capricorne": 61,
+      "verseau": 63,
+      "poissons": 82
+    },
+    "day_code": {
+      "date": "2026-09-07",
+      "planetes": {
+        "lune": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 116.75,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 174.15,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 207.7,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 107.11,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "freine",
+        "terre": "neutre",
+        "air": "neutre",
+        "eau": "favorise"
+      }
+    }
   }
 }

@@ -49,11 +49,14 @@ P2 = important mais pas bloquant, P3 = idée future à explorer.
   bien que pour aujourd'hui, pas besoin d'attendre que la routine
   accumule les jours un par un. La routine quotidienne (étape 1,
   `docs/routine-prompt.md`) y ajoute l'entrée du jour à chaque édition.
-  Format : `{"AAAA-MM-JJ": {"belier": 78, "taureau": 64, ...}, ...}`.
+  Format : `{"AAAA-MM-JJ": {"energies": {"belier": 78, ...}, "day_code": {...}}, ...}`
+  — `day_code` (positions réelles + éléments favorisé/neutre/freiné)
+  ajouté le 7 septembre pour que chaque énergie reste vérifiable après
+  coup, voir `docs/ARCHITECTURE.md` § Historique des énergies.
 
   **Reste à construire : la courbe elle-même**, côté JS d'`index.html` —
   `fetch("data/historique-energie.json")`, puis pour chaque profil
-  enregistré, extraire la série de son signe solaire et la tracer.
+  enregistré, extraire `energies[signe]` de chaque date et la tracer.
   Réutiliser le composant `.dc-chart-box`/SVG déjà construit sur Scénario
   pour le graphique de croissance d'audience (voir `docs/ARCHITECTURE.md`
   de Scénario, section « Mesure d'audience »), même principe

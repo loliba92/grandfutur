@@ -291,9 +291,24 @@ c'est un vrai serveur HTTP.
 
 ### Historique des énergies — recalculé rétroactivement, pas inventé
 
-`data/historique-energie.json` (`{"AAAA-MM-JJ": {"belier": 78, ...}, ...}`)
-nourrit le futur graphique d'évolution par profil (`docs/BACKLOG.md` §
-P3, demandé le 7 septembre, débloqué le même jour par ce fichier).
+`data/historique-energie.json` — une entrée par date :
+```json
+"AAAA-MM-JJ": {
+  "energies": { "belier": 78, "taureau": 64, ... },
+  "day_code": {
+    "planetes": { "lune": {"signe": "cancer", "element": "eau", "degre": 116.75, "retrograde": false}, ... },
+    "elements": { "feu": "freine", "terre": "neutre", "air": "neutre", "eau": "favorise" }
+  }
+}
+```
+`energies` nourrit le futur graphique d'évolution par profil
+(`docs/BACKLOG.md` § P3, demandé le 7 septembre, débloqué le même jour
+par ce fichier). `day_code` répond à un défaut relevé le même jour :
+sans lui, aucun moyen de vérifier après coup *pourquoi* un signe
+affichait tel chiffre à telle date — jusque-là le code du jour n'était
+imprimé que dans un fichier temporaire pendant l'exécution de la
+routine, puis jeté. Chaque énergie de l'historique est désormais
+traçable jusqu'à la position réelle des planètes qui l'a produite.
 
 **Point important à ne jamais perdre de vue** : ce n'est *pas* un journal
 de ce qui a réellement été publié — le site n'a qu'une seule vraie

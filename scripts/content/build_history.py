@@ -40,7 +40,17 @@ def build(days, end_date_str=None):
         day = end_date - datetime.timedelta(days=i)
         day_str = day.isoformat()
         result = generate(day_str)
-        history[day_str] = {sign: result["signs"][sign]["energy"] for sign in ZODIAC_ORDER}
+        history[day_str] = {
+            "energies": {sign: result["signs"][sign]["energy"] for sign in ZODIAC_ORDER},
+            # Le "code" complet (positions réelles + éléments
+            # favorisé/neutre/freiné) qui a produit ces énergies — sans
+            # ça, impossible de vérifier après coup pourquoi un signe
+            # affichait tel chiffre un jour donné (retour utilisateur du
+            # 7 septembre : jusqu'ici ce code n'était jamais conservé,
+            # seulement imprimé dans un fichier temporaire pendant
+            # l'exécution de la routine, puis perdu).
+            "day_code": result["day_code"],
+        }
 
     HISTORY_PATH.write_text(
         json.dumps(dict(sorted(history.items())), ensure_ascii=False, indent=2) + "\n",
