@@ -385,7 +385,13 @@
     </div>
   </section>
 
-  <section id="signes">
+  <!-- Masqué aux visiteurs (retour utilisateur du 7 septembre : pas
+       utile maintenant que "Vos proches" est la porte d'entrée) — mais
+       jamais supprimé : ces 12 fiches .sign-card restent la source
+       unique de vérité que lit le JS pour construire les cartes
+       personnalisées (score, texte, situation par domaine). Les retirer
+       casserait "Vos proches" entièrement. -->
+  <section id="signes" hidden>
     <div class="section-head">
       <h2>Les 12 signes aujourd'hui</h2>
       <span class="section-note">Cliquez sur un signe pour voir son analyse</span>
@@ -1405,7 +1411,11 @@
       if (!sunData) return;
 
       var ascFlavor = ASCENDANT_FLAVOR[asc];
-      var decFlavor = decanFlavor(sun, decan);
+      // Le décan n'est plus montré ici (retour utilisateur : le sous-titre
+      // + la double phrase ascendant/décan ne se comprenaient pas l'un
+      // l'autre, jugé confus). Son effet reste actif en coulisse : il
+      // continue de repiocher le texte des 4 domaines plus bas
+      // (pickPersonalizedText) — juste sans l'expliquer à l'écran.
 
       // Les 4 scores sont ceux du signe solaire, nuancés par l'élément de
       // l'ascendant — c'est ce qui fait qu'une personne née à 6h et une
@@ -1452,11 +1462,10 @@
       card.innerHTML =
         '<div class="family-card-head">' +
           '<span class="family-card-icon">' + zodiacIconSvg(sun, 20) + '</span>' +
-          '<div><div class="family-card-name">' + escapeHtml(p.name) + '</div><div class="family-card-signs">' + SIGN_NAMES[sun] + ' (' + DECAN_ORDINAL[decan] + ' décan) · Ascendant ' + SIGN_NAMES[asc] + '</div></div>' +
+          '<div><div class="family-card-name">' + escapeHtml(p.name) + '</div><div class="family-card-signs">' + SIGN_NAMES[sun] + ' · Ascendant ' + SIGN_NAMES[asc] + '</div></div>' +
           energyRingHtml +
         '</div>' +
         '<p class="family-card-flavor">' + ascFlavor + '</p>' +
-        '<p class="family-card-flavor">' + decFlavor + '</p>' +
         '<p class="family-card-vibe">' + sunData.vibe + '</p>' +
         '<button type="button" class="family-detail-toggle">Voir le détail <span class="family-detail-chevron">▾</span></button>' +
         '<div class="family-detail-body"><div class="family-detail-inner">' +
@@ -1498,12 +1507,11 @@
       var adjCats = applyAscendantNudge(sunData.categories, ELEMENT_OF[asc]);
       var energy = Math.round(adjCats.reduce(function(sum, c){ return sum + parseInt(c.score, 10); }, 0) / adjCats.length);
       var lines = [];
-      lines.push("Grand Futur — " + p.name + " (" + SIGN_NAMES[sun] + ", " + DECAN_ORDINAL[decan] + " décan, ascendant " + SIGN_NAMES[asc] + ")");
+      lines.push("Grand Futur — " + p.name + " (" + SIGN_NAMES[sun] + ", ascendant " + SIGN_NAMES[asc] + ")");
       lines.push("Énergie du jour : " + energy + "%");
       lines.push("");
       lines.push(sunData.vibe);
       lines.push(ASCENDANT_FLAVOR[asc]);
-      lines.push(decanFlavor(sun, decan));
       lines.push("");
       adjCats.forEach(function(c){
         var personalizedText = pickPersonalizedText(p.date, sun, decan, c.label, c.situation) || c.text;
