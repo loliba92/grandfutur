@@ -6,6 +6,12 @@
 <title>Une journée pour avancer pas à pas — Grand Futur</title>
 <link rel="canonical" href="https://loliba92.github.io/grandfutur/archives/2026-09-07.html">
 <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#10151c">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Grand Futur">
 <meta name="description" content="L'horoscope quotidien de Grand Futur : votre signe, votre ascendant, et celui de vos proches, en un coup d'œil chaque matin.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Grand Futur">
@@ -49,6 +55,7 @@
     font-family: "Inter", system-ui, sans-serif;
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
+    accent-color: var(--gold);
   }
 
   a{ color: inherit; }
@@ -63,9 +70,15 @@
   .wordmark{ font-family:"Fraunces",serif; font-weight:600; font-size:1.5rem; letter-spacing:0.01em; display:flex; align-items:center; gap:10px; text-decoration:none; }
   .wordmark img{ width:28px; height:28px; }
   .wordmark b{ color: var(--gold); font-weight:700; }
-  nav.masthead-nav{ display:flex; gap:20px; flex-wrap:wrap; font-size:0.9rem; }
-  nav.masthead-nav a{ text-decoration:none; color: var(--paper-dim); }
-  nav.masthead-nav a:hover{ color: var(--gold); }
+  nav.masthead-nav{ display:flex; gap:4px; flex-wrap:wrap; font-size:0.88rem; }
+  nav.masthead-nav a{
+    display:flex; align-items:center; gap:7px; text-decoration:none; color: var(--paper-dim);
+    padding:8px 14px; border-radius:999px; transition: background 0.2s, color 0.2s;
+  }
+  nav.masthead-nav a svg{ flex-shrink:0; opacity:0.85; }
+  nav.masthead-nav a:hover{ color: var(--gold); background: var(--surface); }
+  nav.masthead-nav a:hover svg{ opacity:1; }
+  @media (max-width: 640px){ nav.masthead-nav a span{ display:none; } nav.masthead-nav a{ padding:8px; } }
 
   /* ---------- Ad slot ---------- */
   .ad-slot{ max-width:960px; margin:20px auto 0; padding:0 24px; }
@@ -106,8 +119,6 @@
   }
   .article-image-overlay .pubdate{ margin:0; color: rgba(236,231,218,.78); text-shadow: 0 2px 12px rgba(0,0,0,.55); font-size:0.85rem; }
   .dek{ color: var(--paper-dim); font-size:1.05rem; margin: 20px 0 16px; }
-  .image-credit{ font-size:0.75rem; color: var(--paper-dim); margin: 0 0 30px; }
-  .image-credit a{ color: var(--paper-dim); }
   @media (max-width: 720px){
     .article-image-photo-wrap{ height: min(48vh, 420px); min-height: 280px; }
     .article-image-overlay h1{ max-width:none; }
@@ -199,9 +210,10 @@
   .sign-vibe{ margin: 0 0 18px; font-size:1rem; }
   .sign-categories{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:16px; }
   .sign-cat{ background: var(--surface-2); border:1px solid var(--hairline); border-radius:8px; padding:14px 16px; }
-  .sign-cat-head{ display:flex; align-items:baseline; justify-content:space-between; gap:8px; margin-bottom:6px; }
-  .sign-cat-label{ font-family:"JetBrains Mono",monospace; font-size:0.7rem; letter-spacing:0.05em; text-transform:uppercase; color: var(--gold); }
-  .sign-cat-score{ font-family:"JetBrains Mono",monospace; font-size:0.78rem; color: var(--paper-dim); }
+  .sign-cat-label{ display:block; font-family:"JetBrains Mono",monospace; font-size:0.7rem; letter-spacing:0.05em; text-transform:uppercase; color: var(--gold); margin-bottom:8px; }
+  .sign-cat-body{ display:flex; align-items:center; gap:12px; }
+  .cat-gauge{ width:40px; height:40px; border-radius:50%; background: conic-gradient(var(--gold) calc(var(--pct) * 3.6deg), var(--hairline) 0deg); display:grid; place-items:center; flex-shrink:0; }
+  .cat-gauge-inner{ width:31px; height:31px; border-radius:50%; background: var(--surface); display:grid; place-items:center; font-family:"JetBrains Mono",monospace; font-size:0.6rem; }
   .sign-cat-text{ margin:0; font-size:0.88rem; }
 
   /* ---------- List box (top 3) ---------- */
@@ -220,7 +232,9 @@
 
   /* ---------- Footer ---------- */
   footer{ border-top:1px solid var(--hairline); margin-top:60px; padding:30px 0 50px; }
-  footer .disclaimer{ font-size:0.8rem; color: var(--paper-dim); margin-bottom:20px; }
+  footer .disclaimer{ font-size:0.8rem; color: var(--paper-dim); margin-bottom:10px; }
+  footer .photo-credit{ font-size:0.72rem; color: var(--paper-dim); margin: 0 0 20px; }
+  footer .photo-credit a{ color: var(--paper-dim); }
   footer nav{ display:flex; gap:18px; flex-wrap:wrap; font-size:0.85rem; }
   footer nav a{ text-decoration:none; color: var(--paper-dim); }
   footer nav a:hover{ color: var(--gold); }
@@ -236,10 +250,10 @@
   <div class="wrap masthead-row">
     <a class="wordmark" href="../index.html"><img src="../assets/logo.svg" alt=""> Grand<b>Futur</b></a>
     <nav class="masthead-nav">
-      <a href="../index.html">Accueil</a>
-      <a href="../archives.html">Archives</a>
-      <a href="../le-projet.html">Le projet</a>
-      <a href="../contact.html">Contact</a>
+      <a href="../index.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9a1 1 0 0 0 1 1h3v-6h4v6h3a1 1 0 0 0 1-1v-9"/></svg><span>Accueil</span></a>
+      <a href="../archives.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5"/><path d="M9 2h6"/></svg><span>Archives</span></a>
+      <a href="../le-projet.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01"/><path d="M11 12h1v5h1"/></svg><span>Le projet</span></a>
+      <a href="../contact.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg><span>Contact</span></a>
     </nav>
   </div>
 </header>
@@ -254,7 +268,7 @@
   <section class="hero">
     <figure class="article-image">
       <div class="article-image-photo-wrap">
-        <img class="article-image-photo" src="../assets/topic-images/2026-09-07-wide.jpg" alt="Ciel étoilé traversé par la Voie lactée, teintes violettes.">
+        <img class="article-image-photo" src="../assets/topic-images/2026-09-07-wide.jpg" alt="Silhouette d'arbres sous un ciel étoilé, dégradé bleu nuit vers orange à l'horizon.">
         <div class="article-image-scrim"></div>
         <div class="article-image-masthead">
           <img class="article-image-logo" src="../assets/logo.svg" alt="">
@@ -267,7 +281,6 @@
         </div>
       </div>
     </figure>
-    <p class="image-credit">Photo : <a href="https://www.pexels.com/photo/spectacular-view-of-the-milky-way-galaxy-at-night-33630927/" target="_blank" rel="noopener">Stevan Cetojevic</a> / Pexels</p>
     <p class="dek">La Lune traverse aujourd'hui le signe de la Vierge : concrètement, c'est une journée où les détails pèsent plus que les grandes déclarations — vérifier deux fois avant d'envoyer, reprendre un dossier en suspens plutôt qu'en ouvrir un nouveau.</p>
     <p class="dek">Mars, toujours en Lion jusqu'à la fin du mois, continue de pousser les signes de feu (Bélier, Lion, Sagittaire) — d'où leur trio en tête du classement ci-dessous. Les signes d'eau (Cancer, Scorpion, Poissons) ont moins de puissance brute aujourd'hui, mais plus de justesse dans ce qu'ils perçoivent chez les autres.</p>
   </section>
@@ -298,6 +311,17 @@
       <div class="family-grid" id="family-grid">
         <p class="family-empty">Ajoutez un premier profil pour voir apparaître ici le signe, l'ascendant et l'énergie du jour de chacun.</p>
       </div>
+    </div>
+  </section>
+
+  <section id="top3">
+    <div class="list-box">
+      <span class="list-box-label">Le trio le plus énergique du jour</span>
+      <ul class="list-box-items">
+        <li><span class="list-box-rank">01</span><span class="list-box-title">Sagittaire</span><span class="list-box-meta">85% — un jour à saisir une occasion inhabituelle.</span></li>
+        <li><span class="list-box-rank">02</span><span class="list-box-title">Lion</span><span class="list-box-meta">82% — un jour pour se montrer sans complexe.</span></li>
+        <li><span class="list-box-rank">03</span><span class="list-box-title">Bélier</span><span class="list-box-meta">78% — un jour pour lancer ce qui traînait.</span></li>
+      </ul>
     </div>
   </section>
 
@@ -364,23 +388,35 @@
           <div><div class="sign-name">Bélier</div><div class="sign-dates">21 mars – 19 avril</div></div>
           <div class="energy-gauge" style="--pct:78; margin-left:auto;"><div class="energy-gauge-inner">78%</div></div>
         </div>
-        <p class="sign-vibe">Le bon jour pour foncer sur une idée qui traîne depuis trop longtemps. Ton impatience habituelle devient un vrai moteur aujourd'hui, à condition de viser une seule cible à la fois.</p>
+        <p class="sign-vibe">Aujourd'hui, l'impatience joue en ta faveur : une idée que tu retournes depuis des semaines mérite d'être lancée maintenant, pas après-demain.</p>
         <div class="sign-categories">
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">75%</span></div>
-            <p class="sign-cat-text">N'attends pas que l'autre devine ce que tu veux : dis-le clairement aujourd'hui, ça change tout.</p>
+            <span class="sign-cat-label">Amour</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:75;"><div class="cat-gauge-inner">75%</div></div>
+              <p class="sign-cat-text">Dis ce que tu veux au lieu d'attendre que l'autre le devine. Une phrase simple suffit.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">80%</span></div>
-            <p class="sign-cat-text">Bon jour pour défendre ta position dans une négociation, sans détour.</p>
+            <span class="sign-cat-label">Argent & travail</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:80;"><div class="cat-gauge-inner">80%</div></div>
+              <p class="sign-cat-text">Défends ta position sans détour dans une négociation — c'est le moment où ton franc-parler paie.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">82%</span></div>
-            <p class="sign-cat-text">Énergie physique au rendez-vous — profites-en pour bouger plutôt que pour forcer sur autre chose.</p>
+            <span class="sign-cat-label">Santé</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:82;"><div class="cat-gauge-inner">82%</div></div>
+              <p class="sign-cat-text">Beaucoup d'énergie physique : mieux vaut la dépenser en mouvement qu'en discussions qui tournent en rond.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">75%</span></div>
-            <p class="sign-cat-text">Une impatience positive, qui pousse à agir plutôt qu'à ruminer.</p>
+            <span class="sign-cat-label">Humeur</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:75;"><div class="cat-gauge-inner">75%</div></div>
+              <p class="sign-cat-text">Une pointe d'impatience, mais qui pousse à agir plutôt qu'à ressasser.</p>
+            </div>
           </div>
         </div>
       </article>
@@ -390,23 +426,35 @@
           <div><div class="sign-name">Taureau</div><div class="sign-dates">20 avril – 20 mai</div></div>
           <div class="energy-gauge" style="--pct:64; margin-left:auto;"><div class="energy-gauge-inner">64%</div></div>
         </div>
-        <p class="sign-vibe">Une journée pour consolider ce qui existe déjà plutôt que tout changer. Le calme apparent cache un vrai travail de fond, qui paiera dans la durée plus que dans l'instant.</p>
+        <p class="sign-vibe">Rien de spectaculaire en vue aujourd'hui — et c'est tant mieux : ce calme sert un travail de fond qui paiera plus tard.</p>
         <div class="sign-categories">
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">55%</span></div>
-            <p class="sign-cat-text">Rien de spectaculaire aujourd'hui, mais une vraie stabilité qui rassure ton entourage.</p>
+            <span class="sign-cat-label">Amour</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:55;"><div class="cat-gauge-inner">55%</div></div>
+              <p class="sign-cat-text">Pas de grande scène côté cœur, juste une présence stable qui rassure sans qu'on ait besoin de le dire.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">70%</span></div>
-            <p class="sign-cat-text">Bon jour pour consolider un dossier déjà en cours, pas pour en ouvrir un nouveau.</p>
+            <span class="sign-cat-label">Argent & travail</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:70;"><div class="cat-gauge-inner">70%</div></div>
+              <p class="sign-cat-text">Continue un dossier déjà lancé plutôt que d'en ouvrir un nouveau : la constance compte plus que la nouveauté.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">68%</span></div>
-            <p class="sign-cat-text">Énergie correcte, sans excès — un rythme calme te convient mieux aujourd'hui.</p>
+            <span class="sign-cat-label">Santé</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:68;"><div class="cat-gauge-inner">68%</div></div>
+              <p class="sign-cat-text">Un rythme tranquille te convient mieux qu'une accélération forcée.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">63%</span></div>
-            <p class="sign-cat-text">Un calme tranquille, pas d'accès d'enthousiasme particulier.</p>
+            <span class="sign-cat-label">Humeur</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:63;"><div class="cat-gauge-inner">63%</div></div>
+              <p class="sign-cat-text">Calme plat, sans grand enthousiasme ni contrariété particulière.</p>
+            </div>
           </div>
         </div>
       </article>
@@ -416,23 +464,35 @@
           <div><div class="sign-name">Gémeaux</div><div class="sign-dates">21 mai – 20 juin</div></div>
           <div class="energy-gauge" style="--pct:71; margin-left:auto;"><div class="energy-gauge-inner">71%</div></div>
         </div>
-        <p class="sign-vibe">Le bon jour pour reprendre contact avec quelqu'un que tu as un peu délaissé. Les mots te viennent facilement, profites-en pour clarifier ce qui restait flou entre vous.</p>
+        <p class="sign-vibe">Les mots viennent facilement aujourd'hui : c'est le bon moment pour rappeler quelqu'un que tu as un peu laissé de côté.</p>
         <div class="sign-categories">
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">68%</span></div>
-            <p class="sign-cat-text">Une conversation vraie avec quelqu'un que tu avais délaissé peut tout changer aujourd'hui.</p>
+            <span class="sign-cat-label">Amour</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:68;"><div class="cat-gauge-inner">68%</div></div>
+              <p class="sign-cat-text">Une conversation avec une personne délaissée peut débloquer bien plus que prévu.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">72%</span></div>
-            <p class="sign-cat-text">Tes idées circulent bien — bon moment pour présenter un projet à l'oral.</p>
+            <span class="sign-cat-label">Argent & travail</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:72;"><div class="cat-gauge-inner">72%</div></div>
+              <p class="sign-cat-text">Tes idées passent bien à l'oral — profites-en pour présenter ce projet que tu gardais pour toi.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">65%</span></div>
-            <p class="sign-cat-text">Rien à signaler, l'agitation mentale prime sur le physique aujourd'hui.</p>
+            <span class="sign-cat-label">Santé</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:65;"><div class="cat-gauge-inner">65%</div></div>
+              <p class="sign-cat-text">Le mental tourne à plein régime, le corps un peu moins. Rien d'inquiétant.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">79%</span></div>
-            <p class="sign-cat-text">De la curiosité et de l'entrain, une belle disposition sociale.</p>
+            <span class="sign-cat-label">Humeur</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:79;"><div class="cat-gauge-inner">79%</div></div>
+              <p class="sign-cat-text">De la curiosité, de l'entrain, l'envie de parler à tout le monde.</p>
+            </div>
           </div>
         </div>
       </article>
@@ -442,23 +502,35 @@
           <div><div class="sign-name">Cancer</div><div class="sign-dates">21 juin – 22 juillet</div></div>
           <div class="energy-gauge" style="--pct:58; margin-left:auto;"><div class="energy-gauge-inner">58%</div></div>
         </div>
-        <p class="sign-vibe">Une journée pour prendre soin de ton cercle proche plutôt que de courir après des inconnus. L'énergie est plus basse que d'habitude — pas besoin de tout donner aujourd'hui.</p>
+        <p class="sign-vibe">Ton énergie est plus basse que d'habitude, et ce n'est pas un problème : garde-la pour ton cercle proche.</p>
         <div class="sign-categories">
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">62%</span></div>
-            <p class="sign-cat-text">Ton cercle proche a besoin de toi plus qu'un inconnu aujourd'hui — recentre-toi sur l'essentiel.</p>
+            <span class="sign-cat-label">Amour</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:62;"><div class="cat-gauge-inner">62%</div></div>
+              <p class="sign-cat-text">Ta famille ou tes proches ont plus besoin de toi aujourd'hui qu'un inconnu ne l'aura jamais.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">48%</span></div>
-            <p class="sign-cat-text">Peu d'énergie pour les rapports de force — mieux vaut temporiser un dossier tendu.</p>
+            <span class="sign-cat-label">Argent & travail</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:48;"><div class="cat-gauge-inner">48%</div></div>
+              <p class="sign-cat-text">Peu de force pour un rapport de force : reporte une négociation tendue si tu le peux.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">55%</span></div>
-            <p class="sign-cat-text">Énergie plus basse que d'habitude, normal — pas besoin de tout donner.</p>
+            <span class="sign-cat-label">Santé</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:55;"><div class="cat-gauge-inner">55%</div></div>
+              <p class="sign-cat-text">Fatigue normale, pas d'alarme. Repose-toi sans culpabiliser.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">67%</span></div>
-            <p class="sign-cat-text">Une sensibilité à fleur de peau, mais pas négative.</p>
+            <span class="sign-cat-label">Humeur</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:67;"><div class="cat-gauge-inner">67%</div></div>
+              <p class="sign-cat-text">Sensible, mais pas dans le mauvais sens du terme.</p>
+            </div>
           </div>
         </div>
       </article>
@@ -468,23 +540,35 @@
           <div><div class="sign-name">Lion</div><div class="sign-dates">23 juillet – 22 août</div></div>
           <div class="energy-gauge" style="--pct:82; margin-left:auto;"><div class="energy-gauge-inner">82%</div></div>
         </div>
-        <p class="sign-vibe">Le bon jour pour te montrer, sans avoir besoin qu'on te le demande. Ta présence rassure et entraîne les autres plus qu'elle ne dérange, même si tu prends un peu plus de place que d'habitude.</p>
+        <p class="sign-vibe">Ta présence rassure plus qu'elle n'impressionne aujourd'hui, même en prenant un peu plus de place que d'habitude.</p>
         <div class="sign-categories">
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">85%</span></div>
-            <p class="sign-cat-text">Ta présence rassure et attire — un bon jour pour te montrer sous ton meilleur jour.</p>
+            <span class="sign-cat-label">Amour</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:85;"><div class="cat-gauge-inner">85%</div></div>
+              <p class="sign-cat-text">Tu attires sans forcer — un bon jour pour te montrer sous ton meilleur jour, sans complexe.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">78%</span></div>
-            <p class="sign-cat-text">Ton assurance impressionne, utile pour une présentation ou une négociation.</p>
+            <span class="sign-cat-label">Argent & travail</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:78;"><div class="cat-gauge-inner">78%</div></div>
+              <p class="sign-cat-text">Ton assurance naturelle sert une négociation ou une présentation importante.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">84%</span></div>
-            <p class="sign-cat-text">Énergie au top : canalise-la dans une activité physique plutôt que dans un excès de parole.</p>
+            <span class="sign-cat-label">Santé</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:84;"><div class="cat-gauge-inner">84%</div></div>
+              <p class="sign-cat-text">Beaucoup d'énergie : canalise-la dans le sport plutôt que dans un excès de bavardage.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">81%</span></div>
-            <p class="sign-cat-text">Confiance et bonne humeur communicatives.</p>
+            <span class="sign-cat-label">Humeur</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:81;"><div class="cat-gauge-inner">81%</div></div>
+              <p class="sign-cat-text">Confiance et bonne humeur, qui se transmettent à ceux qui t'entourent.</p>
+            </div>
           </div>
         </div>
       </article>
@@ -494,23 +578,35 @@
           <div><div class="sign-name">Vierge</div><div class="sign-dates">23 août – 22 septembre</div></div>
           <div class="energy-gauge" style="--pct:67; margin-left:auto;"><div class="energy-gauge-inner">67%</div></div>
         </div>
-        <p class="sign-vibe">Une journée pour ranger ce qui traîne, au sens propre comme au figuré. Mettre de l'ordre dans un coin de ta vie te libère plus d'énergie que prévu pour le reste.</p>
+        <p class="sign-vibe">Ranger un coin de ta vie, au sens propre ou au figuré, va te libérer plus d'énergie que prévu.</p>
         <div class="sign-categories">
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">60%</span></div>
-            <p class="sign-cat-text">Pas de grande déclaration aujourd'hui, mais une attention aux détails qui touche l'autre.</p>
+            <span class="sign-cat-label">Amour</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:60;"><div class="cat-gauge-inner">60%</div></div>
+              <p class="sign-cat-text">Pas de grande déclaration, mais une attention aux petits détails qui touche plus qu'on ne le croit.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">82%</span></div>
-            <p class="sign-cat-text">Ton sens du détail évite une erreur à quelqu'un — vraiment remarqué aujourd'hui.</p>
+            <span class="sign-cat-label">Argent & travail</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:82;"><div class="cat-gauge-inner">82%</div></div>
+              <p class="sign-cat-text">Ton œil pour le détail évite une erreur à quelqu'un — remarqué, même sans un mot de plus.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">65%</span></div>
-            <p class="sign-cat-text">Rien d'alarmant, juste une petite fatigue mentale à surveiller.</p>
+            <span class="sign-cat-label">Santé</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:65;"><div class="cat-gauge-inner">65%</div></div>
+              <p class="sign-cat-text">Une petite fatigue mentale, rien de physique.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">61%</span></div>
-            <p class="sign-cat-text">Un peu critique envers toi-même, à relativiser.</p>
+            <span class="sign-cat-label">Humeur</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:61;"><div class="cat-gauge-inner">61%</div></div>
+              <p class="sign-cat-text">Tendance à te juger trop sévèrement. Relativise un peu.</p>
+            </div>
           </div>
         </div>
       </article>
@@ -520,23 +616,35 @@
           <div><div class="sign-name">Balance</div><div class="sign-dates">23 septembre – 22 octobre</div></div>
           <div class="energy-gauge" style="--pct:60; margin-left:auto;"><div class="energy-gauge-inner">60%</div></div>
         </div>
-        <p class="sign-vibe">Le bon jour pour trancher une décision que tu remets depuis des semaines. L'indécision te coûte plus d'énergie que le choix lui-même, quel qu'il soit.</p>
+        <p class="sign-vibe">Une décision remise à plus tard depuis des semaines mérite enfin d'être tranchée aujourd'hui.</p>
         <div class="sign-categories">
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">58%</span></div>
-            <p class="sign-cat-text">Une décision affective en suspens depuis un moment mérite d'être tranchée aujourd'hui.</p>
+            <span class="sign-cat-label">Amour</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:58;"><div class="cat-gauge-inner">58%</div></div>
+              <p class="sign-cat-text">Une question affective en suspens : mieux vaut trancher que continuer d'hésiter.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">55%</span></div>
-            <p class="sign-cat-text">L'indécision te coûte plus d'énergie que le choix lui-même — tranche plutôt que d'hésiter.</p>
+            <span class="sign-cat-label">Argent & travail</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:55;"><div class="cat-gauge-inner">55%</div></div>
+              <p class="sign-cat-text">L'indécision coûte plus cher que le choix lui-même, quel qu'il soit.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">63%</span></div>
-            <p class="sign-cat-text">Énergie correcte, sans plus.</p>
+            <span class="sign-cat-label">Santé</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:63;"><div class="cat-gauge-inner">63%</div></div>
+              <p class="sign-cat-text">Énergie correcte, ni plus ni moins.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">64%</span></div>
-            <p class="sign-cat-text">Un besoin d'harmonie qui te pousse à éviter les tensions inutiles.</p>
+            <span class="sign-cat-label">Humeur</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:64;"><div class="cat-gauge-inner">64%</div></div>
+              <p class="sign-cat-text">Besoin d'harmonie, quitte à éviter une tension qu'il faudrait pourtant affronter.</p>
+            </div>
           </div>
         </div>
       </article>
@@ -546,23 +654,35 @@
           <div><div class="sign-name">Scorpion</div><div class="sign-dates">23 octobre – 21 novembre</div></div>
           <div class="energy-gauge" style="--pct:74; margin-left:auto;"><div class="energy-gauge-inner">74%</div></div>
         </div>
-        <p class="sign-vibe">Une journée propice pour aller au fond d'un sujet que tout le monde préfère éviter. Ta lucidité est plus aiguisée que d'habitude — ne la garde pas seulement pour toi.</p>
+        <p class="sign-vibe">Ta lucidité est plus aiguisée que d'habitude — inutile de la garder seulement pour toi aujourd'hui.</p>
         <div class="sign-categories">
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">70%</span></div>
-            <p class="sign-cat-text">Une vraie conversation en profondeur avec ton/ta partenaire est possible aujourd'hui, si tu oses la lancer.</p>
+            <span class="sign-cat-label">Amour</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:70;"><div class="cat-gauge-inner">70%</div></div>
+              <p class="sign-cat-text">Une conversation en profondeur avec ton ou ta partenaire est possible, si tu oses la lancer le premier.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">76%</span></div>
-            <p class="sign-cat-text">Ta lucidité perce les non-dits d'un dossier professionnel épineux.</p>
+            <span class="sign-cat-label">Argent & travail</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:76;"><div class="cat-gauge-inner">76%</div></div>
+              <p class="sign-cat-text">Tu perces facilement les non-dits d'un dossier professionnel qui traîne.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">72%</span></div>
-            <p class="sign-cat-text">Énergie solide, bien canalisée.</p>
+            <span class="sign-cat-label">Santé</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:72;"><div class="cat-gauge-inner">72%</div></div>
+              <p class="sign-cat-text">Énergie solide, bien canalisée.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">78%</span></div>
-            <p class="sign-cat-text">Une intensité qui te sert plus qu'elle ne dessert aujourd'hui.</p>
+            <span class="sign-cat-label">Humeur</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:78;"><div class="cat-gauge-inner">78%</div></div>
+              <p class="sign-cat-text">Une intensité qui te sert plus qu'elle ne dessert, pour une fois.</p>
+            </div>
           </div>
         </div>
       </article>
@@ -572,23 +692,35 @@
           <div><div class="sign-name">Sagittaire</div><div class="sign-dates">22 novembre – 21 décembre</div></div>
           <div class="energy-gauge" style="--pct:85; margin-left:auto;"><div class="energy-gauge-inner">85%</div></div>
         </div>
-        <p class="sign-vibe">Le bon jour pour dire oui à quelque chose qui sort de ta routine habituelle. L'énergie du jour te pousse vers l'imprévu, et c'est exactement ce dont tu as besoin en ce moment.</p>
+        <p class="sign-vibe">L'envie d'imprévu est la plus forte de tout le zodiaque aujourd'hui. Suis-la.</p>
         <div class="sign-categories">
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">88%</span></div>
-            <p class="sign-cat-text">Une rencontre ou un geste inattendu peut relancer une relation qui s'essoufflait.</p>
+            <span class="sign-cat-label">Amour</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:88;"><div class="cat-gauge-inner">88%</div></div>
+              <p class="sign-cat-text">Une rencontre ou un geste inattendu peut relancer une relation qui s'essoufflait doucement.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">80%</span></div>
-            <p class="sign-cat-text">Bon jour pour dire oui à une opportunité qui sort du cadre habituel.</p>
+            <span class="sign-cat-label">Argent & travail</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:80;"><div class="cat-gauge-inner">80%</div></div>
+              <p class="sign-cat-text">Dis oui à une opportunité qui sort du cadre habituel, même si elle te fait un peu peur.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">86%</span></div>
-            <p class="sign-cat-text">Énergie débordante — canalise-la plutôt que de la disperser partout.</p>
+            <span class="sign-cat-label">Santé</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:86;"><div class="cat-gauge-inner">86%</div></div>
+              <p class="sign-cat-text">Énergie débordante : canalise-la plutôt que de la disperser sur dix choses à la fois.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">86%</span></div>
-            <p class="sign-cat-text">Optimisme contagieux, profites-en pour entraîner les autres.</p>
+            <span class="sign-cat-label">Humeur</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:86;"><div class="cat-gauge-inner">86%</div></div>
+              <p class="sign-cat-text">Un optimisme qui donne envie aux autres de te suivre.</p>
+            </div>
           </div>
         </div>
       </article>
@@ -598,23 +730,35 @@
           <div><div class="sign-name">Capricorne</div><div class="sign-dates">22 décembre – 19 janvier</div></div>
           <div class="energy-gauge" style="--pct:55; margin-left:auto;"><div class="energy-gauge-inner">55%</div></div>
         </div>
-        <p class="sign-vibe">Une journée pour avancer pas à pas sur un projet de fond, sans attendre de résultat spectaculaire. L'énergie plus basse que d'habitude t'invite à ralentir, pas à t'arrêter.</p>
+        <p class="sign-vibe">L'énergie est plus basse aujourd'hui — un signal pour ralentir sur un projet de fond, pas pour l'abandonner.</p>
         <div class="sign-categories">
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">50%</span></div>
-            <p class="sign-cat-text">Rien de spectaculaire, mais une présence stable qui compte plus que les mots aujourd'hui.</p>
+            <span class="sign-cat-label">Amour</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:50;"><div class="cat-gauge-inner">50%</div></div>
+              <p class="sign-cat-text">Rien de spectaculaire, mais une présence stable qui compte plus que les mots.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">62%</span></div>
-            <p class="sign-cat-text">Avance pas à pas sur un dossier de fond, sans attendre de résultat immédiat.</p>
+            <span class="sign-cat-label">Argent & travail</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:62;"><div class="cat-gauge-inner">62%</div></div>
+              <p class="sign-cat-text">Avance pas à pas, sans attendre un résultat immédiat qui ne viendra pas aujourd'hui.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">52%</span></div>
-            <p class="sign-cat-text">Énergie plus basse — ralentis plutôt que de forcer.</p>
+            <span class="sign-cat-label">Santé</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:52;"><div class="cat-gauge-inner">52%</div></div>
+              <p class="sign-cat-text">Fatigue à prendre au sérieux. Ralentis plutôt que de forcer.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">56%</span></div>
-            <p class="sign-cat-text">Un sérieux qui peut passer pour de la froideur — ce n'est pas le cas.</p>
+            <span class="sign-cat-label">Humeur</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:56;"><div class="cat-gauge-inner">56%</div></div>
+              <p class="sign-cat-text">Un sérieux qu'on prend parfois pour de la froideur, à tort.</p>
+            </div>
           </div>
         </div>
       </article>
@@ -624,23 +768,35 @@
           <div><div class="sign-name">Verseau</div><div class="sign-dates">20 janvier – 18 février</div></div>
           <div class="energy-gauge" style="--pct:69; margin-left:auto;"><div class="energy-gauge-inner">69%</div></div>
         </div>
-        <p class="sign-vibe">Le bon jour pour proposer une idée un peu décalée à ton entourage. Ta différence est aujourd'hui une force, même si elle surprend d'abord ceux qui t'écoutent.</p>
+        <p class="sign-vibe">Ta différence surprend d'abord, puis finit par convaincre ceux qui t'écoutent jusqu'au bout.</p>
         <div class="sign-categories">
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">65%</span></div>
-            <p class="sign-cat-text">Une idée un peu différente sur le couple ou l'amitié mérite d'être partagée aujourd'hui.</p>
+            <span class="sign-cat-label">Amour</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:65;"><div class="cat-gauge-inner">65%</div></div>
+              <p class="sign-cat-text">Une idée un peu décalée sur le couple ou l'amitié mérite d'être partagée, même si elle détonne.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">74%</span></div>
-            <p class="sign-cat-text">Ton regard décalé débloque une situation où tout le monde tourne en rond.</p>
+            <span class="sign-cat-label">Argent & travail</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:74;"><div class="cat-gauge-inner">74%</div></div>
+              <p class="sign-cat-text">Ton regard de côté débloque une situation où tout le monde d'autre tourne en rond depuis des jours.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">66%</span></div>
-            <p class="sign-cat-text">Énergie correcte, portée par ta tête plus que par ton corps aujourd'hui.</p>
+            <span class="sign-cat-label">Santé</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:66;"><div class="cat-gauge-inner">66%</div></div>
+              <p class="sign-cat-text">Énergie portée par la tête plus que par le corps aujourd'hui.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">71%</span></div>
-            <p class="sign-cat-text">Une indépendance d'esprit qui te fait du bien.</p>
+            <span class="sign-cat-label">Humeur</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:71;"><div class="cat-gauge-inner">71%</div></div>
+              <p class="sign-cat-text">Une indépendance d'esprit qui fait du bien, à toi comme aux autres.</p>
+            </div>
           </div>
         </div>
       </article>
@@ -650,37 +806,38 @@
           <div><div class="sign-name">Poissons</div><div class="sign-dates">19 février – 20 mars</div></div>
           <div class="energy-gauge" style="--pct:62; margin-left:auto;"><div class="energy-gauge-inner">62%</div></div>
         </div>
-        <p class="sign-vibe">Une journée pour écouter ce que ton instinct te souffle depuis un moment déjà. Ta sensibilité, souvent perçue comme une faiblesse, est aujourd'hui une vraie boussole.</p>
+        <p class="sign-vibe">Ton instinct te souffle quelque chose depuis un moment. Pour une fois, écoute-le avant de trop réfléchir.</p>
         <div class="sign-categories">
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Amour</span><span class="sign-cat-score">68%</span></div>
-            <p class="sign-cat-text">Ton instinct capte quelque chose chez l'autre avant même qu'il ne le dise — fais-lui confiance.</p>
+            <span class="sign-cat-label">Amour</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:68;"><div class="cat-gauge-inner">68%</div></div>
+              <p class="sign-cat-text">Tu perçois chez l'autre ce qu'il n'a pas encore dit — fais confiance à ce que tu ressens.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Argent & travail</span><span class="sign-cat-score">48%</span></div>
-            <p class="sign-cat-text">Peu d'énergie pour les rapports de force aujourd'hui, mieux vaut observer qu'agir.</p>
+            <span class="sign-cat-label">Argent & travail</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:48;"><div class="cat-gauge-inner">48%</div></div>
+              <p class="sign-cat-text">Peu d'énergie pour un rapport de force aujourd'hui : observe plutôt que d'agir dans la précipitation.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Santé</span><span class="sign-cat-score">60%</span></div>
-            <p class="sign-cat-text">Une sensibilité qui demande du repos plus que de l'action.</p>
+            <span class="sign-cat-label">Santé</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:60;"><div class="cat-gauge-inner">60%</div></div>
+              <p class="sign-cat-text">Le repos te fera plus de bien qu'une nouvelle activité.</p>
+            </div>
           </div>
           <div class="sign-cat">
-            <div class="sign-cat-head"><span class="sign-cat-label">Humeur</span><span class="sign-cat-score">72%</span></div>
-            <p class="sign-cat-text">Douceur et intuition, une belle journée intérieure.</p>
+            <span class="sign-cat-label">Humeur</span>
+            <div class="sign-cat-body">
+              <div class="cat-gauge" style="--pct:72;"><div class="cat-gauge-inner">72%</div></div>
+              <p class="sign-cat-text">Douceur et intuition, pour une journée plutôt tournée vers l'intérieur.</p>
+            </div>
           </div>
         </div>
       </article>
-    </div>
-  </section>
-
-  <section id="top3" style="margin-top:44px;">
-    <div class="list-box">
-      <span class="list-box-label">Le trio le plus énergique du jour</span>
-      <ul class="list-box-items">
-        <li><span class="list-box-rank">01</span><span class="list-box-title">Sagittaire</span><span class="list-box-meta">85% — un jour à saisir une occasion inhabituelle.</span></li>
-        <li><span class="list-box-rank">02</span><span class="list-box-title">Lion</span><span class="list-box-meta">82% — un jour pour se montrer sans complexe.</span></li>
-        <li><span class="list-box-rank">03</span><span class="list-box-title">Bélier</span><span class="list-box-meta">78% — un jour pour lancer ce qui traînait.</span></li>
-      </ul>
     </div>
   </section>
 
@@ -698,6 +855,7 @@
 <footer>
   <div class="wrap">
     <p class="disclaimer">Les indications de Grand Futur sont proposées à titre indicatif et de divertissement — elles ne remplacent aucune décision personnelle, médicale, professionnelle ou financière.</p>
+    <p class="photo-credit">Photo d'ouverture : <a href="https://www.pexels.com/photo/silhouette-of-trees-2058946/" target="_blank" rel="noopener">Johannes Plenio</a> / Pexels</p>
     <nav>
       <a href="../le-projet.html">Le projet</a>
       <a href="../mentions-legales.html">Mentions légales</a>

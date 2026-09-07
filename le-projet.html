@@ -6,6 +6,12 @@
 <title>Le projet — Grand Futur</title>
 <link rel="canonical" href="https://loliba92.github.io/grandfutur/le-projet.html">
 <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#10151c">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Grand Futur">
 <meta name="description" content="Grand Futur : l'horoscope quotidien gratuit qui donne, en un coup d'œil, votre signe et celui de vos proches.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Grand Futur">
@@ -28,9 +34,15 @@
   .wordmark{ font-family:"Fraunces",serif; font-weight:600; font-size:1.5rem; display:flex; align-items:center; gap:10px; text-decoration:none; color: var(--ink); }
   .wordmark img{ width:28px; height:28px; }
   .wordmark b{ color: var(--gold); font-weight:700; }
-  nav.masthead-nav{ display:flex; gap:20px; flex-wrap:wrap; font-size:0.9rem; }
-  nav.masthead-nav a{ text-decoration:none; color: var(--paper-dim); }
-  nav.masthead-nav a:hover{ color: var(--gold); }
+  nav.masthead-nav{ display:flex; gap:4px; flex-wrap:wrap; font-size:0.88rem; }
+  nav.masthead-nav a{
+    display:flex; align-items:center; gap:7px; text-decoration:none; color: var(--paper-dim);
+    padding:8px 14px; border-radius:999px; transition: background 0.2s, color 0.2s;
+  }
+  nav.masthead-nav a svg{ flex-shrink:0; opacity:0.85; }
+  nav.masthead-nav a:hover{ color: var(--gold); background: var(--surface); }
+  nav.masthead-nav a:hover svg{ opacity:1; }
+  @media (max-width: 640px){ nav.masthead-nav a span{ display:none; } nav.masthead-nav a{ padding:8px; } }
   h1{ font-family:"Fraunces",serif; font-weight:600; font-size:2rem; margin: 44px 0 20px; }
   h2{ font-family:"Fraunces",serif; font-weight:600; font-size:1.3rem; margin: 40px 0 14px; }
   p{ color: var(--paper-dim); }
@@ -48,10 +60,10 @@
   <div class="masthead-row">
     <a class="wordmark" href="index.html"><img src="assets/logo.svg" alt=""> Grand<b>Futur</b></a>
     <nav class="masthead-nav">
-      <a href="index.html">Accueil</a>
-      <a href="archives.html">Archives</a>
-      <a href="le-projet.html">Le projet</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9a1 1 0 0 0 1 1h3v-6h4v6h3a1 1 0 0 0 1-1v-9"/></svg><span>Accueil</span></a>
+      <a href="archives.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5"/><path d="M9 2h6"/></svg><span>Archives</span></a>
+      <a href="le-projet.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01"/><path d="M11 12h1v5h1"/></svg><span>Le projet</span></a>
+      <a href="contact.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg><span>Contact</span></a>
     </nav>
   </div>
 </header>
