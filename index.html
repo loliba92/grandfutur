@@ -158,15 +158,23 @@
   }
   .profile-form-cancel{ background:none; border:none; color: var(--paper-dim); cursor:pointer; text-decoration:underline; font-size:0.85rem; }
 
-  .family-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap:14px; margin-top:18px; }
-  .family-card{ background: var(--surface-2); border:1px solid var(--hairline); border-radius:10px; padding:16px; }
+  .family-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); gap:14px; margin-top:18px; }
+  .family-card{ background: var(--surface-2); border:1px solid var(--hairline); border-radius:10px; padding:18px; }
   .family-card-head{ display:flex; align-items:center; gap:8px; margin-bottom:2px; }
   .family-card-icon{ color: var(--accent, var(--gold)); flex-shrink:0; display:flex; }
   .family-card-name{ font-family:"Fraunces",serif; font-weight:600; font-size:1.1rem; }
-  .family-card-signs{ font-size:0.8rem; color: var(--paper-dim); margin-bottom:12px; }
-  .family-card-row{ display:flex; align-items:flex-start; gap:12px; }
-  .family-card-flavor{ font-size:0.85rem; color: var(--paper-dim); margin-top:10px; }
-  .family-card-link{ display:inline-block; margin-top:10px; font-size:0.8rem; color: var(--gold); text-decoration:none; }
+  .family-card-signs{ font-size:0.8rem; color: var(--paper-dim); margin-bottom:4px; }
+  .family-card-row{ display:flex; align-items:flex-start; gap:12px; margin:14px 0; }
+  .family-card-flavor{ font-size:0.85rem; color: var(--accent, var(--gold)); margin:0; padding-left:10px; border-left:2px solid var(--accent, var(--gold)); }
+  .family-card-categories{ grid-template-columns: 1fr; margin-bottom:16px; }
+  .family-card-actions{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; padding-top:4px; border-top:1px solid var(--hairline); padding-top:14px; }
+  .family-copy-btn{
+    font-family:"JetBrains Mono",monospace; font-size:0.76rem; background: var(--surface); color: var(--ink);
+    border:1px solid var(--hairline); border-radius:6px; padding:8px 14px; cursor:pointer;
+  }
+  .family-copy-btn:hover{ border-color: var(--gold); color: var(--gold); }
+  .family-copy-btn:disabled{ opacity:0.7; cursor:default; }
+  .family-card-link{ font-size:0.8rem; color: var(--gold); text-decoration:none; }
   .family-empty{ color: var(--paper-dim); font-size:0.9rem; }
 
   /* ---------- Energy gauge ---------- */
@@ -1062,11 +1070,20 @@
   function readCardData(sign){
     var card = document.querySelector('.sign-card[data-sign="' + sign + '"]');
     if (!card) return null;
+    var categories = [];
+    card.querySelectorAll(".sign-cat").forEach(function(cat){
+      categories.push({
+        label: cat.querySelector(".sign-cat-label").textContent,
+        score: cat.querySelector(".cat-gauge-inner").textContent,
+        text: cat.querySelector(".sign-cat-text").textContent
+      });
+    });
     return {
       name: card.querySelector(".sign-name").textContent,
       element: card.getAttribute("data-element"),
       energy: card.getAttribute("data-energy"),
-      vibe: card.querySelector(".sign-vibe").textContent
+      vibe: card.querySelector(".sign-vibe").textContent,
+      categories: categories
     };
   }
 
@@ -1112,24 +1129,84 @@
       var sunData = readCardData(sun);
       if (!sunData) return;
 
-      // Aperçu court : seulement la 1re phrase du texte du jour — le détail
-      // complet reste dans le panneau du signe, pas besoin de le dupliquer ici.
-      var vibePreview = sunData.vibe.split(/(?<=[.!?])\s/)[0];
+      var ascFlavor = ASCENDANT_FLAVOR[ELEMENT_OF[asc]];
+
+      var catsHtml = sunData.categories.map(function(c){
+        return '<div class="sign-cat">' +
+          '<span class="sign-cat-label">' + c.label + '</span>' +
+          '<div class="sign-cat-body">' +
+            '<div class="cat-gauge" style="--pct:' + c.score.replace('%','') + ';"><div class="cat-gauge-inner">' + c.score + '</div></div>' +
+            '<p class="sign-cat-text">' + c.text + '</p>' +
+          '</div></div>';
+      }).join('');
 
       var card = document.createElement("div");
       card.className = "family-card";
+      card.dataset.profileId = p.id;
       card.style.setProperty("--accent", "var(--" + sunData.element + ")");
       card.innerHTML =
         '<div class="family-card-head"><span class="family-card-icon">' + zodiacIconSvg(sun, 20) + '</span><span class="family-card-name">' + p.name + '</span></div>' +
         '<div class="family-card-signs">' + SIGN_NAMES[sun] + ' · Ascendant ' + SIGN_NAMES[asc] + '</div>' +
+        '<p class="family-card-flavor">' + ascFlavor + '</p>' +
         '<div class="family-card-row">' +
           '<div class="energy-gauge" style="--pct:' + sunData.energy + '; --accent: var(--' + sunData.element + ');"><div class="energy-gauge-inner">' + sunData.energy + '%</div></div>' +
-          '<p style="margin:0; font-size:0.9rem;">' + vibePreview + '</p>' +
+          '<p style="margin:0; font-size:0.9rem;">' + sunData.vibe + '</p>' +
         '</div>' +
-        '<p class="family-card-flavor">' + ASCENDANT_FLAVOR[ELEMENT_OF[asc]] + '</p>' +
-        '<a class="family-card-link" href="#signe-' + sun + '" data-target="' + sun + '">Voir le détail de son signe →</a>';
+        '<div class="sign-categories family-card-categories">' + catsHtml + '</div>' +
+        '<div class="family-card-actions">' +
+          '<button type="button" class="family-copy-btn" data-profile-id="' + p.id + '">Copier cet horoscope</button>' +
+          '<a class="family-card-link" href="#signe-' + sun + '" data-target="' + sun + '">Voir aussi la fiche ' + SIGN_NAMES[sun] + ' →</a>' +
+        '</div>';
 
       gridEl.appendChild(card);
+    });
+
+    // Bouton "Copier" : assemble un texte prêt à partager (ex. par message)
+    // reprenant la lecture complète du profil — signe, ascendant, énergie,
+    // et les 4 domaines, tel qu'affiché dans la carte.
+    gridEl.querySelectorAll(".family-copy-btn").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        var id = btn.getAttribute("data-profile-id");
+        var p = profiles.find(function(x){ return x.id === id; });
+        if (!p) return;
+        var sun = sunSignFromDate(p.date);
+        var asc = computeAscendantSign(p.date, p.time);
+        var sunData = readCardData(sun);
+        var lines = [];
+        lines.push("Grand Futur — " + p.name + " (" + SIGN_NAMES[sun] + ", ascendant " + SIGN_NAMES[asc] + ")");
+        lines.push("Énergie du jour : " + sunData.energy + "%");
+        lines.push("");
+        lines.push(sunData.vibe);
+        lines.push(ASCENDANT_FLAVOR[ELEMENT_OF[asc]]);
+        lines.push("");
+        sunData.categories.forEach(function(c){
+          lines.push(c.label + " (" + c.score + ") : " + c.text);
+        });
+        var text = lines.join("\n");
+
+        function showCopied(){
+          var original = btn.textContent;
+          btn.textContent = "Copié ✓";
+          btn.disabled = true;
+          setTimeout(function(){ btn.textContent = original; btn.disabled = false; }, 1800);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(text).then(showCopied).catch(function(){
+            btn.textContent = "Échec de la copie";
+            setTimeout(function(){ btn.textContent = "Copier cet horoscope"; }, 1800);
+          });
+        } else {
+          // Repli navigateurs anciens : zone de texte temporaire + execCommand.
+          var ta = document.createElement("textarea");
+          ta.value = text;
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand("copy"); showCopied(); } catch (e) {}
+          document.body.removeChild(ta);
+        }
+      });
     });
 
     // Liens "voir le détail" : sélectionne la tuile du signe puis scroll vers le panneau
