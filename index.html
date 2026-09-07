@@ -1009,6 +1009,53 @@
     { sign: "sagittaire", from: [11, 22], to: [12, 21] }
   ];
 
+  // Décan (chaque signe divisé en 3 tranches de ~10 jours). Frontières
+  // calculées à partir de la vraie position du Soleil (10° d'écart
+  // écliptique par décan), pas d'une simple division en 3 du nombre de
+  // jours du signe — même exigence que SUN_SIGN_RANGES. Ne dépend que de
+  // la date de naissance (pas de l'heure) et ne varie pas avec le jour :
+  // pas de calcul en temps réel nécessaire côté client, une table de
+  // dates statique suffit (voir scripts/content/day_code.py pour le
+  // script qui a produit ces bornes).
+  var DECAN_RANGES = [
+    { sign: "capricorne", decan: 1, from: [12, 22], to: [12, 31] },
+    { sign: "capricorne", decan: 2, from: [1, 1], to: [1, 10] },
+    { sign: "capricorne", decan: 3, from: [1, 11], to: [1, 19] },
+    { sign: "verseau", decan: 1, from: [1, 20], to: [1, 29] },
+    { sign: "verseau", decan: 2, from: [1, 30], to: [2, 8] },
+    { sign: "verseau", decan: 3, from: [2, 9], to: [2, 18] },
+    { sign: "poissons", decan: 1, from: [2, 19], to: [2, 28] },
+    { sign: "poissons", decan: 2, from: [3, 1], to: [3, 10] },
+    { sign: "poissons", decan: 3, from: [3, 11], to: [3, 20] },
+    { sign: "belier", decan: 1, from: [3, 21], to: [3, 30] },
+    { sign: "belier", decan: 2, from: [3, 31], to: [4, 9] },
+    { sign: "belier", decan: 3, from: [4, 10], to: [4, 19] },
+    { sign: "taureau", decan: 1, from: [4, 20], to: [4, 30] },
+    { sign: "taureau", decan: 2, from: [5, 1], to: [5, 10] },
+    { sign: "taureau", decan: 3, from: [5, 11], to: [5, 20] },
+    { sign: "gemeaux", decan: 1, from: [5, 21], to: [5, 31] },
+    { sign: "gemeaux", decan: 2, from: [6, 1], to: [6, 10] },
+    { sign: "gemeaux", decan: 3, from: [6, 11], to: [6, 21] },
+    { sign: "cancer", decan: 1, from: [6, 22], to: [7, 1] },
+    { sign: "cancer", decan: 2, from: [7, 2], to: [7, 12] },
+    { sign: "cancer", decan: 3, from: [7, 13], to: [7, 22] },
+    { sign: "lion", decan: 1, from: [7, 23], to: [8, 2] },
+    { sign: "lion", decan: 2, from: [8, 3], to: [8, 12] },
+    { sign: "lion", decan: 3, from: [8, 13], to: [8, 22] },
+    { sign: "vierge", decan: 1, from: [8, 23], to: [9, 2] },
+    { sign: "vierge", decan: 2, from: [9, 3], to: [9, 12] },
+    { sign: "vierge", decan: 3, from: [9, 13], to: [9, 22] },
+    { sign: "balance", decan: 1, from: [9, 23], to: [10, 3] },
+    { sign: "balance", decan: 2, from: [10, 4], to: [10, 13] },
+    { sign: "balance", decan: 3, from: [10, 14], to: [10, 23] },
+    { sign: "scorpion", decan: 1, from: [10, 24], to: [11, 2] },
+    { sign: "scorpion", decan: 2, from: [11, 3], to: [11, 12] },
+    { sign: "scorpion", decan: 3, from: [11, 13], to: [11, 22] },
+    { sign: "sagittaire", decan: 1, from: [11, 23], to: [12, 2] },
+    { sign: "sagittaire", decan: 2, from: [12, 3], to: [12, 11] },
+    { sign: "sagittaire", decan: 3, from: [12, 12], to: [12, 21] }
+  ];
+
   var SIGN_NAMES = {
     belier: "Bélier", taureau: "Taureau", gemeaux: "Gémeaux", cancer: "Cancer",
     lion: "Lion", vierge: "Vierge", balance: "Balance", scorpion: "Scorpion",
@@ -1118,6 +1165,66 @@
       }
     }
     return "belier"; // filet de sécurité, ne devrait jamais arriver
+  }
+
+  function decanFromDate(dateStr){
+    // Comparaison numérique (mois*100+jour) plutôt que la logique à 3
+    // clauses OR de sunSignFromDate : cette dernière suppose implicitement
+    // que from.month != to.month (vrai pour SUN_SIGN_RANGES), mais un
+    // décan reste souvent dans le même mois (ex. Bélier 1er décan,
+    // [3,21]-[3,30]) — avec l'ancienne logique, "day <= to.day" seul
+    // suffirait à matcher tout le mois, décan faussé.
+    var parts = dateStr.split("-").map(Number);
+    var val = parts[1] * 100 + parts[2];
+    for (var i = 0; i < DECAN_RANGES.length; i++){
+      var r = DECAN_RANGES[i];
+      var fromVal = r.from[0] * 100 + r.from[1];
+      var toVal = r.to[0] * 100 + r.to[1];
+      if (fromVal <= toVal) {
+        if (val >= fromVal && val <= toVal) return r.decan;
+      } else {
+        // Plage à cheval sur la nouvelle année (capricorne décan 1).
+        if (val >= fromVal || val <= toVal) return r.decan;
+      }
+    }
+    return 1; // filet de sécurité
+  }
+
+  // Règle classique des décans : le 1er décan d'un signe est son
+  // expression "pure" ; le 2e et le 3e sont teintés par les deux autres
+  // signes du même élément (sa "triplicité"), dans l'ordre du zodiaque.
+  // Ex. Bélier : décan 1 = Bélier, décan 2 = Lion, décan 3 = Sagittaire
+  // (les 3 signes de Feu). Formule générique, pas une table de 36 cases
+  // écrites à la main — même principe que le reste de ce système :
+  // un petit calcul + une bibliothèque de fragments réutilisables.
+  function decanRulerSign(sign, decanNum){
+    var idx = ZODIAC_ORDER.indexOf(sign);
+    return ZODIAC_ORDER[(idx + (decanNum - 1) * 4) % 12];
+  }
+
+  var DECAN_COLOR_TRAIT = {
+    belier: "l'envie d'aller droit au but, quitte à bousculer un peu",
+    taureau: "un besoin de stabilité et de confort avant d'avancer",
+    gemeaux: "une curiosité qui saute facilement d'un sujet à l'autre",
+    cancer: "une sensibilité aux non-dits et à l'ambiance du moment",
+    lion: "une confiance qui donne envie de se faire remarquer",
+    vierge: "une exigence du détail, envers les autres comme envers soi",
+    balance: "un temps de réflexion avant de trancher quoi que ce soit",
+    scorpion: "une intensité qui va chercher sous la surface",
+    sagittaire: "une soif d'imprévu et de grand air",
+    capricorne: "une discipline tournée vers le long terme",
+    verseau: "une indépendance d'esprit qui résiste au cadre",
+    poissons: "une intuition qui devance la logique"
+  };
+
+  var DECAN_ORDINAL = { 1: "1er", 2: "2e", 3: "3e" };
+
+  function decanFlavor(sign, decanNum){
+    if (decanNum === 1){
+      return DECAN_ORDINAL[1] + " décan de " + SIGN_NAMES[sign] + " : l'expression la plus directe du signe, sans nuance d'un voisin.";
+    }
+    var ruler = decanRulerSign(sign, decanNum);
+    return DECAN_ORDINAL[decanNum] + " décan de " + SIGN_NAMES[sign] + " : à la base du signe s'ajoute une touche de " + SIGN_NAMES[ruler] + " — " + DECAN_COLOR_TRAIT[ruler] + ".";
   }
 
   /* ---------- Calcul de l'ascendant ----------
@@ -1295,11 +1402,13 @@
 
     profiles.forEach(function(p){
       var sun = sunSignFromDate(p.date);
+      var decan = decanFromDate(p.date);
       var asc = computeAscendantSign(p.date, p.time);
       var sunData = readCardData(sun);
       if (!sunData) return;
 
       var ascFlavor = ASCENDANT_FLAVOR[asc];
+      var decFlavor = decanFlavor(sun, decan);
 
       // Les 4 scores sont ceux du signe solaire, nuancés par l'élément de
       // l'ascendant — c'est ce qui fait qu'une personne née à 6h et une
@@ -1346,10 +1455,11 @@
       card.innerHTML =
         '<div class="family-card-head">' +
           '<span class="family-card-icon">' + zodiacIconSvg(sun, 20) + '</span>' +
-          '<div><div class="family-card-name">' + escapeHtml(p.name) + '</div><div class="family-card-signs">' + SIGN_NAMES[sun] + ' · Ascendant ' + SIGN_NAMES[asc] + '</div></div>' +
+          '<div><div class="family-card-name">' + escapeHtml(p.name) + '</div><div class="family-card-signs">' + SIGN_NAMES[sun] + ' (' + DECAN_ORDINAL[decan] + ' décan) · Ascendant ' + SIGN_NAMES[asc] + '</div></div>' +
           energyRingHtml +
         '</div>' +
         '<p class="family-card-flavor">' + ascFlavor + '</p>' +
+        '<p class="family-card-flavor">' + decFlavor + '</p>' +
         '<p class="family-card-vibe">' + sunData.vibe + '</p>' +
         '<div class="family-gauges">' + gaugesHtml + '</div>' +
         extrasHtml +
@@ -1384,16 +1494,18 @@
     // fonction pour ne jamais les laisser diverger.
     function buildProfileText(p){
       var sun = sunSignFromDate(p.date);
+      var decan = decanFromDate(p.date);
       var asc = computeAscendantSign(p.date, p.time);
       var sunData = readCardData(sun);
       var adjCats = applyAscendantNudge(sunData.categories, ELEMENT_OF[asc]);
       var energy = Math.round(adjCats.reduce(function(sum, c){ return sum + parseInt(c.score, 10); }, 0) / adjCats.length);
       var lines = [];
-      lines.push("Grand Futur — " + p.name + " (" + SIGN_NAMES[sun] + ", ascendant " + SIGN_NAMES[asc] + ")");
+      lines.push("Grand Futur — " + p.name + " (" + SIGN_NAMES[sun] + ", " + DECAN_ORDINAL[decan] + " décan, ascendant " + SIGN_NAMES[asc] + ")");
       lines.push("Énergie du jour : " + energy + "%");
       lines.push("");
       lines.push(sunData.vibe);
       lines.push(ASCENDANT_FLAVOR[asc]);
+      lines.push(decanFlavor(sun, decan));
       lines.push("");
       adjCats.forEach(function(c){
         lines.push(c.label + " (" + c.score + ") : " + c.text);

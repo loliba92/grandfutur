@@ -213,6 +213,48 @@ Cette architecture compose proprement avec le nudge d'ascendant
 ci-dessus : le code du jour fixe la base par signe solaire, l'ascendant
 la nuance ensuite — deux axes indépendants, aucun conflit.
 
+### Décan — troisième axe, sans nouveau calcul en temps réel
+
+Ajouté le 7 septembre, même logique de « code + bibliothèque de
+fragments » que le reste : le décan (chaque signe divisé en 3 tranches
+de ~10°, ~10 jours) ne dépend que de la date de naissance, jamais du
+jour — contrairement à l'ascendant, pas besoin de recalculer quoi que ce
+soit en temps réel, une table de dates statique suffit.
+
+- **`DECAN_RANGES`** (36 entrées, JS) : bornes calculées à partir de la
+  vraie position du Soleil (10° d'écart écliptique par décan, script
+  ponctuel via `ephem`), pas d'une simple division en 3 du nombre de
+  jours du signe — décalage possible de ±1 jour d'une année sur l'autre
+  (précession négligeable à cette échelle), même tolérance que
+  `SUN_SIGN_RANGES`.
+- **`decanFromDate()`** : *pas* la même logique à 3 clauses OR que
+  `sunSignFromDate()` — celle-ci suppose implicitement que `from.month
+  != to.month`, ce qui n'est pas toujours vrai pour un décan (souvent
+  contenu dans un seul mois, ex. Bélier 1er décan `[3,21]`-`[3,30]`).
+  Bug rencontré et corrigé en test local (25 mars rendait "2e décan" au
+  lieu de "1er") : comparaison numérique `mois*100+jour` à la place.
+- **`decanRulerSign()`** : au lieu d'écrire 36 phrases à la main, la
+  règle classique des décans est codée en formule — le 1er décan d'un
+  signe est son expression "pure", le 2e et le 3e sont teintés par les
+  deux autres signes du même élément (sa triplicité), dans l'ordre du
+  zodiaque (`(index + (decan-1)*4) % 12`). Ex. Bélier : décan 1 =
+  Bélier, décan 2 = Lion, décan 3 = Sagittaire.
+- **`DECAN_COLOR_TRAIT`** : 12 traits réutilisables (un par signe), pas
+  36 — combinés par `decanFlavor()` en "à la base de {signe} s'ajoute
+  une touche de {signe teintant} — {trait}". 12 phrases produisent
+  mécaniquement 36 combinaisons cohérentes, dans le même esprit que
+  `ASCENDANT_NUDGE`/`ASCENDANT_FLAVOR` : un petit calcul plutôt qu'une
+  bibliothèque proportionnelle au nombre de combinaisons.
+
+**Décision assumée : pas de nudge de score pour le décan.** Contrairement
+à l'ascendant, le décan reste purement informatif (libellé + phrase) —
+cumuler un deuxième modificateur numérique sur les 4 scores rendrait le
+système difficile à expliquer et à faire confiance ("pourquoi ce chiffre
+précis ?"). Un axe de plus (l'ascendant) nuance déjà les chiffres ; le
+décan nuance le texte. Affiché dans la carte famille : sous-titre
+("Bélier (2e décan) · Ascendant Gémeaux") + une phrase dédiée, sous celle
+de l'ascendant ; repris dans le texte "Copier"/"Partager".
+
 ## Image du jour (Pexels)
 
 Port simplifié des scripts Scénario (`fetch_topic_image.py` /

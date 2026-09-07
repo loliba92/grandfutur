@@ -66,15 +66,11 @@ P2 = important mais pas bloquant, P3 = idée future à explorer.
   figé sur une seule date, il n'y a rien à tracer dans le temps. À
   construire après, pas avant.
 
-- **Décan** (chaque signe divisé en 3 tranches de 10°, ~10 jours) comme
-  troisième axe de personnalisation, en plus du signe solaire et de
-  l'ascendant — demande utilisateur du 7 septembre. Contrairement à
-  l'ascendant, le décan ne dépend que de la date de naissance (pas de
-  l'heure) et ne varie pas avec le jour : pas besoin de calcul en temps
-  réel, une table de dates statique (36 entrées au lieu des 12 de
-  `SUN_SIGN_RANGES`) suffit. Prévoir une bibliothèque de phrases par décan
-  (comme `ASCENDANT_FLAVOR`) et éventuellement une nuance de score
-  supplémentaire, superposée à celle de l'ascendant.
+- ~~**Décan** comme troisième axe de personnalisation~~ — **fait le 7
+  septembre**, voir `docs/ARCHITECTURE.md` § « Décan ». Pas de nuance de
+  score ajoutée (décision assumée, voir la doc) : reste une phrase
+  informative, pas un modificateur numérique en plus de celui de
+  l'ascendant.
 - **Style du jour et Conseil mécanisés** : ces deux blocs sont encore
   écrits/ajustés à la main à chaque édition (voir `ARCHITECTURE.md` §
   Moteur de contenu, limite assumée) — les faire aussi piocher dans une
