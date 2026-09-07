@@ -99,11 +99,11 @@ chaque jour, en te basant sur `day_code` du JSON généré à l'étape 1 :
   ("bois de l'eau"). Deux signes de même situation aujourd'hui doivent
   quand même lire différemment (varier l'angle : l'un plus travail,
   l'autre plus relationnel, par exemple).
-- **`<span class="sign-conseil-label">Style du jour</span>` et
-  `Conseil`** (12 de chaque) : suivent le principe déjà établi
-  (`docs/ARCHITECTURE.md` § Style du jour) — connecter à une situation
-  concrète du jour, jamais un conseil vestimentaire ou pratique
-  générique et déconnecté.
+- **`<span class="sign-conseil-label">Conseil</span>`** (12) : connecter
+  à une situation concrète du jour, jamais un conseil pratique générique
+  et déconnecté ("bois de l'eau"). **"Style du jour" (fashion horoscope)
+  a été retiré le 7 septembre** (retour utilisateur : "c'est nul") — ne
+  plus l'écrire, ni son bloc `.sign-conseil.sign-style` dans le HTML.
 **`#top3` (trio du jour) masqué depuis le 7 septembre** (retour
 utilisateur : pas utile pour l'instant) — ne plus l'écrire ni le mettre
 à jour chaque matin, ce serait du travail perdu pour une section que

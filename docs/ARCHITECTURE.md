@@ -485,6 +485,34 @@ dédié : voir [`docs/BACKLOG.md`](./BACKLOG.md).
 
 ## Historique
 
+- **7 septembre 2026** : plusieurs retouches rapides sur la carte
+  famille suite aux retours utilisateur en continu.
+  - **"Style du jour" retiré entièrement** ("c'est nul") : les 12 blocs
+    statiques, `readCardData()`/`styleEl`, la ligne dans le texte
+    Copier/Partager, et les instructions correspondantes dans
+    `docs/routine-prompt.md` — tout supprimé, pas juste masqué (contrairement
+    à `#signes`/`#top3`, rien ne dépendait de cette donnée ailleurs).
+  - **Phrase d'ascendant retirée de la zone visible et du texte
+    Copier/Partager**, même raison que le décan plus tôt dans la
+    journée : "je comprends pas s'il y a un lien" entre la phrase
+    d'ascendant (générique) et le résumé du jour (quotidien), juxtaposés
+    sans transition. L'ascendant continue de nuancer les scores
+    (`applyAscendantNudge`), simplement plus expliqué en prose.
+  - **Nom et sous-titre sur la même ligne** (`family-card-name`/
+    `family-card-signs` passés de `<div>` à `<span>`) — carte encore un
+    cran plus compacte.
+  - **Bouton "Voir le détail" restylé en label discret** (JetBrains
+    Mono, minuscule, `--paper-dim`, dorée seulement au survol) plutôt
+    qu'un texte doré de taille normale — moins criard, plus éditorial.
+  - **"Partager cet horoscope" raccourci en "Partager"**.
+  - **Grille "Vos proches" repassée en damier 2 colonnes** (1 colonne
+    sous 640px) — le choix initial "un profil par ligne" datait d'une
+    époque où les cartes étaient beaucoup plus verbeuses ; devenu
+    inutilement large maintenant qu'elles sont compactes. Chaque carte
+    garde sa propre hauteur (`align-items:start`) : une carte dépliée
+    à côté d'une repliée ne s'étire pas pour s'aligner, compromis visuel
+    assumé.
+
 - **7 septembre 2026** : bouton "Copier"/"Partager" unifiés en un seul
   bouton "Partager cet horoscope" (mobile : feuille native inchangée ;
   desktop : petit menu de 4 icônes dessinées à la main — Copier,

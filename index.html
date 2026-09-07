@@ -190,7 +190,16 @@
 
   /* Un profil par ligne, pleine largeur : les 5 jauges tiennent sur une
      seule ligne sans se tasser, plus agréable à lire qu'une grille serrée. */
-  .family-grid{ display:flex; flex-direction:column; gap:20px; margin-top:22px; }
+  /* 2 colonnes dès que la largeur le permet (retour utilisateur du 7
+     septembre : les cartes sont devenues bien plus compactes qu'à
+     l'origine, quand "un profil par ligne" avait été choisi pour la
+     lisibilité — repassé en damier maintenant que c'est possible). Une
+     seule colonne sous 640px pour ne jamais tasser sur mobile étroit.
+     Chaque carte garde sa hauteur propre (align-items:start) : une
+     carte dépliée à côté d'une repliée reste normale, pas d'étirement
+     forcé pour égaliser les deux. */
+  .family-grid{ display:grid; grid-template-columns: 1fr; gap:20px; margin-top:22px; align-items:start; }
+  @media (min-width: 640px){ .family-grid{ grid-template-columns: repeat(2, 1fr); } }
   .family-card{
     background: var(--surface-2); border:1px solid var(--hairline-soft); border-radius:16px; padding:26px;
     box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset, 0 12px 30px rgba(0,0,0,0.18);
@@ -198,17 +207,19 @@
   .family-card-head{ display:flex; align-items:center; gap:8px; margin-bottom:2px; }
   .family-card-icon{ color: var(--accent, var(--gold)); flex-shrink:0; display:flex; }
   .family-card-name{ font-family:"Fraunces",serif; font-weight:600; font-size:1.1rem; }
-  .family-card-signs{ font-size:0.8rem; color: var(--paper-dim); margin-bottom:4px; }
+  .family-card-signs{ font-size:0.8rem; color: var(--paper-dim); margin-left:9px; }
   .family-card-row{ display:flex; align-items:flex-start; gap:12px; margin:14px 0; }
   .family-card-flavor{ font-size:0.85rem; color: var(--paper-dim); margin:8px 0 0; }
   .family-card-vibe{ margin:12px 0 0; font-size:0.9rem; }
-  /* Accordéon "détail" : englobe les 4 domaines + Style du jour/Conseil,
-     replié sous le résumé — même recette que celui des 12 signes. */
+  /* Accordéon "détail" : englobe les 4 domaines + Conseil, replié sous
+     le résumé — même recette que celui des 12 signes. */
   .family-detail-toggle{
-    display:flex; align-items:center; gap:6px; background:none; border:none; padding:0;
-    font-family:"Inter",sans-serif; font-size:0.82rem; color: var(--gold); cursor:pointer;
+    display:flex; align-items:center; gap:5px; background:none; border:none; padding:0;
+    font-family:"JetBrains Mono",monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase;
+    color: var(--paper-dim); cursor:pointer; transition: color 0.15s;
   }
-  .family-detail-chevron{ font-size:0.75rem; transition: transform 0.25s ease; }
+  .family-detail-toggle:hover{ color: var(--gold); }
+  .family-detail-chevron{ font-size:0.65rem; transition: transform 0.25s ease; }
   .family-detail-toggle.is-open .family-detail-chevron{ transform: rotate(180deg); }
   .family-detail-body{ display:grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; }
   .family-detail-inner{ overflow:hidden; }
@@ -318,9 +329,11 @@
   .sign-cat-body{ display:flex; align-items:center; gap:12px; }
   .sign-cat-text{ margin:0; font-size:0.88rem; }
 
-  /* Style du jour + Conseil : deux touches à part, légères, jamais un
-     chiffre — dans l'esprit des horoscopes classiques (ex. "aérez votre
-     appartement cinq minutes"), volontairement détachées des 4 domaines notés. */
+  /* Conseil : une touche à part, légère, jamais un chiffre — dans
+     l'esprit des horoscopes classiques (ex. "aérez votre appartement
+     cinq minutes"), volontairement détachée des 4 domaines notés.
+     "Style du jour" (fashion horoscope) a existé puis a été retiré
+     (retour utilisateur du 7 septembre : "c'est nul"), voir Historique. */
   .sign-extras{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:16px; margin-top:18px; }
   .sign-conseil{ padding:14px 18px; background: var(--surface-2); border-radius:12px; border-left:2px solid var(--gold); }
   .sign-conseil-label{ display:block; font-family:"JetBrains Mono",monospace; font-size:0.68rem; letter-spacing:0.05em; text-transform:uppercase; color: var(--gold); margin-bottom:4px; }
@@ -540,7 +553,6 @@
           </div>
         </div>
         <div class="sign-extras">
-          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Tu vas défendre une idée aujourd'hui : une pièce qui tranche, couleur vive et coupe nette, pour que le look suive le discours.</p></div>
           <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Avant de foncer, relis une fois ce que tu es sur le point d'envoyer.</p></div>
         </div>
       </article>
@@ -582,7 +594,6 @@
           </div>
         </div>
         <div class="sign-extras">
-          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Journée sans éclat particulier, et tant mieux : une matière confortable colle mieux à ce rythme tranquille qu'une pièce qui cherche l'effet.</p></div>
           <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Prends le temps du repas de midi, même dix minutes de plus.</p></div>
         </div>
       </article>
@@ -624,7 +635,6 @@
           </div>
         </div>
         <div class="sign-extras">
-          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Tu vas présenter une idée à l'oral aujourd'hui : associe deux pièces qu'on n'attend pas ensemble, ça amorce déjà la conversation.</p></div>
           <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Note une idée qui te traverse l'esprit avant de l'oublier ce soir.</p></div>
         </div>
       </article>
@@ -666,7 +676,6 @@
           </div>
         </div>
         <div class="sign-extras">
-          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Journée pour rester dans ton cercle proche : une pièce familière, qui rassure, plutôt qu'une nouveauté que tu porterais pour personne.</p></div>
           <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Un message à quelqu'un de confiance te fera plus de bien qu'un silence prolongé.</p></div>
         </div>
       </article>
@@ -708,7 +717,6 @@
           </div>
         </div>
         <div class="sign-extras">
-          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Ta présence va se remarquer dans une présentation ou une négociation : choisis une pièce qui donne envie de se tenir droit.</p></div>
           <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Laisse quelqu'un d'autre parler en premier dans une réunion aujourd'hui.</p></div>
         </div>
       </article>
@@ -750,7 +758,6 @@
           </div>
         </div>
         <div class="sign-extras">
-          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Tu vas repérer au travail un détail que d'autres laissent passer : une tenue nette et bien coupée, sans fioriture, colle à cette rigueur.</p></div>
           <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Range un tiroir ou un dossier qui traîne, ça libère plus que prévu.</p></div>
         </div>
       </article>
@@ -792,7 +799,6 @@
           </div>
         </div>
         <div class="sign-extras">
-          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Le jour où tu vas enfin trancher une question en suspens : une tenue équilibrée, ni trop ni trop peu, à l'image de la décision.</p></div>
           <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Donne-toi une deadline claire aujourd'hui pour trancher, sinon le sujet reviendra demain.</p></div>
         </div>
       </article>
@@ -834,7 +840,6 @@
           </div>
         </div>
         <div class="sign-extras">
-          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Tu vas percer un non-dit dans un dossier ou une conversation : une couleur sombre et profonde en dit déjà long avant que tu parles.</p></div>
           <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Garde une observation juste pour toi jusqu'à avoir une vraie preuve à l'appui.</p></div>
         </div>
       </article>
@@ -876,7 +881,6 @@
           </div>
         </div>
         <div class="sign-extras">
-          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Une occasion inattendue peut surgir aujourd'hui : une tenue confortable, prête à bouger, pour pouvoir dire oui sans réfléchir.</p></div>
           <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Vérifie une date ou un horaire avant de t'engager sur un coup de tête.</p></div>
         </div>
       </article>
@@ -918,7 +922,6 @@
           </div>
         </div>
         <div class="sign-extras">
-          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Journée pour ralentir sur un projet de fond, pas pour l'abandonner : une pièce structurée et sobre inspire confiance même en économisant l'énergie.</p></div>
           <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Note ce que tu as accompli ce soir, même petit : tu as tendance à l'oublier.</p></div>
         </div>
       </article>
@@ -960,7 +963,6 @@
           </div>
         </div>
         <div class="sign-extras">
-          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Ton idée décalée va débloquer une situation où tout le monde tourne en rond depuis des jours : un détail qui ne ressemble à personne d'autre appuie le propos.</p></div>
           <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Formule ton idée simplement : une bonne idée mal expliquée perd tout son impact.</p></div>
         </div>
       </article>
@@ -1002,7 +1004,6 @@
           </div>
         </div>
         <div class="sign-extras">
-          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Tu perçois chez l'autre ce qu'il n'a pas encore dit : une matière fluide, qui bouge avec toi, à l'image de cette intuition.</p></div>
           <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Note une émotion forte plutôt que de la garder pour toi indéfiniment.</p></div>
         </div>
       </article>
@@ -1406,15 +1407,13 @@
         situation: cat.getAttribute("data-situation") || ""
       });
     });
-    var styleEl = card.querySelector(".sign-style .sign-conseil-text");
-    var conseilEl = card.querySelector(".sign-conseil:not(.sign-style) .sign-conseil-text");
+    var conseilEl = card.querySelector(".sign-conseil .sign-conseil-text");
     return {
       name: card.querySelector(".sign-name").textContent,
       element: card.getAttribute("data-element"),
       energy: card.getAttribute("data-energy"),
       vibe: card.querySelector(".sign-vibe").textContent,
       categories: categories,
-      style: styleEl ? styleEl.textContent : "",
       conseil: conseilEl ? conseilEl.textContent : ""
     };
   }
@@ -1464,12 +1463,13 @@
       var sunData = readCardData(sun);
       if (!sunData) return;
 
-      var ascFlavor = ASCENDANT_FLAVOR[asc];
-      // Le décan n'est plus montré ici (retour utilisateur : le sous-titre
-      // + la double phrase ascendant/décan ne se comprenaient pas l'un
-      // l'autre, jugé confus). Son effet reste actif en coulisse : il
-      // continue de repiocher le texte des 4 domaines plus bas
-      // (pickPersonalizedText) — juste sans l'expliquer à l'écran.
+      // Ni la phrase de décan ni celle d'ascendant ne sont montrées ici
+      // (retour utilisateur : deux phrases générique/quotidien juxtaposées
+      // sans lien explicite, "je comprends pas s'il y a un lien"). Les
+      // deux effets restent actifs en coulisse : l'ascendant nuance les
+      // scores (applyAscendantNudge) et le décan repioche le texte des
+      // 4 domaines plus bas (pickPersonalizedText) — juste sans
+      // l'affirmer en prose à l'écran.
 
       // Les 4 scores sont ceux du signe solaire, nuancés par l'élément de
       // l'ascendant — c'est ce qui fait qu'une personne née à 6h et une
@@ -1498,11 +1498,10 @@
             '<p class="sign-cat-text">' + personalizedText + '</p>' +
           '</div></div>';
       }).join('');
-      // Style du jour + Conseil sont dans l'accordéon "Voir le détail",
-      // avec les 4 domaines (voir plus bas) — plus rien d'affiché en
-      // permanence sous le résumé (retour utilisateur du 7 septembre).
+      // Conseil est dans l'accordéon "Voir le détail", avec les 4
+      // domaines (voir plus bas) — plus rien d'affiché en permanence
+      // sous le résumé (retour utilisateur du 7 septembre).
       var extrasHtml = '<div class="sign-extras">' +
-        (sunData.style ? '<div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">' + sunData.style + '</p></div>' : '') +
         (sunData.conseil ? '<div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">' + sunData.conseil + '</p></div>' : '') +
       '</div>';
 
@@ -1513,10 +1512,9 @@
       card.innerHTML =
         '<div class="family-card-head">' +
           '<span class="family-card-icon">' + zodiacIconSvg(sun, 20) + '</span>' +
-          '<div><div class="family-card-name">' + escapeHtml(p.name) + '</div><div class="family-card-signs">' + SIGN_NAMES[sun] + ' · Ascendant ' + SIGN_NAMES[asc] + '</div></div>' +
+          '<div><span class="family-card-name">' + escapeHtml(p.name) + '</span><span class="family-card-signs">' + SIGN_NAMES[sun] + ' · Ascendant ' + SIGN_NAMES[asc] + '</span></div>' +
           energyRingHtml +
         '</div>' +
-        '<p class="family-card-flavor">' + ascFlavor + '</p>' +
         '<p class="family-card-vibe">' + sunData.vibe + '</p>' +
         '<button type="button" class="family-detail-toggle">Voir le détail <span class="family-detail-chevron">▾</span></button>' +
         '<div class="family-detail-body"><div class="family-detail-inner">' +
@@ -1527,7 +1525,7 @@
           '<div class="family-share-wrap">' +
             '<button type="button" class="family-share-trigger" data-profile-id="' + p.id + '">' +
               '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8 15.8 6.4M8.2 13.2l7.6 4.4"/></svg>' +
-              'Partager cet horoscope' +
+              'Partager' +
             '</button>' +
             '<div class="family-share-menu" hidden>' +
               '<button type="button" class="family-share-icon" data-share-action="copy" data-profile-id="' + p.id + '" aria-label="Copier le texte" title="Copier le texte">' +
@@ -1551,8 +1549,8 @@
     });
 
     // Accordéon "Voir le détail" : englobe désormais les 4 domaines ET
-    // Style du jour/Conseil (regroupés sous le résumé, retour utilisateur
-    // du 7 septembre) — même principe que celui des 12 signes
+    // Conseil (regroupés sous le résumé, retour utilisateur du 7
+    // septembre) — même principe que celui des 12 signes
     // (grid-template-rows 0fr -> 1fr), indépendant par carte.
     gridEl.querySelectorAll(".family-detail-toggle").forEach(function(toggle){
       toggle.addEventListener("click", function(){
@@ -1580,16 +1578,11 @@
       lines.push("Énergie du jour : " + energy + "%");
       lines.push("");
       lines.push(sunData.vibe);
-      lines.push(ASCENDANT_FLAVOR[asc]);
       lines.push("");
       adjCats.forEach(function(c){
         var personalizedText = pickPersonalizedText(p.date, sun, decan, c.label, c.situation) || c.text;
         lines.push(c.label + " (" + c.score + ") : " + personalizedText);
       });
-      if (sunData.style){
-        lines.push("");
-        lines.push("Style du jour : " + sunData.style);
-      }
       if (sunData.conseil){
         lines.push("");
         lines.push("Conseil : " + sunData.conseil);
@@ -1624,7 +1617,7 @@
       gridEl.querySelectorAll(".family-share-menu").forEach(function(m){ m.hidden = true; });
     }
 
-    // Bouton unique "Partager cet horoscope" : sur mobile (API dispo),
+    // Bouton unique "Partager" : sur mobile (API dispo),
     // ouvre directement la feuille de partage native du téléphone — pas
     // besoin du menu custom, l'OS propose déjà tous les réseaux installés.
     // Sinon (desktop), déroule le petit menu d'icônes juste en dessous.
