@@ -151,11 +151,12 @@ compteur ne fonctionne réellement.
 
 ## Formulaire de contact
 
-FormSubmit, AJAX (comme Scénario). **`contact.html` contient un
-placeholder `VOTRE-EMAIL@exemple.com`** à remplacer par la vraie adresse
-de destination avant mise en ligne — FormSubmit envoie un email de
-confirmation à cette adresse au premier message reçu ; une fois activé,
-un alias anonyme pourra remplacer l'email en clair, comme sur Scénario.
+FormSubmit, AJAX (comme Scénario), destination `grandfuturcontact@gmail.com`.
+**Reste à faire : envoyer un premier message de test depuis `contact.html`
+et cliquer sur le lien de confirmation reçu par email** — le formulaire
+ne délivre rien tant que cette activation n'est pas faite. Une fois
+activé, un alias anonyme pourra remplacer l'email en clair dans le code,
+comme sur Scénario (optionnel, évite l'exposition aux robots spammeurs).
 
 ## Identité visuelle
 
@@ -172,9 +173,9 @@ Scénario pour la lisibilité (Fraunces + Inter + JetBrains Mono).
   l'énergie de chaque signe, récupère une photo Pexels adaptée au thème,
   écrase `index.html` et fige l'archive — sur le modèle exact de la
   routine Scénario (`docs/routine-prompt.md`).
-- **Compte GoatCounter** `grandfutur` à créer.
-- **FormSubmit** : remplacer l'email placeholder dans `contact.html` et
-  activer via le lien de confirmation.
+- **FormSubmit** : envoyer un premier message de test depuis
+  `contact.html` et cliquer sur le lien de confirmation reçu à
+  `grandfuturcontact@gmail.com` pour activer le formulaire.
 - **Compte Google AdSense** à créer et faire valider, puis remplacer le
   placeholder `.ad-slot` par le vrai code — et implémenter un bandeau de
   consentement cookies avant activation réelle.
@@ -183,3 +184,10 @@ Scénario pour la lisibilité (Fraunces + Inter + JetBrains Mono).
 - **Nom de domaine** : le site tourne pour l'instant sur
   `https://loliba92.github.io/grandfutur/` — à remplacer par un domaine
   dédié (`CNAME` + toutes les URLs absolues du site) une fois acheté.
+
+## Historique
+
+- **7 septembre 2026** : v1 de démonstration publiée. GitHub Pages activé
+  (branche `main`, dossier racine). Compte GoatCounter `grandfutur` créé
+  et confirmé fonctionnel (le script déjà posé dans le gabarit correspond
+  au bon compte). Email de contact confirmé : `grandfuturcontact@gmail.com`.
