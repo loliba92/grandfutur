@@ -213,6 +213,34 @@ Cette architecture compose proprement avec le nudge d'ascendant
 ci-dessus : le code du jour fixe la base par signe solaire, l'ascendant
 la nuance ensuite — deux axes indépendants, aucun conflit.
 
+### Chaque domaine a sa propre planète, pas les 4 à la fois
+
+Défaut identifié par l'utilisateur (7/09) : « si Mercure influence mon
+humeur négativement, est-ce que ce sera bien pris en compte dans la
+phrase Humeur ? » Réponse honnête à l'époque : non. Le code du jour ne
+calculait qu'un seul verdict par élément (toutes planètes confondues),
+appliqué identiquement aux 4 domaines — Mercure mal placé freinait Amour
+et Santé exactement autant que Argent & travail, aucun lien entre une
+planète précise et son domaine.
+
+Correctif : `DOMAIN_PLANETS` (`day_code.py`) attribue à chaque domaine
+les planètes qui le gouvernent traditionnellement — Amour (Vénus, Lune),
+Argent & travail (Mercure, Mars), Santé (Mars, Lune), Humeur (Mercure,
+Lune). `domain_elements` refait le même classement favorisé/neutre/freiné
+que `elements`, mais un jeu de poids séparé par domaine, restreint à ses
+seules planètes. `generate_signs.py` pioche désormais la situation de
+chaque domaine dans `domain_elements[domaine]`, plus dans `elements`
+(qui reste calculé, toutes planètes confondues — sert au thème général
+du jour, paragraphe d'intro et phrase "vibe", pas au choix des phrases
+par domaine).
+
+Effet concret (7 septembre, avant/après) : le Taureau passait de
+4 domaines "neutre" identiques (énergie 64) à Amour freiné / Argent &
+travail neutre / Santé freiné / Humeur neutre (énergie 56) — quatre
+lectures réellement différentes au lieu d'une seule recopiée 4 fois.
+Historique (`data/historique-energie.json`) recalculé sur les 91 jours
+avec le nouveau modèle.
+
 ### Décan — troisième axe, sans nouveau calcul en temps réel
 
 Ajouté le 7 septembre, même logique de « code + bibliothèque de

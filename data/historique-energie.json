@@ -1,18 +1,18 @@
 {
   "2026-06-09": {
     "energies": {
-      "belier": 86,
-      "taureau": 59,
+      "belier": 77,
+      "taureau": 56,
       "gemeaux": 47,
-      "cancer": 83,
-      "lion": 82,
-      "vierge": 60,
+      "cancer": 59,
+      "lion": 73,
+      "vierge": 57,
       "balance": 47,
-      "scorpion": 78,
-      "sagittaire": 84,
-      "capricorne": 64,
+      "scorpion": 54,
+      "sagittaire": 76,
+      "capricorne": 61,
       "verseau": 47,
-      "poissons": 84
+      "poissons": 60
     },
     "day_code": {
       "date": "2026-06-09",
@@ -47,23 +47,49 @@
         "terre": "neutre",
         "air": "freine",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-06-10": {
     "energies": {
-      "belier": 84,
-      "taureau": 65,
+      "belier": 76,
+      "taureau": 62,
       "gemeaux": 44,
-      "cancer": 81,
-      "lion": 80,
-      "vierge": 62,
+      "cancer": 57,
+      "lion": 72,
+      "vierge": 59,
       "balance": 44,
-      "scorpion": 81,
-      "sagittaire": 78,
-      "capricorne": 65,
+      "scorpion": 57,
+      "sagittaire": 69,
+      "capricorne": 62,
       "verseau": 46,
-      "poissons": 83
+      "poissons": 59
     },
     "day_code": {
       "date": "2026-06-10",
@@ -98,23 +124,49 @@
         "terre": "neutre",
         "air": "freine",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-06-11": {
     "energies": {
-      "belier": 83,
-      "taureau": 62,
+      "belier": 74,
+      "taureau": 59,
       "gemeaux": 44,
-      "cancer": 83,
-      "lion": 84,
-      "vierge": 64,
+      "cancer": 59,
+      "lion": 75,
+      "vierge": 60,
       "balance": 46,
-      "scorpion": 83,
-      "sagittaire": 84,
-      "capricorne": 62,
+      "scorpion": 59,
+      "sagittaire": 75,
+      "capricorne": 58,
       "verseau": 47,
-      "poissons": 83
+      "poissons": 59
     },
     "day_code": {
       "date": "2026-06-11",
@@ -149,6 +201,32 @@
         "terre": "neutre",
         "air": "freine",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
@@ -157,15 +235,15 @@
       "belier": 49,
       "taureau": 84,
       "gemeaux": 49,
-      "cancer": 62,
+      "cancer": 58,
       "lion": 48,
       "vierge": 79,
       "balance": 45,
-      "scorpion": 62,
+      "scorpion": 58,
       "sagittaire": 47,
       "capricorne": 79,
       "verseau": 48,
-      "poissons": 63
+      "poissons": 59
     },
     "day_code": {
       "date": "2026-06-12",
@@ -200,6 +278,32 @@
         "terre": "favorise",
         "air": "freine",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
@@ -208,15 +312,15 @@
       "belier": 44,
       "taureau": 80,
       "gemeaux": 48,
-      "cancer": 63,
+      "cancer": 59,
       "lion": 46,
       "vierge": 82,
       "balance": 42,
-      "scorpion": 66,
+      "scorpion": 62,
       "sagittaire": 48,
       "capricorne": 83,
       "verseau": 46,
-      "poissons": 63
+      "poissons": 59
     },
     "day_code": {
       "date": "2026-06-13",
@@ -251,23 +355,49 @@
         "terre": "favorise",
         "air": "freine",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-06-14": {
     "energies": {
-      "belier": 46,
-      "taureau": 61,
-      "gemeaux": 86,
-      "cancer": 44,
-      "lion": 48,
-      "vierge": 66,
-      "balance": 80,
-      "scorpion": 46,
-      "sagittaire": 48,
-      "capricorne": 62,
-      "verseau": 83,
-      "poissons": 45
+      "belier": 50,
+      "taureau": 58,
+      "gemeaux": 77,
+      "cancer": 52,
+      "lion": 52,
+      "vierge": 63,
+      "balance": 70,
+      "scorpion": 54,
+      "sagittaire": 52,
+      "capricorne": 58,
+      "verseau": 74,
+      "poissons": 53
     },
     "day_code": {
       "date": "2026-06-14",
@@ -302,23 +432,49 @@
         "terre": "neutre",
         "air": "favorise",
         "eau": "freine"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-06-15": {
     "energies": {
-      "belier": 45,
-      "taureau": 65,
-      "gemeaux": 80,
-      "cancer": 45,
-      "lion": 43,
-      "vierge": 60,
-      "balance": 80,
-      "scorpion": 49,
-      "sagittaire": 46,
-      "capricorne": 60,
-      "verseau": 83,
-      "poissons": 45
+      "belier": 49,
+      "taureau": 62,
+      "gemeaux": 71,
+      "cancer": 53,
+      "lion": 47,
+      "vierge": 56,
+      "balance": 71,
+      "scorpion": 57,
+      "sagittaire": 50,
+      "capricorne": 56,
+      "verseau": 74,
+      "poissons": 53
     },
     "day_code": {
       "date": "2026-06-15",
@@ -353,23 +509,49 @@
         "terre": "neutre",
         "air": "favorise",
         "eau": "freine"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-06-16": {
     "energies": {
-      "belier": 60,
-      "taureau": 60,
+      "belier": 48,
+      "taureau": 57,
       "gemeaux": 46,
-      "cancer": 82,
-      "lion": 60,
-      "vierge": 59,
+      "cancer": 77,
+      "lion": 48,
+      "vierge": 56,
       "balance": 48,
-      "scorpion": 79,
-      "sagittaire": 61,
-      "capricorne": 62,
+      "scorpion": 74,
+      "sagittaire": 49,
+      "capricorne": 60,
       "verseau": 43,
-      "poissons": 83
+      "poissons": 78
     },
     "day_code": {
       "date": "2026-06-16",
@@ -404,23 +586,49 @@
         "terre": "neutre",
         "air": "freine",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-06-17": {
     "energies": {
-      "belier": 63,
-      "taureau": 62,
+      "belier": 51,
+      "taureau": 59,
       "gemeaux": 50,
-      "cancer": 82,
-      "lion": 61,
-      "vierge": 62,
+      "cancer": 76,
+      "lion": 49,
+      "vierge": 58,
       "balance": 45,
-      "scorpion": 83,
-      "sagittaire": 60,
-      "capricorne": 65,
+      "scorpion": 78,
+      "sagittaire": 48,
+      "capricorne": 62,
       "verseau": 48,
-      "poissons": 79
+      "poissons": 74
     },
     "day_code": {
       "date": "2026-06-17",
@@ -455,23 +663,49 @@
         "terre": "neutre",
         "air": "freine",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-06-18": {
     "energies": {
-      "belier": 82,
-      "taureau": 64,
+      "belier": 73,
+      "taureau": 62,
       "gemeaux": 44,
-      "cancer": 60,
-      "lion": 84,
-      "vierge": 61,
+      "cancer": 52,
+      "lion": 76,
+      "vierge": 58,
       "balance": 46,
-      "scorpion": 65,
-      "sagittaire": 79,
-      "capricorne": 60,
+      "scorpion": 57,
+      "sagittaire": 70,
+      "capricorne": 57,
       "verseau": 47,
-      "poissons": 62
+      "poissons": 54
     },
     "day_code": {
       "date": "2026-06-18",
@@ -506,23 +740,49 @@
         "terre": "neutre",
         "air": "freine",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-06-19": {
     "energies": {
-      "belier": 83,
-      "taureau": 62,
+      "belier": 74,
+      "taureau": 58,
       "gemeaux": 45,
-      "cancer": 60,
-      "lion": 83,
-      "vierge": 63,
+      "cancer": 52,
+      "lion": 74,
+      "vierge": 60,
       "balance": 48,
-      "scorpion": 62,
-      "sagittaire": 82,
-      "capricorne": 62,
+      "scorpion": 54,
+      "sagittaire": 72,
+      "capricorne": 59,
       "verseau": 45,
-      "poissons": 61
+      "poissons": 53
     },
     "day_code": {
       "date": "2026-06-19",
@@ -557,23 +817,49 @@
         "terre": "neutre",
         "air": "freine",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-06-20": {
     "energies": {
-      "belier": 62,
+      "belier": 50,
       "taureau": 85,
       "gemeaux": 48,
-      "cancer": 59,
-      "lion": 61,
+      "cancer": 51,
+      "lion": 49,
       "vierge": 84,
       "balance": 44,
-      "scorpion": 64,
-      "sagittaire": 60,
+      "scorpion": 56,
+      "sagittaire": 48,
       "capricorne": 84,
       "verseau": 46,
-      "poissons": 61
+      "poissons": 53
     },
     "day_code": {
       "date": "2026-06-20",
@@ -608,23 +894,49 @@
         "terre": "favorise",
         "air": "freine",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-06-21": {
     "energies": {
-      "belier": 62,
+      "belier": 50,
       "taureau": 83,
       "gemeaux": 44,
-      "cancer": 62,
-      "lion": 60,
+      "cancer": 54,
+      "lion": 48,
       "vierge": 84,
       "balance": 42,
-      "scorpion": 62,
-      "sagittaire": 61,
+      "scorpion": 54,
+      "sagittaire": 49,
       "capricorne": 83,
       "verseau": 46,
-      "poissons": 60
+      "poissons": 52
     },
     "day_code": {
       "date": "2026-06-21",
@@ -659,23 +971,49 @@
         "terre": "favorise",
         "air": "freine",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-06-22": {
     "energies": {
-      "belier": 45,
-      "taureau": 61,
-      "gemeaux": 84,
-      "cancer": 49,
-      "lion": 45,
-      "vierge": 63,
-      "balance": 82,
-      "scorpion": 44,
-      "sagittaire": 46,
-      "capricorne": 60,
-      "verseau": 80,
-      "poissons": 46
+      "belier": 49,
+      "taureau": 58,
+      "gemeaux": 75,
+      "cancer": 57,
+      "lion": 49,
+      "vierge": 60,
+      "balance": 73,
+      "scorpion": 52,
+      "sagittaire": 50,
+      "capricorne": 58,
+      "verseau": 72,
+      "poissons": 54
     },
     "day_code": {
       "date": "2026-06-22",
@@ -710,23 +1048,49 @@
         "terre": "neutre",
         "air": "favorise",
         "eau": "freine"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-06-23": {
     "energies": {
-      "belier": 47,
-      "taureau": 60,
-      "gemeaux": 81,
-      "cancer": 49,
-      "lion": 45,
-      "vierge": 64,
-      "balance": 81,
-      "scorpion": 43,
-      "sagittaire": 46,
-      "capricorne": 65,
-      "verseau": 85,
-      "poissons": 45
+      "belier": 51,
+      "taureau": 57,
+      "gemeaux": 72,
+      "cancer": 57,
+      "lion": 49,
+      "vierge": 61,
+      "balance": 72,
+      "scorpion": 51,
+      "sagittaire": 50,
+      "capricorne": 62,
+      "verseau": 76,
+      "poissons": 53
     },
     "day_code": {
       "date": "2026-06-23",
@@ -761,23 +1125,49 @@
         "terre": "neutre",
         "air": "favorise",
         "eau": "freine"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-06-24": {
     "energies": {
-      "belier": 62,
-      "taureau": 62,
+      "belier": 50,
+      "taureau": 59,
       "gemeaux": 45,
-      "cancer": 82,
-      "lion": 64,
-      "vierge": 65,
+      "cancer": 78,
+      "lion": 52,
+      "vierge": 62,
       "balance": 46,
-      "scorpion": 81,
-      "sagittaire": 59,
-      "capricorne": 61,
+      "scorpion": 76,
+      "sagittaire": 47,
+      "capricorne": 58,
       "verseau": 44,
-      "poissons": 80
+      "poissons": 75
     },
     "day_code": {
       "date": "2026-06-24",
@@ -812,23 +1202,49 @@
         "terre": "neutre",
         "air": "freine",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-06-25": {
     "energies": {
-      "belier": 66,
-      "taureau": 64,
+      "belier": 54,
+      "taureau": 61,
       "gemeaux": 46,
-      "cancer": 82,
-      "lion": 62,
-      "vierge": 60,
+      "cancer": 78,
+      "lion": 50,
+      "vierge": 58,
       "balance": 44,
-      "scorpion": 80,
-      "sagittaire": 63,
-      "capricorne": 60,
+      "scorpion": 76,
+      "sagittaire": 51,
+      "capricorne": 57,
       "verseau": 46,
-      "poissons": 85
+      "poissons": 80
     },
     "day_code": {
       "date": "2026-06-25",
@@ -863,23 +1279,49 @@
         "terre": "neutre",
         "air": "freine",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-06-26": {
     "energies": {
-      "belier": 62,
-      "taureau": 64,
+      "belier": 50,
+      "taureau": 62,
       "gemeaux": 48,
-      "cancer": 83,
-      "lion": 62,
-      "vierge": 62,
+      "cancer": 78,
+      "lion": 50,
+      "vierge": 59,
       "balance": 47,
-      "scorpion": 80,
-      "sagittaire": 62,
-      "capricorne": 62,
+      "scorpion": 75,
+      "sagittaire": 50,
+      "capricorne": 58,
       "verseau": 48,
-      "poissons": 85
+      "poissons": 80
     },
     "day_code": {
       "date": "2026-06-26",
@@ -914,23 +1356,49 @@
         "terre": "neutre",
         "air": "freine",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-06-27": {
     "energies": {
-      "belier": 83,
-      "taureau": 59,
+      "belier": 74,
+      "taureau": 56,
       "gemeaux": 46,
-      "cancer": 61,
-      "lion": 81,
-      "vierge": 64,
+      "cancer": 53,
+      "lion": 72,
+      "vierge": 61,
       "balance": 47,
-      "scorpion": 62,
-      "sagittaire": 80,
-      "capricorne": 57,
+      "scorpion": 54,
+      "sagittaire": 71,
+      "capricorne": 54,
       "verseau": 49,
-      "poissons": 62
+      "poissons": 54
     },
     "day_code": {
       "date": "2026-06-27",
@@ -965,23 +1433,49 @@
         "terre": "neutre",
         "air": "freine",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-06-28": {
     "energies": {
-      "belier": 85,
-      "taureau": 63,
+      "belier": 76,
+      "taureau": 60,
       "gemeaux": 48,
-      "cancer": 60,
-      "lion": 82,
-      "vierge": 66,
+      "cancer": 52,
+      "lion": 73,
+      "vierge": 62,
       "balance": 46,
-      "scorpion": 63,
-      "sagittaire": 84,
-      "capricorne": 61,
+      "scorpion": 55,
+      "sagittaire": 75,
+      "capricorne": 58,
       "verseau": 46,
-      "poissons": 61
+      "poissons": 53
     },
     "day_code": {
       "date": "2026-06-28",
@@ -1016,23 +1510,49 @@
         "terre": "neutre",
         "air": "freine",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-06-29": {
     "energies": {
-      "belier": 46,
-      "taureau": 82,
-      "gemeaux": 60,
-      "cancer": 47,
-      "lion": 44,
-      "vierge": 80,
-      "balance": 61,
-      "scorpion": 46,
-      "sagittaire": 45,
-      "capricorne": 80,
-      "verseau": 62,
-      "poissons": 45
+      "belier": 50,
+      "taureau": 73,
+      "gemeaux": 58,
+      "cancer": 55,
+      "lion": 48,
+      "vierge": 71,
+      "balance": 58,
+      "scorpion": 54,
+      "sagittaire": 49,
+      "capricorne": 71,
+      "verseau": 58,
+      "poissons": 53
     },
     "day_code": {
       "date": "2026-06-29",
@@ -1067,23 +1587,49 @@
         "terre": "favorise",
         "air": "neutre",
         "eau": "freine"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-06-30": {
     "energies": {
-      "belier": 48,
-      "taureau": 80,
-      "gemeaux": 63,
-      "cancer": 46,
-      "lion": 49,
-      "vierge": 84,
-      "balance": 62,
-      "scorpion": 46,
-      "sagittaire": 45,
-      "capricorne": 78,
-      "verseau": 60,
-      "poissons": 47
+      "belier": 52,
+      "taureau": 72,
+      "gemeaux": 60,
+      "cancer": 54,
+      "lion": 53,
+      "vierge": 75,
+      "balance": 59,
+      "scorpion": 54,
+      "sagittaire": 49,
+      "capricorne": 68,
+      "verseau": 57,
+      "poissons": 55
     },
     "day_code": {
       "date": "2026-06-30",
@@ -1118,23 +1664,49 @@
         "terre": "favorise",
         "air": "neutre",
         "eau": "freine"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-01": {
     "energies": {
-      "belier": 46,
-      "taureau": 82,
-      "gemeaux": 60,
-      "cancer": 44,
-      "lion": 46,
-      "vierge": 82,
-      "balance": 65,
-      "scorpion": 47,
-      "sagittaire": 46,
-      "capricorne": 77,
-      "verseau": 64,
-      "poissons": 46
+      "belier": 50,
+      "taureau": 73,
+      "gemeaux": 57,
+      "cancer": 52,
+      "lion": 50,
+      "vierge": 74,
+      "balance": 62,
+      "scorpion": 55,
+      "sagittaire": 50,
+      "capricorne": 68,
+      "verseau": 60,
+      "poissons": 54
     },
     "day_code": {
       "date": "2026-07-01",
@@ -1169,23 +1741,49 @@
         "terre": "favorise",
         "air": "neutre",
         "eau": "freine"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-02": {
     "energies": {
-      "belier": 61,
+      "belier": 49,
       "taureau": 43,
       "gemeaux": 85,
-      "cancer": 62,
-      "lion": 61,
+      "cancer": 54,
+      "lion": 49,
       "vierge": 48,
       "balance": 80,
-      "scorpion": 62,
-      "sagittaire": 62,
+      "scorpion": 54,
+      "sagittaire": 50,
       "capricorne": 48,
       "verseau": 84,
-      "poissons": 62
+      "poissons": 54
     },
     "day_code": {
       "date": "2026-07-02",
@@ -1220,23 +1818,49 @@
         "terre": "freine",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-03": {
     "energies": {
-      "belier": 62,
+      "belier": 50,
       "taureau": 47,
       "gemeaux": 82,
-      "cancer": 60,
-      "lion": 63,
+      "cancer": 52,
+      "lion": 51,
       "vierge": 41,
       "balance": 82,
-      "scorpion": 63,
-      "sagittaire": 60,
+      "scorpion": 55,
+      "sagittaire": 48,
       "capricorne": 46,
       "verseau": 83,
-      "poissons": 59
+      "poissons": 51
     },
     "day_code": {
       "date": "2026-07-03",
@@ -1271,23 +1895,49 @@
         "terre": "freine",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-04": {
     "energies": {
-      "belier": 61,
+      "belier": 49,
       "taureau": 45,
-      "gemeaux": 63,
-      "cancer": 80,
-      "lion": 58,
+      "gemeaux": 60,
+      "cancer": 75,
+      "lion": 46,
       "vierge": 48,
-      "balance": 62,
-      "scorpion": 82,
-      "sagittaire": 61,
+      "balance": 60,
+      "scorpion": 77,
+      "sagittaire": 49,
       "capricorne": 42,
-      "verseau": 62,
-      "poissons": 86
+      "verseau": 59,
+      "poissons": 81
     },
     "day_code": {
       "date": "2026-07-04",
@@ -1322,23 +1972,49 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-07-05": {
     "energies": {
-      "belier": 65,
+      "belier": 53,
       "taureau": 49,
-      "gemeaux": 63,
-      "cancer": 82,
-      "lion": 64,
+      "gemeaux": 60,
+      "cancer": 77,
+      "lion": 52,
       "vierge": 49,
-      "balance": 61,
-      "scorpion": 82,
-      "sagittaire": 63,
+      "balance": 58,
+      "scorpion": 76,
+      "sagittaire": 51,
       "capricorne": 46,
-      "verseau": 60,
-      "poissons": 80
+      "verseau": 58,
+      "poissons": 75
     },
     "day_code": {
       "date": "2026-07-05",
@@ -1373,23 +2049,49 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-07-06": {
     "energies": {
-      "belier": 62,
+      "belier": 50,
       "taureau": 45,
-      "gemeaux": 65,
-      "cancer": 82,
-      "lion": 62,
+      "gemeaux": 62,
+      "cancer": 77,
+      "lion": 50,
       "vierge": 48,
-      "balance": 63,
-      "scorpion": 80,
-      "sagittaire": 62,
+      "balance": 60,
+      "scorpion": 75,
+      "sagittaire": 50,
       "capricorne": 49,
-      "verseau": 64,
-      "poissons": 82
+      "verseau": 62,
+      "poissons": 77
     },
     "day_code": {
       "date": "2026-07-06",
@@ -1424,23 +2126,49 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-07-07": {
     "energies": {
-      "belier": 77,
+      "belier": 68,
       "taureau": 47,
-      "gemeaux": 64,
-      "cancer": 61,
-      "lion": 85,
+      "gemeaux": 61,
+      "cancer": 53,
+      "lion": 76,
       "vierge": 46,
-      "balance": 60,
-      "scorpion": 61,
-      "sagittaire": 84,
+      "balance": 57,
+      "scorpion": 53,
+      "sagittaire": 75,
       "capricorne": 46,
-      "verseau": 62,
-      "poissons": 63
+      "verseau": 60,
+      "poissons": 55
     },
     "day_code": {
       "date": "2026-07-07",
@@ -1475,23 +2203,49 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-08": {
     "energies": {
-      "belier": 82,
+      "belier": 72,
       "taureau": 45,
-      "gemeaux": 63,
-      "cancer": 59,
-      "lion": 84,
+      "gemeaux": 60,
+      "cancer": 51,
+      "lion": 75,
       "vierge": 46,
-      "balance": 62,
-      "scorpion": 62,
-      "sagittaire": 83,
+      "balance": 60,
+      "scorpion": 54,
+      "sagittaire": 74,
       "capricorne": 46,
-      "verseau": 62,
-      "poissons": 64
+      "verseau": 59,
+      "poissons": 56
     },
     "day_code": {
       "date": "2026-07-08",
@@ -1526,23 +2280,49 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-09": {
     "energies": {
-      "belier": 46,
-      "taureau": 80,
-      "gemeaux": 61,
-      "cancer": 46,
-      "lion": 46,
-      "vierge": 85,
-      "balance": 58,
-      "scorpion": 44,
-      "sagittaire": 48,
-      "capricorne": 80,
-      "verseau": 59,
-      "poissons": 43
+      "belier": 50,
+      "taureau": 71,
+      "gemeaux": 58,
+      "cancer": 54,
+      "lion": 50,
+      "vierge": 76,
+      "balance": 55,
+      "scorpion": 52,
+      "sagittaire": 52,
+      "capricorne": 70,
+      "verseau": 56,
+      "poissons": 51
     },
     "day_code": {
       "date": "2026-07-09",
@@ -1577,23 +2357,49 @@
         "terre": "favorise",
         "air": "neutre",
         "eau": "freine"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "neutre",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-10": {
     "energies": {
       "belier": 48,
-      "taureau": 83,
-      "gemeaux": 64,
-      "cancer": 65,
+      "taureau": 74,
+      "gemeaux": 61,
+      "cancer": 57,
       "lion": 44,
-      "vierge": 81,
-      "balance": 61,
-      "scorpion": 61,
+      "vierge": 72,
+      "balance": 58,
+      "scorpion": 53,
       "sagittaire": 46,
-      "capricorne": 83,
-      "verseau": 62,
-      "poissons": 61
+      "capricorne": 74,
+      "verseau": 59,
+      "poissons": 53
     },
     "day_code": {
       "date": "2026-07-10",
@@ -1628,23 +2434,49 @@
         "terre": "favorise",
         "air": "neutre",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-11": {
     "energies": {
       "belier": 44,
-      "taureau": 63,
+      "taureau": 51,
       "gemeaux": 81,
-      "cancer": 63,
+      "cancer": 55,
       "lion": 50,
-      "vierge": 62,
+      "vierge": 50,
       "balance": 84,
-      "scorpion": 61,
+      "scorpion": 53,
       "sagittaire": 46,
-      "capricorne": 65,
+      "capricorne": 53,
       "verseau": 83,
-      "poissons": 65
+      "poissons": 57
     },
     "day_code": {
       "date": "2026-07-11",
@@ -1679,23 +2511,49 @@
         "terre": "neutre",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-12": {
     "energies": {
       "belier": 45,
-      "taureau": 65,
+      "taureau": 53,
       "gemeaux": 86,
-      "cancer": 59,
+      "cancer": 51,
       "lion": 44,
-      "vierge": 63,
+      "vierge": 51,
       "balance": 80,
-      "scorpion": 59,
+      "scorpion": 51,
       "sagittaire": 49,
-      "capricorne": 61,
+      "capricorne": 49,
       "verseau": 82,
-      "poissons": 61
+      "poissons": 53
     },
     "day_code": {
       "date": "2026-07-12",
@@ -1730,23 +2588,49 @@
         "terre": "neutre",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-13": {
     "energies": {
       "belier": 45,
-      "taureau": 61,
-      "gemeaux": 63,
-      "cancer": 81,
+      "taureau": 49,
+      "gemeaux": 60,
+      "cancer": 76,
       "lion": 46,
-      "vierge": 60,
-      "balance": 63,
-      "scorpion": 84,
+      "vierge": 48,
+      "balance": 60,
+      "scorpion": 79,
       "sagittaire": 47,
-      "capricorne": 64,
-      "verseau": 62,
-      "poissons": 84
+      "capricorne": 52,
+      "verseau": 60,
+      "poissons": 80
     },
     "day_code": {
       "date": "2026-07-13",
@@ -1781,23 +2665,49 @@
         "terre": "neutre",
         "air": "neutre",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-07-14": {
     "energies": {
       "belier": 45,
-      "taureau": 63,
-      "gemeaux": 62,
-      "cancer": 80,
+      "taureau": 51,
+      "gemeaux": 59,
+      "cancer": 75,
       "lion": 43,
-      "vierge": 61,
-      "balance": 65,
-      "scorpion": 84,
+      "vierge": 49,
+      "balance": 62,
+      "scorpion": 78,
       "sagittaire": 46,
-      "capricorne": 62,
-      "verseau": 64,
-      "poissons": 82
+      "capricorne": 50,
+      "verseau": 62,
+      "poissons": 77
     },
     "day_code": {
       "date": "2026-07-14",
@@ -1832,23 +2742,49 @@
         "terre": "neutre",
         "air": "neutre",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-07-15": {
     "energies": {
-      "belier": 81,
-      "taureau": 47,
-      "gemeaux": 64,
-      "cancer": 48,
-      "lion": 83,
-      "vierge": 48,
-      "balance": 61,
-      "scorpion": 48,
-      "sagittaire": 82,
-      "capricorne": 45,
-      "verseau": 62,
-      "poissons": 50
+      "belier": 72,
+      "taureau": 51,
+      "gemeaux": 61,
+      "cancer": 56,
+      "lion": 74,
+      "vierge": 52,
+      "balance": 58,
+      "scorpion": 56,
+      "sagittaire": 73,
+      "capricorne": 49,
+      "verseau": 59,
+      "poissons": 58
     },
     "day_code": {
       "date": "2026-07-15",
@@ -1883,23 +2819,49 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "freine"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-16": {
     "energies": {
-      "belier": 84,
-      "taureau": 45,
-      "gemeaux": 60,
-      "cancer": 44,
-      "lion": 80,
-      "vierge": 45,
-      "balance": 61,
-      "scorpion": 42,
-      "sagittaire": 86,
-      "capricorne": 48,
-      "verseau": 60,
-      "poissons": 47
+      "belier": 75,
+      "taureau": 49,
+      "gemeaux": 57,
+      "cancer": 52,
+      "lion": 71,
+      "vierge": 49,
+      "balance": 58,
+      "scorpion": 50,
+      "sagittaire": 77,
+      "capricorne": 52,
+      "verseau": 57,
+      "poissons": 55
     },
     "day_code": {
       "date": "2026-07-16",
@@ -1934,23 +2896,49 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "freine"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-17": {
     "energies": {
       "belier": 49,
-      "taureau": 82,
-      "gemeaux": 63,
-      "cancer": 60,
+      "taureau": 73,
+      "gemeaux": 60,
+      "cancer": 52,
       "lion": 48,
-      "vierge": 83,
-      "balance": 60,
-      "scorpion": 65,
+      "vierge": 74,
+      "balance": 57,
+      "scorpion": 57,
       "sagittaire": 47,
-      "capricorne": 82,
-      "verseau": 62,
-      "poissons": 62
+      "capricorne": 72,
+      "verseau": 59,
+      "poissons": 54
     },
     "day_code": {
       "date": "2026-07-17",
@@ -1985,23 +2973,49 @@
         "terre": "favorise",
         "air": "neutre",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-18": {
     "energies": {
       "belier": 47,
-      "taureau": 84,
-      "gemeaux": 60,
-      "cancer": 62,
+      "taureau": 75,
+      "gemeaux": 57,
+      "cancer": 54,
       "lion": 46,
-      "vierge": 82,
-      "balance": 64,
-      "scorpion": 62,
+      "vierge": 73,
+      "balance": 60,
+      "scorpion": 54,
       "sagittaire": 42,
-      "capricorne": 84,
-      "verseau": 63,
-      "poissons": 64
+      "capricorne": 75,
+      "verseau": 60,
+      "poissons": 56
     },
     "day_code": {
       "date": "2026-07-18",
@@ -2036,23 +3050,49 @@
         "terre": "favorise",
         "air": "neutre",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-19": {
     "energies": {
       "belier": 44,
-      "taureau": 62,
+      "taureau": 50,
       "gemeaux": 82,
-      "cancer": 61,
+      "cancer": 53,
       "lion": 42,
-      "vierge": 61,
+      "vierge": 49,
       "balance": 80,
-      "scorpion": 60,
+      "scorpion": 52,
       "sagittaire": 46,
-      "capricorne": 65,
+      "capricorne": 53,
       "verseau": 80,
-      "poissons": 60
+      "poissons": 52
     },
     "day_code": {
       "date": "2026-07-19",
@@ -2087,23 +3127,49 @@
         "terre": "neutre",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-20": {
     "energies": {
       "belier": 48,
-      "taureau": 62,
+      "taureau": 50,
       "gemeaux": 80,
-      "cancer": 65,
+      "cancer": 57,
       "lion": 46,
-      "vierge": 64,
+      "vierge": 52,
       "balance": 79,
-      "scorpion": 64,
+      "scorpion": 56,
       "sagittaire": 41,
-      "capricorne": 63,
+      "capricorne": 51,
       "verseau": 84,
-      "poissons": 61
+      "poissons": 53
     },
     "day_code": {
       "date": "2026-07-20",
@@ -2138,23 +3204,49 @@
         "terre": "neutre",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-21": {
     "energies": {
       "belier": 42,
-      "taureau": 61,
+      "taureau": 49,
       "gemeaux": 81,
-      "cancer": 62,
+      "cancer": 54,
       "lion": 46,
-      "vierge": 66,
+      "vierge": 54,
       "balance": 81,
-      "scorpion": 64,
+      "scorpion": 56,
       "sagittaire": 46,
-      "capricorne": 62,
+      "capricorne": 50,
       "verseau": 80,
-      "poissons": 62
+      "poissons": 54
     },
     "day_code": {
       "date": "2026-07-21",
@@ -2189,23 +3281,49 @@
         "terre": "neutre",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-22": {
     "energies": {
       "belier": 45,
-      "taureau": 62,
-      "gemeaux": 61,
-      "cancer": 82,
+      "taureau": 50,
+      "gemeaux": 58,
+      "cancer": 77,
       "lion": 44,
-      "vierge": 62,
-      "balance": 61,
-      "scorpion": 84,
+      "vierge": 50,
+      "balance": 58,
+      "scorpion": 79,
       "sagittaire": 45,
-      "capricorne": 61,
-      "verseau": 60,
-      "poissons": 83
+      "capricorne": 49,
+      "verseau": 57,
+      "poissons": 78
     },
     "day_code": {
       "date": "2026-07-22",
@@ -2240,23 +3358,49 @@
         "terre": "neutre",
         "air": "neutre",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-07-23": {
     "energies": {
       "belier": 44,
-      "taureau": 62,
-      "gemeaux": 66,
-      "cancer": 82,
+      "taureau": 50,
+      "gemeaux": 64,
+      "cancer": 77,
       "lion": 47,
-      "vierge": 59,
-      "balance": 67,
-      "scorpion": 83,
+      "vierge": 47,
+      "balance": 64,
+      "scorpion": 78,
       "sagittaire": 44,
-      "capricorne": 62,
-      "verseau": 62,
-      "poissons": 82
+      "capricorne": 50,
+      "verseau": 60,
+      "poissons": 77
     },
     "day_code": {
       "date": "2026-07-23",
@@ -2291,23 +3435,49 @@
         "terre": "neutre",
         "air": "neutre",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-07-24": {
     "energies": {
-      "belier": 82,
-      "taureau": 44,
-      "gemeaux": 62,
-      "cancer": 48,
-      "lion": 81,
-      "vierge": 46,
-      "balance": 60,
-      "scorpion": 46,
-      "sagittaire": 82,
-      "capricorne": 44,
-      "verseau": 59,
-      "poissons": 49
+      "belier": 73,
+      "taureau": 48,
+      "gemeaux": 60,
+      "cancer": 56,
+      "lion": 72,
+      "vierge": 50,
+      "balance": 57,
+      "scorpion": 54,
+      "sagittaire": 72,
+      "capricorne": 48,
+      "verseau": 56,
+      "poissons": 57
     },
     "day_code": {
       "date": "2026-07-24",
@@ -2342,23 +3512,49 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "freine"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-25": {
     "energies": {
-      "belier": 79,
-      "taureau": 47,
-      "gemeaux": 60,
-      "cancer": 45,
-      "lion": 82,
-      "vierge": 47,
-      "balance": 63,
-      "scorpion": 50,
-      "sagittaire": 80,
-      "capricorne": 44,
-      "verseau": 62,
-      "poissons": 48
+      "belier": 70,
+      "taureau": 51,
+      "gemeaux": 57,
+      "cancer": 53,
+      "lion": 73,
+      "vierge": 51,
+      "balance": 60,
+      "scorpion": 58,
+      "sagittaire": 72,
+      "capricorne": 48,
+      "verseau": 59,
+      "poissons": 56
     },
     "day_code": {
       "date": "2026-07-25",
@@ -2393,23 +3589,49 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "freine"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-26": {
     "energies": {
-      "belier": 82,
-      "taureau": 49,
-      "gemeaux": 60,
-      "cancer": 42,
-      "lion": 81,
-      "vierge": 46,
-      "balance": 61,
-      "scorpion": 46,
-      "sagittaire": 81,
-      "capricorne": 49,
-      "verseau": 64,
-      "poissons": 44
+      "belier": 73,
+      "taureau": 53,
+      "gemeaux": 58,
+      "cancer": 50,
+      "lion": 72,
+      "vierge": 50,
+      "balance": 58,
+      "scorpion": 54,
+      "sagittaire": 72,
+      "capricorne": 53,
+      "verseau": 60,
+      "poissons": 52
     },
     "day_code": {
       "date": "2026-07-26",
@@ -2444,23 +3666,49 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "freine"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-27": {
     "energies": {
       "belier": 46,
-      "taureau": 80,
-      "gemeaux": 64,
-      "cancer": 62,
+      "taureau": 70,
+      "gemeaux": 61,
+      "cancer": 54,
       "lion": 46,
-      "vierge": 82,
-      "balance": 67,
-      "scorpion": 61,
+      "vierge": 74,
+      "balance": 64,
+      "scorpion": 53,
       "sagittaire": 45,
-      "capricorne": 83,
-      "verseau": 62,
-      "poissons": 63
+      "capricorne": 74,
+      "verseau": 59,
+      "poissons": 55
     },
     "day_code": {
       "date": "2026-07-27",
@@ -2495,23 +3743,49 @@
         "terre": "favorise",
         "air": "neutre",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-28": {
     "energies": {
       "belier": 50,
-      "taureau": 81,
-      "gemeaux": 64,
-      "cancer": 61,
+      "taureau": 72,
+      "gemeaux": 60,
+      "cancer": 53,
       "lion": 42,
-      "vierge": 84,
-      "balance": 60,
-      "scorpion": 65,
+      "vierge": 74,
+      "balance": 57,
+      "scorpion": 57,
       "sagittaire": 46,
-      "capricorne": 83,
-      "verseau": 67,
-      "poissons": 62
+      "capricorne": 74,
+      "verseau": 64,
+      "poissons": 54
     },
     "day_code": {
       "date": "2026-07-28",
@@ -2546,23 +3820,49 @@
         "terre": "favorise",
         "air": "neutre",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-29": {
     "energies": {
       "belier": 48,
-      "taureau": 65,
+      "taureau": 53,
       "gemeaux": 80,
-      "cancer": 64,
+      "cancer": 56,
       "lion": 46,
-      "vierge": 61,
+      "vierge": 49,
       "balance": 80,
-      "scorpion": 64,
+      "scorpion": 56,
       "sagittaire": 46,
-      "capricorne": 65,
+      "capricorne": 53,
       "verseau": 82,
-      "poissons": 63
+      "poissons": 55
     },
     "day_code": {
       "date": "2026-07-29",
@@ -2597,23 +3897,49 @@
         "terre": "neutre",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-30": {
     "energies": {
       "belier": 46,
-      "taureau": 64,
+      "taureau": 52,
       "gemeaux": 81,
-      "cancer": 65,
+      "cancer": 57,
       "lion": 45,
-      "vierge": 58,
+      "vierge": 46,
       "balance": 82,
-      "scorpion": 61,
+      "scorpion": 53,
       "sagittaire": 45,
-      "capricorne": 60,
+      "capricorne": 48,
       "verseau": 82,
-      "poissons": 64
+      "poissons": 56
     },
     "day_code": {
       "date": "2026-07-30",
@@ -2648,23 +3974,49 @@
         "terre": "neutre",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-07-31": {
     "energies": {
       "belier": 44,
-      "taureau": 64,
+      "taureau": 52,
       "gemeaux": 81,
-      "cancer": 64,
+      "cancer": 56,
       "lion": 43,
-      "vierge": 62,
+      "vierge": 50,
       "balance": 82,
-      "scorpion": 63,
+      "scorpion": 55,
       "sagittaire": 47,
-      "capricorne": 62,
+      "capricorne": 50,
       "verseau": 82,
-      "poissons": 61
+      "poissons": 53
     },
     "day_code": {
       "date": "2026-07-31",
@@ -2699,23 +4051,49 @@
         "terre": "neutre",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-08-01": {
     "energies": {
       "belier": 45,
-      "taureau": 63,
-      "gemeaux": 62,
-      "cancer": 82,
+      "taureau": 51,
+      "gemeaux": 60,
+      "cancer": 77,
       "lion": 46,
-      "vierge": 58,
-      "balance": 65,
-      "scorpion": 81,
+      "vierge": 46,
+      "balance": 62,
+      "scorpion": 76,
       "sagittaire": 44,
-      "capricorne": 62,
-      "verseau": 60,
-      "poissons": 82
+      "capricorne": 50,
+      "verseau": 57,
+      "poissons": 77
     },
     "day_code": {
       "date": "2026-08-01",
@@ -2750,23 +4128,49 @@
         "terre": "neutre",
         "air": "neutre",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-08-02": {
     "energies": {
       "belier": 46,
-      "taureau": 61,
-      "gemeaux": 63,
-      "cancer": 82,
+      "taureau": 49,
+      "gemeaux": 60,
+      "cancer": 77,
       "lion": 50,
-      "vierge": 62,
-      "balance": 61,
-      "scorpion": 84,
+      "vierge": 50,
+      "balance": 58,
+      "scorpion": 79,
       "sagittaire": 46,
-      "capricorne": 61,
-      "verseau": 62,
-      "poissons": 83
+      "capricorne": 49,
+      "verseau": 59,
+      "poissons": 78
     },
     "day_code": {
       "date": "2026-08-02",
@@ -2801,23 +4205,49 @@
         "terre": "neutre",
         "air": "neutre",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-08-03": {
     "energies": {
-      "belier": 83,
-      "taureau": 47,
-      "gemeaux": 62,
-      "cancer": 45,
-      "lion": 80,
-      "vierge": 49,
-      "balance": 59,
-      "scorpion": 46,
-      "sagittaire": 81,
-      "capricorne": 43,
-      "verseau": 62,
-      "poissons": 47
+      "belier": 74,
+      "taureau": 51,
+      "gemeaux": 59,
+      "cancer": 53,
+      "lion": 71,
+      "vierge": 53,
+      "balance": 56,
+      "scorpion": 54,
+      "sagittaire": 72,
+      "capricorne": 47,
+      "verseau": 60,
+      "poissons": 55
     },
     "day_code": {
       "date": "2026-08-03",
@@ -2852,23 +4282,49 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "freine"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-08-04": {
     "energies": {
-      "belier": 85,
-      "taureau": 46,
-      "gemeaux": 62,
-      "cancer": 48,
-      "lion": 83,
-      "vierge": 44,
-      "balance": 60,
-      "scorpion": 47,
-      "sagittaire": 85,
-      "capricorne": 45,
-      "verseau": 64,
-      "poissons": 50
+      "belier": 76,
+      "taureau": 50,
+      "gemeaux": 58,
+      "cancer": 56,
+      "lion": 74,
+      "vierge": 48,
+      "balance": 57,
+      "scorpion": 55,
+      "sagittaire": 76,
+      "capricorne": 49,
+      "verseau": 61,
+      "poissons": 58
     },
     "day_code": {
       "date": "2026-08-04",
@@ -2903,23 +4359,49 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "freine"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-08-05": {
     "energies": {
       "belier": 44,
-      "taureau": 81,
-      "gemeaux": 60,
-      "cancer": 62,
+      "taureau": 72,
+      "gemeaux": 57,
+      "cancer": 54,
       "lion": 46,
-      "vierge": 82,
-      "balance": 66,
-      "scorpion": 63,
+      "vierge": 73,
+      "balance": 63,
+      "scorpion": 55,
       "sagittaire": 44,
-      "capricorne": 83,
-      "verseau": 65,
-      "poissons": 61
+      "capricorne": 74,
+      "verseau": 62,
+      "poissons": 53
     },
     "day_code": {
       "date": "2026-08-05",
@@ -2954,23 +4436,49 @@
         "terre": "favorise",
         "air": "neutre",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
   "2026-08-06": {
     "energies": {
       "belier": 48,
-      "taureau": 84,
-      "gemeaux": 60,
-      "cancer": 64,
+      "taureau": 75,
+      "gemeaux": 57,
+      "cancer": 56,
       "lion": 47,
-      "vierge": 82,
-      "balance": 58,
-      "scorpion": 60,
+      "vierge": 74,
+      "balance": 56,
+      "scorpion": 52,
       "sagittaire": 46,
-      "capricorne": 82,
-      "verseau": 64,
-      "poissons": 63
+      "capricorne": 72,
+      "verseau": 60,
+      "poissons": 55
     },
     "day_code": {
       "date": "2026-08-06",
@@ -3005,6 +4513,32 @@
         "terre": "favorise",
         "air": "neutre",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        }
       }
     }
   },
@@ -3013,15 +4547,15 @@
       "belier": 47,
       "taureau": 43,
       "gemeaux": 82,
-      "cancer": 60,
+      "cancer": 52,
       "lion": 45,
       "vierge": 46,
       "balance": 86,
-      "scorpion": 61,
+      "scorpion": 53,
       "sagittaire": 47,
       "capricorne": 43,
       "verseau": 80,
-      "poissons": 64
+      "poissons": 56
     },
     "day_code": {
       "date": "2026-08-07",
@@ -3056,6 +4590,32 @@
         "terre": "freine",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        }
       }
     }
   },
@@ -3064,15 +4624,15 @@
       "belier": 48,
       "taureau": 44,
       "gemeaux": 78,
-      "cancer": 64,
+      "cancer": 56,
       "lion": 45,
       "vierge": 46,
       "balance": 80,
-      "scorpion": 63,
+      "scorpion": 55,
       "sagittaire": 44,
       "capricorne": 46,
       "verseau": 82,
-      "poissons": 63
+      "poissons": 55
     },
     "day_code": {
       "date": "2026-08-08",
@@ -3107,6 +4667,32 @@
         "terre": "freine",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        }
       }
     }
   },
@@ -3114,16 +4700,16 @@
     "energies": {
       "belier": 46,
       "taureau": 48,
-      "gemeaux": 61,
-      "cancer": 80,
+      "gemeaux": 62,
+      "cancer": 75,
       "lion": 47,
       "vierge": 47,
-      "balance": 62,
-      "scorpion": 85,
+      "balance": 64,
+      "scorpion": 80,
       "sagittaire": 48,
       "capricorne": 41,
-      "verseau": 62,
-      "poissons": 83
+      "verseau": 63,
+      "poissons": 78
     },
     "day_code": {
       "date": "2026-08-09",
@@ -3158,23 +4744,49 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-08-10": {
     "energies": {
-      "belier": 61,
+      "belier": 53,
       "taureau": 47,
-      "gemeaux": 85,
-      "cancer": 61,
-      "lion": 66,
+      "gemeaux": 66,
+      "cancer": 72,
+      "lion": 58,
       "vierge": 44,
-      "balance": 83,
-      "scorpion": 62,
-      "sagittaire": 63,
+      "balance": 64,
+      "scorpion": 73,
+      "sagittaire": 55,
       "capricorne": 46,
-      "verseau": 79,
-      "poissons": 60
+      "verseau": 60,
+      "poissons": 72
     },
     "day_code": {
       "date": "2026-08-10",
@@ -3209,22 +4821,48 @@
         "terre": "freine",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-08-11": {
     "energies": {
-      "belier": 80,
+      "belier": 75,
       "taureau": 47,
-      "gemeaux": 64,
+      "gemeaux": 65,
       "cancer": 48,
-      "lion": 82,
+      "lion": 77,
       "vierge": 44,
-      "balance": 63,
+      "balance": 64,
       "scorpion": 46,
-      "sagittaire": 82,
+      "sagittaire": 77,
       "capricorne": 42,
-      "verseau": 65,
+      "verseau": 66,
       "poissons": 46
     },
     "day_code": {
@@ -3260,23 +4898,49 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "freine"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-08-12": {
     "energies": {
-      "belier": 81,
+      "belier": 76,
       "taureau": 51,
-      "gemeaux": 63,
-      "cancer": 60,
-      "lion": 82,
+      "gemeaux": 51,
+      "cancer": 57,
+      "lion": 77,
       "vierge": 46,
-      "balance": 60,
-      "scorpion": 66,
-      "sagittaire": 85,
+      "balance": 48,
+      "scorpion": 63,
+      "sagittaire": 80,
       "capricorne": 44,
-      "verseau": 62,
-      "poissons": 62
+      "verseau": 50,
+      "poissons": 60
     },
     "day_code": {
       "date": "2026-08-12",
@@ -3311,23 +4975,49 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-08-13": {
     "energies": {
-      "belier": 48,
-      "taureau": 79,
-      "gemeaux": 48,
-      "cancer": 66,
-      "lion": 44,
-      "vierge": 81,
-      "balance": 46,
-      "scorpion": 60,
-      "sagittaire": 46,
-      "capricorne": 81,
-      "verseau": 44,
-      "poissons": 64
+      "belier": 56,
+      "taureau": 70,
+      "gemeaux": 52,
+      "cancer": 63,
+      "lion": 52,
+      "vierge": 72,
+      "balance": 50,
+      "scorpion": 57,
+      "sagittaire": 54,
+      "capricorne": 72,
+      "verseau": 48,
+      "poissons": 61
     },
     "day_code": {
       "date": "2026-08-13",
@@ -3362,23 +5052,49 @@
         "terre": "favorise",
         "air": "freine",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "neutre",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-08-14": {
     "energies": {
-      "belier": 46,
-      "taureau": 79,
-      "gemeaux": 44,
-      "cancer": 63,
-      "lion": 44,
-      "vierge": 79,
-      "balance": 47,
-      "scorpion": 64,
-      "sagittaire": 48,
-      "capricorne": 79,
-      "verseau": 45,
-      "poissons": 64
+      "belier": 54,
+      "taureau": 70,
+      "gemeaux": 48,
+      "cancer": 60,
+      "lion": 52,
+      "vierge": 70,
+      "balance": 51,
+      "scorpion": 62,
+      "sagittaire": 56,
+      "capricorne": 70,
+      "verseau": 49,
+      "poissons": 61
     },
     "day_code": {
       "date": "2026-08-14",
@@ -3413,23 +5129,49 @@
         "terre": "favorise",
         "air": "freine",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "neutre",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-08-15": {
     "energies": {
-      "belier": 45,
-      "taureau": 80,
-      "gemeaux": 42,
-      "cancer": 60,
-      "lion": 44,
-      "vierge": 81,
-      "balance": 45,
-      "scorpion": 60,
-      "sagittaire": 46,
-      "capricorne": 84,
-      "verseau": 46,
-      "poissons": 63
+      "belier": 53,
+      "taureau": 71,
+      "gemeaux": 46,
+      "cancer": 58,
+      "lion": 52,
+      "vierge": 72,
+      "balance": 49,
+      "scorpion": 57,
+      "sagittaire": 54,
+      "capricorne": 75,
+      "verseau": 50,
+      "poissons": 60
     },
     "day_code": {
       "date": "2026-08-15",
@@ -3464,23 +5206,49 @@
         "terre": "favorise",
         "air": "freine",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "neutre",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-08-16": {
     "energies": {
-      "belier": 66,
+      "belier": 58,
       "taureau": 47,
-      "gemeaux": 82,
-      "cancer": 63,
-      "lion": 64,
+      "gemeaux": 73,
+      "cancer": 60,
+      "lion": 56,
       "vierge": 45,
-      "balance": 84,
-      "scorpion": 58,
-      "sagittaire": 64,
+      "balance": 76,
+      "scorpion": 55,
+      "sagittaire": 56,
       "capricorne": 45,
-      "verseau": 81,
-      "poissons": 60
+      "verseau": 72,
+      "poissons": 57
     },
     "day_code": {
       "date": "2026-08-16",
@@ -3515,23 +5283,49 @@
         "terre": "freine",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-08-17": {
     "energies": {
-      "belier": 59,
+      "belier": 51,
       "taureau": 47,
-      "gemeaux": 82,
-      "cancer": 60,
-      "lion": 61,
+      "gemeaux": 74,
+      "cancer": 57,
+      "lion": 53,
       "vierge": 47,
-      "balance": 82,
-      "scorpion": 61,
-      "sagittaire": 62,
+      "balance": 72,
+      "scorpion": 58,
+      "sagittaire": 54,
       "capricorne": 46,
-      "verseau": 85,
-      "poissons": 62
+      "verseau": 76,
+      "poissons": 60
     },
     "day_code": {
       "date": "2026-08-17",
@@ -3566,22 +5360,48 @@
         "terre": "freine",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-08-18": {
     "energies": {
-      "belier": 62,
+      "belier": 54,
       "taureau": 48,
-      "gemeaux": 64,
+      "gemeaux": 52,
       "cancer": 82,
-      "lion": 64,
+      "lion": 56,
       "vierge": 46,
-      "balance": 63,
+      "balance": 51,
       "scorpion": 82,
-      "sagittaire": 60,
+      "sagittaire": 52,
       "capricorne": 44,
-      "verseau": 62,
+      "verseau": 50,
       "poissons": 83
     },
     "day_code": {
@@ -3617,22 +5437,48 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-08-19": {
     "energies": {
-      "belier": 64,
+      "belier": 56,
       "taureau": 45,
-      "gemeaux": 62,
+      "gemeaux": 50,
       "cancer": 84,
-      "lion": 62,
+      "lion": 54,
       "vierge": 47,
-      "balance": 61,
+      "balance": 49,
       "scorpion": 82,
-      "sagittaire": 62,
+      "sagittaire": 54,
       "capricorne": 46,
-      "verseau": 60,
+      "verseau": 48,
       "poissons": 86
     },
     "day_code": {
@@ -3668,23 +5514,49 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-08-20": {
     "energies": {
-      "belier": 82,
+      "belier": 78,
       "taureau": 46,
-      "gemeaux": 63,
-      "cancer": 65,
-      "lion": 83,
+      "gemeaux": 51,
+      "cancer": 62,
+      "lion": 78,
       "vierge": 48,
-      "balance": 64,
-      "scorpion": 62,
-      "sagittaire": 78,
+      "balance": 52,
+      "scorpion": 60,
+      "sagittaire": 74,
       "capricorne": 47,
-      "verseau": 61,
-      "poissons": 64
+      "verseau": 49,
+      "poissons": 61
     },
     "day_code": {
       "date": "2026-08-20",
@@ -3719,23 +5591,49 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-08-21": {
     "energies": {
-      "belier": 79,
+      "belier": 74,
       "taureau": 46,
-      "gemeaux": 60,
-      "cancer": 63,
-      "lion": 83,
+      "gemeaux": 48,
+      "cancer": 60,
+      "lion": 78,
       "vierge": 49,
-      "balance": 62,
-      "scorpion": 64,
-      "sagittaire": 85,
+      "balance": 50,
+      "scorpion": 61,
+      "sagittaire": 80,
       "capricorne": 46,
-      "verseau": 62,
-      "poissons": 61
+      "verseau": 50,
+      "poissons": 58
     },
     "day_code": {
       "date": "2026-08-21",
@@ -3770,23 +5668,49 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-08-22": {
     "energies": {
-      "belier": 80,
+      "belier": 75,
       "taureau": 47,
-      "gemeaux": 59,
-      "cancer": 59,
-      "lion": 82,
+      "gemeaux": 47,
+      "cancer": 56,
+      "lion": 78,
       "vierge": 48,
-      "balance": 60,
-      "scorpion": 60,
-      "sagittaire": 84,
+      "balance": 48,
+      "scorpion": 58,
+      "sagittaire": 79,
       "capricorne": 48,
-      "verseau": 65,
-      "poissons": 64
+      "verseau": 53,
+      "poissons": 62
     },
     "day_code": {
       "date": "2026-08-22",
@@ -3821,23 +5745,49 @@
         "terre": "freine",
         "air": "neutre",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-08-23": {
     "energies": {
-      "belier": 41,
-      "taureau": 80,
-      "gemeaux": 46,
-      "cancer": 62,
-      "lion": 46,
-      "vierge": 81,
-      "balance": 43,
-      "scorpion": 64,
-      "sagittaire": 44,
-      "capricorne": 81,
-      "verseau": 48,
-      "poissons": 64
+      "belier": 49,
+      "taureau": 71,
+      "gemeaux": 50,
+      "cancer": 60,
+      "lion": 54,
+      "vierge": 72,
+      "balance": 47,
+      "scorpion": 61,
+      "sagittaire": 52,
+      "capricorne": 72,
+      "verseau": 52,
+      "poissons": 60
     },
     "day_code": {
       "date": "2026-08-23",
@@ -3872,23 +5822,49 @@
         "terre": "favorise",
         "air": "freine",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "neutre",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-08-24": {
     "energies": {
-      "belier": 43,
-      "taureau": 81,
-      "gemeaux": 46,
-      "cancer": 62,
-      "lion": 46,
-      "vierge": 78,
-      "balance": 47,
-      "scorpion": 62,
-      "sagittaire": 41,
-      "capricorne": 82,
-      "verseau": 44,
-      "poissons": 63
+      "belier": 51,
+      "taureau": 72,
+      "gemeaux": 50,
+      "cancer": 59,
+      "lion": 54,
+      "vierge": 69,
+      "balance": 51,
+      "scorpion": 59,
+      "sagittaire": 49,
+      "capricorne": 73,
+      "verseau": 48,
+      "poissons": 60
     },
     "day_code": {
       "date": "2026-08-24",
@@ -3923,23 +5899,49 @@
         "terre": "favorise",
         "air": "freine",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "neutre",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-08-25": {
     "energies": {
-      "belier": 66,
+      "belier": 58,
       "taureau": 49,
-      "gemeaux": 87,
-      "cancer": 64,
-      "lion": 62,
+      "gemeaux": 78,
+      "cancer": 60,
+      "lion": 54,
       "vierge": 46,
-      "balance": 80,
-      "scorpion": 62,
-      "sagittaire": 62,
+      "balance": 72,
+      "scorpion": 59,
+      "sagittaire": 54,
       "capricorne": 48,
-      "verseau": 80,
-      "poissons": 61
+      "verseau": 71,
+      "poissons": 58
     },
     "day_code": {
       "date": "2026-08-25",
@@ -3974,23 +5976,49 @@
         "terre": "freine",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "neutre",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-08-26": {
     "energies": {
       "belier": 47,
-      "taureau": 61,
-      "gemeaux": 80,
-      "cancer": 60,
+      "taureau": 53,
+      "gemeaux": 71,
+      "cancer": 56,
       "lion": 48,
-      "vierge": 63,
-      "balance": 83,
-      "scorpion": 63,
+      "vierge": 55,
+      "balance": 74,
+      "scorpion": 60,
       "sagittaire": 49,
-      "capricorne": 61,
-      "verseau": 84,
-      "poissons": 65
+      "capricorne": 53,
+      "verseau": 75,
+      "poissons": 62
     },
     "day_code": {
       "date": "2026-08-26",
@@ -4025,23 +6053,49 @@
         "terre": "neutre",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "favorise",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-08-27": {
     "energies": {
       "belier": 47,
-      "taureau": 61,
-      "gemeaux": 83,
-      "cancer": 62,
+      "taureau": 53,
+      "gemeaux": 74,
+      "cancer": 58,
       "lion": 47,
-      "vierge": 63,
-      "balance": 80,
-      "scorpion": 60,
+      "vierge": 55,
+      "balance": 71,
+      "scorpion": 57,
       "sagittaire": 45,
-      "capricorne": 64,
-      "verseau": 83,
-      "poissons": 58
+      "capricorne": 56,
+      "verseau": 74,
+      "poissons": 56
     },
     "day_code": {
       "date": "2026-08-27",
@@ -4076,22 +6130,48 @@
         "terre": "neutre",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "favorise",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-08-28": {
     "energies": {
       "belier": 47,
-      "taureau": 62,
-      "gemeaux": 62,
+      "taureau": 54,
+      "gemeaux": 50,
       "cancer": 79,
       "lion": 47,
-      "vierge": 63,
-      "balance": 61,
+      "vierge": 55,
+      "balance": 49,
       "scorpion": 80,
       "sagittaire": 49,
-      "capricorne": 62,
-      "verseau": 62,
+      "capricorne": 54,
+      "verseau": 50,
       "poissons": 84
     },
     "day_code": {
@@ -4127,22 +6207,48 @@
         "terre": "neutre",
         "air": "neutre",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-08-29": {
     "energies": {
       "belier": 44,
-      "taureau": 62,
-      "gemeaux": 64,
+      "taureau": 54,
+      "gemeaux": 52,
       "cancer": 84,
       "lion": 45,
-      "vierge": 64,
-      "balance": 61,
+      "vierge": 56,
+      "balance": 49,
       "scorpion": 81,
       "sagittaire": 48,
-      "capricorne": 64,
-      "verseau": 63,
+      "capricorne": 56,
+      "verseau": 51,
       "poissons": 85
     },
     "day_code": {
@@ -4178,23 +6284,49 @@
         "terre": "neutre",
         "air": "neutre",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-08-30": {
     "energies": {
-      "belier": 80,
-      "taureau": 46,
-      "gemeaux": 45,
-      "cancer": 59,
-      "lion": 83,
-      "vierge": 44,
-      "balance": 48,
-      "scorpion": 61,
-      "sagittaire": 78,
-      "capricorne": 47,
-      "verseau": 45,
-      "poissons": 60
+      "belier": 71,
+      "taureau": 54,
+      "gemeaux": 49,
+      "cancer": 56,
+      "lion": 74,
+      "vierge": 52,
+      "balance": 52,
+      "scorpion": 58,
+      "sagittaire": 70,
+      "capricorne": 55,
+      "verseau": 49,
+      "poissons": 57
     },
     "day_code": {
       "date": "2026-08-30",
@@ -4229,23 +6361,49 @@
         "terre": "freine",
         "air": "freine",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-08-31": {
     "energies": {
-      "belier": 80,
-      "taureau": 46,
-      "gemeaux": 46,
-      "cancer": 59,
-      "lion": 82,
-      "vierge": 47,
-      "balance": 46,
-      "scorpion": 60,
-      "sagittaire": 83,
-      "capricorne": 46,
-      "verseau": 46,
-      "poissons": 60
+      "belier": 71,
+      "taureau": 54,
+      "gemeaux": 50,
+      "cancer": 56,
+      "lion": 72,
+      "vierge": 55,
+      "balance": 50,
+      "scorpion": 57,
+      "sagittaire": 74,
+      "capricorne": 54,
+      "verseau": 50,
+      "poissons": 57
     },
     "day_code": {
       "date": "2026-08-31",
@@ -4280,23 +6438,49 @@
         "terre": "freine",
         "air": "freine",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-09-01": {
     "energies": {
       "belier": 44,
-      "taureau": 80,
-      "gemeaux": 62,
-      "cancer": 60,
+      "taureau": 76,
+      "gemeaux": 50,
+      "cancer": 56,
       "lion": 46,
-      "vierge": 81,
-      "balance": 63,
-      "scorpion": 62,
+      "vierge": 76,
+      "balance": 51,
+      "scorpion": 59,
       "sagittaire": 48,
-      "capricorne": 84,
-      "verseau": 60,
-      "poissons": 62
+      "capricorne": 79,
+      "verseau": 48,
+      "poissons": 59
     },
     "day_code": {
       "date": "2026-09-01",
@@ -4331,23 +6515,49 @@
         "terre": "favorise",
         "air": "neutre",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-09-02": {
     "energies": {
       "belier": 46,
-      "taureau": 80,
-      "gemeaux": 65,
-      "cancer": 63,
+      "taureau": 75,
+      "gemeaux": 53,
+      "cancer": 60,
       "lion": 48,
-      "vierge": 78,
-      "balance": 64,
-      "scorpion": 60,
+      "vierge": 74,
+      "balance": 52,
+      "scorpion": 57,
       "sagittaire": 44,
-      "capricorne": 82,
-      "verseau": 61,
-      "poissons": 64
+      "capricorne": 77,
+      "verseau": 49,
+      "poissons": 60
     },
     "day_code": {
       "date": "2026-09-02",
@@ -4382,23 +6592,49 @@
         "terre": "favorise",
         "air": "neutre",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-09-03": {
     "energies": {
       "belier": 43,
-      "taureau": 82,
-      "gemeaux": 63,
-      "cancer": 63,
+      "taureau": 76,
+      "gemeaux": 51,
+      "cancer": 60,
       "lion": 47,
-      "vierge": 84,
-      "balance": 60,
-      "scorpion": 62,
+      "vierge": 79,
+      "balance": 48,
+      "scorpion": 59,
       "sagittaire": 46,
-      "capricorne": 79,
-      "verseau": 63,
-      "poissons": 62
+      "capricorne": 74,
+      "verseau": 51,
+      "poissons": 58
     },
     "day_code": {
       "date": "2026-09-03",
@@ -4433,23 +6669,49 @@
         "terre": "favorise",
         "air": "neutre",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "favorise",
+          "air": "freine",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-09-04": {
     "energies": {
       "belier": 48,
-      "taureau": 64,
-      "gemeaux": 83,
-      "cancer": 62,
+      "taureau": 56,
+      "gemeaux": 74,
+      "cancer": 59,
       "lion": 44,
-      "vierge": 61,
-      "balance": 80,
-      "scorpion": 61,
+      "vierge": 53,
+      "balance": 71,
+      "scorpion": 58,
       "sagittaire": 45,
-      "capricorne": 65,
-      "verseau": 80,
-      "poissons": 60
+      "capricorne": 57,
+      "verseau": 71,
+      "poissons": 57
     },
     "day_code": {
       "date": "2026-09-04",
@@ -4484,23 +6746,49 @@
         "terre": "neutre",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "favorise",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-09-05": {
     "energies": {
       "belier": 50,
-      "taureau": 62,
-      "gemeaux": 81,
-      "cancer": 62,
+      "taureau": 54,
+      "gemeaux": 72,
+      "cancer": 58,
       "lion": 47,
-      "vierge": 62,
-      "balance": 77,
-      "scorpion": 60,
+      "vierge": 54,
+      "balance": 68,
+      "scorpion": 58,
       "sagittaire": 47,
-      "capricorne": 60,
-      "verseau": 81,
-      "poissons": 65
+      "capricorne": 52,
+      "verseau": 72,
+      "poissons": 62
     },
     "day_code": {
       "date": "2026-09-05",
@@ -4535,22 +6823,48 @@
         "terre": "neutre",
         "air": "favorise",
         "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "freine"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "favorise",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "favorise",
+          "eau": "freine"
+        }
       }
     }
   },
   "2026-09-06": {
     "energies": {
       "belier": 48,
-      "taureau": 64,
-      "gemeaux": 64,
+      "taureau": 56,
+      "gemeaux": 52,
       "cancer": 82,
       "lion": 47,
-      "vierge": 62,
-      "balance": 62,
+      "vierge": 54,
+      "balance": 50,
       "scorpion": 82,
       "sagittaire": 49,
-      "capricorne": 58,
-      "verseau": 60,
+      "capricorne": 50,
+      "verseau": 48,
       "poissons": 82
     },
     "day_code": {
@@ -4586,22 +6900,48 @@
         "terre": "neutre",
         "air": "neutre",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   },
   "2026-09-07": {
     "energies": {
       "belier": 42,
-      "taureau": 64,
-      "gemeaux": 66,
+      "taureau": 56,
+      "gemeaux": 54,
       "cancer": 78,
       "lion": 47,
-      "vierge": 60,
-      "balance": 64,
+      "vierge": 52,
+      "balance": 52,
       "scorpion": 82,
       "sagittaire": 47,
-      "capricorne": 61,
-      "verseau": 63,
+      "capricorne": 53,
+      "verseau": 51,
       "poissons": 82
     },
     "day_code": {
@@ -4637,6 +6977,32 @@
         "terre": "neutre",
         "air": "neutre",
         "eau": "favorise"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "favorise"
+        },
+        "Argent & travail": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "freine",
+          "terre": "freine",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Humeur": {
+          "feu": "freine",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        }
       }
     }
   }

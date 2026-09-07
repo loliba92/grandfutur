@@ -40,12 +40,22 @@ def generate(date_str):
     signs_out = {}
     for sign in ZODIAC_ORDER:
         element = ELEMENT_OF[sign]
+        # Situation générale du signe (toutes planètes confondues) : sert
+        # au thème d'ensemble (paragraphe d'intro, phrase "vibe"), pas au
+        # choix des phrases par domaine — voir domain_elements plus bas,
+        # chaque domaine a sa propre situation, pas forcément la même.
         situation = day_code["elements"][element]
         categories = []
         scores = []
         for domain in DOMAINS:
-            text, score = pick_and_score(date_str, sign, domain, situation)
-            categories.append({"label": domain, "score": score, "text": text})
+            domain_situation = day_code["domain_elements"][domain][element]
+            text, score = pick_and_score(date_str, sign, domain, domain_situation)
+            categories.append({
+                "label": domain,
+                "situation": domain_situation,
+                "score": score,
+                "text": text,
+            })
             scores.append(score)
         energy = round(sum(scores) / len(scores))
         signs_out[sign] = {
