@@ -247,6 +247,13 @@
   .cat-gauge-inner{ width:31px; height:31px; border-radius:50%; background: var(--surface); display:grid; place-items:center; font-family:"JetBrains Mono",monospace; font-size:0.6rem; }
   .sign-cat-text{ margin:0; font-size:0.88rem; }
 
+  /* Conseil : une petite touche à part, légère, jamais un chiffre —
+     dans l'esprit des horoscopes classiques (ex. "aérez votre appartement
+     cinq minutes"), volontairement détachée du reste. */
+  .sign-conseil{ margin-top:16px; padding:12px 16px; background: var(--surface-2); border-radius:8px; border-left:2px solid var(--gold); }
+  .sign-conseil-label{ display:block; font-family:"JetBrains Mono",monospace; font-size:0.68rem; letter-spacing:0.05em; text-transform:uppercase; color: var(--gold); margin-bottom:4px; }
+  .sign-conseil-text{ margin:0; font-size:0.88rem; font-style:italic; color: var(--paper-dim); }
+
   /* ---------- List box (top 3) ---------- */
   .list-box{ background: var(--surface); border:1px solid var(--gold); border-radius:10px; padding:20px 22px; }
   .list-box-label{ display:block; font-family:"JetBrains Mono",monospace; font-size:0.75rem; letter-spacing:0.06em; text-transform:uppercase; color: var(--gold); margin-bottom:14px; }
@@ -364,51 +371,51 @@
     </div>
     <div class="sign-tiles" id="sign-tiles">
       <button type="button" class="sign-tile" data-sign="belier" data-element="feu">
-        <span class="sign-tile-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v-6"/><path d="M12 14c-3 0-5-2.3-4.5-5.2C7.7 7.1 9 6.3 9.7 7.2c.6.7 0 1.7-1.4 2"/><path d="M12 14c3 0 5-2.3 4.5-5.2C16.3 7.1 15 6.3 14.3 7.2c-.6.7 0 1.7 1.4 2"/></svg></span>
+        <span class="sign-tile-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v-6"/><path d="M12 14c-3 0-5-2.3-4.5-5.2C7.7 7.1 9 6.3 9.7 7.2c.6.7 0 1.7-1.4 2"/><path d="M12 14c3 0 5-2.3 4.5-5.2C16.3 7.1 15 6.3 14.3 7.2c-.6.7 0 1.7 1.4 2"/></svg></span>
         <span class="sign-tile-name">Bélier</span>
       </button>
       <button type="button" class="sign-tile" data-sign="taureau" data-element="terre">
-        <span class="sign-tile-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="4.6"/><path d="M7.5 9c0-2.8 2-4.6 4.5-4.6S16.5 6.2 16.5 9"/></svg></span>
+        <span class="sign-tile-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="4.6"/><path d="M7.5 9c0-2.8 2-4.6 4.5-4.6S16.5 6.2 16.5 9"/></svg></span>
         <span class="sign-tile-name">Taureau</span>
       </button>
       <button type="button" class="sign-tile" data-sign="gemeaux" data-element="air">
-        <span class="sign-tile-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="6" x2="17" y2="6"/><line x1="7" y1="18" x2="17" y2="18"/><line x1="9.5" y1="6" x2="9.5" y2="18"/><line x1="14.5" y1="6" x2="14.5" y2="18"/></svg></span>
+        <span class="sign-tile-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="6" x2="17" y2="6"/><line x1="7" y1="18" x2="17" y2="18"/><line x1="9.5" y1="6" x2="9.5" y2="18"/><line x1="14.5" y1="6" x2="14.5" y2="18"/></svg></span>
         <span class="sign-tile-name">Gémeaux</span>
       </button>
       <button type="button" class="sign-tile" data-sign="cancer" data-element="eau">
-        <span class="sign-tile-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.3" cy="8.7" r="2.1"/><path d="M8.3 8.7c0 5.3 4 7 6.7 4.8"/><circle cx="15.7" cy="15.3" r="2.1"/><path d="M15.7 15.3c0-5.3-4-7-6.7-4.8"/></svg></span>
+        <span class="sign-tile-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.3" cy="8.7" r="2.1"/><path d="M8.3 8.7c0 5.3 4 7 6.7 4.8"/><circle cx="15.7" cy="15.3" r="2.1"/><path d="M15.7 15.3c0-5.3-4-7-6.7-4.8"/></svg></span>
         <span class="sign-tile-name">Cancer</span>
       </button>
       <button type="button" class="sign-tile" data-sign="lion" data-element="feu">
-        <span class="sign-tile-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9.2" cy="8" r="3"/><path d="M9.2 11c0 6.2 4.3 3 4.3 7.2c0 2-2 2.8-4 1.8"/></svg></span>
+        <span class="sign-tile-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9.2" cy="8" r="3"/><path d="M9.2 11c0 6.2 4.3 3 4.3 7.2c0 2-2 2.8-4 1.8"/></svg></span>
         <span class="sign-tile-name">Lion</span>
       </button>
       <button type="button" class="sign-tile" data-sign="vierge" data-element="terre">
-        <span class="sign-tile-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 7.5v11"/><path d="M6.5 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v9"/><path d="M10.1 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v6.5c0 2.8 1.8 3.7 3.7 2"/></svg></span>
+        <span class="sign-tile-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 7.5v11"/><path d="M6.5 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v9"/><path d="M10.1 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v6.5c0 2.8 1.8 3.7 3.7 2"/></svg></span>
         <span class="sign-tile-name">Vierge</span>
       </button>
       <button type="button" class="sign-tile" data-sign="balance" data-element="air">
-        <span class="sign-tile-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="7.5" x2="18" y2="7.5"/><path d="M7 13.5a5 5 0 0 0 10 0"/><line x1="4.5" y1="18.5" x2="19.5" y2="18.5"/></svg></span>
+        <span class="sign-tile-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="7.5" x2="18" y2="7.5"/><path d="M7 13.5a5 5 0 0 0 10 0"/><line x1="4.5" y1="18.5" x2="19.5" y2="18.5"/></svg></span>
         <span class="sign-tile-name">Balance</span>
       </button>
       <button type="button" class="sign-tile" data-sign="scorpion" data-element="eau">
-        <span class="sign-tile-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 7.5v11"/><path d="M6.5 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v9"/><path d="M10.1 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v9"/><path d="M13.7 16.3l4.3 2.2"/><path d="M18 18.5l-.7-3"/><path d="M18 18.5l-2.9.8"/></svg></span>
+        <span class="sign-tile-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 7.5v11"/><path d="M6.5 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v9"/><path d="M10.1 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v9"/><path d="M13.7 16.3l4.3 2.2"/><path d="M18 18.5l-.7-3"/><path d="M18 18.5l-2.9.8"/></svg></span>
         <span class="sign-tile-name">Scorpion</span>
       </button>
       <button type="button" class="sign-tile" data-sign="sagittaire" data-element="feu">
-        <span class="sign-tile-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5.5" y1="18.5" x2="18" y2="6"/><path d="M12 6h6v6"/><line x1="9.8" y1="11.8" x2="13.5" y2="15.5"/></svg></span>
+        <span class="sign-tile-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5.5" y1="18.5" x2="18" y2="6"/><path d="M12 6h6v6"/><line x1="9.8" y1="11.8" x2="13.5" y2="15.5"/></svg></span>
         <span class="sign-tile-name">Sagittaire</span>
       </button>
       <button type="button" class="sign-tile" data-sign="capricorne" data-element="terre">
-        <span class="sign-tile-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 8c0-1.4 1-2.5 2.2-2.5S11 6.3 10 8.7c-2.3 4.7-1 9.3 2 9.3"/><path d="M13.3 14.3c1.2-2 3.4-2 4.4.1c1 2.2-1.1 4.3-3.4 3.4"/></svg></span>
+        <span class="sign-tile-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 8c0-1.4 1-2.5 2.2-2.5S11 6.3 10 8.7c-2.3 4.7-1 9.3 2 9.3"/><path d="M13.3 14.3c1.2-2 3.4-2 4.4.1c1 2.2-1.1 4.3-3.4 3.4"/></svg></span>
         <span class="sign-tile-name">Capricorne</span>
       </button>
       <button type="button" class="sign-tile" data-sign="verseau" data-element="air">
-        <span class="sign-tile-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 9c2.2-2 4.3-2 6.5 0s4.3 2 6.5 0s4.3-2 6.5 0"/><path d="M3.5 15.5c2.2-2 4.3-2 6.5 0s4.3 2 6.5 0s4.3-2 6.5 0"/></svg></span>
+        <span class="sign-tile-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 9c2.2-2 4.3-2 6.5 0s4.3 2 6.5 0s4.3-2 6.5 0"/><path d="M3.5 15.5c2.2-2 4.3-2 6.5 0s4.3 2 6.5 0s4.3-2 6.5 0"/></svg></span>
         <span class="sign-tile-name">Verseau</span>
       </button>
       <button type="button" class="sign-tile" data-sign="poissons" data-element="eau">
-        <span class="sign-tile-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.2 4c-3.2 3.2-3.2 12.8 0 16"/><path d="M15.8 4c3.2 3.2 3.2 12.8 0 16"/><line x1="6" y1="12" x2="18" y2="12"/></svg></span>
+        <span class="sign-tile-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.2 4c-3.2 3.2-3.2 12.8 0 16"/><path d="M15.8 4c3.2 3.2 3.2 12.8 0 16"/><line x1="6" y1="12" x2="18" y2="12"/></svg></span>
         <span class="sign-tile-name">Poissons</span>
       </button>
     </div>
@@ -416,311 +423,319 @@
       <p class="sign-detail-empty" id="sign-detail-empty">Cliquez sur un signe ci-dessus pour voir son analyse du jour.</p>
       <article class="sign-card" data-sign="belier" data-element="feu" data-energy="78" hidden>
         <div class="sign-card-top">
-          <span class="sign-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v-6"/><path d="M12 14c-3 0-5-2.3-4.5-5.2C7.7 7.1 9 6.3 9.7 7.2c.6.7 0 1.7-1.4 2"/><path d="M12 14c3 0 5-2.3 4.5-5.2C16.3 7.1 15 6.3 14.3 7.2c-.6.7 0 1.7 1.4 2"/></svg></span>
+          <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v-6"/><path d="M12 14c-3 0-5-2.3-4.5-5.2C7.7 7.1 9 6.3 9.7 7.2c.6.7 0 1.7-1.4 2"/><path d="M12 14c3 0 5-2.3 4.5-5.2C16.3 7.1 15 6.3 14.3 7.2c-.6.7 0 1.7 1.4 2"/></svg></span>
           <div><div class="sign-name">Bélier</div><div class="sign-dates">21 mars – 19 avril</div></div>
           <div class="energy-gauge" style="--pct:78; margin-left:auto;"><div class="energy-gauge-inner">78%</div></div>
         </div>
-        <p class="sign-vibe">Aujourd'hui, l'impatience joue en ta faveur : une idée que tu retournes depuis des semaines mérite d'être lancée maintenant, pas après-demain. Le risque, c'est d'aller trop vite et de sauter une étape qui te reviendra dans la figure plus tard — prends dix minutes pour vérifier les détails avant de foncer.</p>
+        <p class="sign-vibe">Aujourd'hui, l'impatience joue en ta faveur : une idée que tu retournes depuis des semaines mérite d'être lancée maintenant, pas après-demain.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:75;"><div class="cat-gauge-inner">75%</div></div>
-              <p class="sign-cat-text">Dis ce que tu veux au lieu d'attendre que l'autre le devine : une phrase simple suffit, et c'est justement ce qui te manque en ce moment. Attention à ne pas transformer cette franchise en reproche — le ton compte autant que le fond.</p>
+              <p class="sign-cat-text">Dis ce que tu veux au lieu d'attendre que l'autre le devine : une phrase simple suffit aujourd'hui.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:80;"><div class="cat-gauge-inner">80%</div></div>
-              <p class="sign-cat-text">Défends ta position sans détour dans une négociation, c'est le moment où ton franc-parler paie. Prépare quand même deux ou trois arguments concrets avant d'y aller : l'aplomb seul ne suffira pas si on te pousse dans tes retranchements.</p>
+              <p class="sign-cat-text">Défends ta position sans détour dans une négociation — ton franc-parler paie aujourd'hui.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:82;"><div class="cat-gauge-inner">82%</div></div>
-              <p class="sign-cat-text">Beaucoup d'énergie physique aujourd'hui : une séance de sport ou une longue marche te fera plus de bien qu'un après-midi à ruminer. Évite quand même de forcer sur un effort inhabituel sans échauffement, l'excès de confiance est le vrai risque du jour.</p>
+              <p class="sign-cat-text">Beaucoup d'énergie : bouge, ça te fera plus de bien que ruminer.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:75;"><div class="cat-gauge-inner">75%</div></div>
-              <p class="sign-cat-text">Une pointe d'impatience qui pousse à agir plutôt qu'à ressasser, plutôt bon signe. Mais gare aux mots qui dépassent la pensée dans une discussion tendue — compte jusqu'à trois avant de répondre si quelqu'un te cherche.</p>
+              <p class="sign-cat-text">Impatient, mais motivé.</p>
             </div>
           </div>
         </div>
+        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Avant de foncer, relis une fois ce que tu es sur le point d'envoyer.</p></div>
       </article>
       <article class="sign-card" data-sign="taureau" data-element="terre" data-energy="64" hidden>
         <div class="sign-card-top">
-          <span class="sign-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="4.6"/><path d="M7.5 9c0-2.8 2-4.6 4.5-4.6S16.5 6.2 16.5 9"/></svg></span>
+          <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="4.6"/><path d="M7.5 9c0-2.8 2-4.6 4.5-4.6S16.5 6.2 16.5 9"/></svg></span>
           <div><div class="sign-name">Taureau</div><div class="sign-dates">20 avril – 20 mai</div></div>
           <div class="energy-gauge" style="--pct:64; margin-left:auto;"><div class="energy-gauge-inner">64%</div></div>
         </div>
-        <p class="sign-vibe">Rien de spectaculaire en vue aujourd'hui, et c'est tant mieux : ce calme sert un travail de fond qui paiera plus tard. Le vrai risque, c'est de confondre stabilité et immobilisme — un petit geste concret aujourd'hui vaut mieux qu'attendre le moment parfait.</p>
+        <p class="sign-vibe">Rien de spectaculaire en vue aujourd'hui, et c'est tant mieux : ce calme sert un travail de fond qui paiera plus tard.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:55;"><div class="cat-gauge-inner">55%</div></div>
-              <p class="sign-cat-text">Pas de grande scène côté cœur, juste une présence stable qui rassure sans qu'on ait besoin de le dire. Si tu attends un signe fort de l'autre, tu risques d'être déçu aujourd'hui — ce n'est pas le bon jour pour juger une relation sur ce seul critère.</p>
+              <p class="sign-cat-text">Pas de grande scène aujourd'hui, juste une présence stable qui rassure sans grands mots.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:70;"><div class="cat-gauge-inner">70%</div></div>
-              <p class="sign-cat-text">Continue un dossier déjà lancé plutôt que d'en ouvrir un nouveau : la constance compte plus que la nouveauté aujourd'hui. Fixe-toi une seule tâche concrète à terminer avant ce soir, plutôt qu'une liste entière que tu ne finiras pas.</p>
+              <p class="sign-cat-text">Continue un dossier déjà lancé plutôt que d'en ouvrir un nouveau : la constance paie.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:68;"><div class="cat-gauge-inner">68%</div></div>
-              <p class="sign-cat-text">Un rythme tranquille te convient mieux qu'une accélération forcée — inutile de culpabiliser si tu n'as pas envie de bouger beaucoup. Ne saute pas complètement le repas de midi sous prétexte de gagner du temps, ton corps te le fera payer en fin de journée.</p>
+              <p class="sign-cat-text">Un rythme tranquille te convient très bien aujourd'hui.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:63;"><div class="cat-gauge-inner">63%</div></div>
-              <p class="sign-cat-text">Calme plat, sans grand enthousiasme ni contrariété particulière. Si une frustration ancienne remonte, note-la plutôt que de l'exprimer à chaud — ce n'est pas le meilleur jour pour une conversation difficile.</p>
+              <p class="sign-cat-text">Calme, posé.</p>
             </div>
           </div>
         </div>
+        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Prends le temps du repas de midi, même dix minutes de plus.</p></div>
       </article>
       <article class="sign-card" data-sign="gemeaux" data-element="air" data-energy="71" hidden>
         <div class="sign-card-top">
-          <span class="sign-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="6" x2="17" y2="6"/><line x1="7" y1="18" x2="17" y2="18"/><line x1="9.5" y1="6" x2="9.5" y2="18"/><line x1="14.5" y1="6" x2="14.5" y2="18"/></svg></span>
+          <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="6" x2="17" y2="6"/><line x1="7" y1="18" x2="17" y2="18"/><line x1="9.5" y1="6" x2="9.5" y2="18"/><line x1="14.5" y1="6" x2="14.5" y2="18"/></svg></span>
           <div><div class="sign-name">Gémeaux</div><div class="sign-dates">21 mai – 20 juin</div></div>
           <div class="energy-gauge" style="--pct:71; margin-left:auto;"><div class="energy-gauge-inner">71%</div></div>
         </div>
-        <p class="sign-vibe">Les mots viennent facilement aujourd'hui : bon moment pour rappeler quelqu'un que tu as un peu laissé de côté. Attention cependant à ne pas trop parler et pas assez écouter — la conversation ne doit pas devenir un monologue.</p>
+        <p class="sign-vibe">Les mots viennent facilement aujourd'hui : bon moment pour rappeler quelqu'un que tu as un peu laissé de côté.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:68;"><div class="cat-gauge-inner">68%</div></div>
-              <p class="sign-cat-text">Une conversation avec une personne délaissée peut débloquer bien plus que prévu, à condition de vraiment écouter sa réponse. Évite les sous-entendus : dis les choses clairement, ton habileté verbale peut sinon créer plus de confusion que de clarté.</p>
+              <p class="sign-cat-text">Les mots viennent facilement : bon moment pour rappeler quelqu'un que tu as un peu délaissé.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:72;"><div class="cat-gauge-inner">72%</div></div>
-              <p class="sign-cat-text">Tes idées passent bien à l'oral, profites-en pour présenter ce projet que tu gardais pour toi. Prépare tout de même deux ou trois chiffres solides pour appuyer ton discours : la forme convainc, mais le fond décidera.</p>
+              <p class="sign-cat-text">Tes idées passent bien à l'oral aujourd'hui — présente ce projet que tu gardais pour toi.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:65;"><div class="cat-gauge-inner">65%</div></div>
-              <p class="sign-cat-text">Le mental tourne à plein régime, le corps un peu moins — rien d'inquiétant, mais pense à te lever de ta chaise toutes les heures si tu es sur un écran toute la journée.</p>
+              <p class="sign-cat-text">Le mental tourne à plein régime, pense à lever les yeux de l'écran de temps en temps.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:79;"><div class="cat-gauge-inner">79%</div></div>
-              <p class="sign-cat-text">De la curiosité, de l'entrain, l'envie de parler à tout le monde. Garde un peu d'énergie pour toi en fin de journée : tu risques de repartir vidé si tu la donnes entièrement aux autres.</p>
+              <p class="sign-cat-text">Curieux, bavard.</p>
             </div>
           </div>
         </div>
+        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Note une idée qui te traverse l'esprit avant de l'oublier ce soir.</p></div>
       </article>
       <article class="sign-card" data-sign="cancer" data-element="eau" data-energy="58" hidden>
         <div class="sign-card-top">
-          <span class="sign-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.3" cy="8.7" r="2.1"/><path d="M8.3 8.7c0 5.3 4 7 6.7 4.8"/><circle cx="15.7" cy="15.3" r="2.1"/><path d="M15.7 15.3c0-5.3-4-7-6.7-4.8"/></svg></span>
+          <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8.3" cy="8.7" r="2.1"/><path d="M8.3 8.7c0 5.3 4 7 6.7 4.8"/><circle cx="15.7" cy="15.3" r="2.1"/><path d="M15.7 15.3c0-5.3-4-7-6.7-4.8"/></svg></span>
           <div><div class="sign-name">Cancer</div><div class="sign-dates">21 juin – 22 juillet</div></div>
           <div class="energy-gauge" style="--pct:58; margin-left:auto;"><div class="energy-gauge-inner">58%</div></div>
         </div>
-        <p class="sign-vibe">Ton énergie est plus basse que d'habitude, et ce n'est pas un problème : garde-la pour ton cercle proche plutôt que de la disperser. Le risque du jour, c'est de t'isoler complètement sous prétexte de fatigue — un message à quelqu'un de confiance suffit, pas besoin de faire semblant d'aller bien.</p>
+        <p class="sign-vibe">Ton énergie est plus basse que d'habitude, et ce n'est pas un problème : garde-la pour ton cercle proche plutôt que de la disperser.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:62;"><div class="cat-gauge-inner">62%</div></div>
-              <p class="sign-cat-text">Ta famille ou tes proches ont plus besoin de toi aujourd'hui qu'un inconnu ne l'aura jamais. Ne te sacrifie pas non plus complètement pour eux : un service rendu de mauvaise humeur ne fait plaisir à personne.</p>
+              <p class="sign-cat-text">Ta famille ou tes proches ont plus besoin de toi aujourd'hui qu'un inconnu ne l'aura jamais.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:48;"><div class="cat-gauge-inner">48%</div></div>
-              <p class="sign-cat-text">Peu de force pour un rapport de force : reporte une négociation tendue si tu le peux. Si tu ne peux vraiment pas la reporter, prépare-la à l'écrit plutôt qu'à l'oral, ça compense un peu le manque d'énergie du moment.</p>
+              <p class="sign-cat-text">Peu de force pour un rapport de force aujourd'hui : reporte une négociation tendue si tu le peux.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:55;"><div class="cat-gauge-inner">55%</div></div>
-              <p class="sign-cat-text">Fatigue normale, pas d'alarme : repose-toi sans culpabiliser. Évite en revanche de compenser par du sucre ou de la caféine en excès, ça donnera un coup de fouet court suivi d'une chute plus dure.</p>
+              <p class="sign-cat-text">Fatigue normale, repose-toi sans culpabiliser.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:67;"><div class="cat-gauge-inner">67%</div></div>
-              <p class="sign-cat-text">Sensible, mais pas dans le mauvais sens du terme : tu perçois plus de choses que d'habitude chez les autres. Ne prends pas tout personnellement pour autant, une remarque neutre n'est pas forcément dirigée contre toi.</p>
+              <p class="sign-cat-text">Sensible, tourné vers l'intérieur.</p>
             </div>
           </div>
         </div>
+        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Un message à quelqu'un de confiance te fera plus de bien qu'un silence prolongé.</p></div>
       </article>
       <article class="sign-card" data-sign="lion" data-element="feu" data-energy="82" hidden>
         <div class="sign-card-top">
-          <span class="sign-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9.2" cy="8" r="3"/><path d="M9.2 11c0 6.2 4.3 3 4.3 7.2c0 2-2 2.8-4 1.8"/></svg></span>
+          <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9.2" cy="8" r="3"/><path d="M9.2 11c0 6.2 4.3 3 4.3 7.2c0 2-2 2.8-4 1.8"/></svg></span>
           <div><div class="sign-name">Lion</div><div class="sign-dates">23 juillet – 22 août</div></div>
           <div class="energy-gauge" style="--pct:82; margin-left:auto;"><div class="energy-gauge-inner">82%</div></div>
         </div>
-        <p class="sign-vibe">Ta présence rassure plus qu'elle n'impressionne aujourd'hui, même en prenant un peu plus de place que d'habitude. Le piège, c'est de vouloir occuper tout l'espace dans une conversation à plusieurs — laisse consciemment la place à quelqu'un de plus discret.</p>
+        <p class="sign-vibe">Ta présence rassure plus qu'elle n'impressionne aujourd'hui, même en prenant un peu plus de place que d'habitude.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:85;"><div class="cat-gauge-inner">85%</div></div>
-              <p class="sign-cat-text">Tu attires sans forcer, bon jour pour te montrer sous ton meilleur jour, sans complexe. Reste quand même attentif à ce que l'autre exprime, pas seulement à l'effet que tu produis.</p>
+              <p class="sign-cat-text">Tu attires sans forcer aujourd'hui — montre-toi sous ton meilleur jour, sans complexe.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:78;"><div class="cat-gauge-inner">78%</div></div>
-              <p class="sign-cat-text">Ton assurance naturelle sert une négociation ou une présentation importante. Prépare-toi à entendre une objection sans la prendre comme une attaque personnelle : ce serait dommage de gâcher un bon dossier par de l'orgueil.</p>
+              <p class="sign-cat-text">Ton assurance naturelle sert une négociation ou une présentation importante.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:84;"><div class="cat-gauge-inner">84%</div></div>
-              <p class="sign-cat-text">Beaucoup d'énergie : canalise-la dans le sport plutôt que dans un excès de bavardage. Bois un peu plus d'eau que d'habitude si tu pousses l'effort, l'enthousiasme te fait parfois oublier les bases.</p>
+              <p class="sign-cat-text">Belle énergie physique, à mettre au service d'une activité qui te plaît vraiment.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:81;"><div class="cat-gauge-inner">81%</div></div>
-              <p class="sign-cat-text">Confiance et bonne humeur, qui se transmettent à ceux qui t'entourent. Si quelqu'un ne suit pas ton énergie aujourd'hui, ce n'est pas contre toi : tout le monde n'a pas la même journée que la tienne.</p>
+              <p class="sign-cat-text">Confiant, rayonnant.</p>
             </div>
           </div>
         </div>
+        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Laisse quelqu'un d'autre parler en premier dans une réunion aujourd'hui.</p></div>
       </article>
       <article class="sign-card" data-sign="vierge" data-element="terre" data-energy="67" hidden>
         <div class="sign-card-top">
-          <span class="sign-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 7.5v11"/><path d="M6.5 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v9"/><path d="M10.1 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v6.5c0 2.8 1.8 3.7 3.7 2"/></svg></span>
+          <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 7.5v11"/><path d="M6.5 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v9"/><path d="M10.1 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v6.5c0 2.8 1.8 3.7 3.7 2"/></svg></span>
           <div><div class="sign-name">Vierge</div><div class="sign-dates">23 août – 22 septembre</div></div>
           <div class="energy-gauge" style="--pct:67; margin-left:auto;"><div class="energy-gauge-inner">67%</div></div>
         </div>
-        <p class="sign-vibe">Ranger un coin de ta vie, au sens propre ou au figuré, va te libérer plus d'énergie que prévu. Attention à ne pas transformer ce besoin d'ordre en critique permanente envers ceux qui t'entourent — tout le monde n'a pas ta rigueur, et ce n'est pas un défaut.</p>
+        <p class="sign-vibe">Ranger un coin de ta vie, au sens propre ou au figuré, va te libérer plus d'énergie que prévu.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:60;"><div class="cat-gauge-inner">60%</div></div>
-              <p class="sign-cat-text">Pas de grande déclaration, mais une attention aux petits détails qui touche plus qu'on ne le croit. Évite de pointer un défaut chez l'autre aujourd'hui, même avec de bonnes intentions : ton sens du détail peut vite sonner comme un reproche.</p>
+              <p class="sign-cat-text">Pas de grande déclaration aujourd'hui, mais une attention aux détails qui touche plus qu'on ne le croit.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:82;"><div class="cat-gauge-inner">82%</div></div>
-              <p class="sign-cat-text">Ton œil pour le détail évite une erreur à quelqu'un, remarqué même sans un mot de plus. Choisis bien à qui tu le signales et comment : une remarque juste mais mal amenée peut braquer plus qu'elle n'aide.</p>
+              <p class="sign-cat-text">Ton œil pour le détail évite une erreur à quelqu'un, remarqué même sans un mot de plus.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:65;"><div class="cat-gauge-inner">65%</div></div>
-              <p class="sign-cat-text">Une petite fatigue mentale, rien de physique. Accorde-toi une vraie pause sans culpabiliser de ne rien produire pendant ce temps-là.</p>
+              <p class="sign-cat-text">Petite fatigue mentale, accorde-toi une vraie pause.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:61;"><div class="cat-gauge-inner">61%</div></div>
-              <p class="sign-cat-text">Tendance à te juger trop sévèrement aujourd'hui. Relativise : le standard que tu t'imposes n'est pas celui que les autres attendent de toi.</p>
+              <p class="sign-cat-text">Un peu trop sévère envers toi-même.</p>
             </div>
           </div>
         </div>
+        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Range un tiroir ou un dossier qui traîne, ça libère plus que prévu.</p></div>
       </article>
       <article class="sign-card" data-sign="balance" data-element="air" data-energy="60" hidden>
         <div class="sign-card-top">
-          <span class="sign-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="7.5" x2="18" y2="7.5"/><path d="M7 13.5a5 5 0 0 0 10 0"/><line x1="4.5" y1="18.5" x2="19.5" y2="18.5"/></svg></span>
+          <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="7.5" x2="18" y2="7.5"/><path d="M7 13.5a5 5 0 0 0 10 0"/><line x1="4.5" y1="18.5" x2="19.5" y2="18.5"/></svg></span>
           <div><div class="sign-name">Balance</div><div class="sign-dates">23 septembre – 22 octobre</div></div>
           <div class="energy-gauge" style="--pct:60; margin-left:auto;"><div class="energy-gauge-inner">60%</div></div>
         </div>
-        <p class="sign-vibe">Une décision remise à plus tard depuis des semaines mérite enfin d'être tranchée aujourd'hui. Ce n'est pas grave si le choix n'est pas parfait : l'indécision te coûte plus cher qu'une décision imparfaite mais assumée.</p>
+        <p class="sign-vibe">Une décision remise à plus tard depuis des semaines mérite enfin d'être tranchée aujourd'hui.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:58;"><div class="cat-gauge-inner">58%</div></div>
-              <p class="sign-cat-text">Une question affective en suspens : mieux vaut trancher que continuer d'hésiter. Prépare-toi à ce que la réponse ne plaise pas à tout le monde : ce n'est pas ton rôle de contenter tout le monde en même temps.</p>
+              <p class="sign-cat-text">Une question affective en suspens depuis un moment mérite d'être tranchée aujourd'hui.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:55;"><div class="cat-gauge-inner">55%</div></div>
-              <p class="sign-cat-text">L'indécision coûte plus cher que le choix lui-même, quel qu'il soit. Donne-toi une deadline stricte aujourd'hui pour trancher, sinon le sujet reviendra demain identique.</p>
+              <p class="sign-cat-text">L'indécision coûte plus cher que le choix lui-même, quel qu'il soit.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:63;"><div class="cat-gauge-inner">63%</div></div>
-              <p class="sign-cat-text">Énergie correcte, ni plus ni moins. Une activité qui implique quelqu'un d'autre (marche à deux, sport en binôme) te motivera plus qu'une séance en solo aujourd'hui.</p>
+              <p class="sign-cat-text">Énergie correcte, une activité à deux te motive plus qu'une séance en solo.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:64;"><div class="cat-gauge-inner">64%</div></div>
-              <p class="sign-cat-text">Besoin d'harmonie, quitte à éviter une tension qu'il faudrait pourtant affronter. Une conversation inconfortable maintenant t'évitera un conflit plus dur plus tard.</p>
+              <p class="sign-cat-text">En recherche d'équilibre.</p>
             </div>
           </div>
         </div>
+        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Donne-toi une deadline claire aujourd'hui pour trancher, sinon le sujet reviendra demain.</p></div>
       </article>
       <article class="sign-card" data-sign="scorpion" data-element="eau" data-energy="74" hidden>
         <div class="sign-card-top">
-          <span class="sign-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 7.5v11"/><path d="M6.5 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v9"/><path d="M10.1 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v9"/><path d="M13.7 16.3l4.3 2.2"/><path d="M18 18.5l-.7-3"/><path d="M18 18.5l-2.9.8"/></svg></span>
+          <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 7.5v11"/><path d="M6.5 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v9"/><path d="M10.1 7.5c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v9"/><path d="M13.7 16.3l4.3 2.2"/><path d="M18 18.5l-.7-3"/><path d="M18 18.5l-2.9.8"/></svg></span>
           <div><div class="sign-name">Scorpion</div><div class="sign-dates">23 octobre – 21 novembre</div></div>
           <div class="energy-gauge" style="--pct:74; margin-left:auto;"><div class="energy-gauge-inner">74%</div></div>
         </div>
-        <p class="sign-vibe">Ta lucidité est plus aiguisée que d'habitude, inutile de la garder seulement pour toi aujourd'hui. Le risque, c'est de l'utiliser pour démonter quelqu'un plutôt que pour l'aider à voir plus clair — la nuance fera toute la différence.</p>
+        <p class="sign-vibe">Ta lucidité est plus aiguisée que d'habitude, inutile de la garder seulement pour toi aujourd'hui.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:70;"><div class="cat-gauge-inner">70%</div></div>
-              <p class="sign-cat-text">Une conversation en profondeur avec ton ou ta partenaire est possible, si tu oses la lancer le premier. Prépare-toi vraiment à entendre une réponse honnête, pas seulement à en donner une.</p>
+              <p class="sign-cat-text">Une conversation en profondeur avec ton ou ta partenaire est possible, si tu oses la lancer le premier.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:76;"><div class="cat-gauge-inner">76%</div></div>
-              <p class="sign-cat-text">Tu perces facilement les non-dits d'un dossier professionnel qui traîne. Garde cette lecture pour toi jusqu'à avoir une vraie preuve à présenter : une intuition juste mais mal amenée perd toute sa force.</p>
+              <p class="sign-cat-text">Tu perces facilement les non-dits d'un dossier professionnel qui traîne.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:72;"><div class="cat-gauge-inner">72%</div></div>
-              <p class="sign-cat-text">Énergie solide, bien canalisée. Un effort intense (sport, ménage de fond) t'aidera à évacuer une tension accumulée depuis quelques jours.</p>
+              <p class="sign-cat-text">Énergie solide, un effort intense t'aidera à évacuer une tension accumulée.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:78;"><div class="cat-gauge-inner">78%</div></div>
-              <p class="sign-cat-text">Une intensité qui te sert plus qu'elle ne dessert, pour une fois. Reste vigilant si un sujet sensible remonte dans une discussion : ton radar est fin aujourd'hui, mais la réponse peut vite devenir cassante si tu ne la modères pas.</p>
+              <p class="sign-cat-text">Intense, lucide.</p>
             </div>
           </div>
         </div>
+        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Garde une observation juste pour toi jusqu'à avoir une vraie preuve à l'appui.</p></div>
       </article>
       <article class="sign-card" data-sign="sagittaire" data-element="feu" data-energy="85" hidden>
         <div class="sign-card-top">
-          <span class="sign-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5.5" y1="18.5" x2="18" y2="6"/><path d="M12 6h6v6"/><line x1="9.8" y1="11.8" x2="13.5" y2="15.5"/></svg></span>
+          <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5.5" y1="18.5" x2="18" y2="6"/><path d="M12 6h6v6"/><line x1="9.8" y1="11.8" x2="13.5" y2="15.5"/></svg></span>
           <div><div class="sign-name">Sagittaire</div><div class="sign-dates">22 novembre – 21 décembre</div></div>
           <div class="energy-gauge" style="--pct:85; margin-left:auto;"><div class="energy-gauge-inner">85%</div></div>
         </div>
@@ -730,145 +745,149 @@
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:88;"><div class="cat-gauge-inner">88%</div></div>
-              <p class="sign-cat-text">Une rencontre ou un geste inattendu peut relancer une relation qui s'essoufflait doucement. Ne promets rien de définitif sur un coup de tête : l'enthousiasme du moment n'a pas toujours la même valeur le lendemain.</p>
+              <p class="sign-cat-text">Une rencontre ou un geste inattendu peut relancer une relation qui s'essoufflait doucement.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:80;"><div class="cat-gauge-inner">80%</div></div>
-              <p class="sign-cat-text">Dis oui à une opportunité qui sort du cadre habituel, même si elle te fait un peu peur. Vérifie les détails pratiques (délais, budget) avant de t'engager complètement, pas seulement l'idée générale qui t'emballe.</p>
+              <p class="sign-cat-text">Dis oui à une opportunité qui sort du cadre habituel, même si elle te fait un peu peur.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:86;"><div class="cat-gauge-inner">86%</div></div>
-              <p class="sign-cat-text">Énergie débordante : canalise-la plutôt que de la disperser sur dix choses à la fois. Choisis une seule activité physique aujourd'hui et vas-y à fond, plutôt que de papillonner entre plusieurs sans en terminer une.</p>
+              <p class="sign-cat-text">Énergie débordante : choisis une seule activité et vas-y à fond.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:86;"><div class="cat-gauge-inner">86%</div></div>
-              <p class="sign-cat-text">Un optimisme qui donne envie aux autres de te suivre. Reste à l'écoute de ceux qui ont besoin de plus de temps pour se décider : tout le monde n'avance pas à ton rythme.</p>
+              <p class="sign-cat-text">Optimiste, en mouvement.</p>
             </div>
           </div>
         </div>
+        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Vérifie une date ou un horaire avant de t'engager sur un coup de tête.</p></div>
       </article>
       <article class="sign-card" data-sign="capricorne" data-element="terre" data-energy="55" hidden>
         <div class="sign-card-top">
-          <span class="sign-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 8c0-1.4 1-2.5 2.2-2.5S11 6.3 10 8.7c-2.3 4.7-1 9.3 2 9.3"/><path d="M13.3 14.3c1.2-2 3.4-2 4.4.1c1 2.2-1.1 4.3-3.4 3.4"/></svg></span>
+          <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 8c0-1.4 1-2.5 2.2-2.5S11 6.3 10 8.7c-2.3 4.7-1 9.3 2 9.3"/><path d="M13.3 14.3c1.2-2 3.4-2 4.4.1c1 2.2-1.1 4.3-3.4 3.4"/></svg></span>
           <div><div class="sign-name">Capricorne</div><div class="sign-dates">22 décembre – 19 janvier</div></div>
           <div class="energy-gauge" style="--pct:55; margin-left:auto;"><div class="energy-gauge-inner">55%</div></div>
         </div>
-        <p class="sign-vibe">L'énergie est plus basse aujourd'hui, un signal pour ralentir sur un projet de fond, pas pour l'abandonner. Le vrai risque, c'est de te punir mentalement pour ce ralentissement au lieu de simplement l'accepter comme un passage normal.</p>
+        <p class="sign-vibe">L'énergie est plus basse aujourd'hui, un signal pour ralentir sur un projet de fond, pas pour l'abandonner.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:50;"><div class="cat-gauge-inner">50%</div></div>
-              <p class="sign-cat-text">Rien de spectaculaire, mais une présence stable qui compte plus que les mots. Si tu attends une preuve d'amour visible aujourd'hui, tu risques de la chercher au mauvais endroit : elle est déjà là, juste discrète.</p>
+              <p class="sign-cat-text">Rien de spectaculaire, mais une présence stable qui compte plus que les mots aujourd'hui.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:62;"><div class="cat-gauge-inner">62%</div></div>
-              <p class="sign-cat-text">Avance pas à pas, sans attendre un résultat immédiat qui ne viendra pas aujourd'hui. Note ce que tu as accompli en fin de journée, même petit : tu as tendance à ne retenir que ce qui reste à faire.</p>
+              <p class="sign-cat-text">Avance pas à pas sur un dossier de fond, sans attendre un résultat immédiat.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:52;"><div class="cat-gauge-inner">52%</div></div>
-              <p class="sign-cat-text">Fatigue à prendre au sérieux. Ralentis plutôt que de forcer, et évite de repousser une pause déjeuner sous prétexte que le travail attend : il attendra de toute façon un peu plus.</p>
+              <p class="sign-cat-text">Fatigue à prendre au sérieux aujourd'hui — ralentir n'est pas un échec.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:56;"><div class="cat-gauge-inner">56%</div></div>
-              <p class="sign-cat-text">Un sérieux qu'on prend parfois pour de la froideur, à tort. Un petit mot pour préciser ce que tu ressens évitera un malentendu avec quelqu'un qui t'interprète mal aujourd'hui.</p>
+              <p class="sign-cat-text">Sérieux, réservé.</p>
             </div>
           </div>
         </div>
+        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Note ce que tu as accompli ce soir, même petit : tu as tendance à l'oublier.</p></div>
       </article>
       <article class="sign-card" data-sign="verseau" data-element="air" data-energy="69" hidden>
         <div class="sign-card-top">
-          <span class="sign-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 9c2.2-2 4.3-2 6.5 0s4.3 2 6.5 0s4.3-2 6.5 0"/><path d="M3.5 15.5c2.2-2 4.3-2 6.5 0s4.3 2 6.5 0s4.3-2 6.5 0"/></svg></span>
+          <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 9c2.2-2 4.3-2 6.5 0s4.3 2 6.5 0s4.3-2 6.5 0"/><path d="M3.5 15.5c2.2-2 4.3-2 6.5 0s4.3 2 6.5 0s4.3-2 6.5 0"/></svg></span>
           <div><div class="sign-name">Verseau</div><div class="sign-dates">20 janvier – 18 février</div></div>
           <div class="energy-gauge" style="--pct:69; margin-left:auto;"><div class="energy-gauge-inner">69%</div></div>
         </div>
-        <p class="sign-vibe">Ta différence surprend d'abord, puis finit par convaincre ceux qui t'écoutent jusqu'au bout. Le piège, c'est de te braquer trop vite si la première réaction est froide — laisse à ton idée le temps de faire son chemin avant de la retirer.</p>
+        <p class="sign-vibe">Ta différence surprend d'abord, puis finit par convaincre ceux qui t'écoutent jusqu'au bout.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:65;"><div class="cat-gauge-inner">65%</div></div>
-              <p class="sign-cat-text">Une idée un peu décalée sur le couple ou l'amitié mérite d'être partagée, même si elle détonne. Accepte que l'autre ait besoin de temps pour digérer, ce n'est pas un rejet.</p>
+              <p class="sign-cat-text">Une idée un peu décalée sur le couple ou l'amitié mérite d'être partagée aujourd'hui.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:74;"><div class="cat-gauge-inner">74%</div></div>
-              <p class="sign-cat-text">Ton regard de côté débloque une situation où tout le monde d'autre tourne en rond depuis des jours. Formule ta proposition simplement : une bonne idée mal expliquée perd tout son impact.</p>
+              <p class="sign-cat-text">Ton regard de côté débloque une situation où tout le monde tourne en rond depuis des jours.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:66;"><div class="cat-gauge-inner">66%</div></div>
-              <p class="sign-cat-text">Énergie portée par la tête plus que par le corps aujourd'hui. Un peu d'air frais entre deux tâches te fera plus de bien qu'un café de plus.</p>
+              <p class="sign-cat-text">Énergie portée par la tête plus que par le corps — une vraie pause te fera du bien.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:71;"><div class="cat-gauge-inner">71%</div></div>
-              <p class="sign-cat-text">Une indépendance d'esprit qui fait du bien, à toi comme aux autres. Attention à ne pas t'isoler complètement sous couvert d'autonomie : un mot à quelqu'un aujourd'hui ne coûte rien.</p>
+              <p class="sign-cat-text">Indépendant, original.</p>
             </div>
           </div>
         </div>
+        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Formule ton idée simplement : une bonne idée mal expliquée perd tout son impact.</p></div>
       </article>
       <article class="sign-card" data-sign="poissons" data-element="eau" data-energy="62" hidden>
         <div class="sign-card-top">
-          <span class="sign-glyph"><svg class="" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.2 4c-3.2 3.2-3.2 12.8 0 16"/><path d="M15.8 4c3.2 3.2 3.2 12.8 0 16"/><line x1="6" y1="12" x2="18" y2="12"/></svg></span>
+          <span class="sign-glyph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.2 4c-3.2 3.2-3.2 12.8 0 16"/><path d="M15.8 4c3.2 3.2 3.2 12.8 0 16"/><line x1="6" y1="12" x2="18" y2="12"/></svg></span>
           <div><div class="sign-name">Poissons</div><div class="sign-dates">19 février – 20 mars</div></div>
           <div class="energy-gauge" style="--pct:62; margin-left:auto;"><div class="energy-gauge-inner">62%</div></div>
         </div>
-        <p class="sign-vibe">Ton instinct te souffle quelque chose depuis un moment. Pour une fois, écoute-le avant de trop réfléchir — mais garde un minimum de recul avant d'agir uniquement sur cette impression : un fait vérifié vaut mieux qu'une intuition seule pour une décision importante.</p>
+        <p class="sign-vibe">Ton instinct te souffle quelque chose depuis un moment. Pour une fois, écoute-le avant de trop réfléchir.</p>
         <div class="sign-categories">
           <div class="sign-cat">
             <span class="sign-cat-label">Amour</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:68;"><div class="cat-gauge-inner">68%</div></div>
-              <p class="sign-cat-text">Tu perçois chez l'autre ce qu'il n'a pas encore dit, fais confiance à ce que tu ressens. Vérifie quand même par une vraie question avant d'agir sur ce que tu crois avoir compris : l'intuition n'est pas toujours exacte.</p>
+              <p class="sign-cat-text">Tu perçois chez l'autre ce qu'il n'a pas encore dit — fais confiance à ce que tu ressens.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Argent & travail</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:48;"><div class="cat-gauge-inner">48%</div></div>
-              <p class="sign-cat-text">Peu d'énergie pour un rapport de force aujourd'hui : observe plutôt que d'agir dans la précipitation. Si une décision doit vraiment être prise, demande un jour de délai plutôt que de trancher sous pression.</p>
+              <p class="sign-cat-text">Peu d'énergie pour un rapport de force aujourd'hui : observe plutôt que d'agir dans la précipitation.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Santé</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:60;"><div class="cat-gauge-inner">60%</div></div>
-              <p class="sign-cat-text">Le repos te fera plus de bien qu'une nouvelle activité. Ne culpabilise pas de dire non à une sollicitation aujourd'hui, ton corps te le demande clairement.</p>
+              <p class="sign-cat-text">Le repos te fera plus de bien qu'une nouvelle activité.</p>
             </div>
           </div>
           <div class="sign-cat">
             <span class="sign-cat-label">Humeur</span>
             <div class="sign-cat-body">
               <div class="cat-gauge" style="--pct:72;"><div class="cat-gauge-inner">72%</div></div>
-              <p class="sign-cat-text">Douceur et intuition, pour une journée plutôt tournée vers l'intérieur. Si une émotion forte remonte, note-la plutôt que de la garder pour toi indéfiniment : elle a besoin de sortir d'une façon ou d'une autre.</p>
+              <p class="sign-cat-text">Doux, intuitif.</p>
             </div>
           </div>
         </div>
+        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Note une émotion forte plutôt que de la garder pour toi indéfiniment.</p></div>
       </article>
     </div>
   </section>
@@ -1099,12 +1118,14 @@
         text: cat.querySelector(".sign-cat-text").textContent
       });
     });
+    var conseilEl = card.querySelector(".sign-conseil-text");
     return {
       name: card.querySelector(".sign-name").textContent,
       element: card.getAttribute("data-element"),
       energy: card.getAttribute("data-energy"),
       vibe: card.querySelector(".sign-vibe").textContent,
-      categories: categories
+      categories: categories,
+      conseil: conseilEl ? conseilEl.textContent : ""
     };
   }
 
@@ -1185,6 +1206,7 @@
           '<p style="margin:0; font-size:0.9rem;">' + vibePreview + '</p>' +
         '</div>' +
         '<div class="family-chart">' + chartHtml + '</div>' +
+        (sunData.conseil ? '<div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">' + sunData.conseil + '</p></div>' : '') +
         '<button type="button" class="family-detail-toggle">Voir le détail par domaine <span class="family-detail-chevron">▾</span></button>' +
         '<div class="family-detail-body"><div class="family-detail-inner">' +
           '<div class="sign-categories family-card-categories">' + catsHtml + '</div>' +
@@ -1229,6 +1251,10 @@
         sunData.categories.forEach(function(c){
           lines.push(c.label + " (" + c.score + ") : " + c.text);
         });
+        if (sunData.conseil){
+          lines.push("");
+          lines.push("Conseil : " + sunData.conseil);
+        }
         var text = lines.join("\n");
 
         function showCopied(){
