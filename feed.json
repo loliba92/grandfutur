@@ -1,0 +1,19 @@
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "Grand Futur — L'horoscope du jour",
+  "home_page_url": "https://loliba92.github.io/grandfutur/",
+  "feed_url": "https://loliba92.github.io/grandfutur/feed.json",
+  "description": "Chaque matin, l'énergie du jour pour les 12 signes, et le trio le plus favorable.",
+  "language": "fr",
+  "items": [
+    {
+      "id": "grandfutur-2026-09-07",
+      "title": "Une journée pour avancer pas à pas, sans forcer le rythme",
+      "url": "https://loliba92.github.io/grandfutur/archives/2026-09-07.html",
+      "content_text": "Pas de grand bouleversement aujourd'hui : le ciel invite à consolider plutôt qu'à tout relancer. Le trio du jour : Sagittaire 85%, Lion 82%, Bélier 78%.",
+      "image": "https://loliba92.github.io/grandfutur/assets/topic-images/2026-09-07.jpg",
+      "date_published": "2026-09-07T07:00:00+02:00",
+      "tags": ["sagittaire", "lion", "belier"]
+    }
+  ]
+}

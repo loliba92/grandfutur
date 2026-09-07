@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://loliba92.github.io/grandfutur/sitemap.xml

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Grand Futur</title>
+<link rel="canonical" href="https://loliba92.github.io/grandfutur/contact.html">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<meta name="description" content="Une question, une remarque sur Grand Futur ? Écrivez-nous.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #0d0f1e; --surface: #161933; --surface-2: #1e2242; --hairline: #2b2f57;
+    --paper: #eae7f5; --paper-dim: #a9a7c4; --gold: #e0b168; --terre: #6b9c6e;
+  }
+  *,*::before,*::after{ box-sizing: border-box; }
+  body{ margin:0; background: var(--ink); color: var(--paper); font-family:"Inter",system-ui,sans-serif; line-height:1.6; }
+  a{ color: var(--gold); }
+  .wrap{ max-width: 640px; margin: 0 auto; padding: 0 24px; }
+  header.masthead{ border-bottom: 1px solid var(--hairline); padding: 26px 0 20px; }
+  .masthead-row{ max-width:960px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .wordmark{ font-family:"Fraunces",serif; font-weight:600; font-size:1.5rem; display:flex; align-items:center; gap:10px; text-decoration:none; color: var(--paper); }
+  .wordmark img{ width:28px; height:28px; }
+  .wordmark b{ color: var(--gold); font-weight:700; }
+  nav.masthead-nav{ display:flex; gap:20px; flex-wrap:wrap; font-size:0.9rem; }
+  nav.masthead-nav a{ text-decoration:none; color: var(--paper-dim); }
+  nav.masthead-nav a:hover{ color: var(--gold); }
+  h1{ font-family:"Fraunces",serif; font-weight:600; font-size:2rem; margin: 44px 0 12px; }
+  p.intro{ color: var(--paper-dim); margin-bottom: 28px; }
+  .form-row{ margin-bottom: 18px; display:flex; flex-direction:column; gap:6px; }
+  label{ font-size:0.85rem; color: var(--paper-dim); }
+  input, textarea{
+    background: var(--surface); border:1px solid var(--hairline); border-radius:6px; color: var(--paper);
+    padding:10px 12px; font-family:"Inter",sans-serif; font-size:0.95rem;
+  }
+  textarea{ min-height:130px; resize:vertical; }
+  .submit-btn{
+    background: var(--gold); color: var(--ink); border:none; border-radius:6px; padding:12px 22px;
+    font-weight:600; cursor:pointer; font-size:0.95rem;
+  }
+  .form-hint{ font-size:0.78rem; color: var(--paper-dim); margin-top:12px; }
+  .hp{ position:absolute; left:-9999px; }
+  .form-sent{ display:none; color: var(--terre); font-weight:600; margin-bottom:18px; }
+  footer{ border-top:1px solid var(--hairline); margin-top:60px; padding:30px 0 50px; font-size:0.85rem; color: var(--paper-dim); }
+  footer .wrap{ max-width:960px; }
+  footer nav{ display:flex; gap:18px; flex-wrap:wrap; }
+  footer nav a{ text-decoration:none; color: var(--paper-dim); }
+  footer nav a:hover{ color: var(--gold); }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-row">
+    <a class="wordmark" href="index.html"><img src="assets/logo.svg" alt=""> Grand<b>Futur</b></a>
+    <nav class="masthead-nav">
+      <a href="index.html">Accueil</a>
+      <a href="archives.html">Archives</a>
+      <a href="le-projet.html">Le projet</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Contact</h1>
+  <p class="intro">Une question, une remarque, un problème sur le site ? Écrivez-nous ci-dessous — chaque message est lu.</p>
+
+  <p class="form-sent" id="form-sent">Merci, votre message est bien parti. ✓</p>
+
+  <!-- ⚠️ Remplacer "VOTRE-EMAIL@exemple.com" par la vraie adresse de destination avant mise en ligne.
+       FormSubmit enverra un email de confirmation à cette adresse au tout premier message reçu — cliquer
+       sur ce lien de confirmation active le formulaire. Une fois activé, une adresse "alias" (chaîne
+       anonyme) pourra remplacer l'email en clair dans ce code, comme sur Scénario. -->
+  <form class="contact-form" action="https://formsubmit.co/VOTRE-EMAIL@exemple.com" method="POST">
+    <input type="hidden" name="_subject" value="Nouveau message via Grand Futur">
+    <input type="hidden" name="_next" value="https://loliba92.github.io/grandfutur/contact.html?envoye=1">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <div class="form-row">
+      <label for="nom">Votre nom (facultatif)</label>
+      <input id="nom" type="text" name="nom" placeholder="Comment vous appeler ?">
+    </div>
+    <div class="form-row">
+      <label for="email">Votre email</label>
+      <input id="email" type="email" name="email" required placeholder="Pour pouvoir vous répondre">
+    </div>
+    <div class="form-row">
+      <label for="message">Votre message</label>
+      <textarea id="message" name="message" required placeholder="Une question, une remarque…"></textarea>
+    </div>
+    <button class="submit-btn" type="submit">Envoyer</button>
+    <p class="form-hint">Vos coordonnées ne servent qu'à vous répondre, jamais à autre chose.</p>
+  </form>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="le-projet.html">Le projet</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-de-confidentialite.html">Confidentialité</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+  <script data-goatcounter="https://grandfutur.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</footer>
+
+<script>
+(function(){
+  var form = document.querySelector('.contact-form');
+  var sent = document.getElementById('form-sent');
+
+  if (new URLSearchParams(location.search).get('envoye') === '1' && sent) {
+    sent.style.display = 'block';
+  }
+
+  if (!form || !window.fetch) return;
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('.submit-btn');
+    var data = {};
+    new FormData(form).forEach(function(value, key){ data[key] = value; });
+    if (btn) { btn.disabled = true; btn.textContent = 'Envoi…'; }
+
+    fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(function(r){ if (!r.ok) throw new Error('http'); return r.json(); })
+    .then(function(){
+      form.reset();
+      if (sent) { sent.style.display = 'block'; sent.scrollIntoView({ behavior:'smooth', block:'center' }); }
+    })
+    .catch(function(){
+      if (sent) {
+        sent.style.color = '#d9784c';
+        sent.textContent = "Une erreur est survenue — réessayez, ou écrivez directement par email.";
+        sent.style.display = 'block';
+      }
+    })
+    .finally(function(){ if (btn) { btn.disabled = false; btn.textContent = 'Envoyer'; } });
+  });
+})();
+</script>
+
+</body>
+</html>
