@@ -25,17 +25,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink: #0d0f1e;
-    --surface: #161933;
-    --surface-2: #1e2242;
-    --hairline: #2b2f57;
-    --paper: #eae7f5;
-    --paper-dim: #a9a7c4;
-    --gold: #e0b168;
-    --feu: #d9784c;
-    --terre: #6b9c6e;
-    --air: #6a8fc7;
-    --eau: #9070c9;
+    --bg: #f3ead9;
+    --ink: #2b2318;
+    --surface: #fbf6ea;
+    --surface-2: #f1e6cf;
+    --hairline: #ddcba3;
+    --paper-dim: #6e6250;
+    --gold: #b8863f;
+    --feu: #b5573c;
+    --terre: #4f8563;
+    --air: #4f708f;
+    --eau: #6f5f96;
   }
 
   *,*::before,*::after{ box-sizing: border-box; }
@@ -43,8 +43,8 @@
 
   body{
     margin:0;
-    background: var(--ink);
-    color: var(--paper);
+    background: var(--bg);
+    color: var(--ink);
     font-family: "Inter", system-ui, sans-serif;
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
@@ -69,20 +69,48 @@
   /* ---------- Ad slot ---------- */
   .ad-slot{ max-width:960px; margin:20px auto 0; padding:0 24px; }
   .ad-slot-inner{
-    border:1px dashed var(--hairline); border-radius:8px; padding:14px;
+    border:1px dashed var(--hairline); border-radius:8px; padding:14px; background: var(--surface);
     text-align:center; font-family:"JetBrains Mono",monospace; font-size:0.7rem;
     letter-spacing:0.06em; text-transform:uppercase; color: var(--paper-dim);
   }
 
-  /* ---------- Hero ---------- */
-  .hero{ padding: 40px 0 8px; }
-  .eyebrow{ font-family:"JetBrains Mono",monospace; font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase; color: var(--gold); margin-bottom:14px; }
-  .hero h1{ font-family:"Fraunces",serif; font-weight:600; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height:1.15; margin:0 0 18px; }
-  .dek{ color: var(--paper-dim); font-size:1.05rem; margin: 0 0 16px; }
-  .hero-image{ width:100%; border-radius:12px; overflow:hidden; margin: 20px 0 6px; border:1px solid var(--hairline); }
-  .hero-image img{ width:100%; display:block; aspect-ratio: 16/9; object-fit:cover; }
+  /* ---------- Hero image "couverture" (traitement repris de Scénario :
+     photo plein écran, dégradé sombre, titre incrusté en bas) ---------- */
+  .hero{ padding: 0 0 8px; }
+  .article-image{ margin: 0 0 10px; }
+  .article-image-photo-wrap{
+    position: relative; overflow:hidden;
+    width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
+    height: min(60vh, 560px); min-height: 320px;
+  }
+  .article-image-photo{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+  .article-image-scrim{
+    position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(16,21,28,.8) 0%, rgba(16,21,28,.14) 26%, rgba(16,21,28,.05) 42%, rgba(16,21,28,.5) 60%, rgba(16,21,28,.88) 80%, rgba(16,21,28,1) 100%);
+  }
+  .article-image-masthead{ position:absolute; top:18px; left:24px; display:flex; align-items:center; gap:7px; z-index:2; }
+  .article-image-logo{ width:30px; height:30px; display:block; }
+  .article-image-wordmark{ font-family:"Fraunces",serif; font-weight:600; font-size: clamp(1.1rem, 2.3vw, 1.4rem); color: #f6efdd; }
+  .article-image-wordmark b{ color: var(--gold); font-weight:700; }
+  .article-image-overlay{ position:absolute; left:0; right:0; bottom:0; z-index:2; padding-bottom:28px; }
+  .eyebrow{
+    display:inline-flex; align-items:center; font-family:"JetBrains Mono",monospace; font-size:0.75rem;
+    letter-spacing:0.08em; text-transform:uppercase; color: var(--gold);
+    background: rgba(16,21,28,.55); backdrop-filter: blur(7px) saturate(140%); -webkit-backdrop-filter: blur(7px) saturate(140%);
+    border-left:3px solid var(--gold); border-radius:4px; padding:6px 14px; margin-bottom:14px;
+  }
+  .article-image-overlay h1{
+    font-family:"Fraunces",serif; font-weight:600; font-size: clamp(1.6rem, 3.6vw, 2.4rem); line-height:1.18;
+    margin:0 0 8px; max-width: 22ch; color: #f6efdd; text-shadow: 0 3px 22px rgba(0,0,0,.6);
+  }
+  .article-image-overlay .pubdate{ margin:0; color: rgba(236,231,218,.78); text-shadow: 0 2px 12px rgba(0,0,0,.55); font-size:0.85rem; }
+  .dek{ color: var(--paper-dim); font-size:1.05rem; margin: 20px 0 16px; }
   .image-credit{ font-size:0.75rem; color: var(--paper-dim); margin: 0 0 30px; }
   .image-credit a{ color: var(--paper-dim); }
+  @media (max-width: 720px){
+    .article-image-photo-wrap{ height: min(48vh, 420px); min-height: 280px; }
+    .article-image-overlay h1{ max-width:none; }
+  }
 
   /* ---------- Section heads ---------- */
   .section-head{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin: 44px 0 18px; flex-wrap:wrap; }
@@ -98,18 +126,18 @@
   }
   .profile-chip.is-active{ border-color: var(--gold); }
   .profile-chip button{ background:none; border:none; color: var(--paper-dim); cursor:pointer; font-size:0.9rem; line-height:1; padding:4px 6px; border-radius:50%; }
-  .profile-chip button:hover{ color: var(--paper); background: var(--hairline); }
+  .profile-chip button:hover{ color: var(--ink); background: var(--hairline); }
   .add-profile-btn{
     font-family:"JetBrains Mono",monospace; font-size:0.8rem; background:none; color: var(--gold);
     border:1px dashed var(--gold); border-radius:999px; padding:8px 16px; cursor:pointer;
   }
-  .add-profile-btn:hover{ background: rgba(224,177,104,0.1); }
+  .add-profile-btn:hover{ background: rgba(184,134,63,0.12); }
 
   .profile-form{ display:none; gap:12px; flex-wrap:wrap; align-items:end; margin-top:16px; padding-top:16px; border-top:1px solid var(--hairline); }
   .profile-form.is-open{ display:flex; }
   .profile-form label{ display:flex; flex-direction:column; gap:6px; font-size:0.8rem; color: var(--paper-dim); }
   .profile-form input{
-    background: var(--surface-2); border:1px solid var(--hairline); border-radius:6px; color: var(--paper);
+    background: var(--surface-2); border:1px solid var(--hairline); border-radius:6px; color: var(--ink);
     padding:8px 10px; font-family:"Inter",sans-serif; font-size:0.9rem;
   }
   .profile-form button[type=submit]{
@@ -136,7 +164,17 @@
   .signs-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap:16px; }
   .sign-card{ background: var(--surface); border:1px solid var(--hairline); border-radius:12px; padding:20px; scroll-margin-top: 90px; transition: border-color 0.3s, background 0.3s; }
   .sign-card.is-highlighted{ border-color: var(--gold); background: var(--surface-2); }
-  .sign-card-top{ display:flex; align-items:center; gap:14px; margin-bottom:12px; }
+  /* Accordéon en CSS pur (grid-template-rows 0fr -> 1fr), sans dépendance JS
+     pour l'animation — seul le basculement de la classe is-open est fait en JS. */
+  .sign-card-top{
+    display:flex; align-items:center; gap:14px; width:100%;
+    background:none; border:none; padding:0; margin:0; cursor:pointer; text-align:left; font:inherit; color:inherit;
+  }
+  .sign-chevron{ color: var(--paper-dim); font-size:0.9rem; transition: transform 0.25s ease; flex-shrink:0; }
+  .sign-card.is-open .sign-chevron{ transform: rotate(180deg); color: var(--gold); }
+  .sign-card-body{ display:grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; }
+  .sign-card-body-inner{ overflow:hidden; }
+  .sign-card.is-open .sign-card-body{ grid-template-rows: 1fr; margin-top:14px; }
   .sign-glyph{ font-size:1.8rem; width:44px; height:44px; border-radius:50%; display:grid; place-items:center; background: var(--surface-2); flex-shrink:0; }
   .sign-card[data-element="feu"] .sign-glyph{ color: var(--feu); }
   .sign-card[data-element="terre"] .sign-glyph{ color: var(--terre); }
@@ -199,19 +237,8 @@
 
 <main class="wrap">
 
-  <section class="hero">
-    <p class="eyebrow">Édition du 7 septembre 2026</p>
-    <h1>Une journée pour avancer pas à pas, sans forcer le rythme</h1>
-    <p class="dek">Pas de grand bouleversement aujourd'hui : le ciel invite plutôt à consolider ce qui est déjà en mouvement qu'à en lancer de nouveaux chantiers. Les signes de feu gardent une longueur d'avance côté énergie, pendant que les signes d'eau profitent d'un climat plus intérieur, propice à l'écoute.</p>
-    <p class="dek">C'est le genre de journée qui récompense la régularité plutôt que les coups d'éclat — un bon jour pour terminer quelque chose plutôt que pour en commencer une autre.</p>
-    <div class="hero-image">
-      <img src="assets/topic-images/2026-09-07-wide.jpg" alt="Ciel étoilé traversé par la Voie lactée, teintes violettes.">
-    </div>
-    <p class="image-credit">Photo : <a href="https://www.pexels.com/photo/spectacular-view-of-the-milky-way-galaxy-at-night-33630927/" target="_blank" rel="noopener">Stevan Cetojevic</a> / Pexels</p>
-  </section>
-
   <section id="famille">
-    <div class="section-head">
+    <div class="section-head" style="margin-top:28px;">
       <h2>Vos proches</h2>
       <span class="section-note">Enregistrés uniquement sur cet appareil</span>
     </div>
@@ -239,6 +266,27 @@
     </div>
   </section>
 
+  <section class="hero">
+    <figure class="article-image">
+      <div class="article-image-photo-wrap">
+        <img class="article-image-photo" src="assets/topic-images/2026-09-07-wide.jpg" alt="Ciel étoilé traversé par la Voie lactée, teintes violettes.">
+        <div class="article-image-scrim"></div>
+        <div class="article-image-masthead">
+          <img class="article-image-logo" src="assets/logo.svg" alt="">
+          <span class="article-image-wordmark">Grand<b>Futur</b></span>
+        </div>
+        <div class="article-image-overlay wrap">
+          <p class="eyebrow">Édition du 7 septembre 2026</p>
+          <h1>Une journée pour avancer pas à pas, sans forcer le rythme</h1>
+          <p class="pubdate">Publié le 7 septembre 2026</p>
+        </div>
+      </div>
+    </figure>
+    <p class="image-credit">Photo : <a href="https://www.pexels.com/photo/spectacular-view-of-the-milky-way-galaxy-at-night-33630927/" target="_blank" rel="noopener">Stevan Cetojevic</a> / Pexels</p>
+    <p class="dek">La Lune traverse aujourd'hui le signe de la Vierge : concrètement, c'est une journée où les détails pèsent plus que les grandes déclarations — vérifier deux fois avant d'envoyer, reprendre un dossier en suspens plutôt qu'en ouvrir un nouveau.</p>
+    <p class="dek">Mars, toujours en Lion jusqu'à la fin du mois, continue de pousser les signes de feu (Bélier, Lion, Sagittaire) — d'où leur trio en tête du classement ci-dessous. Les signes d'eau (Cancer, Scorpion, Poissons) ont moins de puissance brute aujourd'hui, mais plus de justesse dans ce qu'ils perçoivent chez les autres.</p>
+  </section>
+
   <section id="signes">
     <div class="section-head">
       <h2>Les 12 signes aujourd'hui</h2>
@@ -246,159 +294,195 @@
     <div class="signs-grid">
 
       <article class="sign-card" data-sign="belier" data-element="feu" data-energy="78">
-        <div class="sign-card-top">
+        <button type="button" class="sign-card-top">
           <span class="sign-glyph">♈</span>
           <div><div class="sign-name">Bélier</div><div class="sign-dates">21 mars – 19 avril</div></div>
           <div class="energy-gauge" style="--pct:78; margin-left:auto;"><div class="energy-gauge-inner">78%</div></div>
-        </div>
-        <p class="sign-vibe">Le bon jour pour foncer sur une idée qui traîne depuis trop longtemps.</p>
+          <span class="sign-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="sign-card-body"><div class="sign-card-body-inner">
+        <p class="sign-vibe">Le bon jour pour foncer sur une idée qui traîne depuis trop longtemps. Ton impatience habituelle devient un vrai moteur aujourd'hui, à condition de viser une seule cible à la fois.</p>
         <div class="sign-meta">
-          <div><span class="label">Atout</span>Ton énergie de départ — utilise-la avant qu'elle ne retombe.</div>
-          <div><span class="label">À éviter</span>Trancher une dispute à chaud, laisse la pression retomber d'abord.</div>
+          <div><span class="label">Atout</span>Ton énergie de départ — utilise-la maintenant, avant qu'elle ne retombe en fin de journée.</div>
+          <div><span class="label">À éviter</span>Trancher une dispute à chaud : laisse la pression retomber avant de répondre, tu le regretterais sinon.</div>
         </div>
+        </div></div>
       </article>
 
       <article class="sign-card" data-sign="taureau" data-element="terre" data-energy="64">
-        <div class="sign-card-top">
+        <button type="button" class="sign-card-top">
           <span class="sign-glyph">♉</span>
           <div><div class="sign-name">Taureau</div><div class="sign-dates">20 avril – 20 mai</div></div>
           <div class="energy-gauge" style="--pct:64; margin-left:auto;"><div class="energy-gauge-inner">64%</div></div>
-        </div>
-        <p class="sign-vibe">Une journée pour consolider ce qui existe déjà plutôt que tout changer.</p>
+          <span class="sign-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="sign-card-body"><div class="sign-card-body-inner">
+        <p class="sign-vibe">Une journée pour consolider ce qui existe déjà plutôt que tout changer. Le calme apparent cache un vrai travail de fond, qui paiera dans la durée plus que dans l'instant.</p>
         <div class="sign-meta">
-          <div><span class="label">Atout</span>Ta patience — elle paie plus que d'habitude aujourd'hui.</div>
-          <div><span class="label">À éviter</span>Un achat impulsif qui ne te ressemble pas.</div>
+          <div><span class="label">Atout</span>Ta patience — elle rapporte plus que d'habitude aujourd'hui, même si les résultats ne sont pas immédiats.</div>
+          <div><span class="label">À éviter</span>Un achat impulsif qui ne te ressemble pas : le besoin de confort ne doit pas remplacer la réflexion.</div>
         </div>
+        </div></div>
       </article>
 
       <article class="sign-card" data-sign="gemeaux" data-element="air" data-energy="71">
-        <div class="sign-card-top">
+        <button type="button" class="sign-card-top">
           <span class="sign-glyph">♊</span>
           <div><div class="sign-name">Gémeaux</div><div class="sign-dates">21 mai – 20 juin</div></div>
           <div class="energy-gauge" style="--pct:71; margin-left:auto;"><div class="energy-gauge-inner">71%</div></div>
-        </div>
-        <p class="sign-vibe">Le bon jour pour reprendre contact avec quelqu'un que tu as un peu délaissé.</p>
+          <span class="sign-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="sign-card-body"><div class="sign-card-body-inner">
+        <p class="sign-vibe">Le bon jour pour reprendre contact avec quelqu'un que tu as un peu délaissé. Les mots te viennent facilement, profites-en pour clarifier ce qui restait flou entre vous.</p>
         <div class="sign-meta">
-          <div><span class="label">Atout</span>Ta facilité à mettre des mots sur ce que les autres n'arrivent pas à dire.</div>
-          <div><span class="label">À éviter</span>Trop de fronts ouverts en même temps — choisis-en un.</div>
+          <div><span class="label">Atout</span>Ta facilité à mettre des mots sur ce que les autres n'arrivent pas à dire — un vrai service rendu autour de toi.</div>
+          <div><span class="label">À éviter</span>Trop de fronts ouverts en même temps : choisis une conversation à mener à son terme plutôt que dix entamées.</div>
         </div>
+        </div></div>
       </article>
 
       <article class="sign-card" data-sign="cancer" data-element="eau" data-energy="58">
-        <div class="sign-card-top">
+        <button type="button" class="sign-card-top">
           <span class="sign-glyph">♋</span>
           <div><div class="sign-name">Cancer</div><div class="sign-dates">21 juin – 22 juillet</div></div>
           <div class="energy-gauge" style="--pct:58; margin-left:auto;"><div class="energy-gauge-inner">58%</div></div>
-        </div>
-        <p class="sign-vibe">Une journée pour prendre soin de ton cercle proche, pas des inconnus.</p>
+          <span class="sign-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="sign-card-body"><div class="sign-card-body-inner">
+        <p class="sign-vibe">Une journée pour prendre soin de ton cercle proche plutôt que de courir après des inconnus. L'énergie est plus basse que d'habitude — pas besoin de tout donner aujourd'hui.</p>
         <div class="sign-meta">
-          <div><span class="label">Atout</span>Ton intuition sur ce dont un proche a besoin, sans qu'il le dise.</div>
-          <div><span class="label">À éviter</span>Ressasser une remarque qui n'était probablement pas si grave.</div>
+          <div><span class="label">Atout</span>Ton intuition sur ce dont un proche a besoin, souvent avant qu'il ne le dise lui-même.</div>
+          <div><span class="label">À éviter</span>Ressasser une remarque qui n'était probablement pas si grave — reviens-y demain si ça compte vraiment.</div>
         </div>
+        </div></div>
       </article>
 
       <article class="sign-card" data-sign="lion" data-element="feu" data-energy="82">
-        <div class="sign-card-top">
+        <button type="button" class="sign-card-top">
           <span class="sign-glyph">♌</span>
           <div><div class="sign-name">Lion</div><div class="sign-dates">23 juillet – 22 août</div></div>
           <div class="energy-gauge" style="--pct:82; margin-left:auto;"><div class="energy-gauge-inner">82%</div></div>
-        </div>
-        <p class="sign-vibe">Le bon jour pour te montrer, sans avoir besoin qu'on te le demande.</p>
+          <span class="sign-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="sign-card-body"><div class="sign-card-body-inner">
+        <p class="sign-vibe">Le bon jour pour te montrer, sans avoir besoin qu'on te le demande. Ta présence rassure et entraîne les autres plus qu'elle ne dérange, même si tu prends un peu plus de place que d'habitude.</p>
         <div class="sign-meta">
-          <div><span class="label">Atout</span>Ta capacité à donner confiance à quelqu'un qui en manque.</div>
-          <div><span class="label">À éviter</span>Vouloir avoir le dernier mot dans une discussion qui n'en vaut pas la peine.</div>
+          <div><span class="label">Atout</span>Ta capacité à donner confiance à quelqu'un qui en manque — un vrai talent à ne pas sous-estimer.</div>
+          <div><span class="label">À éviter</span>Vouloir avoir le dernier mot dans une discussion qui n'en vaut vraiment pas la peine.</div>
         </div>
+        </div></div>
       </article>
 
       <article class="sign-card" data-sign="vierge" data-element="terre" data-energy="67">
-        <div class="sign-card-top">
+        <button type="button" class="sign-card-top">
           <span class="sign-glyph">♍</span>
           <div><div class="sign-name">Vierge</div><div class="sign-dates">23 août – 22 septembre</div></div>
           <div class="energy-gauge" style="--pct:67; margin-left:auto;"><div class="energy-gauge-inner">67%</div></div>
-        </div>
-        <p class="sign-vibe">Une journée pour ranger ce qui traîne, au sens propre comme au figuré.</p>
+          <span class="sign-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="sign-card-body"><div class="sign-card-body-inner">
+        <p class="sign-vibe">Une journée pour ranger ce qui traîne, au sens propre comme au figuré. Mettre de l'ordre dans un coin de ta vie te libère plus d'énergie que prévu pour le reste.</p>
         <div class="sign-meta">
-          <div><span class="label">Atout</span>Ton sens du détail, qui évite une erreur à quelqu'un d'autre.</div>
-          <div><span class="label">À éviter</span>Critiquer un travail qui n'attendait pas de retour.</div>
+          <div><span class="label">Atout</span>Ton sens du détail, qui évite une erreur à quelqu'un d'autre sans même qu'on te le demande.</div>
+          <div><span class="label">À éviter</span>Critiquer un travail qui n'attendait pas de retour — parfois, le silence bienveillant vaut mieux que la correction.</div>
         </div>
+        </div></div>
       </article>
 
       <article class="sign-card" data-sign="balance" data-element="air" data-energy="60">
-        <div class="sign-card-top">
+        <button type="button" class="sign-card-top">
           <span class="sign-glyph">♎</span>
           <div><div class="sign-name">Balance</div><div class="sign-dates">23 septembre – 22 octobre</div></div>
           <div class="energy-gauge" style="--pct:60; margin-left:auto;"><div class="energy-gauge-inner">60%</div></div>
-        </div>
-        <p class="sign-vibe">Le bon jour pour trancher une décision que tu remets depuis des semaines.</p>
+          <span class="sign-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="sign-card-body"><div class="sign-card-body-inner">
+        <p class="sign-vibe">Le bon jour pour trancher une décision que tu remets depuis des semaines. L'indécision te coûte plus d'énergie que le choix lui-même, quel qu'il soit.</p>
         <div class="sign-meta">
-          <div><span class="label">Atout</span>Ton sens de la mesure, utile pour calmer un désaccord entre deux proches.</div>
-          <div><span class="label">À éviter</span>Dire oui pour éviter un conflit que tu devrais plutôt affronter.</div>
+          <div><span class="label">Atout</span>Ton sens de la mesure, utile aujourd'hui pour calmer un désaccord entre deux proches.</div>
+          <div><span class="label">À éviter</span>Dire oui pour éviter un conflit que tu devrais plutôt affronter directement — ça ne fera que le reporter.</div>
         </div>
+        </div></div>
       </article>
 
       <article class="sign-card" data-sign="scorpion" data-element="eau" data-energy="74">
-        <div class="sign-card-top">
+        <button type="button" class="sign-card-top">
           <span class="sign-glyph">♏</span>
           <div><div class="sign-name">Scorpion</div><div class="sign-dates">23 octobre – 21 novembre</div></div>
           <div class="energy-gauge" style="--pct:74; margin-left:auto;"><div class="energy-gauge-inner">74%</div></div>
-        </div>
-        <p class="sign-vibe">Une journée propice pour aller au fond d'un sujet que tout le monde évite.</p>
+          <span class="sign-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="sign-card-body"><div class="sign-card-body-inner">
+        <p class="sign-vibe">Une journée propice pour aller au fond d'un sujet que tout le monde préfère éviter. Ta lucidité est plus aiguisée que d'habitude — ne la garde pas seulement pour toi.</p>
         <div class="sign-meta">
-          <div><span class="label">Atout</span>Ta capacité à voir ce qui se cache derrière les non-dits.</div>
-          <div><span class="label">À éviter</span>Interpréter un silence comme une attaque personnelle.</div>
+          <div><span class="label">Atout</span>Ta capacité à voir ce qui se cache derrière les non-dits, un vrai atout dans une conversation difficile.</div>
+          <div><span class="label">À éviter</span>Interpréter un silence comme une attaque personnelle — ce n'est pas toujours dirigé contre toi.</div>
         </div>
+        </div></div>
       </article>
 
       <article class="sign-card" data-sign="sagittaire" data-element="feu" data-energy="85">
-        <div class="sign-card-top">
+        <button type="button" class="sign-card-top">
           <span class="sign-glyph">♐</span>
           <div><div class="sign-name">Sagittaire</div><div class="sign-dates">22 novembre – 21 décembre</div></div>
           <div class="energy-gauge" style="--pct:85; margin-left:auto;"><div class="energy-gauge-inner">85%</div></div>
-        </div>
-        <p class="sign-vibe">Le bon jour pour dire oui à quelque chose qui sort de ta routine.</p>
+          <span class="sign-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="sign-card-body"><div class="sign-card-body-inner">
+        <p class="sign-vibe">Le bon jour pour dire oui à quelque chose qui sort de ta routine habituelle. L'énergie du jour te pousse vers l'imprévu, et c'est exactement ce dont tu as besoin en ce moment.</p>
         <div class="sign-meta">
-          <div><span class="label">Atout</span>Ton optimisme, contagieux pour ceux qui en manquent aujourd'hui.</div>
-          <div><span class="label">À éviter</span>Promettre plus que ce que tu peux vraiment tenir.</div>
+          <div><span class="label">Atout</span>Ton optimisme, contagieux pour ceux qui en manquent cruellement aujourd'hui autour de toi.</div>
+          <div><span class="label">À éviter</span>Promettre plus que ce que tu peux vraiment tenir — l'enthousiasme du moment peut te jouer des tours.</div>
         </div>
+        </div></div>
       </article>
 
       <article class="sign-card" data-sign="capricorne" data-element="terre" data-energy="55">
-        <div class="sign-card-top">
+        <button type="button" class="sign-card-top">
           <span class="sign-glyph">♑</span>
           <div><div class="sign-name">Capricorne</div><div class="sign-dates">22 décembre – 19 janvier</div></div>
           <div class="energy-gauge" style="--pct:55; margin-left:auto;"><div class="energy-gauge-inner">55%</div></div>
-        </div>
-        <p class="sign-vibe">Une journée pour avancer pas à pas sur un projet de fond.</p>
+          <span class="sign-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="sign-card-body"><div class="sign-card-body-inner">
+        <p class="sign-vibe">Une journée pour avancer pas à pas sur un projet de fond, sans attendre de résultat spectaculaire. L'énergie plus basse que d'habitude t'invite à ralentir, pas à t'arrêter.</p>
         <div class="sign-meta">
-          <div><span class="label">Atout</span>Ta discipline, qui rassure davantage que tu ne le penses.</div>
-          <div><span class="label">À éviter</span>Te reprocher un rythme que toi seul juges trop lent.</div>
+          <div><span class="label">Atout</span>Ta discipline, qui rassure ton entourage bien plus que tu ne l'imagines toi-même.</div>
+          <div><span class="label">À éviter</span>Te reprocher un rythme que toi seul juges trop lent — personne d'autre ne le voit ainsi.</div>
         </div>
+        </div></div>
       </article>
 
       <article class="sign-card" data-sign="verseau" data-element="air" data-energy="69">
-        <div class="sign-card-top">
+        <button type="button" class="sign-card-top">
           <span class="sign-glyph">♒</span>
           <div><div class="sign-name">Verseau</div><div class="sign-dates">20 janvier – 18 février</div></div>
           <div class="energy-gauge" style="--pct:69; margin-left:auto;"><div class="energy-gauge-inner">69%</div></div>
-        </div>
-        <p class="sign-vibe">Le bon jour pour proposer une idée un peu décalée à ton entourage.</p>
+          <span class="sign-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="sign-card-body"><div class="sign-card-body-inner">
+        <p class="sign-vibe">Le bon jour pour proposer une idée un peu décalée à ton entourage. Ta différence est aujourd'hui une force, même si elle surprend d'abord ceux qui t'écoutent.</p>
         <div class="sign-meta">
-          <div><span class="label">Atout</span>Ton regard différent, qui débloque une situation où tout le monde tourne en rond.</div>
-          <div><span class="label">À éviter</span>Te braquer si ton idée n'est pas comprise immédiatement.</div>
+          <div><span class="label">Atout</span>Ton regard différent, qui débloque une situation où tout le monde tourne en rond depuis un moment.</div>
+          <div><span class="label">À éviter</span>Te braquer si ton idée n'est pas comprise immédiatement — laisse-lui le temps de faire son chemin.</div>
         </div>
+        </div></div>
       </article>
 
       <article class="sign-card" data-sign="poissons" data-element="eau" data-energy="62">
-        <div class="sign-card-top">
+        <button type="button" class="sign-card-top">
           <span class="sign-glyph">♓</span>
           <div><div class="sign-name">Poissons</div><div class="sign-dates">19 février – 20 mars</div></div>
           <div class="energy-gauge" style="--pct:62; margin-left:auto;"><div class="energy-gauge-inner">62%</div></div>
-        </div>
-        <p class="sign-vibe">Une journée pour écouter ce que ton instinct te souffle depuis un moment.</p>
+          <span class="sign-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="sign-card-body"><div class="sign-card-body-inner">
+        <p class="sign-vibe">Une journée pour écouter ce que ton instinct te souffle depuis un moment déjà. Ta sensibilité, souvent perçue comme une faiblesse, est aujourd'hui une vraie boussole.</p>
         <div class="sign-meta">
-          <div><span class="label">Atout</span>Ta sensibilité, qui capte une tension avant qu'elle n'éclate.</div>
-          <div><span class="label">À éviter</span>T'oublier complètement au profit des besoins des autres.</div>
+          <div><span class="label">Atout</span>Ta sensibilité, qui capte une tension avant qu'elle n'éclate ouvertement autour de toi.</div>
+          <div><span class="label">À éviter</span>T'oublier complètement au profit des besoins des autres — ta journée compte aussi.</div>
         </div>
+        </div></div>
       </article>
 
     </div>
@@ -674,13 +758,14 @@
       gridEl.appendChild(card);
     });
 
-    // Liens "voir le détail" : scroll + highlight temporaire
+    // Liens "voir le détail" : ouvre l'accordéon du signe puis scroll + highlight temporaire
     gridEl.querySelectorAll(".family-card-link").forEach(function(link){
       link.addEventListener("click", function(e){
         e.preventDefault();
         var sign = link.getAttribute("data-target");
         var card = document.querySelector('.sign-card[data-sign="' + sign + '"]');
         if (!card) return;
+        openSignCard(card);
         card.scrollIntoView({ behavior: "smooth", block: "center" });
         card.classList.add("is-highlighted");
         setTimeout(function(){ card.classList.remove("is-highlighted"); }, 2200);
@@ -688,10 +773,33 @@
     });
   }
 
+  // Accordéon des 12 signes : un clic sur l'en-tête bascule l'ouverture de sa
+  // carte, indépendamment des autres (pas de fermeture automatique des autres).
+  function openSignCard(card){
+    card.classList.add("is-open");
+    var toggle = card.querySelector(".sign-card-top");
+    if (toggle) toggle.setAttribute("aria-expanded", "true");
+  }
+  document.querySelectorAll(".sign-card-top").forEach(function(toggle){
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.addEventListener("click", function(){
+      var card = toggle.closest(".sign-card");
+      var isOpen = card.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  });
+
   // Ancres directes #signe-XXX -> id sur chaque carte, pour l'accès direct par signe
   document.querySelectorAll(".sign-card").forEach(function(card){
     card.id = "signe-" + card.getAttribute("data-sign");
   });
+
+  // Arrivée directe sur #signe-XXX (lien externe, partage) : ouvrir l'accordéon
+  // correspondant automatiquement, sinon il resterait replié malgré le scroll natif du navigateur.
+  if (location.hash.indexOf("#signe-") === 0){
+    var targetCard = document.getElementById(location.hash.slice(1));
+    if (targetCard) openSignCard(targetCard);
+  }
 
   addBtn.addEventListener("click", function(){ formEl.classList.add("is-open"); });
   cancelBtn.addEventListener("click", function(){ formEl.classList.remove("is-open"); formEl.reset(); });

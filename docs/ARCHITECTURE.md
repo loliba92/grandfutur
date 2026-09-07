@@ -37,18 +37,37 @@ scripts/social/               Scripts Python de récupération d'image (voir plu
 
 ## Le gabarit d'édition (`index.html`)
 
+Ordre de lecture, retravaillé le 7 septembre (retour utilisateur : les
+profils doivent être vus en premier, avant même le résumé du jour) :
+
 1. **Masthead** — logo, wordmark, nav (Accueil / Archives / Le projet / Contact).
 2. **Emplacement pub** — bandeau réservé pour Google AdSense (voir plus bas).
-3. **Hero** — édito du jour (thème général, sans jargon astro dans le titre — le
-   titre répond à « qu'est-ce que ça change pour moi aujourd'hui », jamais
-   « qu'est-ce qui se passe dans le ciel »), photo du jour (Pexels).
-4. **Vos proches** — gestionnaire de profils (voir plus bas).
-5. **Les 12 signes** — une carte par signe : glyphe zodiacal, dates, élément
-   (Feu/Terre/Air/Eau, code couleur), texte du jour, jauge d'énergie (%),
-   atout / à éviter. Chaque carte porte `data-sign`, `data-element` et
-   `data-energy` — lus par le JS du gestionnaire de profils, **source
-   unique de vérité** (pas de duplication du contenu du jour dans un objet
-   JS séparé).
+3. **Vos proches** — gestionnaire de profils, **en tout premier dans le
+   corps de page** (voir plus bas) : c'est ce qu'un lecteur doit voir avant
+   toute autre chose.
+4. **Hero / résumé du jour** — photo plein écran type « couverture »
+   (traitement repris de Scénario : dégradé sombre, logo en filigrane,
+   titre incrusté en bas de l'image — voir `.article-image-*`), puis le
+   texte d'intro. **Toujours ancré sur des éléments réels et nommés**
+   (une planète, une position, une phase lunaire) reliés à une conséquence
+   concrète — jamais une formule vague type « le ciel invite à... » qui ne
+   dit rien de vérifiable ni d'actionnable. Retour utilisateur explicite le
+   7 septembre : *"c'est creux, ça ne veut rien dire"* sur une première
+   version trop lisse — règle à appliquer aussi le jour où la génération
+   sera automatisée avec de vraies éphémérides.
+5. **Les 12 signes, en accordéon** — une carte par signe, repliée par
+   défaut : l'en-tête (glyphe, dates, jauge d'énergie) reste visible en
+   permanence, le détail (texte du jour, atout, à éviter) ne s'affiche
+   qu'au clic. Accordéon en CSS pur (`grid-template-rows` 0fr → 1fr, comme
+   l'accordéon des résumés de `archives.html` sur Scénario), le JS ne fait
+   que basculer une classe `is-open` — plusieurs cartes peuvent rester
+   ouvertes en même temps, pas de fermeture automatique des autres. Chaque
+   carte porte `data-sign`, `data-element` et `data-energy` — lus par le
+   JS du gestionnaire de profils, **source unique de vérité** (pas de
+   duplication du contenu du jour dans un objet JS séparé). Un clic sur
+   « Voir le détail de son signe » depuis une carte famille ouvre
+   l'accordéon correspondant avant de scroller — sinon le contenu resterait
+   caché malgré le défilement.
 6. **Trio du jour** — top 3 énergie, `.list-box` (composant repris tel quel
    du gabarit Scénario).
 7. **Lexique** — Signe, Ascendant, Élément.
@@ -160,11 +179,18 @@ comme sur Scénario (optionnel, évite l'exposition aux robots spammeurs).
 
 ## Identité visuelle
 
-Palette propre à Grand Futur (pas une reprise des couleurs Scénario) :
-fond très sombre à dominante indigo (`--ink #0d0f1e`), accent or
-(`--gold #e0b168`), quatre couleurs d'élément (Feu `#d9784c`, Terre
-`#6b9c6e`, Air `#6a8fc7`, Eau `#9070c9`). Même base typographique que
-Scénario pour la lisibilité (Fraunces + Inter + JetBrains Mono).
+**Fond clair « éditorial chaleureux »** (décidé le 7 septembre après retour
+utilisateur : une première version sombre à dominante indigo/violette a été
+jugée « trop ésotérique »). Palette actuelle, propre à Grand Futur : fond
+parchemin chaud (`--bg #f3ead9`), texte encre brune (`--ink #2b2318`),
+accent or plus profond qu'un simple jaune pour garder du contraste sur fond
+clair (`--gold #b8863f`), quatre couleurs d'élément recalées pour rester
+lisibles sur fond clair (Feu `#b5573c`, Terre `#4f8563`, Air `#4f708f`, Eau
+`#6f5f96`). Seule la photo du jour (bandeau `.article-image-*`) garde un
+traitement sombre — dégradé + texte clair incrusté dessus — puisqu'elle
+reste une image, indépendante du thème du reste de la page. Même base
+typographique que Scénario pour la lisibilité (Fraunces + Inter +
+JetBrains Mono).
 
 ## Ce qui reste à faire
 
