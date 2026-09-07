@@ -158,15 +158,20 @@
   }
   .profile-form-cancel{ background:none; border:none; color: var(--paper-dim); cursor:pointer; text-decoration:underline; font-size:0.85rem; }
 
-  .family-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); gap:14px; margin-top:18px; }
+  /* Un profil par ligne, pleine largeur : les 5 jauges tiennent sur une
+     seule ligne sans se tasser, plus agréable à lire qu'une grille serrée. */
+  .family-grid{ display:flex; flex-direction:column; gap:14px; margin-top:18px; }
   .family-card{ background: var(--surface-2); border:1px solid var(--hairline); border-radius:10px; padding:18px; }
   .family-card-head{ display:flex; align-items:center; gap:8px; margin-bottom:2px; }
   .family-card-icon{ color: var(--accent, var(--gold)); flex-shrink:0; display:flex; }
   .family-card-name{ font-family:"Fraunces",serif; font-weight:600; font-size:1.1rem; }
   .family-card-signs{ font-size:0.8rem; color: var(--paper-dim); margin-bottom:4px; }
   .family-card-row{ display:flex; align-items:flex-start; gap:12px; margin:14px 0; }
-  .family-card-flavor{ font-size:0.85rem; color: var(--accent, var(--gold)); margin:0; padding-left:10px; border-left:2px solid var(--accent, var(--gold)); }
-  .family-card-categories{ grid-template-columns: 1fr; }
+  .family-card-flavor{ font-size:0.85rem; color: var(--accent, var(--gold)); margin:10px 0 0; padding-left:10px; border-left:2px solid var(--accent, var(--gold)); }
+  .family-card-vibe{ margin:12px 0 0; font-size:0.9rem; }
+  .family-gauges{ display:flex; gap:16px; flex-wrap:wrap; margin:16px 0; }
+  .family-gauge-item{ display:flex; flex-direction:column; align-items:center; gap:6px; }
+  .family-gauge-label{ font-family:"JetBrains Mono",monospace; font-size:0.62rem; letter-spacing:0.03em; text-transform:uppercase; color: var(--paper-dim); text-align:center; max-width:76px; }
 
   /* Mini-graphique en barres : les 4 domaines toujours visibles, en un
      coup d'œil, sans avoir besoin de déplier quoi que ce soit. */
@@ -247,10 +252,11 @@
   .cat-gauge-inner{ width:31px; height:31px; border-radius:50%; background: var(--surface); display:grid; place-items:center; font-family:"JetBrains Mono",monospace; font-size:0.6rem; }
   .sign-cat-text{ margin:0; font-size:0.88rem; }
 
-  /* Conseil : une petite touche à part, légère, jamais un chiffre —
-     dans l'esprit des horoscopes classiques (ex. "aérez votre appartement
-     cinq minutes"), volontairement détachée du reste. */
-  .sign-conseil{ margin-top:16px; padding:12px 16px; background: var(--surface-2); border-radius:8px; border-left:2px solid var(--gold); }
+  /* Style du jour + Conseil : deux touches à part, légères, jamais un
+     chiffre — dans l'esprit des horoscopes classiques (ex. "aérez votre
+     appartement cinq minutes"), volontairement détachées des 4 domaines notés. */
+  .sign-extras{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:14px; margin-top:16px; }
+  .sign-conseil{ padding:12px 16px; background: var(--surface-2); border-radius:8px; border-left:2px solid var(--gold); }
   .sign-conseil-label{ display:block; font-family:"JetBrains Mono",monospace; font-size:0.68rem; letter-spacing:0.05em; text-transform:uppercase; color: var(--gold); margin-bottom:4px; }
   .sign-conseil-text{ margin:0; font-size:0.88rem; font-style:italic; color: var(--paper-dim); }
 
@@ -458,7 +464,10 @@
             </div>
           </div>
         </div>
-        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Avant de foncer, relis une fois ce que tu es sur le point d'envoyer.</p></div>
+        <div class="sign-extras">
+          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Une pièce qui tranche : couleur vive, coupe nette, rien de flou aujourd'hui.</p></div>
+          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Avant de foncer, relis une fois ce que tu es sur le point d'envoyer.</p></div>
+        </div>
       </article>
       <article class="sign-card" data-sign="taureau" data-element="terre" data-energy="64" hidden>
         <div class="sign-card-top">
@@ -497,7 +506,10 @@
             </div>
           </div>
         </div>
-        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Prends le temps du repas de midi, même dix minutes de plus.</p></div>
+        <div class="sign-extras">
+          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Une matière agréable au toucher — le confort compte plus que l'effet aujourd'hui.</p></div>
+          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Prends le temps du repas de midi, même dix minutes de plus.</p></div>
+        </div>
       </article>
       <article class="sign-card" data-sign="gemeaux" data-element="air" data-energy="71" hidden>
         <div class="sign-card-top">
@@ -536,7 +548,10 @@
             </div>
           </div>
         </div>
-        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Note une idée qui te traverse l'esprit avant de l'oublier ce soir.</p></div>
+        <div class="sign-extras">
+          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Superpose deux styles qui n'ont pas l'habitude d'aller ensemble, juste pour voir.</p></div>
+          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Note une idée qui te traverse l'esprit avant de l'oublier ce soir.</p></div>
+        </div>
       </article>
       <article class="sign-card" data-sign="cancer" data-element="eau" data-energy="58" hidden>
         <div class="sign-card-top">
@@ -575,7 +590,10 @@
             </div>
           </div>
         </div>
-        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Un message à quelqu'un de confiance te fera plus de bien qu'un silence prolongé.</p></div>
+        <div class="sign-extras">
+          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Une pièce familière, qui rassure — pas le jour pour tester du neuf.</p></div>
+          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Un message à quelqu'un de confiance te fera plus de bien qu'un silence prolongé.</p></div>
+        </div>
       </article>
       <article class="sign-card" data-sign="lion" data-element="feu" data-energy="82" hidden>
         <div class="sign-card-top">
@@ -614,7 +632,10 @@
             </div>
           </div>
         </div>
-        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Laisse quelqu'un d'autre parler en premier dans une réunion aujourd'hui.</p></div>
+        <div class="sign-extras">
+          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Une pièce qui se remarque, du genre qui donne envie de se tenir droit.</p></div>
+          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Laisse quelqu'un d'autre parler en premier dans une réunion aujourd'hui.</p></div>
+        </div>
       </article>
       <article class="sign-card" data-sign="vierge" data-element="terre" data-energy="67" hidden>
         <div class="sign-card-top">
@@ -653,7 +674,10 @@
             </div>
           </div>
         </div>
-        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Range un tiroir ou un dossier qui traîne, ça libère plus que prévu.</p></div>
+        <div class="sign-extras">
+          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Une tenue nette et bien coupée, sans fioriture inutile aujourd'hui.</p></div>
+          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Range un tiroir ou un dossier qui traîne, ça libère plus que prévu.</p></div>
+        </div>
       </article>
       <article class="sign-card" data-sign="balance" data-element="air" data-energy="60" hidden>
         <div class="sign-card-top">
@@ -692,7 +716,10 @@
             </div>
           </div>
         </div>
-        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Donne-toi une deadline claire aujourd'hui pour trancher, sinon le sujet reviendra demain.</p></div>
+        <div class="sign-extras">
+          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Une tenue équilibrée, ni trop ni trop peu — l'harmonie plutôt que l'audace.</p></div>
+          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Donne-toi une deadline claire aujourd'hui pour trancher, sinon le sujet reviendra demain.</p></div>
+        </div>
       </article>
       <article class="sign-card" data-sign="scorpion" data-element="eau" data-energy="74" hidden>
         <div class="sign-card-top">
@@ -731,7 +758,10 @@
             </div>
           </div>
         </div>
-        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Garde une observation juste pour toi jusqu'à avoir une vraie preuve à l'appui.</p></div>
+        <div class="sign-extras">
+          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Une couleur sombre et profonde, qui en dit long sans un mot.</p></div>
+          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Garde une observation juste pour toi jusqu'à avoir une vraie preuve à l'appui.</p></div>
+        </div>
       </article>
       <article class="sign-card" data-sign="sagittaire" data-element="feu" data-energy="85" hidden>
         <div class="sign-card-top">
@@ -770,7 +800,10 @@
             </div>
           </div>
         </div>
-        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Vérifie une date ou un horaire avant de t'engager sur un coup de tête.</p></div>
+        <div class="sign-extras">
+          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Une tenue confortable, prête à bouger — pense pratique plus qu'apprêté.</p></div>
+          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Vérifie une date ou un horaire avant de t'engager sur un coup de tête.</p></div>
+        </div>
       </article>
       <article class="sign-card" data-sign="capricorne" data-element="terre" data-energy="55" hidden>
         <div class="sign-card-top">
@@ -809,7 +842,10 @@
             </div>
           </div>
         </div>
-        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Note ce que tu as accompli ce soir, même petit : tu as tendance à l'oublier.</p></div>
+        <div class="sign-extras">
+          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Une pièce structurée et sobre, du genre qui inspire confiance sans en faire trop.</p></div>
+          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Note ce que tu as accompli ce soir, même petit : tu as tendance à l'oublier.</p></div>
+        </div>
       </article>
       <article class="sign-card" data-sign="verseau" data-element="air" data-energy="69" hidden>
         <div class="sign-card-top">
@@ -848,7 +884,10 @@
             </div>
           </div>
         </div>
-        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Formule ton idée simplement : une bonne idée mal expliquée perd tout son impact.</p></div>
+        <div class="sign-extras">
+          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Un détail décalé — couleur ou accessoire — qui ne ressemble à personne d'autre.</p></div>
+          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Formule ton idée simplement : une bonne idée mal expliquée perd tout son impact.</p></div>
+        </div>
       </article>
       <article class="sign-card" data-sign="poissons" data-element="eau" data-energy="62" hidden>
         <div class="sign-card-top">
@@ -887,7 +926,10 @@
             </div>
           </div>
         </div>
-        <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Note une émotion forte plutôt que de la garder pour toi indéfiniment.</p></div>
+        <div class="sign-extras">
+          <div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">Une matière fluide, qui bouge avec toi plutôt que de te contraindre.</p></div>
+          <div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">Note une émotion forte plutôt que de la garder pour toi indéfiniment.</p></div>
+        </div>
       </article>
     </div>
   </section>
@@ -1118,13 +1160,15 @@
         text: cat.querySelector(".sign-cat-text").textContent
       });
     });
-    var conseilEl = card.querySelector(".sign-conseil-text");
+    var styleEl = card.querySelector(".sign-style .sign-conseil-text");
+    var conseilEl = card.querySelector(".sign-conseil:not(.sign-style) .sign-conseil-text");
     return {
       name: card.querySelector(".sign-name").textContent,
       element: card.getAttribute("data-element"),
       energy: card.getAttribute("data-energy"),
       vibe: card.querySelector(".sign-vibe").textContent,
       categories: categories,
+      style: styleEl ? styleEl.textContent : "",
       conseil: conseilEl ? conseilEl.textContent : ""
     };
   }
@@ -1176,13 +1220,16 @@
       // par domaine est dans l'accordéon repliable juste en dessous.
       var vibePreview = sunData.vibe.split(/(?<=[.!?])\s/)[0];
 
-      var chartHtml = sunData.categories.map(function(c){
-        return '<div class="family-chart-row">' +
-          '<span class="family-chart-label">' + c.label + '</span>' +
-          '<div class="family-chart-bar-track"><div class="family-chart-bar-fill" style="width:' + c.score + ';"></div></div>' +
-          '<span class="family-chart-score">' + c.score + '</span>' +
-        '</div>';
-      }).join('');
+      // Rangée de petites jauges rondes — énergie globale + les 4 domaines,
+      // toujours visible mais compacte (préféré à des barres, jugées trop
+      // lourdes pour une carte censée rester simple).
+      var gaugesHtml = '<div class="family-gauge-item"><div class="energy-gauge" style="--pct:' + sunData.energy + '; --accent: var(--' + sunData.element + ');"><div class="energy-gauge-inner" style="width:32px;height:32px;font-size:0.62rem;">' + sunData.energy + '%</div></div><span class="family-gauge-label">Énergie</span></div>' +
+        sunData.categories.map(function(c){
+          return '<div class="family-gauge-item">' +
+            '<div class="cat-gauge" style="--pct:' + c.score.replace('%','') + ';"><div class="cat-gauge-inner">' + c.score + '</div></div>' +
+            '<span class="family-gauge-label">' + c.label + '</span>' +
+          '</div>';
+        }).join('');
 
       var catsHtml = sunData.categories.map(function(c){
         return '<div class="sign-cat">' +
@@ -1192,6 +1239,10 @@
             '<p class="sign-cat-text">' + c.text + '</p>' +
           '</div></div>';
       }).join('');
+      var extrasHtml = '<div class="sign-extras">' +
+        (sunData.style ? '<div class="sign-conseil sign-style"><span class="sign-conseil-label">Style du jour</span><p class="sign-conseil-text">' + sunData.style + '</p></div>' : '') +
+        (sunData.conseil ? '<div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">' + sunData.conseil + '</p></div>' : '') +
+      '</div>';
 
       var card = document.createElement("div");
       card.className = "family-card";
@@ -1201,19 +1252,15 @@
         '<div class="family-card-head"><span class="family-card-icon">' + zodiacIconSvg(sun, 20) + '</span><span class="family-card-name">' + p.name + '</span></div>' +
         '<div class="family-card-signs">' + SIGN_NAMES[sun] + ' · Ascendant ' + SIGN_NAMES[asc] + '</div>' +
         '<p class="family-card-flavor">' + ascFlavor + '</p>' +
-        '<div class="family-card-row">' +
-          '<div class="energy-gauge" style="--pct:' + sunData.energy + '; --accent: var(--' + sunData.element + ');"><div class="energy-gauge-inner">' + sunData.energy + '%</div></div>' +
-          '<p style="margin:0; font-size:0.9rem;">' + vibePreview + '</p>' +
-        '</div>' +
-        '<div class="family-chart">' + chartHtml + '</div>' +
-        (sunData.conseil ? '<div class="sign-conseil"><span class="sign-conseil-label">Conseil</span><p class="sign-conseil-text">' + sunData.conseil + '</p></div>' : '') +
+        '<p class="family-card-vibe">' + vibePreview + '</p>' +
+        '<div class="family-gauges">' + gaugesHtml + '</div>' +
         '<button type="button" class="family-detail-toggle">Voir le détail par domaine <span class="family-detail-chevron">▾</span></button>' +
         '<div class="family-detail-body"><div class="family-detail-inner">' +
           '<div class="sign-categories family-card-categories">' + catsHtml + '</div>' +
+          extrasHtml +
         '</div></div>' +
         '<div class="family-card-actions">' +
           '<button type="button" class="family-copy-btn" data-profile-id="' + p.id + '">Copier cet horoscope</button>' +
-          '<a class="family-card-link" href="#signe-' + sun + '" data-target="' + sun + '">Voir aussi la fiche ' + SIGN_NAMES[sun] + ' →</a>' +
         '</div>';
 
       gridEl.appendChild(card);
