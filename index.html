@@ -210,15 +210,28 @@
   .family-card-signs{ font-size:0.8rem; color: var(--paper-dim); margin-left:9px; }
   .family-card-row{ display:flex; align-items:flex-start; gap:12px; margin:14px 0; }
   .family-card-flavor{ font-size:0.85rem; color: var(--paper-dim); margin:8px 0 0; }
-  /* Grille Énergie + 4 domaines, remplace le paragraphe "vibe" (résumé en
-     une phrase) — toujours visible, sans clic (retour utilisateur du 7
-     septembre : "super visuel", pas caché derrière un accordéon). Chaque
-     carte réutilise le composant .energy-ring (icône + jauge ronde +
-     phrase courte du panier de phrases du domaine). */
-  .family-domain-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(118px,1fr)); gap:14px; margin:16px 0 0; }
-  .family-domain-card{ display:flex; flex-direction:column; align-items:center; gap:8px; text-align:center; }
-  .family-domain-top{ display:flex; align-items:center; gap:6px; color: var(--paper-dim); }
-  .family-domain-icon{ display:flex; color: var(--gold); }
+  /* Remplace le paragraphe "vibe" (résumé en une phrase) — toujours
+     visible, sans clic (retour utilisateur du 7 septembre : "super
+     visuel"). Énergie est une moyenne des 4 domaines, pas un domaine en
+     soi : elle est centrée seule au-dessus d'une ligne de séparation
+     plutôt que glissée en 5e carte dans la grille (2 colonnes + 5 cartes
+     laissait Humeur seul sur sa ligne — "c'est quand même moche").
+     Icône et libellé de chaque carte reprennent la couleur de leur
+     jauge (--ring-color, celle du seuil de score) au lieu d'un or fixe
+     déconnecté du reste : icône + jauge + libellé se lisent comme une
+     seule unité colorée. */
+  .family-energy-block{ display:flex; flex-direction:column; align-items:center; gap:10px; margin:18px 0 0; text-align:center; }
+  .family-energy-top{ display:flex; align-items:center; gap:6px; color: var(--ring-color, var(--gold)); }
+  .family-energy-label{ font-family:"JetBrains Mono",monospace; font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; }
+  .family-energy-text{ margin:0; font-size:0.85rem; color: var(--paper-dim); max-width:280px; }
+  .energy-ring--lg{ width:84px; height:84px; }
+  .energy-ring--lg .energy-ring-inner{ width:68px; height:68px; }
+  .energy-ring--lg .energy-ring-value{ font-size:1.25rem; }
+  .family-divider{ border:none; border-top:1px solid var(--hairline-soft); margin:18px 0; }
+
+  .family-domain-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap:20px 16px; }
+  .family-domain-card{ display:flex; flex-direction:column; align-items:center; gap:8px; text-align:center; color: var(--ring-color, var(--gold)); }
+  .family-domain-top{ display:flex; align-items:center; gap:6px; }
   .family-domain-label{ font-family:"JetBrains Mono",monospace; font-size:0.68rem; letter-spacing:0.05em; text-transform:uppercase; }
   .family-domain-text{ margin:0; font-size:0.78rem; color: var(--paper-dim); line-height:1.35; }
   /* Accordéon "détail" : ne contient plus que Conseil, la grille
@@ -1490,24 +1503,30 @@
       var adjCats = applyAscendantNudge(sunData.categories, ELEMENT_OF[asc]);
       var energy = Math.round(adjCats.reduce(function(sum, c){ return sum + parseInt(c.score, 10); }, 0) / adjCats.length);
 
-      // Grille toujours visible : Énergie + les 4 domaines, chacun avec sa
-      // jauge ronde (remplace le paragraphe "vibe", retour utilisateur du
-      // 7 septembre : "super visuel"). Le texte de chaque domaine est
-      // repioché selon le décan, à situation égale (favorise/neutre/freine
-      // déjà fixée par le code du jour) : deux profils du même signe mais
-      // de décans différents lisent une phrase différente dans le même
-      // panier. Score inchangé (le décan ne touche jamais les chiffres).
-      var energyCardHtml = '<div class="family-domain-card">' +
-        '<div class="family-domain-top">' + ENERGY_ICON + '<span class="family-domain-label">Énergie</span></div>' +
-        '<div class="energy-ring" style="--pct:' + energy + '; --ring-color:' + scoreColor(energy) + ';"><div class="energy-ring-inner"><span class="energy-ring-value">' + energy + '%</span></div></div>' +
-        '<p class="family-domain-text">' + energyTierText(energy) + '</p>' +
-      '</div>';
+      // Toujours visible, sans clic (remplace le paragraphe "vibe",
+      // retour utilisateur : "super visuel"). Énergie est centrée seule
+      // au-dessus d'une ligne, puis les 4 domaines en dessous en 2x2
+      // (jamais de carte orpheline) — retour utilisateur : la version à
+      // 5 cartes en 2 colonnes était "quand même moche". Le texte de
+      // chaque domaine est repioché selon le décan, à situation égale
+      // (favorise/neutre/freine déjà fixée par le code du jour) : deux
+      // profils du même signe mais de décans différents lisent une
+      // phrase différente dans le même panier. Score inchangé (le décan
+      // ne touche jamais les chiffres).
+      var energyColor = scoreColor(energy);
+      var energyBlockHtml = '<div class="family-energy-block" style="--ring-color:' + energyColor + ';">' +
+        '<div class="family-energy-top">' + ENERGY_ICON + '<span class="family-energy-label">Énergie</span></div>' +
+        '<div class="energy-ring energy-ring--lg" style="--pct:' + energy + '; --ring-color:' + energyColor + ';"><div class="energy-ring-inner"><span class="energy-ring-value">' + energy + '%</span></div></div>' +
+        '<p class="family-energy-text">' + energyTierText(energy) + '</p>' +
+      '</div>' +
+      '<hr class="family-divider">';
       var domainCardsHtml = adjCats.map(function(c){
         var pct = c.score.replace('%','');
+        var color = scoreColor(pct);
         var personalizedText = pickPersonalizedText(p.date, sun, decan, c.label, c.situation) || c.text;
-        return '<div class="family-domain-card">' +
+        return '<div class="family-domain-card" style="--ring-color:' + color + ';">' +
           '<div class="family-domain-top">' + (DOMAIN_ICONS[c.label] || '') + '<span class="family-domain-label">' + c.label + '</span></div>' +
-          '<div class="energy-ring" style="--pct:' + pct + '; --ring-color:' + scoreColor(pct) + ';"><div class="energy-ring-inner"><span class="energy-ring-value">' + c.score + '</span></div></div>' +
+          '<div class="energy-ring" style="--pct:' + pct + '; --ring-color:' + color + ';"><div class="energy-ring-inner"><span class="energy-ring-value">' + c.score + '</span></div></div>' +
           '<p class="family-domain-text">' + personalizedText + '</p>' +
         '</div>';
       }).join('');
@@ -1526,7 +1545,8 @@
           '<span class="family-card-icon">' + zodiacIconSvg(sun, 20) + '</span>' +
           '<div><span class="family-card-name">' + escapeHtml(p.name) + '</span><span class="family-card-signs">' + SIGN_NAMES[sun] + ' · Ascendant ' + SIGN_NAMES[asc] + '</span></div>' +
         '</div>' +
-        '<div class="family-domain-grid">' + energyCardHtml + domainCardsHtml + '</div>' +
+        energyBlockHtml +
+        '<div class="family-domain-grid">' + domainCardsHtml + '</div>' +
         (sunData.conseil ? '<button type="button" class="family-detail-toggle">Voir le conseil <span class="family-detail-chevron">▾</span></button>' : '') +
         '<div class="family-detail-body"><div class="family-detail-inner">' +
           extrasHtml +

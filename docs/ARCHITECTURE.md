@@ -485,6 +485,18 @@ dédié : voir [`docs/BACKLOG.md`](./BACKLOG.md).
 
 ## Historique
 
+- **7 septembre 2026** : ajustement de la grille Énergie + 4 domaines
+  (voir entrée juste en dessous) suite à un premier retour utilisateur
+  ("c'est quand même moche") : 5 cartes en grille à 2 colonnes laissait
+  Humeur seul sur sa 3e ligne. Énergie — une moyenne des 4 domaines, pas
+  un domaine en soi — est désormais centrée seule au-dessus d'une ligne
+  de séparation (`<hr class="family-divider">`), avec une jauge plus
+  grande (`.energy-ring--lg`) ; les 4 domaines restent en dessous, en
+  grille fixe 2x2 (jamais de carte orpheline avec exactement 4 éléments).
+  Icône et libellé de chaque carte reprennent désormais la couleur de sa
+  jauge (`--ring-color`, celle du seuil de score) au lieu d'un or fixe,
+  pour que chaque unité icône+jauge+libellé se lise d'un seul bloc.
+
 - **7 septembre 2026** : le paragraphe "vibe" (résumé du signe en une
   phrase, `.sign-vibe`) retiré de la carte famille — remplacé par une
   grille toujours visible, Énergie + les 4 domaines, chacun avec sa
