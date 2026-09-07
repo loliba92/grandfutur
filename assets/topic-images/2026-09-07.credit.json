@@ -1,9 +1,9 @@
 {
-  "candidate": 3,
+  "candidate": 2,
   "source": "pexels",
-  "file": "/tmp/topic-image-candidates-v3/candidate-3.jpg",
-  "photographer": "Johannes Plenio",
-  "pexels_url": "https://www.pexels.com/photo/silhouette-of-trees-2058946/",
-  "original_url": "https://images.pexels.com/photos/2058946/pexels-photo-2058946.jpeg",
-  "query": "starry night sky golden horizon"
+  "file": "/tmp/topic-candidates/candidate-2.jpg",
+  "photographer": "Marek Piwnicki",
+  "pexels_url": "https://www.pexels.com/photo/panoramic-view-of-the-mountain-ranges-10050598/",
+  "original_url": "https://images.pexels.com/photos/10050598/pexels-photo-10050598.jpeg",
+  "query": "misty mountain valley sunrise landscape"
 }

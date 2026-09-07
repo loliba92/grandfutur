@@ -485,6 +485,29 @@ dédié : voir [`docs/BACKLOG.md`](./BACKLOG.md).
 
 ## Historique
 
+- **7 septembre 2026** : bouton "Copier"/"Partager" unifiés en un seul
+  bouton "Partager cet horoscope" (mobile : feuille native inchangée ;
+  desktop : petit menu de 4 icônes dessinées à la main — Copier,
+  WhatsApp, Telegram, X — plutôt que 2-3 widgets séparés). Deux
+  maquettes présentées avant codage, option retenue par l'utilisateur.
+  **Même jour** : sections "Les 12 signes aujourd'hui" et "Le trio le
+  plus énergique du jour" masquées (`hidden`, jamais supprimées —
+  `#signes` reste la source de données de "Vos proches", `#top3` ne
+  sert à rien d'autre et pourra être supprimé plus tard) — jugées non
+  utiles maintenant que "Vos proches" est la porte d'entrée ; la routine
+  n'a donc plus à écrire le trio chaque matin. Raffinement visuel
+  (point 7 d'une liste de pistes de refonte plus large, points 5 et 6
+  mis de côté pour l'instant) : bordures de cartes adoucies
+  (`--hairline-soft`), plus de respiration (padding/gap augmentés),
+  halo doux et animé très lentement derrière les jauges d'énergie,
+  texture d'étoiles discrète en fond de page (radial-gradients, pas une
+  image) — palette et typographie déjà alignées avec l'idée de départ,
+  pas retouchées. Titre du jour agrandi (`clamp(2.1rem, 5vw, 3.3rem)`
+  contre `1.6rem-2.4rem`). Photo du jour remplacée : un ciel étoilé
+  jugé "trop banal" comme choix récurrent → paysage de montagnes
+  brumeuses au lever du jour (Marek Piwnicki/Pexels), plus cohérent
+  avec la consigne "un beau paysage" et la palette du site.
+
 - **7 septembre 2026** : "Argent & travail" renommé en "Argent" (retour
   utilisateur : séparer les deux en 2 domaines demanderait une nouvelle
   bibliothèque de phrases, une attribution planétaire séparée et une

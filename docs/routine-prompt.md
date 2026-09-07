@@ -104,9 +104,10 @@ chaque jour, en te basant sur `day_code` du JSON généré à l'étape 1 :
   (`docs/ARCHITECTURE.md` § Style du jour) — connecter à une situation
   concrète du jour, jamais un conseil vestimentaire ou pratique
   générique et déconnecté.
-- **`Le trio le plus énergique du jour`** (`#top3`, `.list-box`) : les 3
-  signes avec la plus haute `energy` dans le JSON (égalité → ordre
-  alphabétique), avec une phrase courte chacun.
+**`#top3` (trio du jour) masqué depuis le 7 septembre** (retour
+utilisateur : pas utile pour l'instant) — ne plus l'écrire ni le mettre
+à jour chaque matin, ce serait du travail perdu pour une section que
+personne ne voit.
 
 **Cohérence obligatoire** : les vibes/Style/Conseil doivent correspondre
 à la `situation` réelle de chaque signe ce jour-là (pas à une impression
