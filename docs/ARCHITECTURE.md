@@ -485,6 +485,20 @@ dédié : voir [`docs/BACKLOG.md`](./BACKLOG.md).
 
 ## Historique
 
+- **7 septembre 2026** : le paragraphe "vibe" (résumé du signe en une
+  phrase, `.sign-vibe`) retiré de la carte famille — remplacé par une
+  grille toujours visible, Énergie + les 4 domaines, chacun avec sa
+  propre jauge ronde (icône, pourcentage, une phrase courte), réutilisant
+  le composant `.energy-ring` déjà utilisé pour l'énergie globale. Retour
+  utilisateur : "ça doit être super visuel", avec un mockup de référence
+  (icône + jauge + texte court par carte). Les 4 domaines ne sont donc
+  plus cachés derrière l'accordéon "Voir le détail" — celui-ci ne
+  contient plus que Conseil (renommé "Voir le conseil"). `apply_to_index.py`
+  ne lit/écrit plus `.sign-vibe` (fonction et dict `NEW_VIBES` retirés),
+  et `docs/routine-prompt.md` ne demande plus de le rédiger chaque jour —
+  la donnée n'était plus affichée nulle part. `index.html` et l'archive
+  du jour régénérés et vérifiés (Playwright, zéro erreur JS).
+
 - **7 septembre 2026** : `rank_elements()` (`day_code.py`) plafonné à
   **un seul** élément favorisé et **un seul** freiné par calcul, jamais
   plus — retour utilisateur : "tu es sûr de tes % c'est super bas".

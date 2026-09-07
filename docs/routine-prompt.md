@@ -92,13 +92,10 @@ chaque jour, en te basant sur `day_code` du JSON généré à l'étape 1 :
   élément ça favorise/freine) en langage clair, jamais en jargon
   astrologique brut. Terminer par un paragraphe "Le bon réflexe
   aujourd'hui / Le mauvais réflexe", cohérent avec la situation du jour.
-- **Les 12 `<p class="sign-vibe">`** (une par fiche signe) : doivent
-  refléter la vraie `situation` de ce signe (favorise/neutre/freine,
-  dans le JSON), connectée à la vie quotidienne (travail, relations,
-  énergie physique) — jamais une formule générique ou un conseil creux
-  ("bois de l'eau"). Deux signes de même situation aujourd'hui doivent
-  quand même lire différemment (varier l'angle : l'un plus travail,
-  l'autre plus relationnel, par exemple).
+**`.sign-vibe` retiré le 7 septembre** (résumé en une phrase, remplacé côté
+carte famille par la grille Énergie + 4 domaines à jauges rondes — retour
+utilisateur : "super visuel") — ne plus l'écrire, `apply_to_index.py` ne
+le lit/écrit plus.
 - **`<span class="sign-conseil-label">Conseil</span>`** (12) : connecter
   à une situation concrète du jour, jamais un conseil pratique générique
   et déconnecté ("bois de l'eau"). **"Style du jour" (fashion horoscope)
