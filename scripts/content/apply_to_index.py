@@ -75,8 +75,13 @@ def patch_sign_block(html, sign, data, vibe_text):
     # (readCardData) pour re-piocher une phrase personnalisée par décan
     # dans la carte famille, sans avoir à recalculer le code du jour
     # côté client (voir ARCHITECTURE.md § Décan et quotidien).
+    # [^>]* entre le groupe 1 et le groupe 2 : tolère un data-situation
+    # déjà présent d'une exécution précédente (sinon le regex ne matche
+    # plus du tout à la 2e régénération, et les catégories ne sont plus
+    # remplacées — bug rencontré et corrigé le 7 septembre, silencieux :
+    # aucune erreur, juste l'ancien texte qui reste affiché).
     cat_re = re.compile(
-        r'(<div class="sign-cat")(>\s*<span class="sign-cat-label">)[^<]+(</span>\s*<div class="sign-cat-body">\s*'
+        r'(<div class="sign-cat")[^>]*(>\s*<span class="sign-cat-label">)[^<]+(</span>\s*<div class="sign-cat-body">\s*'
         r'<div class="stat" style="--accent: )[^;]+(;">\s*<span class="stat-value">)\d+%(</span><span class="stat-bar"><span class="stat-bar-fill" style="width:)\d+(%;"></span></span></div>\s*'
         r'<p class="sign-cat-text">)[^<]+(</p>)',
         re.S,
