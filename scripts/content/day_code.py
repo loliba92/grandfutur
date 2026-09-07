@@ -26,6 +26,7 @@ Usage :
 import sys
 import json
 import math
+import hashlib
 from datetime import date
 
 import ephem
@@ -60,20 +61,35 @@ DOMAIN_PLANETS = {
 }
 
 
-def rank_elements(weight):
-    """{élément: poids} -> {élément: favorise/neutre/freine}. Le top
-    devient favorisé, le bottom freiné, sauf égalité totale (rien ne se
-    distingue) où tout reste neutre."""
-    ranked = sorted(weight.items(), key=lambda kv: kv[1], reverse=True)
-    top_w, bottom_w = ranked[0][1], ranked[-1][1]
-    result = {}
-    for el, w in weight.items():
-        if w == top_w and top_w > bottom_w:
-            result[el] = "favorise"
-        elif w == bottom_w and top_w > bottom_w:
-            result[el] = "freine"
-        else:
-            result[el] = "neutre"
+def _stable_pick(tied_elements, tie_key):
+    """Choisit un élément parmi les ex-æquo, de façon stable (même clé ->
+    même choix) plutôt que de toujours favoriser le premier du dict
+    (feu) — sinon Feu gagnerait systématiquement les égalités."""
+    if len(tied_elements) == 1:
+        return tied_elements[0]
+    idx = int(hashlib.md5(tie_key.encode("utf-8")).hexdigest(), 16) % len(tied_elements)
+    return tied_elements[idx]
+
+
+def rank_elements(weight, tie_key="rank"):
+    """{élément: poids} -> {élément: favorise/neutre/freine}.
+
+    Toujours UN SEUL élément favorisé et UN SEUL freiné, jamais plus —
+    même en cas d'égalité à plusieurs (fréquent : dès qu'un domaine n'a
+    qu'une ou deux planètes qui le gouvernent, la moitié des éléments
+    peut se retrouver à 0). Sans cette règle, un jour où une planète
+    domine peut freiner 3 signes sur 4 en même temps — vérifié et jugé
+    trop dur le 7 septembre ("tu es sûr de tes % c'est super bas").
+    Le reste (y compris les autres éléments à égalité) redevient neutre.
+    """
+    top_w = max(weight.values())
+    bottom_w = min(weight.values())
+    result = {el: "neutre" for el in weight}
+    if top_w > bottom_w:
+        top_candidates = [el for el, w in weight.items() if w == top_w]
+        result[_stable_pick(top_candidates, tie_key + "|top")] = "favorise"
+        bottom_candidates = [el for el, w in weight.items() if w == bottom_w]
+        result[_stable_pick(bottom_candidates, tie_key + "|bottom")] = "freine"
     return result
 
 
@@ -120,13 +136,15 @@ def compute_day_code(day_str=None):
             "retrograde": is_retrograde(cls, d),
         }
 
+    resolved_date = day_str or date.today().isoformat()
+
     # Poids cumulé de chaque élément aujourd'hui, toutes planètes
     # confondues — sert au thème général du jour (paragraphe d'intro),
     # pas au choix des phrases par domaine (voir domain_elements).
     weight = {"feu": 0.0, "terre": 0.0, "air": 0.0, "eau": 0.0}
     for name, info in planets.items():
         weight[info["element"]] += PLANET_WEIGHT[name]
-    elements = rank_elements(weight)
+    elements = rank_elements(weight, tie_key=resolved_date + "|global")
 
     # Même calcul, mais un jeu de poids séparé par domaine, restreint aux
     # planètes qui le gouvernent (DOMAIN_PLANETS) — c'est ce qui alimente
@@ -136,10 +154,10 @@ def compute_day_code(day_str=None):
         dweight = {"feu": 0.0, "terre": 0.0, "air": 0.0, "eau": 0.0}
         for name in ruling_planets:
             dweight[planets[name]["element"]] += PLANET_WEIGHT[name]
-        domain_elements[domain] = rank_elements(dweight)
+        domain_elements[domain] = rank_elements(dweight, tie_key=resolved_date + "|" + domain)
 
     return {
-        "date": day_str or date.today().isoformat(),
+        "date": resolved_date,
         "planetes": planets,
         "elements": elements,
         "domain_elements": domain_elements,

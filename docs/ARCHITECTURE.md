@@ -485,6 +485,23 @@ dédié : voir [`docs/BACKLOG.md`](./BACKLOG.md).
 
 ## Historique
 
+- **7 septembre 2026** : `rank_elements()` (`day_code.py`) plafonné à
+  **un seul** élément favorisé et **un seul** freiné par calcul, jamais
+  plus — retour utilisateur : "tu es sûr de tes % c'est super bas".
+  Vérification faite à la main : le calcul était juste, mais quand un
+  domaine n'a que 1-2 planètes gouvernantes (`DOMAIN_PLANETS`) et
+  qu'elles se concentrent dans un même élément (ex. Lune + Mars tous
+  les deux en Cancer le 7 septembre), les 2-3 autres éléments tombent
+  à égalité à 0 et étaient *tous* classés "freiné" simultanément — un
+  signe pouvait se retrouver avec ses 4 domaines freinés le même jour
+  (Bélier : 42% avant correctif). Désormais, en cas d'égalité, un seul
+  élément parmi les ex-æquo est tiré au sort de façon stable (hash de
+  `date + domaine`, jamais toujours le même pour ne pas avantager Feu
+  qui passait en premier dans le dict) ; les autres redeviennent
+  neutres. Effet le 7 septembre : Bélier passe de 42% à 49%, plus aucun
+  signe n'a ses 4 domaines freinés à la fois. `index.html`, l'archive du
+  jour et l'historique (91 jours) recalculés avec la règle corrigée.
+
 - **7 septembre 2026** : plusieurs retouches rapides sur la carte
   famille suite aux retours utilisateur en continu.
   - **"Style du jour" retiré entièrement** ("c'est nul") : les 12 blocs
