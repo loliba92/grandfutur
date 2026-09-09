@@ -7005,5 +7005,82 @@
         }
       }
     }
+  },
+  "2026-09-09": {
+    "energies": {
+      "belier": 77,
+      "taureau": 59,
+      "gemeaux": 58,
+      "cancer": 58,
+      "lion": 78,
+      "vierge": 60,
+      "balance": 59,
+      "scorpion": 59,
+      "sagittaire": 81,
+      "capricorne": 59,
+      "verseau": 56,
+      "poissons": 61
+    },
+    "day_code": {
+      "date": "2026-09-09",
+      "planetes": {
+        "lune": {
+          "signe": "lion",
+          "element": "feu",
+          "degre": 145.18,
+          "retrograde": false
+        },
+        "mercure": {
+          "signe": "vierge",
+          "element": "terre",
+          "degre": 177.62,
+          "retrograde": false
+        },
+        "venus": {
+          "signe": "balance",
+          "element": "air",
+          "degre": 209.07,
+          "retrograde": false
+        },
+        "mars": {
+          "signe": "cancer",
+          "element": "eau",
+          "degre": 108.36,
+          "retrograde": false
+        }
+      },
+      "elements": {
+        "feu": "favorise",
+        "terre": "freine",
+        "air": "neutre",
+        "eau": "neutre"
+      },
+      "domain_elements": {
+        "Amour": {
+          "feu": "favorise",
+          "terre": "neutre",
+          "air": "neutre",
+          "eau": "freine"
+        },
+        "Argent": {
+          "feu": "neutre",
+          "terre": "neutre",
+          "air": "freine",
+          "eau": "favorise"
+        },
+        "Santé": {
+          "feu": "favorise",
+          "terre": "freine",
+          "air": "neutre",
+          "eau": "neutre"
+        },
+        "Humeur": {
+          "feu": "favorise",
+          "terre": "neutre",
+          "air": "neutre",
+          "eau": "freine"
+        }
+      }
+    }
   }
 }
