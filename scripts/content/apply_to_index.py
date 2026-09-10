@@ -27,25 +27,25 @@ def score_color(score):
 
 
 # Vibes réécrites pour rester honnêtes avec le vrai code du jour du
-# 2026-09-09 (Feu favorisé — Lune en Lion —, Terre freinée — Mercure en
-# Vierge —, Air et Eau neutres — Vénus en Balance, Mars en Cancer). À la
-# prochaine édition avec une configuration différente, ces phrases seront
-# réécrites à nouveau — pas de valeur par défaut : mieux vaut un rappel
-# explicite ("Bloc introuvable") que de laisser une vibe de la veille en
-# place.
+# 2026-09-10 (Terre favorisée — Lune ET Mercure en Vierge, double
+# transit —, Feu freiné, Air et Eau neutres — Vénus en Balance, Mars en
+# Cancer). À la prochaine édition avec une configuration différente, ces
+# phrases seront réécrites à nouveau — pas de valeur par défaut : mieux
+# vaut un rappel explicite ("Bloc introuvable") que de laisser une vibe
+# de la veille en place.
 VIBES = {
-    "belier": "Ton énergie repart plus vite que prévu aujourd'hui, portée par la Lune en Lion : bon moment pour attaquer le dossier que tu remets depuis lundi plutôt que d'attendre le suivant. Cette assurance se voit aussi côté cœur, où elle attire plus qu'elle n'intimide.",
-    "taureau": "Mercure en Vierge alourdit un peu le mental aujourd'hui, sans rien enlever à ta stabilité de fond. Une tâche répétitive avance quand même, à condition de lever les yeux de l'écran de temps en temps.",
-    "gemeaux": "Une journée sans grand relief, ni portée ni freinée par le ciel du jour : c'est le moment d'observer plutôt que de réagir, y compris dans une discussion qui pourrait s'envenimer. Relis deux fois un message avant de l'envoyer, l'inattention guette plus qu'un vrai désaccord.",
-    "cancer": "Mars occupe ton signe aujourd'hui, ce qui aiguise ton sens pratique sur une question d'argent ou d'organisation en suspens. La même énergie tourne vite en fatigue mentale si tu ne la canalises pas : une discussion sensible attendra mieux demain qu'aujourd'hui.",
-    "lion": "La Lune traverse ton signe aujourd'hui, et ça se sent : une conversation que tu retardais depuis des jours a de bonnes chances d'aboutir. Canalise ce trop-plein d'énergie dans un seul projet plutôt que de courir plusieurs lièvres à la fois.",
-    "vierge": "Mercure occupe ton signe aujourd'hui, ce qui aiguise ton sens du détail au travail — la même précision peut se retourner contre toi si tu la tournes vers l'intérieur. Une petite tension s'installe : une vraie pause, pas un simple café, suffira à la désamorcer.",
-    "balance": "Vénus traverse ton signe aujourd'hui sans bousculer grand-chose : une présence stable suffit, pas besoin de mettre en scène ce que tu ressens pour que ça compte. Côté argent, évite de promettre plus que tu ne pourras tenir dans les jours qui viennent.",
-    "scorpion": "Ta lucidité financière ou pratique est particulièrement nette aujourd'hui : avance sur ce qui traîne, la clarté est là. Côté émotions en revanche, tu es un peu à fleur de peau — mieux vaut prévenir ton entourage qu'espérer que ça passe inaperçu.",
-    "sagittaire": "L'énergie est à son maximum aujourd'hui, portée par une Lune complice en Lion : les échanges, au travail comme en famille, te font plus de bien que d'habitude. Reprends une habitude que tu avais laissée filer, le terrain est favorable.",
-    "capricorne": "L'élan collectif du jour ne te porte pas particulièrement, et ce n'est pas un problème : ton rythme de fond n'a jamais eu besoin d'un coup de pouce astral pour avancer. Continue ce qui est déjà lancé plutôt que d'ouvrir un nouveau chantier, et évite de repousser tes limites physiques aujourd'hui.",
-    "verseau": "Une journée neutre, presque silencieuse côté ciel, ce qui te laisse justement de la place pour tes propres idées. Une petite marche ou un rituel simple entretient ce que tu as construit ces derniers jours, sans qu'il soit besoin d'en faire plus.",
-    "poissons": "Comme les autres signes d'Eau, tu vois plus clair que d'habitude sur un sujet pratique ou financier resté en suspens : profites-en pour trancher. L'irritabilité guette côté cœur, mieux vaut choisir tes mots que les laisser filer.",
+    "belier": "Mars, ta planète maîtresse, est en Cancer aujourd'hui : ton élan habituel doit ruser plutôt que foncer, et une question financière en suspens gagne à attendre un jour plus favorable. Écoute ton corps avant de le pousser encore, le mental tourne déjà à plein régime.",
+    "taureau": "La Lune et Mercure traversent Vierge, un signe de Terre comme le tien : le terrain est particulièrement stable aujourd'hui, et ça se voit jusque dans ta présence, qui attire sans effort. Le corps suit bien aussi — une activité physique un peu plus longue que d'habitude passera comme une lettre à la poste.",
+    "gemeaux": "L'Air reste neutre aujourd'hui pendant que Vénus le traverse en Balance : de quoi apporter un peu de grâce sociale sans rien bousculer côté cœur. L'irritabilité guette néanmoins, alors relis deux fois un message avant de l'envoyer.",
+    "cancer": "Mars occupe ton signe aujourd'hui, ce qui aiguise ton sens pratique : un contact professionnel peut débloquer quelque chose si tu prends l'initiative plutôt que d'attendre. Le reste de la journée reste stable, sans pic ni creux particulier.",
+    "lion": "Le Feu est freiné aujourd'hui, et ça se traduit surtout par moins de patience que d'habitude : le silence vaut parfois mieux qu'une phrase de trop, en amour comme en négociation. Pas la journée pour repousser tes limites physiques, même pour une bonne raison.",
+    "vierge": "La Lune et Mercure occupent ton signe en même temps aujourd'hui, un double transit qui se sent nettement : une conversation que tu repousses depuis des jours peut enfin bien se passer. Belle énergie physique aussi — une activité qui te plaît vraiment en profitera pleinement.",
+    "balance": "Vénus, ta planète maîtresse, traverse ton propre signe aujourd'hui sans rien bousculer de spectaculaire : tes efforts ne se voient pas encore, mais ils comptent. L'irritabilité guette en fin de journée, mieux vaut le savoir avant qu'un mot de trop parte.",
+    "scorpion": "Ta lucidité financière est particulièrement nette aujourd'hui : un contact professionnel peut débloquer quelque chose si tu prends l'initiative. Côté cœur, rien de marquant, ce qui te laisse justement de la place pour le reste.",
+    "sagittaire": "Le Feu est freiné aujourd'hui : le mental tourne à plein régime, pense à lever les yeux de l'écran de temps en temps. Une décision financière importante peut attendre un jour plus favorable, la patience paiera plus que la précipitation.",
+    "capricorne": "Comme les deux autres signes de Terre, tu profites du double passage de la Lune et Mercure en Vierge aujourd'hui : dis ce que tu ressens plutôt que d'attendre que l'autre le devine, l'accueil sera bon. Curieux·se et bavard·e, les échanges te font du bien, et le corps suit sans effort.",
+    "verseau": "Une journée neutre côté ciel, ce qui te laisse de la place pour tes propres idées plutôt que de suivre le mouvement. Sensible et tourné·e vers l'intérieur en fin de journée, inutile de te forcer à être sociable si l'envie n'y est pas.",
+    "poissons": "Comme les autres signes d'Eau, tu vois plus clair que d'habitude sur un sujet financier : défends ta position dans une négociation, ton argumentaire tient la route aujourd'hui. Ce qui est solide dans ta vie n'a pas besoin d'être prouvé une fois de plus.",
 }
 
 
