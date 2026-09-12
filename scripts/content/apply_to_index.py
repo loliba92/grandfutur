@@ -27,26 +27,26 @@ def score_color(score):
 
 
 # Vibes réécrites pour rester honnêtes avec le vrai code du jour du
-# 2026-09-11 (Eau favorisée — Vénus en Scorpion ET Mars en Cancer,
-# deux planètes d'Eau en même temps —, Feu freiné (aucune planète n'y
-# est aujourd'hui), Terre et Air neutres — Lune en Vierge, Mercure en
-# Balance). À la prochaine édition avec une configuration différente, ces
-# phrases seront réécrites à nouveau — pas de valeur par défaut : mieux
-# vaut un rappel explicite ("Bloc introuvable") que de laisser une vibe
-# de la veille en place.
+# 2026-09-12 (Air favorisé — Lune ET Mercure en Balance, deux planètes
+# d'Air en même temps —, Terre freinée (aucune planète n'y est
+# aujourd'hui), Feu et Eau neutres — Vénus en Scorpion, Mars en Cancer).
+# À la prochaine édition avec une configuration différente, ces phrases
+# seront réécrites à nouveau — pas de valeur par défaut : mieux vaut un
+# rappel explicite ("Bloc introuvable") que de laisser une vibe de la
+# veille en place.
 VIBES = {
-    "belier": "Mars, ta planète maîtresse, reste en Cancer aujourd'hui : ton énergie habituelle doit passer par la ruse plutôt que par la charge frontale, surtout si un sujet d'argent traîne depuis quelques jours. Le corps demande aussi plus de ménagement que d'habitude — une séance plus courte qu'à l'accoutumée ne sera pas du temps perdu.",
-    "taureau": "Vénus, ta planète maîtresse, brille dans le Scorpion aujourd'hui sans rien t'apporter directement : la Terre reste dans un entre-deux stable, ni portée ni freinée. Le quotidien tourne normalement — une tâche répétitive avancera sans accroc si tu t'y tiens.",
-    "gemeaux": "Mercure, ta planète maîtresse, traverse la Balance aujourd'hui : les échanges gagnent en diplomatie sans que ça bouscule grand-chose. Une conversation délicate peut se dérouler mieux que prévu si tu restes dans la nuance plutôt que dans la répartie facile.",
-    "cancer": "Mars occupe ton signe aujourd'hui, ce qui aiguise ton sens pratique et ta capacité à protéger ce qui compte : une initiative professionnelle a de bonnes chances d'aboutir si tu la lances maintenant. Le corps répond bien aussi, à condition de canaliser cette énergie plutôt que de la laisser déborder en agacement.",
-    "lion": "Sans planète de Feu pour te porter aujourd'hui, ton énergie habituelle tourne un peu au ralenti — rien d'inquiétant, juste de quoi ajuster le rythme. Une remarque un peu vive peut vite déraper en dispute si tu ne la retiens pas, mieux vaut compter jusqu'à dix avant de répondre.",
-    "vierge": "Mercure, ta planète maîtresse, traverse la Balance aujourd'hui, un signe sociable qui te pousse à soigner tes formulations plutôt qu'à foncer droit au but. La Terre reste neutre, donc rien d'exceptionnel à attendre — un rendez-vous ordinaire se passera simplement bien.",
-    "balance": "Vénus, ta planète maîtresse, traverse le Scorpion aujourd'hui : tes sentiments gagnent en intensité sans que ça se voie forcément de l'extérieur. L'Air reste neutre, donc pas de grand bouleversement — une discussion à cœur ouvert avec un proche fera plus de bien qu'une sortie improvisée.",
-    "scorpion": "Vénus traverse ton signe aujourd'hui, ce qui rend tes sentiments plus lisibles que d'habitude sans les rendre plus fragiles pour autant. Une conversation financière ou intime que tu repousses depuis un moment a de bonnes chances de bien se passer si tu la lances toi-même.",
-    "sagittaire": "Le Feu manque de carburant aujourd'hui, ce qui se traduit surtout par une impatience plus grande que d'habitude face à ce qui n'avance pas assez vite à ton goût. Une décision financière importante gagne à attendre demain plutôt qu'à être tranchée sous le coup de l'agacement.",
-    "capricorne": "La Terre reste dans un entre-deux stable aujourd'hui, sans planète pour la porter ni la freiner particulièrement : une bonne journée pour avancer sur un dossier de fond sans attendre de reconnaissance immédiate. Le corps suit sans excès ni fatigue notable.",
-    "verseau": "Une journée neutre côté ciel pour toi aujourd'hui, ce qui laisse le champ libre à tes propres priorités plutôt qu'à celles des autres. Un projet perso avance mieux en solo qu'en groupe, pas la peine de forcer une réunion qui peut attendre.",
-    "poissons": "Comme les autres signes d'Eau, tu profites aujourd'hui de la présence de Vénus en Scorpion et de Mars en Cancer : ton intuition est plus fiable que ton mental pour trancher une question en suspens. Une décision financière qui te trottait dans la tête peut enfin se prendre, sans devoir tout justifier par la logique.",
+    "belier": "Mars, ta planète maîtresse, reste en Cancer aujourd'hui, loin de ton terrain habituel : le corps répond correctement mais sans excès, une séance de sport ordinaire suffira très bien. Un sujet d'argent en suspens n'a pas besoin d'être tranché aujourd'hui — le classer peut attendre demain sans rien perdre.",
+    "taureau": "Vénus, ta planète maîtresse, brille dans le Scorpion sans rien t'apporter directement, et sans planète de Terre pour te porter aujourd'hui, ton élément reste freiné : une négociation professionnelle gagnerait à être reportée si tu en as la possibilité. Le corps demande à être ménagé plutôt que poussé, une pause dans l'après-midi vaut mieux qu'un rythme tenu d'une traite.",
+    "gemeaux": "Mercure, ta planète maîtresse, traverse la Balance aux côtés de la Lune aujourd'hui, une configuration rare qui aiguise à la fois ton mental et ta justesse relationnelle. Une conversation professionnelle délicate a de bonnes chances de bien tourner si tu la lances toi-même plutôt que d'attendre qu'elle vienne à toi.",
+    "cancer": "La Lune traverse la Balance aujourd'hui, un peu loin de ton élément habituel, mais Mars reste dans ton signe et continue d'aiguiser ton sens pratique : une initiative professionnelle lancée aujourd'hui a de bonnes chances d'aboutir. Le corps suit normalement, sans besoin de forcer le rythme.",
+    "lion": "Sans planète de Feu pour te porter aujourd'hui, ton énergie habituelle tourne un peu au ralenti, ce qui n'empêche pas d'avancer, juste à un rythme plus posé. Une remarque un peu vive au bureau peut vite déraper en dispute si tu ne la retiens pas, mieux vaut la garder pour toi jusqu'à demain.",
+    "vierge": "Mercure, ta planète maîtresse, traverse la Balance aujourd'hui aux côtés de la Lune, ce qui t'aide à soigner tes formulations, mais ton élément reste freiné faute de planète pour le porter : un dossier administratif avancera mieux si tu le fractionnes en petites étapes plutôt que de vouloir le boucler d'un coup. Le mental tourne vite, pense à lever les yeux de l'écran de temps en temps.",
+    "balance": "Vénus, ta planète maîtresse, traverse le Scorpion aujourd'hui pendant que la Lune et Mercure occupent ton propre signe : une configuration rare qui te met en position de force, autant sur le plan du cœur que des mots. Une demande que tu portes depuis un moment a de bonnes chances d'être entendue si tu la formules aujourd'hui plutôt que de la garder pour toi.",
+    "scorpion": "Vénus traverse ton signe aujourd'hui, ce qui rend tes sentiments plus lisibles que d'habitude, mais ton élément reste dans un entre-deux stable, ni porté ni freiné par le reste du ciel. Un rythme de travail habituel te convient très bien aujourd'hui, pas besoin d'en faire plus pour que ça avance.",
+    "sagittaire": "Le Feu manque de carburant aujourd'hui, sans planète pour le porter, ce qui se traduit surtout par une impatience plus grande que d'habitude face à ce qui n'avance pas assez vite à ton goût. Une décision financière importante gagne à attendre demain plutôt qu'à être tranchée sous le coup de l'agacement.",
+    "capricorne": "La Terre ne reçoit aucune planète aujourd'hui, ce qui te prive un peu de ton carburant habituel sans rien freiner de dramatique : un dossier de fond avancera normalement si tu ne cherches pas de reconnaissance immédiate. Le corps suit sans excès ni fatigue notable, une journée pour tenir le rythme plutôt que l'accélérer.",
+    "verseau": "Lune et Mercure traversent la Balance aujourd'hui, un signe d'Air comme le tien, ce qui nourrit directement ton besoin d'échanger et de voir large. Un projet perso gagnera à être partagé aujourd'hui plutôt que gardé pour toi, les retours que tu recevras seront plus utiles que d'habitude.",
+    "poissons": "Vénus en Scorpion et Mars en Cancer, deux planètes d'Eau comme toi, gardent ton élément dans un entre-deux stable — ni porté ni freiné. Une intuition sur un sujet financier mérite d'être notée aujourd'hui même si tu ne comptes pas agir tout de suite, elle pourrait se révéler juste dans quelques jours.",
 }
 
 
